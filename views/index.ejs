@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>SmartCampus</title>
+		<link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+		<link rel="stylesheet" href="/stylesheets/mainStyle.css" />
+		<script src="http://www.babylonjs.com/babylon.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+		<script type="text/javascript" src="/javascripts/angular.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+        <script src="/javascripts/angularApp.js"></script>
+	</head>
+	<body ng-app="appCampus" ng-controller="MainCtrl">
+			 <!-- Static navbar -->
+	    <nav class="navbar navbar-default navbar-static-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">Smart Campus</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li><a href="#viewmode">View Mode</a></li>
+	            <li><a href="#editmode">Edit Mode</a></li>
+	          </ul>
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#">Filters</a></li>
+	            <li><a href="#">About</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
+
+	    <div id="canvasContainer">
+	    	<canvas id="renderCanvas"></canvas>  
+	    	<div class="panel panel-default" id="buildingPanel">
+	    		<div class="panel-heading" id=buildingPanelToggle>
+					<div class="btn-group" data-toggle="buttons" id="toggleButtons">
+					  <label class="btn btn-primary active" id="campusToggleButton">
+					    <input type="radio" name="options" id="option1" autocomplete="off" checked>
+					    <span id="campusWord">
+					    {{campus_str}}
+					    </span>
+					  </label>
+					  <label class="btn btn-primary" id="buildingToggleButton">
+					    <input type="radio" name="options" id="option2" autocomplete="off">
+					    <span id="buildingWord">
+					    {{building_str}}
+					    </span>
+					  </label>
+					</div>
+				</div>
+				<div class="panel-heading" id=buildingPanelHeading>
+					<h3 class="panel-title" id="buildingPanelTitle">Building parameters and information. Or whole campus</h3>
+				</div>
+				<div class="panel-body" id="buildingPanelBody" >
+					<span  ng-repeat="building in buildings | orderBy: '-cost'">
+    					{{building.name}} cost GT {{building.cost}} $ <br>
+				    </span>
+				</div>
+			</div>
+	    </div>
+	
+		<!-- Bootstrap core JavaScript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+		<!-- Babylon JS files-->
+		<script type="text/javascript" src="/javascripts/Application.js"></script>
+		<script type="text/javascript" src="/javascripts/User.js"></script>
+		<script type="text/javascript" src="/javascripts/Environment.js"></script>
+		
+
+		
+	</body>
+</html>

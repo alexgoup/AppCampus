@@ -1,0 +1,94 @@
+html, body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#renderCanvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    touch-action: none;
+}
+
+#buildingPanel { 
+	position: absolute;
+	top: 5%;
+	left: 80%;
+	width: 18%;
+	height: 40%;
+	/*opacity: 0.5;*/
+	margin:0px;
+	border: 5px solid transparent;
+	border-color: #346562;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,0.2)
+ }
+
+#buildingPanelBody {
+	background-color: inherit;
+	width: 100%;
+	height:80%;
+	padding:3px;
+}
+
+#buildingPanelBody span {
+	color: white;
+}
+
+#buildingPanelHeading{ 
+	background-color: inherit;
+	border-bottom: 3px solid transparent;
+	border-color: #346562;
+ 	width: 100%;
+	height:10%;
+	padding: 3px;
+ }
+
+#buildingPanelToggle{ 
+	border-bottom: 3px solid transparent;
+	border-color: #346562;
+	background-color: inherit;
+ 	width: 100%;
+	height:10%;
+	margin:0px;
+	padding:0px;
+ }
+
+ #toggleButtons { 	
+ 	width: 100%;
+ 	height: 100%;
+	padding: 3px;
+ }
+
+ #campusToggleButton{
+ 	width: 50%;
+ 	height: 100%;
+ 	padding:1px;
+ }
+
+ #buildingToggleButton{
+ 	width: 50%;
+ 	height: 100%;
+ 	padding:1px;
+ }
+
+#campusWord { 
+ 	font-size: 0.8vw;
+ }
+
+ #buildingWord { 
+ 	font-size: 0.8vw;
+ }
+
+
+
+
+#canvasContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+/*    touch-action: none;*/
+}
