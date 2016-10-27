@@ -5,7 +5,7 @@ Environment = function(application) {
     //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
 
     var materialGround = new BABYLON.StandardMaterial("groundTexture", scene);
-    materialGround.emissiveTexture = new BABYLON.Texture("/images/campus_ground_resized.png", scene);
+    materialGround.emissiveTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);
     materialGround.emissiveTexture.uScale = 1;
     materialGround.emissiveTexture.vScale = 1;
 

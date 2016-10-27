@@ -10,7 +10,7 @@ var Building = require('./models/Buildings');
         // authentication routes
 
         // sample api route
-        app.get('/api/nerds', function(req, res) {
+       /* app.get('/api/nerds', function(req, res) {
             // use mongoose to get all nerds in the database
             Building.find(function(err, buildings) {
 
@@ -21,7 +21,7 @@ var Building = require('./models/Buildings');
 
                 res.json(buildings); // return all nerds in JSON format
             });
-        });
+        });*/
 
         // route to handle creating goes here (app.post)
         // route to handle delete goes here (app.delete)
