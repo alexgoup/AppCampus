@@ -4,6 +4,24 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+require('./models/Buildings');
+
+mongoose.connect('mongodb://localhost/campus');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  var BuildingSchema = new mongoose.Schema({
+  title: String,
+  cost: Number
+});
+
+var Building = mongoose.model('Building', BuildingSchema);
+
+var sc = new Building({ title: 'Student Center', cost: 300000000 });
+console.log(sc.title); 
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
