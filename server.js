@@ -43,7 +43,7 @@ require('./app/routes')(app); // configure our routes
 app.listen(port);               
 
 // shoutout to the user                     
-console.log('Magic happens on port ' + port);
+console.log('Magic happens on port ' + port + '. You are connected to MongoDB on the database ' + db.url);
 
 // expose app           
 exports = module.exports = app;                         
