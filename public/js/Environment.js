@@ -1,7 +1,10 @@
 Environment = function(application) {
     this.application = application;
     var scene = application.scene;
+    this.currentBlist = []; 
+    this.Zlist = []; 
 
+    initBuildings(this);
     //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
 
     var materialGround = new BABYLON.StandardMaterial("groundTexture", scene);
