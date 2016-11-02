@@ -11,6 +11,8 @@ Application = function(canvasId) {
     _this.actualTime = Date.now();
     // On initie la scène avec une fonction associée à l'objet Game
     this.scene = this._initScene(engine);
+
+    this.controllerElement = document.querySelector('body');
     
     var _user = new User(_this, canvas);
 

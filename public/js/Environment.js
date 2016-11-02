@@ -13,6 +13,9 @@ Environment = function(application) {
     this.pixelToPos = 0.415;
     this.hscale = 2;
 
+    var controllerElement = this.application.controllerElement; 
+    this.controllerElement = controllerElement; 
+
     initBuildings(this);
     //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
 
@@ -39,7 +42,10 @@ Environment = function(application) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
 	            var bldgClicked = meshClicked.building;
-	            console.log(bldgClicked.name);
+	            var scope = angular.element(controllerElement).scope(); 
+		        scope.$apply(function(){
+		            scope.mouseOverBuildingName = bldgClicked.name;
+		        });
 	            var meshesClicked = bldgClicked.mesh3DList; 
 	            for(var i=0; i<meshesClicked.length; i++){
 	            	meshesClicked[i].material = brightmaterialBuilding; 
@@ -109,7 +115,6 @@ Environment.prototype = {
 		   			
 		   		}
 	    }
-	    console.log(this.currentBlist);
    		this.drawInitMeshes(); 
 
 	},

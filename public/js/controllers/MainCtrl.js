@@ -13,6 +13,7 @@ app.controller('MainController',
 		BuildingFactory.getZones().then(function(result) {
     		$scope.zones = result.data;
 			});
+		$scope.mouseOverBuildingName = "No Building Selected"
 		
 
 	}

@@ -27,6 +27,17 @@ html, body {
 	background-color: rgba(0,0,0,0.2)
  }
 
+#spanname{
+	position: absolute;
+	top: 5%;
+	left: 20%;
+	width: 18%;
+	height: 40%;
+	/*opacity: 0.5;*/
+	margin:0px;
+	color: white;
+}
+
 #buildingPanelBody {
 	background-color: inherit;
 	width: 100%;
