@@ -24,6 +24,49 @@ Environment = function(application) {
     var ground = BABYLON.Mesh.CreateGround("campus_ground", 1024*this.pixelToPos, 843*this.pixelToPos, 2, scene);
     ground.material = materialGround;
 
+	var materialBuilding = new BABYLON.StandardMaterial("wallTexture", this.scene);
+	materialBuilding.emissiveTexture = new BABYLON.Texture("/img/wood.jpg", this.scene); 
+	this.materialBuilding = materialBuilding;
+
+    var brightmaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
+    brightmaterialBuilding.emissiveTexture = new BABYLON.Texture("/img/wood.jpg", scene);
+    brightmaterialBuilding.emissiveTexture.level = 2;
+    this.brightmaterialBuilding = brightmaterialBuilding;
+
+    this.pointerMeshActionOPOverT = new BABYLON.ExecuteCodeAction(
+	    BABYLON.ActionManager.OnPointerOverTrigger,
+	    function(evt) {
+	        if (evt.meshUnderPointer) { 
+	            var meshClicked = evt.meshUnderPointer; 
+	            var bldgClicked = meshClicked.building;
+	            console.log(bldgClicked.name);
+	            var meshesClicked = bldgClicked.mesh3DList; 
+	            for(var i=0; i<meshesClicked.length; i++){
+	            	meshesClicked[i].material = brightmaterialBuilding; 
+	            }
+	             
+
+	        }
+	    }
+    );
+
+    this.pointerMeshActionOPOutT = new BABYLON.ExecuteCodeAction(
+	    BABYLON.ActionManager.OnPointerOutTrigger,
+	    function(evt) {
+	        if (evt.meshUnderPointer) { 
+	            var meshClicked = evt.meshUnderPointer; 
+	            var bldgClicked = meshClicked.building; 
+	            var meshesClicked = bldgClicked.mesh3DList; 
+	            for(var i=0; i<meshesClicked.length; i++){
+	            	meshesClicked[i].material = materialBuilding; 
+	            } 
+
+	        }
+	    }
+    );
+
+
+
 };
 
 Environment.prototype = {
@@ -43,6 +86,7 @@ Environment.prototype = {
    			var meshObj = new MeshBuilding(mesh.bId,mesh.zoneId,mesh.type,mesh.x0,mesh.y0,mesh.p1,mesh.p2,mesh.p3,mesh.p4,mesh.p5);
    			for(var k=0; k<this.currentBlist.length; k++){
    				if(this.currentBlist[k].id == meshObj.buildingID){
+   					/*meshObj.building = this.currentBlist[k];*/
    					this.currentBlist[k].meshList.push(meshObj);
    					break;
    				}
@@ -65,14 +109,14 @@ Environment.prototype = {
 		   			
 		   		}
 	    }
-
+	    console.log(this.currentBlist);
    		this.drawInitMeshes(); 
 
 	},
 
 	drawInitMeshes: function(){
-		var materialBuilding = new BABYLON.StandardMaterial("wallTexture", this.scene);
-		materialBuilding.emissiveTexture = new BABYLON.Texture("/img/wood.jpg", this.scene);
+
+
 
 		for(var i=0; i<this.currentBlist.length; i++){ 
 			if(this.currentBlist[i].zone != undefined){ 
@@ -111,7 +155,11 @@ Environment.prototype = {
 							mainBox.position.z -= 4.5;
 						}
 						mainBox.rotation.y = -degToRad(p4);
-						mainBox.material = materialBuilding;
+						mainBox.material = this.materialBuilding;
+						mainBox.actionManager = new BABYLON.ActionManager(this.scene);
+						mainBox.actionManager.registerAction(this.pointerMeshActionOPOverT);
+						mainBox.actionManager.registerAction(this.pointerMeshActionOPOutT);
+						mainBox.building = this.currentBlist[i];
 						this.currentBlist[i].mesh3DList.push(mainBox);
 					}
 					else if (type == 2){
@@ -125,7 +173,8 @@ Environment.prototype = {
 
 						var mainCylinder = BABYLON.Mesh.CreateCylinder("bldg_"+i+"mesh_"+k, hCyl, 2*rTop, 2*rBtm, 12, 4, this.scene);
 						mainCylinder.position =  new BABYLON.Vector3(xCyl+this.dx0,(1/2)*hCyl,zCyl+this.dz0);
-						mainCylinder.material = materialBuilding;
+						mainCylinder.material = this.materialBuilding;
+						mainCylinder.actionManager = new BABYLON.ActionManager(this.scene);
 
 						this.currentBlist[i].mesh3DList.push(mainCylinder);
 					}
