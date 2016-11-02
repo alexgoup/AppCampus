@@ -3,4 +3,6 @@ function Building(id,name,bClass) {
     this.meshList = []; 
     this.name = name; 
     this.bClass = bClass; 
+    this.zone;
+    this.mesh3DList = [];
 }

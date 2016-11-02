@@ -11,32 +11,48 @@ var HttpClient = function() {
     }
 }
 
-var initBuildingsList = []; 
+var jsonToLoad = ['/api/buildingsnames','/api/zones','/api/buildingspos'];
+var njson = jsonToLoad.length;
+var nLoadJsonFinished = 0;
+var buildingsnamesJSON,
+	zonesList, 
+	buildingsposJSON; 
 
 function initBuildings(environment) { 
 	bClient = new HttpClient();
 	bClient.get('/api/buildingsnames', function(response) {
-	   var buildingsnamesJSON = JSON && JSON.parse(response) || $.parseJSON(response);
-	   for(var k=0; k<buildingsnamesJSON.length; k++){
-	   		var bldg = buildingsnamesJSON[k]; 
-	   		var bldgObj = new Building(bldg.bId,bldg.bName,bldg.bClass); 
-	   		initBuildingsList.push(bldgObj);
+	   buildingsnamesJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+	   nLoadJsonFinished ++; 
+	   if (njson == nLoadJsonFinished){
+	   	environment.initBuildingsList(); 
 	   }
-	   initBuildingsMeshes(environment);
 
 	});
 
 	cClient = new HttpClient();
 	cClient.get('/api/zones', function(response) {
-	   var zonesList = JSON && JSON.parse(response) || $.parseJSON(response);
-	   environment.Zlist = zonesList;
+	   zonesList = JSON && JSON.parse(response) || $.parseJSON(response);
+	   nLoadJsonFinished ++;
+	   if (njson == nLoadJsonFinished){
+	   	environment.initBuildingsList(); 
+	   }
+	});
 
+	aClient = new HttpClient();
+	aClient.get('/api/buildingspos', function(response) {
+    	buildingsposJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+	   	nLoadJsonFinished ++;
+	   	if (njson == nLoadJsonFinished){
+	   	environment.initBuildingsList(); 
+	   }
 	});
 
 
 
-}
 
+
+}
+/*
 function initBuildingsMeshes(environment){
 
 	aClient = new HttpClient();
@@ -58,4 +74,4 @@ function initBuildingsMeshes(environment){
    		environment.currentBlist = initBuildingsList; 
    		console.log(environment);
 	});
-}
+}*/

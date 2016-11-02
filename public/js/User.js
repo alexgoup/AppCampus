@@ -23,7 +23,7 @@ User.prototype = {
     _initCamera : function(scene, canvas) {
         // On crée la caméra
         this.camera = new BABYLON.ArcRotateCamera("camera", 1, 0.8, 10, new BABYLON.Vector3(0, 0, 0), scene);
-        this.camera.setPosition(new BABYLON.Vector3(0, 10, -10));
+        this.camera.setPosition(new BABYLON.Vector3(-100, 220, -275));
         //this.camera.setTarget(BABYLON.Vector3.Zero());
         this.camera.attachControl(canvas, true);
 
