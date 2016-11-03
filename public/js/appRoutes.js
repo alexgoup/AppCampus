@@ -10,11 +10,10 @@
         })
 
         // nerds page that will use the NerdController
-        .when('/nerds', {
-            templateUrl: 'views/nerd.html',
-            controller: 'NerdController'
+        .when('/about', {
+            templateUrl: 'views/about.html',
+           controller: 'NerdController'
         });
 
-    $locationProvider.html5Mode(true);
 
 }]);*/

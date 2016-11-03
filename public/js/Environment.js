@@ -13,6 +13,8 @@ Environment = function(application) {
     this.pixelToPos = 0.415;
     this.hscale = 2;
 
+    var imgTexture_path = "/img/wood.jpg"
+
     var controllerElement = this.application.controllerElement; 
     this.controllerElement = controllerElement; 
 
@@ -27,12 +29,14 @@ Environment = function(application) {
     var ground = BABYLON.Mesh.CreateGround("campus_ground", 1024*this.pixelToPos, 843*this.pixelToPos, 2, scene);
     ground.material = materialGround;
 
-	var materialBuilding = new BABYLON.StandardMaterial("wallTexture", this.scene);
-	materialBuilding.emissiveTexture = new BABYLON.Texture("/img/wood.jpg", this.scene); 
+	var materialBuilding = new BABYLON.StandardMaterial("wallTexture", scene);
+	materialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); 
+/*	materialBuilding.emissiveColor = new BABYLON.Color3(57/255,107/255,107/255);*/
 	this.materialBuilding = materialBuilding;
 
     var brightmaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
-    brightmaterialBuilding.emissiveTexture = new BABYLON.Texture("/img/wood.jpg", scene);
+    brightmaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);
+/*    brightmaterialBuilding.emissiveColor = new BABYLON.Color3(98/255,184/255,184/255);*/
     brightmaterialBuilding.emissiveTexture.level = 2;
     this.brightmaterialBuilding = brightmaterialBuilding;
 
@@ -83,14 +87,22 @@ Environment = function(application) {
 	            var bldgClicked = meshClicked.building; 
 	            var scope = angular.element(controllerElement).scope(); 
 		        scope.$apply(function(){
-		            scope.currentparams[0].value = bldgClicked.params.bAddress;  
-		            scope.currentparams[1].value = bldgClicked.params.bArchitect;  
-		            scope.currentparams[2].value = bldgClicked.params.bBuilt;  
-		            scope.currentparams[3].value = bldgClicked.params.bContractor;  
-		            scope.currentparams[4].value = bldgClicked.params.bCost;  
-		            scope.currentparams[5].value = bldgClicked.params.bRenov;  
-		            scope.currentparams[6].value = bldgClicked.params.bType;  
-		            scope.currentparams[7].value = bldgClicked.params.namedAfter;  
+		        	if(bldgClicked.params != undefined){
+			            scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
+			            scope.currentparams[1].value = bldgClicked.params.bArchitect == "" ? "No information available" : bldgClicked.params.bArchitect;  
+			            scope.currentparams[2].value = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
+			            scope.currentparams[3].value = bldgClicked.params.bContractor == "" ? "No information available" : bldgClicked.params.bContractor;  
+			            scope.currentparams[4].value = bldgClicked.params.bCost == "" ? "No information available" : bldgClicked.params.bCost;  
+			            scope.currentparams[5].value = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
+			            scope.currentparams[6].value = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType;  
+			            scope.currentparams[7].value = bldgClicked.params.namedAfter == "" ? "No information available" : bldgClicked.params.namedAfter; 	        		
+		        	}
+		        	else{
+		        		for(var i=0; i<scope.currentparams.length; i++){
+		        			scope.currentparams[i].value = "No information available";
+		        		}
+		        	}
+ 
 		        });
 
 
