@@ -13,7 +13,43 @@ app.controller('MainController',
 		BuildingFactory.getZones().then(function(result) {
     		$scope.zones = result.data;
 			});
-		$scope.mouseOverBuildingName = "No Building Selected"
+		$scope.mouseOverBuildingName = "No Building Selected"; 
+		$scope.currentparams = [
+			{
+				name:"Address",
+				value:"Select a building...",
+			}, 
+			{
+				name:"Architect",
+				value:"Select a building...",
+			},
+			{
+				name:"Build Date",
+				value:"Select a building...",
+			},
+			{
+				name:"Contractor",
+				value:"Select a building...",
+			},
+			{
+				name:"Cost",
+				value:"Select a building...",
+			},
+			{
+				name:"Renovation Date",
+				value:"Select a building...",
+			},
+			{
+				name:"Material",
+				value:"Select a building...",
+			},
+			{
+				name:"Named After",
+				value:"Select a building...",
+			},
+
+		]; 
+
 		
 
 	}

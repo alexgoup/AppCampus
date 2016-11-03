@@ -46,36 +46,38 @@
 
 	    <div id="canvasContainer">
 	    	<canvas id="renderCanvas"></canvas>  
-		    	<span id="spanname">
-	    		{{mouseOverBuildingName}}
-			    </span>
 	    	<div class="panel panel-default" id="buildingPanel">
-	    		<div class="panel-heading" id=buildingPanelToggle>
+<!-- 	    		<div class="panel-heading" id=buildingPanelToggle>
 					<div class="btn-group" data-toggle="buttons" id="toggleButtons">
 					  <label class="btn btn-primary active" id="campusToggleButton">
 					    <input type="radio" name="options" id="option1" autocomplete="off" checked>
 					    <span id="campusWord">
-					    {{campus_str}}
+					    	{{campus_str}}
 					    </span>
 					  </label>
 					  <label class="btn btn-primary" id="buildingToggleButton">
 					    <input type="radio" name="options" id="option2" autocomplete="off">
 					    <span id="buildingWord">
-					    {{building_str}}
+					    	{{building_str}}
 					    </span>
 					  </label>
-					</div>
-				</div>
+					</div> 
+				</div> -->
 				<div class="panel-heading" id=buildingPanelHeading>
-					<h3 class="panel-title" id="buildingPanelTitle">Building parameters and information. Or whole campus</h3>
+					<h3 class="panel-title" id="buildingPanelTitle">
+						<span> {{mouseOverBuildingName}} </span>
+					</h3>
 				</div>
 				<div class="panel-body" id="buildingPanelBody" >
-					<!-- <span  ng-repeat="building in buildings | orderBy: '-cost'">
-    					{{building.name}} cost GT {{building.cost}} $ <br>
+<!-- 				    <span  ng-repeat="zone in zones" id="myspan">
+
 				    </span> -->
-				    <span  ng-repeat="zone in zones" id="myspan">
-    					zone number {{zone.zoneId}} has x1zone {{zone.x1Zone}} <br>
-				    </span>
+			        <table class="table" id="paramstable">
+			          <tr ng-repeat="param in currentparams">
+			            <td>{{param.name}}</td>
+			            <td>{{param.value}}</td>
+			          </tr>					   
+				    </table>
 				</div>
 			</div>
 	    </div>

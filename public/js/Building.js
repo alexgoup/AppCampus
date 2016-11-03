@@ -5,4 +5,6 @@ function Building(id,name,bClass) {
     this.bClass = bClass; 
     this.zone;
     this.mesh3DList = [];
+    this.params;
+    this.departmentList = []; 
 }

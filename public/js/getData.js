@@ -11,12 +11,14 @@ var HttpClient = function() {
     }
 }
 
-var jsonToLoad = ['/api/buildingsnames','/api/zones','/api/buildingspos'];
+var jsonToLoad = ['/api/buildingsnames','/api/zones','/api/buildingspos','/api/buildingsparams','/api/buildingsparamsbis','/api/buildingsfloors'];
 var njson = jsonToLoad.length;
 var nLoadJsonFinished = 0;
 var buildingsnamesJSON,
 	zonesList, 
-	buildingsposJSON; 
+	buildingsposJSON,
+	buildingsparamsJSON,
+	buildingsfloorsJSON; 
 
 function initBuildings(environment) { 
 	bClient = new HttpClient();
@@ -41,6 +43,33 @@ function initBuildings(environment) {
 	aClient = new HttpClient();
 	aClient.get('/api/buildingspos', function(response) {
     	buildingsposJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+	   	nLoadJsonFinished ++;
+	   	if (njson == nLoadJsonFinished){
+	   	environment.initBuildingsList(); 
+	   }
+	});
+
+	dClient = new HttpClient();
+	dClient.get('/api/buildingsparams', function(response) {
+    	buildingsparamsJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+	   	nLoadJsonFinished ++;
+	   	if (njson == nLoadJsonFinished){
+	   	environment.initBuildingsList(); 
+	   }
+	});
+
+	fClient = new HttpClient();
+	fClient.get('/api/buildingsparamsbis', function(response) {
+    	buildingsparamsbisJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+	   	nLoadJsonFinished ++;
+	   	if (njson == nLoadJsonFinished){
+	   	environment.initBuildingsList(); 
+	   }
+	});
+
+	eClient = new HttpClient();
+	eClient.get('/api/buildingsfloors', function(response) {
+    	buildingsfloorsJSON = JSON && JSON.parse(response) || $.parseJSON(response);
 	   	nLoadJsonFinished ++;
 	   	if (njson == nLoadJsonFinished){
 	   	environment.initBuildingsList(); 

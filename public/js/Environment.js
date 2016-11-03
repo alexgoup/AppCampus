@@ -62,10 +62,37 @@ Environment = function(application) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
 	            var bldgClicked = meshClicked.building; 
+	            var scope = angular.element(controllerElement).scope(); 
+		        scope.$apply(function(){
+		            scope.mouseOverBuildingName = "No building selected";
+		        });
 	            var meshesClicked = bldgClicked.mesh3DList; 
 	            for(var i=0; i<meshesClicked.length; i++){
 	            	meshesClicked[i].material = materialBuilding; 
 	            } 
+
+	        }
+	    }
+    );
+
+    this.pointerMeshActionOPickT = new BABYLON.ExecuteCodeAction(
+	    BABYLON.ActionManager.OnPickTrigger,
+	    function(evt) {
+	        if (evt.meshUnderPointer) { 
+	            var meshClicked = evt.meshUnderPointer; 
+	            var bldgClicked = meshClicked.building; 
+	            var scope = angular.element(controllerElement).scope(); 
+		        scope.$apply(function(){
+		            scope.currentparams[0].value = bldgClicked.params.bAddress;  
+		            scope.currentparams[1].value = bldgClicked.params.bArchitect;  
+		            scope.currentparams[2].value = bldgClicked.params.bBuilt;  
+		            scope.currentparams[3].value = bldgClicked.params.bContractor;  
+		            scope.currentparams[4].value = bldgClicked.params.bCost;  
+		            scope.currentparams[5].value = bldgClicked.params.bRenov;  
+		            scope.currentparams[6].value = bldgClicked.params.bType;  
+		            scope.currentparams[7].value = bldgClicked.params.namedAfter;  
+		        });
+
 
 	        }
 	    }
@@ -82,10 +109,24 @@ Environment.prototype = {
 		for(var k=0; k<buildingsnamesJSON.length; k++){
 		   		var bldg = buildingsnamesJSON[k]; 
 		   		var bldgObj = new Building(bldg.bId,bldg.bName,bldg.bClass); 
+		   		for(var j=0; j<buildingsparamsJSON.length; j++){
+		   			if(buildingsparamsJSON[j].bId == bldgObj.id){
+		   				bldgObj.params = buildingsparamsJSON[j]; 
+		   			}
+		   		}
+		   		for(var j=0; j<buildingsparamsbisJSON.length; j++){
+		   			if(buildingsparamsbisJSON[j].bldg == bldgObj.id){ 
+		   				bldgObj.departmentList.push({ 
+		   					name: buildingsparamsbisJSON[j].department, 
+		   					assignedArea: buildingsparamsbisJSON[j].assignedArea, 
+		   					roomSpaceCount: buildingsparamsbisJSON[j].roomSpaceCount, 
+		   				});  
+		   			}
+		   		}
 		   		this.currentBlist.push(bldgObj);
 	    }
 
-
+	    console.log(this.currentBlist);
 		   
 	   for(var j=0; j<buildingsposJSON.length; j++){
    			var mesh = buildingsposJSON[j]; 
@@ -164,6 +205,7 @@ Environment.prototype = {
 						mainBox.actionManager = new BABYLON.ActionManager(this.scene);
 						mainBox.actionManager.registerAction(this.pointerMeshActionOPOverT);
 						mainBox.actionManager.registerAction(this.pointerMeshActionOPOutT);
+						mainBox.actionManager.registerAction(this.pointerMeshActionOPickT);
 						mainBox.building = this.currentBlist[i];
 						this.currentBlist[i].mesh3DList.push(mainBox);
 					}
@@ -180,7 +222,10 @@ Environment.prototype = {
 						mainCylinder.position =  new BABYLON.Vector3(xCyl+this.dx0,(1/2)*hCyl,zCyl+this.dz0);
 						mainCylinder.material = this.materialBuilding;
 						mainCylinder.actionManager = new BABYLON.ActionManager(this.scene);
-
+						mainCylinder.actionManager.registerAction(this.pointerMeshActionOPOverT);
+						mainCylinder.actionManager.registerAction(this.pointerMeshActionOPOutT);
+						mainCylinder.actionManager.registerAction(this.pointerMeshActionOPickT);
+						mainCylinder.building = this.currentBlist[i];
 						this.currentBlist[i].mesh3DList.push(mainCylinder);
 					}
 

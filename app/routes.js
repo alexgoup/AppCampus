@@ -3,6 +3,9 @@
 // grab the nerd model we just created
 var BuildingPos = require('./models/BuildingsPos');
 var BuildingNames = require('./models/BuildingsNames');
+var BuildingParams = require('./models/BuildingsParams');
+var BuildingParamsBis = require('./models/BuildingsParamsBis');
+var BuildingFloors = require('./models/BuildingsFloors');
 var Zones = require('./models/Zones');
 
     module.exports = function(app) {
@@ -48,6 +51,45 @@ var Zones = require('./models/Zones');
                     res.send(err);
 
                 res.json(zones); // return all nerds in JSON format
+            });
+        });
+
+        app.get('/api/buildingsparams', function(req, res) {
+            // use mongoose to get all nerds in the database
+           BuildingParams.find(function(err, buildingsparams) {
+
+                // if there is an error retrieving, send the error. 
+                                // nothing after res.send(err) will execute
+                if (err)
+                    res.send(err);
+
+                res.json(buildingsparams); // return all nerds in JSON format
+            });
+        }); 
+
+       app.get('/api/buildingsparamsbis', function(req, res) {
+            // use mongoose to get all nerds in the database
+           BuildingParamsBis.find(function(err, buildingsparamsbis) {
+
+                // if there is an error retrieving, send the error. 
+                                // nothing after res.send(err) will execute
+                if (err)
+                    res.send(err);
+
+                res.json(buildingsparamsbis); // return all nerds in JSON format
+            });
+        });
+
+        app.get('/api/buildingsfloors', function(req, res) {
+            // use mongoose to get all nerds in the database
+           BuildingFloors.find(function(err, buildingsfloors) {
+
+                // if there is an error retrieving, send the error. 
+                                // nothing after res.send(err) will execute
+                if (err)
+                    res.send(err);
+
+                res.json(buildingsfloors); // return all nerds in JSON format
             });
         });
 
