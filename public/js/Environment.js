@@ -46,6 +46,7 @@ Environment = function(application) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
 	            var bldgClicked = meshClicked.building;
+
 	            var scope = angular.element(controllerElement).scope(); 
 		        scope.$apply(function(){
 		            scope.mouseOverBuildingName = bldgClicked.name;
@@ -78,6 +79,7 @@ Environment = function(application) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
 	            var bldgClicked = meshClicked.building; 
+	            bldgClicked.animate(); 
 	            var scope = angular.element(controllerElement).scope(); 
 		        scope.$apply(function(){
 		        	if(bldgClicked.params != undefined){
@@ -113,7 +115,7 @@ Environment.prototype = {
 		
 		for(var k=0; k<buildingsnamesJSON.length; k++){
 		   		var bldg = buildingsnamesJSON[k]; 
-		   		var bldgObj = new Building(bldg.bId,bldg.bName,bldg.bClass); 
+		   		var bldgObj = new Building(bldg.bId,bldg.bName,bldg.bClass,this); 
 		   		for(var j=0; j<buildingsparamsJSON.length; j++){
 		   			if(buildingsparamsJSON[j].bId == bldgObj.id){
 		   				bldgObj.params = buildingsparamsJSON[j]; 
@@ -200,10 +202,22 @@ Environment.prototype = {
 						mainBox.scaling.y = hCube; 
 						mainBox.scaling.x = lCube; 
 						mainBox.scaling.z = wCube; 
+
+						if(this.currentBlist[i].mesh3DList.length == 0 ){
+							this.currentBlist[i].savex = xCube+this.dx0;
+							this.currentBlist[i].savey = ((1/2)*mainBox.scaling.y);
+							this.currentBlist[i].savez = zCube+this.dz0;
+							if(this.zone==4){
+								this.currentBlist[i].savez -= 4.5;
+							}
+						}
+
 						mainBox.position =  new BABYLON.Vector3(xCube+this.dx0,((1/2)*mainBox.scaling.y),zCube+this.dz0);
 						if(this.zone==4){
 							mainBox.position.z -= 4.5;
 						}
+						mainBox.position.x -= this.currentBlist[i].savex;
+						mainBox.position.z -= this.currentBlist[i].savez;
 						mainBox.rotation.y = -degToRad(p4);
 						mainBox.material = this.materialBuilding;
 						this.currentBlist[i].mesh3DList.push(mainBox);
@@ -218,13 +232,22 @@ Environment.prototype = {
 						var yCyl = 0.5*hCyl+this.hPlate+h0Cube;
 
 						var mainCylinder = BABYLON.Mesh.CreateCylinder("bldg_"+i+"mesh_"+k, hCyl, 2*rTop, 2*rBtm, 12, 4, this.scene);
+						if(this.currentBlist[i].mesh3DList.length == 0 ){
+							this.currentBlist[i].savex = xCyl+this.dx0;
+							this.currentBlist[i].savey = (1/2)*hCyl;
+							this.currentBlist[i].savez = zCyl+this.dz0;
+						}
 						mainCylinder.position =  new BABYLON.Vector3(xCyl+this.dx0,(1/2)*hCyl,zCyl+this.dz0);
+						mainCylinder.position.x -= this.currentBlist[i].savex;
+						mainCylinder.position.z -= this.currentBlist[i].savez;
 						mainCylinder.material = this.materialBuilding;
 						this.currentBlist[i].mesh3DList.push(mainCylinder);
 					}
 
 				}
 				var newMesh = BABYLON.Mesh.MergeMeshes(this.currentBlist[i].mesh3DList,true);
+				newMesh.position.x = this.currentBlist[i].savex;
+				newMesh.position.z = this.currentBlist[i].savez;
 				newMesh.building = this.currentBlist[i];
 				newMesh.actionManager = new BABYLON.ActionManager(this.scene);
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPOverT);
