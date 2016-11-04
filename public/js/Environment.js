@@ -50,10 +50,7 @@ Environment = function(application) {
 		        scope.$apply(function(){
 		            scope.mouseOverBuildingName = bldgClicked.name;
 		        });
-	            var meshesClicked = bldgClicked.mesh3DList; 
-	            for(var i=0; i<meshesClicked.length; i++){
-	            	meshesClicked[i].material = brightmaterialBuilding; 
-	            }
+		        meshClicked.material = brightmaterialBuilding; 
 	             
 
 	        }
@@ -70,11 +67,7 @@ Environment = function(application) {
 		        scope.$apply(function(){
 		            scope.mouseOverBuildingName = "No building selected";
 		        });
-	            var meshesClicked = bldgClicked.mesh3DList; 
-	            for(var i=0; i<meshesClicked.length; i++){
-	            	meshesClicked[i].material = materialBuilding; 
-	            } 
-
+		        meshClicked.material = materialBuilding;
 	        }
 	    }
     );
@@ -145,7 +138,6 @@ Environment.prototype = {
    			var meshObj = new MeshBuilding(mesh.bId,mesh.zoneId,mesh.type,mesh.x0,mesh.y0,mesh.p1,mesh.p2,mesh.p3,mesh.p4,mesh.p5);
    			for(var k=0; k<this.currentBlist.length; k++){
    				if(this.currentBlist[k].id == meshObj.buildingID){
-   					/*meshObj.building = this.currentBlist[k];*/
    					this.currentBlist[k].meshList.push(meshObj);
    					break;
    				}
@@ -214,11 +206,6 @@ Environment.prototype = {
 						}
 						mainBox.rotation.y = -degToRad(p4);
 						mainBox.material = this.materialBuilding;
-						mainBox.actionManager = new BABYLON.ActionManager(this.scene);
-						mainBox.actionManager.registerAction(this.pointerMeshActionOPOverT);
-						mainBox.actionManager.registerAction(this.pointerMeshActionOPOutT);
-						mainBox.actionManager.registerAction(this.pointerMeshActionOPickT);
-						mainBox.building = this.currentBlist[i];
 						this.currentBlist[i].mesh3DList.push(mainBox);
 					}
 					else if (type == 2){
@@ -233,18 +220,22 @@ Environment.prototype = {
 						var mainCylinder = BABYLON.Mesh.CreateCylinder("bldg_"+i+"mesh_"+k, hCyl, 2*rTop, 2*rBtm, 12, 4, this.scene);
 						mainCylinder.position =  new BABYLON.Vector3(xCyl+this.dx0,(1/2)*hCyl,zCyl+this.dz0);
 						mainCylinder.material = this.materialBuilding;
-						mainCylinder.actionManager = new BABYLON.ActionManager(this.scene);
-						mainCylinder.actionManager.registerAction(this.pointerMeshActionOPOverT);
-						mainCylinder.actionManager.registerAction(this.pointerMeshActionOPOutT);
-						mainCylinder.actionManager.registerAction(this.pointerMeshActionOPickT);
-						mainCylinder.building = this.currentBlist[i];
 						this.currentBlist[i].mesh3DList.push(mainCylinder);
 					}
 
 				}
+				var newMesh = BABYLON.Mesh.MergeMeshes(this.currentBlist[i].mesh3DList,true);
+				newMesh.building = this.currentBlist[i];
+				newMesh.actionManager = new BABYLON.ActionManager(this.scene);
+				newMesh.actionManager.registerAction(this.pointerMeshActionOPOverT);
+				newMesh.actionManager.registerAction(this.pointerMeshActionOPOutT);
+				newMesh.actionManager.registerAction(this.pointerMeshActionOPickT);
+				this.currentBlist[i].mesh = newMesh;
 			}
 
 		}
+
+
 	}
 
 

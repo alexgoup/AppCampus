@@ -7,4 +7,5 @@ function Building(id,name,bClass) {
     this.mesh3DList = [];
     this.params;
     this.departmentList = []; 
+    this.mesh; 
 }
