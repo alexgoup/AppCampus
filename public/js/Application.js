@@ -24,7 +24,6 @@ Application = function(canvasId) {
 
         // Checker le mouvement du joueur en lui envoyant le ratio de déplacement
         //_player._checkMove((_this.fps)/60);
-        console.log(_user.camera.position);
 
         _this.scene.render();
                
