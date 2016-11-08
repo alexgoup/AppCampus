@@ -13,10 +13,14 @@ Environment = function(application) {
     this.pixelToPos = 0.415;
     this.hscale = 2;
 
+    var _this = this;
+
     var imgTexture_path = "/img/wood.jpg"
 
-    var controllerElement = this.application.controllerElement; 
-    this.controllerElement = controllerElement; 
+    var elem = angular.element(document.querySelector('[ng-app]'));
+	var injector = elem.injector(); 
+ 	var $rootScope = injector.get('$rootScope'); 
+ 	this.scope = $rootScope; 
 
     initBuildings(this);
     //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
@@ -29,6 +33,7 @@ Environment = function(application) {
     var ground = BABYLON.Mesh.CreateGround("campus_ground", 1024*this.pixelToPos, 843*this.pixelToPos, 2, scene);
     ground.material = materialGround;
 
+
 	var materialBuilding = new BABYLON.StandardMaterial("wallTexture", scene);
 	materialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); 
 /*	materialBuilding.emissiveColor = new BABYLON.Color3(57/255,107/255,107/255);*/
@@ -37,75 +42,97 @@ Environment = function(application) {
     var brightmaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
     brightmaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);
 /*    brightmaterialBuilding.emissiveColor = new BABYLON.Color3(98/255,184/255,184/255);*/
-    brightmaterialBuilding.emissiveTexture.level = 2;
+    brightmaterialBuilding.emissiveTexture.level = 1.65;
     this.brightmaterialBuilding = brightmaterialBuilding;
 
-    this.pointerMeshActionOPOverT = new BABYLON.ExecuteCodeAction(
+    var brightermaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
+    brightermaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);
+/*    brightmaterialBuilding.emissiveColor = new BABYLON.Color3(98/255,184/255,184/255);*/
+    brightermaterialBuilding.emissiveTexture.level = 2.2;
+    this.brightermaterialBuilding = brightermaterialBuilding;
+
+    this.currentTarget = "";
+
+    this.pointerMeshActionOPOverT = new BABYLON.ExecuteCodeAction( // HOVER ON A MESH
 	    BABYLON.ActionManager.OnPointerOverTrigger,
 	    function(evt) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
-	            var bldgClicked = meshClicked.building;
-
-	            var scope = angular.element(controllerElement).scope(); 
-		        scope.$apply(function(){
-		            scope.mouseOverBuildingName = bldgClicked.name;
-		        });
-		        meshClicked.material = brightmaterialBuilding; 
-	             
-
-	        }
+	            if(meshClicked != ground){
+	            	scene.hoverCursor = "pointer";
+		            var bldgClicked = meshClicked.building;
+			        meshClicked.material = brightmaterialBuilding; 
+	            }
+	            else{
+	            	scene.hoverCursor = "default";
+	        	}
+            }
 	    }
     );
 
-    this.pointerMeshActionOPOutT = new BABYLON.ExecuteCodeAction(
+    this.pointerMeshActionOPOutT = new BABYLON.ExecuteCodeAction( // HOVER OFF A MESH
 	    BABYLON.ActionManager.OnPointerOutTrigger,
 	    function(evt) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
 	            var bldgClicked = meshClicked.building; 
-	            var scope = angular.element(controllerElement).scope(); 
-		        scope.$apply(function(){
-		            scope.mouseOverBuildingName = "No building selected";
-		        });
 		        meshClicked.material = materialBuilding;
 	        }
 	    }
     );
 
-    this.pointerMeshActionOPickT = new BABYLON.ExecuteCodeAction(
+    this.pointerMeshActionOPickT = new BABYLON.ExecuteCodeAction( //CLICK ON A MESH
 	    BABYLON.ActionManager.OnPickTrigger,
 	    function(evt) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
-	            var bldgClicked = meshClicked.building; 
-	            bldgClicked.animate(); 
-	            var scope = angular.element(controllerElement).scope(); 
-		        scope.$apply(function(){
-		        	if(bldgClicked.params != undefined){
-			            scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
-			            scope.currentparams[1].value = bldgClicked.params.bArchitect == "" ? "No information available" : bldgClicked.params.bArchitect;  
-			            scope.currentparams[2].value = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
-			            scope.currentparams[3].value = bldgClicked.params.bContractor == "" ? "No information available" : bldgClicked.params.bContractor;  
-			            scope.currentparams[4].value = bldgClicked.params.bCost == "" ? "No information available" : bldgClicked.params.bCost;  
-			            scope.currentparams[5].value = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
-			            scope.currentparams[6].value = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType;  
-			            scope.currentparams[7].value = bldgClicked.params.namedAfter == "" ? "No information available" : bldgClicked.params.namedAfter; 	        		
-		        	}
-		        	else{
-		        		for(var i=0; i<scope.currentparams.length; i++){
-		        			scope.currentparams[i].value = "No information available";
-		        		}
-		        	}
- 
-		        });
+	        	if (meshClicked != ground) { 
+		            var bldgClicked = meshClicked.building; 
+		            if(bldgClicked != _this.currentTarget){
+		            	if(_this.currentTarget != ""){ 
+		            		_this.currentTarget.animateState = 2; 
+		            		_this.currentTarget.desanimate(); 
+		            	}
+		            	bldgClicked.animateState = 1;
+			            bldgClicked.animate(); 
+				        _this.scope.$apply(function(){ 
+				        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
+				        	if(bldgClicked.params != undefined){
+					            _this.scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
+					            _this.scope.currentparams[1].value = bldgClicked.params.bArchitect == "" ? "No information available" : bldgClicked.params.bArchitect;  
+					            _this.scope.currentparams[2].value = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
+					            _this.scope.currentparams[3].value = bldgClicked.params.bContractor == "" ? "No information available" : bldgClicked.params.bContractor;  
+					            _this.scope.currentparams[4].value = bldgClicked.params.bCost == "" ? "No information available" : bldgClicked.params.bCost;  
+					            _this.scope.currentparams[5].value = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
+					            _this.scope.currentparams[6].value = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType;  
+					            _this.scope.currentparams[7].value = bldgClicked.params.namedAfter == "" ? "No information available" : bldgClicked.params.namedAfter; 	        		
+				        	}
+				        	else{
+				        		for(var i=0; i<_this.scope.currentparams.length; i++){
+				        			_this.scope.currentparams[i].value = "No information available";
+				        		}
+				        	}
+		 
+				        });
+		            }
+
+	        	}
+	        	else{ 
+	        		if(_this.currentTarget != ""){
+	        			_this.currentTarget.animateState = 2;
+	        			_this.currentTarget.desanimate();
+	        		}
+	        	}
+
 
 
 	        }
 	    }
     );
 
-
+    ground.actionManager = new BABYLON.ActionManager(this.scene);
+	ground.actionManager.registerAction(this.pointerMeshActionOPOverT);
+	ground.actionManager.registerAction(this.pointerMeshActionOPickT);
 
 };
 
@@ -249,6 +276,8 @@ Environment.prototype = {
 				newMesh.position.x = this.currentBlist[i].savex;
 				newMesh.position.z = this.currentBlist[i].savez;
 				newMesh.building = this.currentBlist[i];
+				newMesh.building.inity = newMesh.position.y; 
+				newMesh.building.initroty = newMesh.rotation.y;
 				newMesh.actionManager = new BABYLON.ActionManager(this.scene);
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPOverT);
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPOutT);

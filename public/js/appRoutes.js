@@ -6,18 +6,19 @@
         // home page
         .when('/', {
             templateUrl: 'views/viewmode.html',
-            controller: 'MainController'
+            controller: 'BuildingController'
         })
 
         .when('/viewmode', {
             templateUrl: 'views/viewmode.html',
-           controller: 'MainController'
+           controller: 'BuildingController'
         })
 
         .when('/editmode', {
             templateUrl: 'views/editmode.html',
-           controller: 'MainController'
+           controller: 'EditController'
         });
 
 
 }]);
+

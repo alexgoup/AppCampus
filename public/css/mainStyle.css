@@ -6,6 +6,10 @@ html, body {
     padding: 0;
 }
 
+#topnavbar{ 
+	margin:0px;
+ }
+
 #renderCanvas {
     width: 100%;
     height: 100%;
@@ -27,16 +31,6 @@ html, body {
 	background-color: rgba(0,0,0,0.2)
  }
 
- #statisticsPanel { 
-	width: 100%;
-	height: 100%;
-	/*opacity: 0.5;*/
-	margin:0px;
-	border: 5px solid transparent;
-	border-color: #346562;
-	border-radius: 6px;
-	background-color: rgba(0,0,0,0.2); 
- } 
  #divstatisticsPanel { 
  	position: absolute;
 	top: 66%;
@@ -45,10 +39,15 @@ html, body {
 	height: 25%;
  }
 
-#chart { 
+#statisticsPanel { 
+	display: block;
 	width: 100%;
 	height: 100%;
-
+	margin:0px;
+	border: 5px solid transparent;
+	border-color: #346562;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,0.2); 
 }
 
 #asdl_logo {

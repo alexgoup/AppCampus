@@ -12,8 +12,6 @@ Application = function(canvasId) {
     // On initie la scène avec une fonction associée à l'objet Game
     this.scene = this._initScene(engine);
 
-    this.controllerElement = document.querySelector('body');
-    
     var _user = new User(_this, canvas);
 
     var _environment = new Environment(_this);
@@ -26,6 +24,7 @@ Application = function(canvasId) {
 
         // Checker le mouvement du joueur en lui envoyant le ratio de déplacement
         //_player._checkMove((_this.fps)/60);
+        console.log(_user.camera.position);
 
         _this.scene.render();
                
