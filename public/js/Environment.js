@@ -84,9 +84,9 @@ Environment = function(application) {
 
     this.pointerMeshActionOPickT = new BABYLON.ExecuteCodeAction( //CLICK ON A MESH
 	    BABYLON.ActionManager.OnPickTrigger,
-	    function(evt) {
-	        if (evt.meshUnderPointer) { 
-	            var meshClicked = evt.meshUnderPointer; 
+	    function(evt) { console.log(evt);
+	        if (evt.source) { 
+	            var meshClicked = evt.source; 
 	        	if (meshClicked != ground) { 
 		            var bldgClicked = meshClicked.building; 
 		            if(bldgClicked != _this.currentTarget){
