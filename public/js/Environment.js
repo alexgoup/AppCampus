@@ -22,6 +22,7 @@ Environment = function(application) {
  	var $rootScope = injector.get('$rootScope'); 
  	this.scope = $rootScope; 
 
+
     initBuildings(this);
     //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
 
@@ -95,6 +96,7 @@ Environment = function(application) {
 		            	}
 		            	bldgClicked.animateState = 1;
 			            bldgClicked.animate(); 
+			            getMonthly(bldgClicked); 
 				        _this.scope.$apply(function(){ 
 				        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
 				        	if(bldgClicked.params != undefined){

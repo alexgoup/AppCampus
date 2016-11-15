@@ -2,6 +2,7 @@
 
 // grab the nerd model we just created
 var BuildingPos = require('./models/BuildingsPos');
+var BuildingMonthly = require('./models/BuildingsMonthly');
 var BuildingNames = require('./models/BuildingsNames');
 var BuildingParams = require('./models/BuildingsParams');
 var BuildingParamsBis = require('./models/BuildingsParamsBis');
@@ -25,6 +26,20 @@ var Zones = require('./models/Zones');
                     res.send(err);
 
                 res.json(buildingspos); // return all nerds in JSON format
+            });
+        });
+
+        app.get('/api/buildingsmonthly/:id', function(req, res) { 
+            // use mongoose to get all nerds in the database
+            var idnum = Number(req.params.id);
+            BuildingMonthly.find({id:idnum},function(err, doc) {
+
+                // if there is an error retrieving, send the error. 
+                                // nothing after res.send(err) will execute
+                if (err)
+                    res.send(err);
+
+                res.json(doc); // return all nerds in JSON format
             });
         });
 

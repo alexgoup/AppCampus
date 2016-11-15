@@ -30,7 +30,7 @@ Building.prototype = {
                  _this.environment.scene.registerAfterRender(function () { 
                 if(_this.animateState == 1) {
                     _this.mesh.material = _this.environment.brightermaterialBuilding; 
-                    _this.mesh.rotation.y += 2*Math.PI/250; 
+                    _this.mesh.rotation.y += 2*Math.PI/750; 
                     if(_this.mesh.position.y < 50 ){
                         _this.mesh.position.y +=1;
                     }
@@ -60,12 +60,12 @@ Building.prototype = {
                     
                     if(_this.lastroty - rotlimitmin < rotlimitplus - _this.lastroty){
                         if(_this.mesh.rotation.y > rotlimitmin ){
-                            _this.mesh.rotation.y -=2*Math.PI/250;
+                            _this.mesh.rotation.y -=2*Math.PI/750;
                         }
                     }
                     else{ 
                         if(_this.mesh.rotation.y < rotlimitplus ){
-                            _this.mesh.rotation.y +=2*Math.PI/250;
+                            _this.mesh.rotation.y +=2*Math.PI/750;
                         }
                     }
  

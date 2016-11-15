@@ -3,7 +3,7 @@ angular.module('MainService', []).factory('BuildingFactory', ['$http', function(
 
     return {
         // call to get all nerds
-        getBuildingsPos : function() {
+/*        getBuildingsPos : function() {
             return $http.get('/api/buildingspos');
         },
         getBuildingsNames : function() {
@@ -11,6 +11,9 @@ angular.module('MainService', []).factory('BuildingFactory', ['$http', function(
         },
         getZones : function() { 
             return $http.get('/api/zones');
+        }*/
+        getMonthly : function(id) { 
+            return $http.get('/api/buildings/' + id.toString());
         }
 
 
