@@ -3,7 +3,7 @@ var app = angular.module('BuildingCtrl', ['MainService']);
 app.controller('BuildingController', 
 	function($scope,$rootScope){
 		$rootScope.mouseOverBuildingName = "No Building Selected"; 
-		$rootScope.currentparams = [
+		$rootScope.defaultcurrentparams =  [
 			{
 				name:"Address",
 				value:"Select a building...",
@@ -38,15 +38,16 @@ app.controller('BuildingController',
 			},
 
 		]; 
+		$rootScope.currentparams = $rootScope.defaultcurrentparams; 
 
 
 		$rootScope.chartOptions = {
         chart: {
             backgroundColor: null,
-            /*type: 'bar'*/
+            
         },
         title: {
-            text: 'Campus Recreation Center Energy Consumption',
+            text: 'Select a building...',
          style: {
              color: 'white',
              font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
@@ -80,7 +81,7 @@ app.controller('BuildingController',
         },
         series: [{
             name: '2012',
-            data: [null,null,null,null,null,null,null,null,null, 1037.804281, 891, 851]
+            data: []
         }, {
             name: '2013',
             data: []

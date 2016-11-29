@@ -26,6 +26,7 @@ User.prototype = {
         this.camera = new BABYLON.ArcRotateCamera("camera", 1, 0.8, 10, new BABYLON.Vector3(0,0,0), scene);
         this.camera.setPosition(new BABYLON.Vector3(-104, 267, -319));
         this.camera.setTarget(BABYLON.Vector3.Zero());
+        this.camera.upperBetaLimit = Math.PI / 2;
         this.camera.attachControl(canvas, true);
 
         

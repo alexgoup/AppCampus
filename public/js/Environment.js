@@ -23,6 +23,7 @@ Environment = function(application) {
  	this.scope = $rootScope; 
 
 
+
     initBuildings(this);
     //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
 
@@ -162,7 +163,6 @@ Environment.prototype = {
 		   		this.currentBlist.push(bldgObj);
 	    }
 
-	    console.log(this.currentBlist);
 		   
 	   for(var j=0; j<buildingsposJSON.length; j++){
    			var mesh = buildingsposJSON[j]; 
@@ -180,6 +180,7 @@ Environment.prototype = {
 		   		var zone = zonesList[k]; 
 		   		var zoneObj = new Zone(zone.zoneId,zone.x1Zone,zone.y1Zone,zone.x2Zone,zone.y2Zone,zone.sZone); 
 		   		for(var i=0; i<this.currentBlist.length; i++){ 
+		   			if( this.currentBlist[i].id == 160){var crc = this.currentBlist[i];}
 		   			if(this.currentBlist[i].meshList.length == 0){
 		   				// NO ZONE FOR THIS BUILDING
 		   			}
@@ -191,6 +192,16 @@ Environment.prototype = {
 		   			
 		   		}
 	    }
+/*	    getMonthly(crc);
+	    this.scope.mouseOverBuildingName = crc.name;
+        this.scope.currentparams[0].value = crc.params.bAddress == "" ? "No information available" : crc.params.bAddress;  
+	    this.scope.currentparams[1].value = crc.params.bArchitect == "" ? "No information available" : crc.params.bArchitect;  
+	    this.scope.currentparams[2].value = crc.params.bBuilt == "" ? "No information available" : crc.params.bBuilt;  
+	    this.scope.currentparams[3].value = crc.params.bContractor == "" ? "No information available" : crc.params.bContractor;  
+	    this.scope.currentparams[4].value = crc.params.bCost == "" ? "No information available" : crc.params.bCost;  
+	    this.scope.currentparams[5].value = crc.params.bRenov == "" ? "No information available" : crc.params.bRenov;  
+	    this.scope.currentparams[6].value = crc.params.bType == "" ? "No information available" : crc.params.bType;  
+	    this.scope.currentparams[7].value = crc.params.namedAfter == "" ? "No information available" : crc.params.namedAfter; */
    		this.drawInitMeshes(); 
 
 	},
