@@ -38,7 +38,37 @@ html, body {
 	width:1.5%;
 	height:90%;
  }*/
+#controlPanel { 
+	position: absolute;
+	top: 13%;
+	left: 1%;
+	width: 15%;
+	height: 75%;
+	margin:0px;
+	border: 5px solid transparent;
+	border-color: #346562;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,0.2)
+ }
 
+ .plotchoiceSpans { 
+ 	color:white;
+ 	margin-bottom:5px;
+  }
+
+.controlPanelHeaders { 
+ 	margin:5px;
+ 	color:white;
+  }
+
+.btn-group { 
+	margin:5px;
+}
+
+#plotchoice { 
+	border-bottom: 3px solid transparent;
+	border-color: #346562;
+ }
 
 #buildingPanel { 
 	position: absolute;
@@ -54,7 +84,7 @@ html, body {
  }
 
 
-#divstatisticsPanel { 
+#ConsumptionPanel { 
  	position: absolute;
 	top: 35%;
 	left: 74%;
@@ -66,6 +96,32 @@ html, body {
 	border-radius: 6px;
 	background-color: rgba(0,0,0,0.2); 
 }
+
+#otherPanel { 
+ 	position: absolute;
+	top: 35%;
+	left: 74%;
+	width: 25%;
+	height: 25%;
+	margin:0px;
+	border: 5px solid transparent;
+	border-color: #346562;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,0.2); 
+}
+
+/*#divstatisticsPanel { 
+ 	position: absolute;
+	top: 35%;
+	left: 74%;
+	width: 25%;
+	height: 25%;
+	margin:0px;
+	border: 5px solid transparent;
+	border-color: #346562;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,0.2); 
+}*/
 
 #panel3{
  	position: absolute;

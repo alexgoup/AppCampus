@@ -1,27 +1,35 @@
 		    	<!-- <div id="rightContainer" > -->
-			    	<div class="panel panel-default" id="buildingPanel" > 
-			    	
+			    	<descriptionpanel-directive class="panel panel-default" id="buildingPanel">
+																												  
+<!-- 			    	
 						<div class="panel-heading" id=buildingPanelHeading>
 							<h3 class="panel-title" id="buildingPanelTitle">
 								<span> {{mouseOverBuildingName}} </span>
 							</h3>
 						</div>
 						<div class="panel-body" id="buildingPanelBody" >
-		<!-- 				    <span  ng-repeat="zone in zones" id="myspan">
-
-						    </span> -->
 					        <table class="table" id="paramstable">
 					          <tr ng-repeat="param in currentparams">
 					            <td>{{param.name}}</td>
 					            <td>{{param.value}}</td>
 					          </tr>					   
 						    </table>
-						</div>
+						</div> -->
+					</descriptionpanel-directive>
+					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="outputConsumption == 'EnergyConsumption'"></hc-chart>
+					<div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div>
+					<div class="panel panel-default" id="controlPanel" > 
+						<div id="plotchoice">
+						<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>
+								<div>
+							  <input type="radio" defaultChecked="true" value="EnergyConsumption" ng-model="outputConsumption">
+							  <span class="plotchoiceSpans"> Energy Consumption </span>
+							  </div>
+							  <div>
+  							  <input type="radio" value="EnergyDistribution" ng-model="outputConsumption">
+  							  <span class="plotchoiceSpans"> Energy Distribution </span>
+  							 	</div>
 					</div>
-					<hc-chart options="chartOptions" id="divstatisticsPanel"></hc-chart>
-			    	<div class="panel panel-default" id="panel3" > 
 
-				<!-- </div> -->
-<!-- 				<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="panelsBar">
-				  >
-				</button> -->
+					</div>
+   

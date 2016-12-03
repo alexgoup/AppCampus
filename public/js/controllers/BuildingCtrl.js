@@ -2,6 +2,12 @@ var app = angular.module('BuildingCtrl', ['MainService']);
 
 app.controller('BuildingController', 
 	function($scope,$rootScope){
+		$scope.outputConsumption = "EnergyConsumption"
+		$scope.showConsumption = ($scope.outputConsumption == "EnergyConsumption");
+		$scope.zoomState = {
+			description : "right",
+			plot:"right"
+		}
 		$rootScope.mouseOverBuildingName = "No Building Selected"; 
 		$rootScope.defaultcurrentparams =  [
 			{

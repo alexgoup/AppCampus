@@ -5,16 +5,16 @@ myapp.directive('hcChart',function() {
                     scope: {
                         options: '='
                     },
-                    link: function (scope, element) { 
+                    link: function (scope, element) { console.log(element.prev())
                         var chart = new Highcharts.Chart(element[0], scope.options); 
                         scope.$watch("options", function (newValue) { 
                             chart = Highcharts.chart(element[0], newValue); 
+                            scope.$parent.chart = chart;
                         },true); 
-                        console.log($(window).height())
-                        element.currentState = "right"
+                        scope.$parent.zoomState.plot = "right"
                         element.dblclick(function() { 
 
-                          if(element.currentState == "right") { 
+                          if(scope.$parent.zoomState.plot == "right") { 
 
                               element.animate(
                               {
@@ -28,12 +28,29 @@ myapp.directive('hcChart',function() {
                                 duration:300,
                                 step: function() {
                                     chart.reflow()
-                                }
+                                },
+                                queue:false
                              }
                               );
-                              element.currentState = "centered";
+                              if(scope.$parent.zoomState.description == "centered"){
+                                 element.prev().animate(
+                                      {
+                                      "left": "74%", 
+                                       "top":"5%", 
+                                       "width":"25%", 
+                                       "height":"25%", 
+                                       "background-color": "rgba(0,0,0,0.2)"
+                                      },
+                                      {
+                                        duration:300,
+                                        queue:false
+                                     }
+                                  );
+                                scope.$parent.zoomState.description = "right";  
+                              }
+                              scope.$parent.zoomState.plot = "centered";
                             }
-                            else if (element.currentState == "centered"){
+                            else if (scope.$parent.zoomState.plot == "centered"){
                                element.animate(
                               {
                               "left": "74%", 
@@ -49,10 +66,33 @@ myapp.directive('hcChart',function() {
                                 }
                              }
                               );
-                              element.currentState = "right";                                
+                              scope.$parent.zoomState.plot = "right";                                
                             }
 
                         });
+
+                                    $(document).click(function(event) { 
+                              if(!$(event.target).closest(element).length) {
+                                  if(element.is(":visible")) {
+                                     element.animate(
+                                    {
+                                    "left": "74%", 
+                                     "top":"35%", 
+                                     "width":"25%", 
+                                     "height":"25%", 
+                                     "background-color": "rgba(0,0,0,0.2)"
+                                    },
+                                    {
+                                      duration:300,
+                                      step: function() {
+                                          chart.reflow()
+                                      }
+                                   }
+                                    );
+                                    scope.$parent.zoomState.plot = "right";                  
+                                  }
+                              }        
+                          })
                     }
 };
 

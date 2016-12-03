@@ -1,0 +1,10 @@
+app.directive('myDirective',function(){
+return{
+    restrict: 'E', // restrict to element
+    link: function(scope,element){
+
+        //element will point to your DOM-element
+
+    }
+}
+});
