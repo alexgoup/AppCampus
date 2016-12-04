@@ -23,7 +23,6 @@ Environment = function(application) {
  	this.scope = $rootScope; 
 
 
-
     initBuildings(this);
     //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
 

@@ -19,17 +19,21 @@
 					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="outputConsumption == 'EnergyConsumption'"></hc-chart>
 					<div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div>
 					<div class="panel panel-default" id="controlPanel" > 
-						<div id="plotchoice">
-						<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>
-								<div>
+						<div class="controlpanelSection">
+							<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>
+							<div>
 							  <input type="radio" defaultChecked="true" value="EnergyConsumption" ng-model="outputConsumption">
 							  <span class="plotchoiceSpans"> Energy Consumption </span>
-							  </div>
-							  <div>
-  							  <input type="radio" value="EnergyDistribution" ng-model="outputConsumption">
-  							  <span class="plotchoiceSpans"> Energy Distribution </span>
-  							 	</div>
-					</div>
-
+						  	</div>
+						  	<div>
+							  <input type="radio" value="EnergyDistribution" ng-model="outputConsumption">
+							  <span class="plotchoiceSpans"> Energy Distribution </span>
+						 	</div>
+						</div>
+						<div class="controlpanelSection">
+							<h4 class="controlPanelHeaders"> <span> Cost filter </span> </h4>
+							<slider floor="200" ceiling="800" step="5" precision="2" ng-model-low="costLow" ng-model-high="costHigh" class="controlSlider"></slider>
+							<span class="plotchoiceSpans"> Min Cost: {{costLow}} - Max Cost: {{costHigh}} </span>
+						</div>
 					</div>
    

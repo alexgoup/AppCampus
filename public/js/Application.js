@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    new Application('renderCanvas');
+    var babylonApp = new Application('renderCanvas');
+    var elem = angular.element(document.querySelector('[ng-app]'));
+    var injector = elem.injector(); 
+    var $rootScope = injector.get('$rootScope'); 
 }, false);
 
 Application = function(canvasId) {
