@@ -32,8 +32,18 @@
 						</div>
 						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Cost filter </span> </h4>
-							<slider floor="200" ceiling="800" step="5" precision="2" ng-model-low="costLow" ng-model-high="costHigh" class="controlSlider"></slider>
-							<span class="plotchoiceSpans"> Min Cost: {{costLow}} - Max Cost: {{costHigh}} </span>
+							<slider floor="0" ceiling="100" step="1" precision="2" ng-model-low="costLow" ng-model-high="costHigh" class="controlSlider"></slider>
+							<span class="plotchoiceSpans"> Min Cost: {{costLow}} M$ - Max Cost: {{costHigh}} M$ </span>
+							<div> <span class="plotchoiceSpans"> Cost Heatmap </span> <input type="checkbox" ng-model="heatmapBool"></div>
+
+
+						</div>
+						<div class="controlpanelSection">
+							<h4 class="controlPanelHeaders"> <span> Energy filter (2014) </span> </h4>
+							<slider floor="0" ceiling="15000" step="1" precision="2" ng-model-low="energyLow" ng-model-high="energyHigh" class="controlSlider"></slider>
+							<span class="plotchoiceSpans"> Min Yearly Energy: {{energyLow}} kwH </span>
+							<span class="plotchoiceSpans"> Max Yearly Energy: {{energyHigh}} kwH </span>
+							<div> <span class="plotchoiceSpans"> Energy Heatmap </span> <input type="checkbox" ng-model="energyheatmapBool"></div>
 						</div>
 					</div>
    

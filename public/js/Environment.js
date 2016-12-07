@@ -37,8 +37,9 @@ Environment = function(application) {
 
 	var materialBuilding = new BABYLON.StandardMaterial("wallTexture", scene);
 	materialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); 
-/*	materialBuilding.emissiveColor = new BABYLON.Color3(57/255,107/255,107/255);*/
+	/*materialBuilding.emissiveColor = new BABYLON.Color3(255/255,0/255,0/255);*/
 	this.materialBuilding = materialBuilding;
+	this.scope.materialBuilding = materialBuilding;
 
     var brightmaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
     brightmaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);
@@ -52,6 +53,16 @@ Environment = function(application) {
     brightermaterialBuilding.emissiveTexture.level = 2.2;
     this.brightermaterialBuilding = brightermaterialBuilding;
 
+    var heatMaterials = []; 
+    for(var i=0; i< 51;i++){
+    	var heatMaterial = new BABYLON.StandardMaterial("wallTexture", scene);
+    	heatMaterial.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); 
+    	var g_value = (i+1)*5;
+    	heatMaterial.emissiveColor = new BABYLON.Color3(255/255,g_value/255,0/255);
+    	heatMaterials.push(heatMaterial);
+    }
+    this.scope.heatMaterials = heatMaterials;
+
     this.currentTarget = "";
 
     this.pointerMeshActionOPOverT = new BABYLON.ExecuteCodeAction( // HOVER ON A MESH
@@ -62,7 +73,9 @@ Environment = function(application) {
 	            if(meshClicked != ground){
 	            	scene.hoverCursor = "pointer";
 		            var bldgClicked = meshClicked.building;
-			        meshClicked.material = brightmaterialBuilding; 
+		            if(!_this.scope.heatmapBool && !_this.scope.energyheatmapBool){
+		            	meshClicked.material = brightmaterialBuilding; 
+		            }
 	            }
 	            else{
 	            	scene.hoverCursor = "default";
@@ -77,7 +90,9 @@ Environment = function(application) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
 	            var bldgClicked = meshClicked.building; 
-		        meshClicked.material = materialBuilding;
+	            if(!_this.scope.heatmapBool && !_this.scope.energyheatmapBool){
+		        	meshClicked.material = materialBuilding;
+		  		}
 	        }
 	    }
     );
@@ -96,7 +111,7 @@ Environment = function(application) {
 		            	}
 		            	bldgClicked.animateState = 1;
 			            bldgClicked.animate(); 
-			            getMonthly(bldgClicked); 
+			            getMonthly(bldgClicked,false); 
 				        _this.scope.$apply(function(){ 
 				        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
 				        	if(bldgClicked.params != undefined){
@@ -150,6 +165,12 @@ Environment.prototype = {
 		   				bldgObj.params = buildingsparamsJSON[j]; 
 		   			}
 		   		}
+		   		if(bldgObj.params == undefined) { 
+		   			bldgObj.params = {bCost:1000000,noCost:true}; 
+		   		}
+		   		else{
+		   			bldgObj.params.noCost = false; 
+		   		}
 		   		for(var j=0; j<buildingsparamsbisJSON.length; j++){
 		   			if(buildingsparamsbisJSON[j].bldg == bldgObj.id){ 
 		   				bldgObj.departmentList.push({ 
@@ -191,16 +212,6 @@ Environment.prototype = {
 		   			
 		   		}
 	    }
-/*	    getMonthly(crc);
-	    this.scope.mouseOverBuildingName = crc.name;
-        this.scope.currentparams[0].value = crc.params.bAddress == "" ? "No information available" : crc.params.bAddress;  
-	    this.scope.currentparams[1].value = crc.params.bArchitect == "" ? "No information available" : crc.params.bArchitect;  
-	    this.scope.currentparams[2].value = crc.params.bBuilt == "" ? "No information available" : crc.params.bBuilt;  
-	    this.scope.currentparams[3].value = crc.params.bContractor == "" ? "No information available" : crc.params.bContractor;  
-	    this.scope.currentparams[4].value = crc.params.bCost == "" ? "No information available" : crc.params.bCost;  
-	    this.scope.currentparams[5].value = crc.params.bRenov == "" ? "No information available" : crc.params.bRenov;  
-	    this.scope.currentparams[6].value = crc.params.bType == "" ? "No information available" : crc.params.bType;  
-	    this.scope.currentparams[7].value = crc.params.namedAfter == "" ? "No information available" : crc.params.namedAfter; */
    		this.drawInitMeshes(); 
 
 	},
@@ -296,10 +307,11 @@ Environment.prototype = {
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPickT);
 				this.currentBlist[i].mesh = newMesh;
 			}
-
+			getMonthly(this.currentBlist[i],true);
 		}
 
-
+		this.scope.buildingsList = this.currentBlist;
+		console.log(this.currentBlist)
 	}
 
 

@@ -28,8 +28,10 @@ Building.prototype = {
           var _this = this;
           if(_this.firstTimeAnimate){
                  _this.environment.scene.registerAfterRender(function () { 
-                if(_this.animateState == 1) {
-                    _this.mesh.material = _this.environment.brightermaterialBuilding; 
+                if(_this.animateState == 1) { 
+                    if(!_this.environment.scope.heatmapBool){
+                        _this.mesh.material = _this.environment.brightermaterialBuilding; 
+                    }
                     _this.mesh.rotation.y += 2*Math.PI/750; 
                     if(_this.mesh.position.y < 50 ){
                         _this.mesh.position.y +=1;
@@ -50,7 +52,9 @@ Building.prototype = {
             if(_this.firstTimeDesanimate){
                 _this.environment.scene.registerAfterRender(function () { 
                 if(_this.animateState == 2){
-                    _this.mesh.material = _this.environment.materialBuilding; 
+                    if(!_this.environment.scope.heatmapBool){
+                        _this.mesh.material = _this.environment.materialBuilding; 
+                    }
                     if(_this.mesh.position.y > _this.inity ){ 
                         _this.mesh.position.y -=1;
                     }

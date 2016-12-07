@@ -20,29 +20,62 @@ var buildingsnamesJSON,
 	buildingsparamsJSON,
 	buildingsfloorsJSON; 
 
-function getMonthly(building){ 
-	buildingClient = new HttpClient();
-	buildingClient.get('/api/buildingsmonthly/' + building.id.toString(), function(response) {
-	    buildingmonthlyJSON = JSON && JSON.parse(response) || $.parseJSON(response);
-		var obj = buildingmonthlyJSON["0"]; 
-		building.environment.scope.$apply(function(){ 
+function getMonthly(building,request){ 
+	if(request){
+		buildingClient = new HttpClient();
+		buildingClient.get('/api/buildingsmonthly/' + building.id.toString(), function(response) {
+	   		buildingmonthlyJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+			var obj = buildingmonthlyJSON["0"]; 
+			if(obj != undefined){
+				building.params.monthly_energy = obj;
+				building.params.tot_energy2014 = obj["Jan-14"]+obj["Feb-14"]+obj["Mar-14"]+obj["Apr-14"]+obj["May-14"]+obj["Jun-14"]+obj["Jul-14"]+obj["Aug-14"]+obj["Sep-14"]+obj["Oct-14"]+obj["Nov-14"]+obj["Dec-14"];
+				building.params.noEnergy = false; 
+			}
+			else{
+				building.params.noEnergy = true;
+			}
+		});
+	}
+	else{
+			building.environment.scope.$apply(function(){ 
+		if(building.params.monthly_energy != undefined){ 
 			building.environment.scope.chartOptions.series = [{
 	            name: '2012',
-	            data: [null,null,null,null,null,null,null,null,null, obj["Oct-12"], obj["Nov-12"], obj["Dec-12"]]
+	            data: [null,null,null,null,null,null,null,null,null, building.params.monthly_energy["Oct-12"], building.params.monthly_energy["Nov-12"], building.params.monthly_energy["Dec-12"]]
 	        }, {
 	            name: '2013',
-	            data: [obj["Jan-13"],obj["Feb-13"],obj["Mar-13"],obj["Apr-13"],obj["May-13"],obj["Jun-13"],obj["Jul-13"],obj["Aug-13"],obj["Sep-13"],obj["Oct-13"],obj["Nov-13"],obj["Dec-13"]]
+	            data: [building.params.monthly_energy["Jan-13"],building.params.monthly_energy["Feb-13"],building.params.monthly_energy["Mar-13"],building.params.monthly_energy["Apr-13"],building.params.monthly_energy["May-13"],building.params.monthly_energy["Jun-13"],building.params.monthly_energy["Jul-13"],building.params.monthly_energy["Aug-13"],building.params.monthly_energy["Sep-13"],building.params.monthly_energy["Oct-13"],building.params.monthly_energy["Nov-13"],building.params.monthly_energy["Dec-13"]]
 	        }, {
 	            name: '2014',
-	            data: [obj["Jan-14"],obj["Feb-14"],obj["Mar-14"],obj["Apr-14"],obj["May-14"],obj["Jun-14"],obj["Jul-14"],obj["Aug-14"],obj["Sep-14"],obj["Oct-14"],obj["Nov-14"],obj["Dec-14"]]
+	            data: [building.params.monthly_energy["Jan-14"],building.params.monthly_energy["Feb-14"],building.params.monthly_energy["Mar-14"],building.params.monthly_energy["Apr-14"],building.params.monthly_energy["May-14"],building.params.monthly_energy["Jun-14"],building.params.monthly_energy["Jul-14"],building.params.monthly_energy["Aug-14"],building.params.monthly_energy["Sep-14"],building.params.monthly_energy["Oct-14"],building.params.monthly_energy["Nov-14"],building.params.monthly_energy["Dec-14"]]
 	        }, {
 	            name: '2015',
-	            data: [obj["Jan-15"],obj["Feb-15"],obj["Mar-15"],obj["Apr-15"],obj["May-15"],obj["Jun-15"],obj["Jul-15"],obj["Aug-15"],obj["Sep-15"],obj["Oct-15"],obj["Nov-15"],obj["Dec-15"]]
+	            data: [building.params.monthly_energy["Jan-15"],building.params.monthly_energy["Feb-15"],building.params.monthly_energy["Mar-15"],building.params.monthly_energy["Apr-15"],building.params.monthly_energy["May-15"],building.params.monthly_energy["Jun-15"],building.params.monthly_energy["Jul-15"],building.params.monthly_energy["Aug-15"],building.params.monthly_energy["Sep-15"],building.params.monthly_energy["Oct-15"],building.params.monthly_energy["Nov-15"],building.params.monthly_energy["Dec-15"]]
 	        }];
-        building.environment.scope.chartOptions.title.text = building.name + " Energy Consumption";
-    });
+	        building.environment.scope.chartOptions.title.text = building.name + " Energy Consumption";
+        }
+        else{ 
+        	building.environment.scope.chartOptions.title.text ="No Data Available for this building...";
+        	building.environment.scope.chartOptions.series =  [{
+	            name: '2012',
+	            data: []
+	        }, {
+	            name: '2013',
+	            data: []
+	        }, {
+	            name: '2014',
+	            data: []
+	        }, {
+	            name: '2015',
+	            data: []
+	        }];
 
-	});
+        }
+		});
+	}
+
+		
+	
 	
 }
 
