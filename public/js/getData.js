@@ -32,6 +32,7 @@ function getMonthly(building,request){
 				building.params.noEnergy = false; 
 			}
 			else{
+				building.params.tot_energy2014 = 0;
 				building.params.noEnergy = true;
 			}
 		});
