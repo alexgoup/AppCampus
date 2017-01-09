@@ -26,22 +26,17 @@
 
     appRoutes.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/viewmode');
 
     $stateProvider
 
-        // home page
-        .state('home', {
-            url: '/home',
-            templateUrl: 'views/viewmode.html',
-            controller: 'BuildingController'
-        })
 
         .state('view', {
             url: '/viewmode',
             templateUrl: 'views/viewmode.html',
             controller: 'BuildingController'
-        })
+        }) 
+
 
         .state('edit', {
             url: '/editmode',

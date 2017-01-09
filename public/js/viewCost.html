@@ -1,36 +1,3 @@
-		    	<!-- <div id="rightContainer" > -->
-			    	<descriptionpanel-directive class="panel panel-default" id="buildingPanel">
-																												  
-<!-- 			    	
-						<div class="panel-heading" id=buildingPanelHeading>
-							<h3 class="panel-title" id="buildingPanelTitle">
-								<span> {{mouseOverBuildingName}} </span>
-							</h3>
-						</div>
-						<div class="panel-body" id="buildingPanelBody" >
-					        <table class="table" id="paramstable">
-					          <tr ng-repeat="param in currentparams">
-					            <td>{{param.name}}</td>
-					            <td>{{param.value}}</td>
-					          </tr>					   
-						    </table>
-						</div> -->
-					</descriptionpanel-directive>
-					<a href="#">
-						<div id="costButtonPanel">
-							<img ng-src="{{costimg}}" class="buttonLogoImg" ng-click="togglecost()"/>
-						</div>
-					</a>					
-					<a href="#">
-						<div id="energyButtonPanel">
-							<img ng-src="{{energyimg}}" class="buttonLogoImg" ng-click="toggleenergy()"/>
-						</div>
-					</a>		
-					<a href="#">
-						<div id="footprintButtonPanel">
-							<img ng-src="{{footprintimg}}" class="buttonLogoImg" ng-click="togglefootprint()"/>
-						</div>
-					</a>
 					<div class="panel panel-default" id="controlPanel" > 
 <!-- 						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>
@@ -43,7 +10,7 @@
 							  <span class="plotchoiceSpans"> Energy Distribution </span>
 						 	</div>
 						</div> -->
-						<div class="controlpanelSection" id="costcontrolpanelSection" ng-style="costStyle">
+						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Cost filter </span> </h4>
 							<slider floor="0" ceiling="100" step="1" precision="2" ng-model-low="costLow" ng-model-high="costHigh" class="controlSlider"></slider>
 							<span class="plotchoiceSpans"> Min Cost: {{costLow}} M$ - Max Cost: {{costHigh}} M$ </span>
@@ -51,7 +18,7 @@
 
 
 						</div>
-						<div class="controlpanelSection" id="energycontrolpanelSection" ng-style="energyStyle">
+						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Energy filter (2014) </span> </h4>
 							<slider floor="0" ceiling="15000" step="1" precision="2" ng-model-low="energyLow" ng-model-high="energyHigh" class="controlSlider"></slider>
 							<span class="plotchoiceSpans"> Min Yearly Energy: {{energyLow}} kwH </span>
@@ -61,4 +28,3 @@
 					</div>
 					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="outputConsumption == 'EnergyConsumption'"></hc-chart>
 					<div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div>
-   

@@ -7,6 +7,51 @@ app.controller('BuildingController',
 		var min_energy = 0;
 		var max_energy = 15000; //KwH per day 
 
+		$scope.costimg = "/img/logos/white-dollar.png"; 
+		$scope.coststate = false;
+	    $scope.togglecost = function() {
+        	$scope.coststate = !$scope.coststate;
+        	if($scope.coststate){
+        		$scope.costimg = "/img/logos/green-dollar.png"; 
+        		$scope.costStyle = { "opacity" : "1" };
+        	}
+        	else
+        	{
+        		$scope.costimg = "/img/logos/white-dollar.png"; 
+        		$scope.costStyle = { "opacity" : "0.3" };
+        	}
+    	};
+    	$scope.costStyle = { "opacity" : "0.3" };
+
+		$scope.energyimg = "/img/logos/green-energy.png"; 
+		$scope.energystate = true;
+	    $scope.toggleenergy = function() {
+        	$scope.energystate = !$scope.energystate;
+        	if($scope.energystate){
+        		$scope.energyimg = "/img/logos/green-energy.png"; 
+        		$scope.energyStyle = { "opacity" : "1" };
+        	}
+        	else
+        	{
+        		$scope.energyimg = "/img/logos/white-energy.png"; 
+        		$scope.energyStyle = { "opacity" : "0.3" };
+        	}
+    	};
+    	$scope.energyStyle = { "opacity" : "1" };
+
+		$scope.footprintimg = "/img/logos/white-footprint.png"; 
+		$scope.footprintstate = false;
+	    $scope.togglefootprint = function() {
+        	$scope.footprintstate = !$scope.footprintstate;
+        	if($scope.footprintstate){
+        		$scope.footprintimg = "/img/logos/green-footprint.png"; 
+        	}
+        	else
+        	{
+        		$scope.footprintimg = "/img/logos/white-footprint.png"; 
+        	}
+    	};
+
 
 		$scope.outputConsumption = "EnergyConsumption"
 		$scope.showConsumption = ($scope.outputConsumption == "EnergyConsumption");
