@@ -1,5 +1,5 @@
 // public/js/appRoutes.js
-    angular.module('appRoutes', []).config(['$routeProvider', function($routeProvider) {
+/*    angular.module('appRoutes', []).config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
 
@@ -20,5 +20,34 @@
         });
 
 
-}]);
+}]);*/
 
+    var appRoutes = angular.module('appRoutes', ['ui.router']);
+
+    appRoutes.config(function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/home');
+
+    $stateProvider
+
+        // home page
+        .state('home', {
+            url: '/home',
+            templateUrl: 'views/viewmode.html',
+            controller: 'BuildingController'
+        })
+
+        .state('view', {
+            url: '/viewmode',
+            templateUrl: 'views/viewmode.html',
+            controller: 'BuildingController'
+        })
+
+        .state('edit', {
+            url: '/editmode',
+            templateUrl: 'views/editmode.html',
+            controller: 'BuildingController'
+        })
+
+
+});

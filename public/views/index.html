@@ -5,7 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>SmartCampus</title>
-		<link rel="stylesheet" href="/css/bootstrap.css" />
+		<link rel="stylesheet" href="/css/bootstrap.css" media="screen"/>
 		<link rel="stylesheet" href="/css/mainStyle.css" />
 		<link rel="stylesheet" href="/css/slider.css" />
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
@@ -20,7 +20,7 @@
 		<script type="text/javascript" src="/js/libs/highcharts.js"></script>
 		<script type="text/javascript" src="/js/libs/slider.js"></script>
 	    <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
-		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script> -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
         <script src="/js/controllers/BuildingCtrl.js"></script>
         <script src="/js/controllers/EditCtrl.js"></script>
         <script src="/js/services/MainService.js"></script>
@@ -38,12 +38,12 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="#">Smart Campus</a>
+	          <a class="navbar-brand" ui-sref="home">Smart Campus</a>
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">
-	            <li><a href="#viewmode">View Mode</a></li>
-	            <li><a href="#editmode">Edit Mode</a></li>
+	            <li><a ui-sref="view">View Mode</a></li>
+	            <li><a ui-sref="edit">Edit Mode</a></li>
 	          </ul>
 	          <ul class="nav navbar-nav navbar-right">
 	            <li><a href="#">Filters</a></li>
@@ -61,7 +61,8 @@
     		<div id="gt_logo">
 	    		<img src="/img/gt_logo_white.png" >
     		</div>	
-    		<ng-view></ng-view>
+    		<!-- <ng-view></ng-view> -->
+    		<div ui-view></div>
 	    </div>
 
 		<script>

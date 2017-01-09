@@ -18,8 +18,11 @@
 					</descriptionpanel-directive>
 					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="outputConsumption == 'EnergyConsumption'"></hc-chart>
 					<div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div>
+					<div class="panel panel-default" id="costButtonPanel"> 
+						<img src="/img/dollar-solid.svg" >
+					</div>
 					<div class="panel panel-default" id="controlPanel" > 
-						<div class="controlpanelSection">
+<!-- 						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>
 							<div>
 							  <input type="radio" defaultChecked="true" value="EnergyConsumption" ng-model="outputConsumption">
@@ -29,7 +32,7 @@
 							  <input type="radio" value="EnergyDistribution" ng-model="outputConsumption">
 							  <span class="plotchoiceSpans"> Energy Distribution </span>
 						 	</div>
-						</div>
+						</div> -->
 						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Cost filter </span> </h4>
 							<slider floor="0" ceiling="100" step="1" precision="2" ng-model-low="costLow" ng-model-high="costHigh" class="controlSlider"></slider>
