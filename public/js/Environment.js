@@ -24,41 +24,51 @@ Environment = function(application) {
 
 
     initBuildings(this);
-    //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
+    var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
+    light.diffuse = new BABYLON.Color3(1, 1, 1);
+	light.specular = new BABYLON.Color3(1, 1, 1);
+	light.groundColor = new BABYLON.Color3(0, 0, 0);
+  /*  var light = new BABYLON.SpotLight("Spot0", new BABYLON.Vector3(0, 3000, -1000), new BABYLON.Vector3(0, -1, 0), 0.8, 2, scene);*/
 
     var materialGround = new BABYLON.StandardMaterial("groundTexture", scene);
-    materialGround.emissiveTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);
-    materialGround.emissiveTexture.uScale = 1;
-    materialGround.emissiveTexture.vScale = 1;
+/*    materialGround.emissiveTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);*/
+    materialGround.diffuseTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);
+/*    materialGround.emissiveTexture.uScale = 1;
+    materialGround.emissiveTexture.vScale = 1;*/
 
     var ground = BABYLON.Mesh.CreateGround("campus_ground", 1024*this.pixelToPos, 843*this.pixelToPos, 2, scene);
     ground.material = materialGround;
 
 
 	var materialBuilding = new BABYLON.StandardMaterial("wallTexture", scene);
-	materialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); 
-	/*materialBuilding.emissiveColor = new BABYLON.Color3(255/255,0/255,0/255);*/
+/*	materialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); */
+	materialBuilding.diffuseColor = new BABYLON.Color3(199/255,172/255,163/255);
+/*	materialBuilding.alpha = 0.9;*/
 	this.materialBuilding = materialBuilding;
 	this.scope.materialBuilding = materialBuilding;
 
     var brightmaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
-    brightmaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);
-/*    brightmaterialBuilding.emissiveColor = new BABYLON.Color3(98/255,184/255,184/255);*/
-    brightmaterialBuilding.emissiveTexture.level = 1.65;
+    /*brightmaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);*/
+  /*  brightmaterialBuilding.diffuseColor = new BABYLON.Color3(237/255,205/255,194/255);*/
+    brightmaterialBuilding.diffuseColor = new BABYLON.Color3(230/255,225/255,220/255);
+ /*   brightmaterialBuilding.diffuseColor.level = 1.65;*/
     this.brightmaterialBuilding = brightmaterialBuilding;
 
     var brightermaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
-    brightermaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);
-/*    brightmaterialBuilding.emissiveColor = new BABYLON.Color3(98/255,184/255,184/255);*/
-    brightermaterialBuilding.emissiveTexture.level = 2.2;
+/*    brightermaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);*/
+    /*brightermaterialBuilding.diffuseColor = new BABYLON.Color3(240/255,225/255,221/255);*/
+/*    brightermaterialBuilding.diffuseColor = new BABYLON.Color3(237/255,231/255,140/255);*/
+        brightmaterialBuilding.diffuseColor = new BABYLON.Color3(230/255,225/255,220/255);
+/*    brightermaterialBuilding.diffuseColor.level = 2.2;*/
     this.brightermaterialBuilding = brightermaterialBuilding;
 
     var heatMaterials = []; 
     for(var i=0; i< 51;i++){
     	var heatMaterial = new BABYLON.StandardMaterial("wallTexture", scene);
-    	heatMaterial.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); 
+    	/*heatMaterial.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); */
     	var g_value = (i+1)*5;
-    	heatMaterial.emissiveColor = new BABYLON.Color3(255/255,g_value/255,0/255);
+    	/*heatMaterial.emissiveColor = new BABYLON.Color3(255/255,g_value/255,0/255);*/
+    	heatMaterial.diffuseColor = new BABYLON.Color3(255/255,g_value/255,0/255);
     	heatMaterials.push(heatMaterial);
     }
     this.scope.heatMaterials = heatMaterials;

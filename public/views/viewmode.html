@@ -59,6 +59,6 @@
 							<div> <span class="plotchoiceSpans"> Energy Heatmap </span> <input type="checkbox" ng-model="energyheatmapBool"></div>
 						</div>
 					</div>
-					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="outputConsumption == 'EnergyConsumption'"></hc-chart>
-					<div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div>
+					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="energystate"></hc-chart>
+					<!-- <div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div> -->
    

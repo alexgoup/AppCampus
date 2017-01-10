@@ -45,9 +45,9 @@ html, body {
 	width: 15%;
 	height: 75%;
 	margin:0px;
-	border: 5px solid transparent;
+	border: 3px solid transparent;
 	border-color: #346562;
-	border-radius: 6px;
+	border-radius: 4px;
 	background-color: rgba(0,0,0,0.2)
  }
 
@@ -75,7 +75,7 @@ html, body {
 }
 
 .controlpanelSection { 
-	border-bottom: 3px solid transparent;
+	border-bottom: 2px solid transparent;
 	border-color: #346562;
  }
 
@@ -95,9 +95,9 @@ html, body {
 	width: 25%;
 	height: 25%;
 	margin:0px;
-	border: 5px solid transparent;
+	border: 3px solid transparent;
 	border-color: #346562;
-	border-radius: 6px;
+	border-radius: 4px;
 	background-color: rgba(0,0,0,0.2)
  }
 
@@ -108,23 +108,11 @@ html, body {
 	width: 7%;
 	height: 12%;
 	margin:0px;
-	border: 5px solid transparent;
+	border: 3px solid transparent;
 	border-color: #346562;
 	border-radius: 6px;
 	/*background-color: rgba(0,0,0,0.2)*/
  } 
-
-.buttonLogoImg{
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-	width: auto;
-	height: 90%;
- }
-
 
  #energyButtonPanel { 
 	position: absolute;
@@ -133,7 +121,7 @@ html, body {
 	width: 7%;
 	height: 12%;
 	margin:0px;
-	border: 5px solid transparent;
+	border: 3px solid transparent;
 	border-color: #346562;
 	border-radius: 6px;
 	background-color: rgba(0,0,0,0.2)
@@ -148,13 +136,22 @@ html, body {
 	width: 7%;
 	height: 12%;
 	margin:0px;
-	border: 5px solid transparent;
+	border: 3px solid transparent;
 	border-color: #346562;
 	border-radius: 6px;
 	background-color: rgba(0,0,0,0.2)
  }
 
-
+.buttonLogoImg{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	width: auto;
+	height: 90%;
+ }
 
 
 #ConsumptionPanel { 
@@ -164,9 +161,9 @@ html, body {
 	width: 25%;
 	height: 25%;
 	margin:0px;
-	border: 5px solid transparent;
+	border: 3px solid transparent;
 	border-color: #346562;
-	border-radius: 6px;
+	border-radius: 4px;
 	background-color: rgba(0,0,0,0.2); 
 }
 

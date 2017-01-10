@@ -7,8 +7,8 @@ app.controller('BuildingController',
 		var min_energy = 0;
 		var max_energy = 15000; //KwH per day 
 
-		$scope.costimg = "/img/logos/white-dollar.png"; 
-		$scope.coststate = false;
+		$scope.costimg = "/img/logos/green-dollar.png"; 
+		$scope.coststate = true;
 	    $scope.togglecost = function() {
         	$scope.coststate = !$scope.coststate;
         	if($scope.coststate){
@@ -18,10 +18,10 @@ app.controller('BuildingController',
         	else
         	{
         		$scope.costimg = "/img/logos/white-dollar.png"; 
-        		$scope.costStyle = { "opacity" : "0.3" };
+        		$scope.costStyle = { "opacity" : "0.2" };
         	}
     	};
-    	$scope.costStyle = { "opacity" : "0.3" };
+    	$scope.costStyle = { "opacity" : "1" };
 
 		$scope.energyimg = "/img/logos/green-energy.png"; 
 		$scope.energystate = true;
@@ -34,7 +34,7 @@ app.controller('BuildingController',
         	else
         	{
         		$scope.energyimg = "/img/logos/white-energy.png"; 
-        		$scope.energyStyle = { "opacity" : "0.3" };
+        		$scope.energyStyle = { "opacity" : "0.2" };
         	}
     	};
     	$scope.energyStyle = { "opacity" : "1" };
@@ -109,7 +109,7 @@ app.controller('BuildingController',
 				        		var cost = building.params.bCost; 
 				        		var ratio = (cost-min_cost*1000000)/(max_cost*1000000-min_cost*1000000);
 				        		var mod_ratio = Math.log(1+ratio)/Math.log(2);
-				        		var bendpower = 10;
+				        		var bendpower = 5;
 				        		for(var k=0; k<bendpower;k++){
 				        			var mod_ratio = Math.log(1+mod_ratio)/Math.log(2);
 				        		}
