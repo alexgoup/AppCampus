@@ -58,6 +58,9 @@
 							<span class="plotchoiceSpans"> Max Yearly Energy: {{energyHigh}} kwH </span>
 							<div> <span class="plotchoiceSpans"> Energy Heatmap </span> <input type="checkbox" ng-model="energyheatmapBool"></div>
 						</div>
+						 <!-- <div class="controlpanelSection" ng-show="energyheatmapBool"> -->
+							  <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="monthPickerOptions" class="controlpanelSection" ng-show="energyheatmapBool" id="monthpicker"></div>
+						 <!-- </div> -->
 					</div>
 					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="energystate"></hc-chart>
 					<!-- <div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div> -->

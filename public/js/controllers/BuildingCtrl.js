@@ -52,6 +52,14 @@ app.controller('BuildingController',
         	}
     	};
 
+    	  $scope.dt = new Date("December 13, 2015 11:13:00");		
+    	  $scope.monthPickerOptions = {
+		    datepickerMode: 'month',
+		    minMode: 'month',
+		    minDate: new Date("October 1, 2012 11:13:00"),
+		    maxDate: new Date("September 13, 2015 11:13:00")
+		  };
+
 
 		$scope.outputConsumption = "EnergyConsumption"
 		$scope.showConsumption = ($scope.outputConsumption == "EnergyConsumption");
@@ -119,12 +127,12 @@ app.controller('BuildingController',
 				        		}
 			        		}
 			        		else{
-			        			if(building.mesh != undefined && !$scope.energyheatmapBool){ console.log("here1")
+			        			if(building.mesh != undefined && !$scope.energyheatmapBool){ 
 			        				building.mesh.material = $rootScope.materialBuilding;
 			        			}
 		        			}	
 		        		}
-		        		if(!$scope.heatmapBool && $scope.energyheatmapBool && building.params.noEnergy && building.mesh != undefined){console.log("here2");
+		        		if(!$scope.heatmapBool && $scope.energyheatmapBool && building.params.noEnergy && building.mesh != undefined){
 		        			building.mesh.material = $rootScope.materialBuilding;
 		        		}
 
@@ -134,19 +142,41 @@ app.controller('BuildingController',
 			firstrender = false; 
         }, true);
 
+        function monthToStr(num,year){
+        	year = year.toString();
+        	var month_arr = new Array();
+			month_arr[0] = "January";
+			month_arr[1] = "February";
+			month_arr[2] = "March";
+			month_arr[3] = "April";
+			month_arr[4] = "May";
+			month_arr[5] = "June";
+			month_arr[6] = "July";
+			month_arr[7] = "August";
+			month_arr[8] = "September";
+			month_arr[9] = "October";
+			month_arr[10] = "November";
+			month_arr[11] = "December";
+			return month_arr[num].substring(0,3) + '-' + year.substring(2,4) ; 
+        }
 
-        $scope.$watch('energyheatmapBool', function() { console.log("here energy")
+        $scope.$watchGroup(['energyheatmapBool','dt'], function(newValues,oldValues,scope) { 
         	if(!firstrender){
+        		$scope.energyheatmapBool = newValues[0];
+        		var month = newValues[1].getMonth(); 
+        		var year = newValues[1].getFullYear(); console.log();
+        		var date_str = monthToStr(month,year);
 	        	$rootScope.energyheatmapBool = $scope.energyheatmapBool;
 	        	if($scope.energyheatmapBool && $rootScope.heatmapBool){
 	        		$scope.heatmapBool = false;
 	        	}
 	        	if($rootScope.buildingsList != undefined){
 		        	for(var i=0; i<$rootScope.buildingsList.length;i++){
-		        		var building = $rootScope.buildingsList[i];
+		        		var building = $rootScope.buildingsList[i]; 
 		        		if(!building.params.noEnergy){
 			        		if($scope.energyheatmapBool){ 
-				        		var energy = building.params.tot_energy2014; 
+				        		/*var energy = building.params.tot_energy2014; */
+				        		var energy = building.params[date_str]; console.log(energy)
 				        		var ratio = (energy-min_energy)/(max_energy-min_energy);
 				        		var mod_ratio = Math.log(1+ratio)/Math.log(2);
 				        		var bendpower = 3;
@@ -159,7 +189,7 @@ app.controller('BuildingController',
 				        		}
 			        		}
 			        		else{
-			        			if(building.mesh != undefined && !$scope.heatmapBool){console.log("material energy")
+			        			if(building.mesh != undefined && !$scope.heatmapBool){
 			        				building.mesh.material = $rootScope.materialBuilding;
 			        			}
 		        			}	
