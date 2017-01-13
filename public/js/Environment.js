@@ -26,12 +26,12 @@ Environment = function(application) {
     initBuildings(this);
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
     light.diffuse = new BABYLON.Color3(1, 1, 1);
-	light.specular = new BABYLON.Color3(1, 1, 1);
+	light.specular = new BABYLON.Color3(0, 0, 0);
 	light.groundColor = new BABYLON.Color3(0, 0, 0);
   /*  var light = new BABYLON.SpotLight("Spot0", new BABYLON.Vector3(0, 3000, -1000), new BABYLON.Vector3(0, -1, 0), 0.8, 2, scene);*/
 
     var materialGround = new BABYLON.StandardMaterial("groundTexture", scene);
-/*    materialGround.emissiveTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);*/
+   /* materialGround.emissiveTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);*/
     materialGround.diffuseTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);
 /*    materialGround.emissiveTexture.uScale = 1;
     materialGround.emissiveTexture.vScale = 1;*/
@@ -317,7 +317,7 @@ Environment.prototype = {
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPickT);
 				this.currentBlist[i].mesh = newMesh;
 			}
-			getMonthly(this.currentBlist[i],true);
+			getMonthly(this.currentBlist[i],true); 
 		}
 
 		this.scope.buildingsList = this.currentBlist;

@@ -29,7 +29,7 @@ Building.prototype = {
           if(_this.firstTimeAnimate){
                  _this.environment.scene.registerAfterRender(function () { 
                 if(_this.animateState == 1) { 
-                    if(!_this.environment.scope.heatmapBool){
+                    if(!_this.environment.scope.heatmapBool && !_this.environment.scope.energyheatmapBool){
                         _this.mesh.material = _this.environment.brightermaterialBuilding; 
                     }
                     _this.mesh.rotation.y += 2*Math.PI/750; 
@@ -52,7 +52,7 @@ Building.prototype = {
             if(_this.firstTimeDesanimate){
                 _this.environment.scene.registerAfterRender(function () { 
                 if(_this.animateState == 2){
-                    if(!_this.environment.scope.heatmapBool){
+                    if(!_this.environment.scope.heatmapBool && !_this.environment.scope.energyheatmapBool){
                         _this.mesh.material = _this.environment.materialBuilding; 
                     }
                     if(_this.mesh.position.y > _this.inity ){ 
@@ -83,5 +83,16 @@ Building.prototype = {
             }
 
           _this.environment.currentTarget = ""; 
+    },
+
+    footprintModel: function(){ 
+        var factor = 0.61420489; // in kg CO2 by kwH
+        this.params.monthly_footprint = this.params.monthly_energy; 
+        this.params.tot_footprint2014 = this.params.tot_energy2014*factor; 
+        for(var key in this.params.monthly_footprint){
+            if(key != "_id" && key != "id"){
+                this.params.monthly_footprint[key] *= factor; // MODEL HERE
+            }
+        } 
     }
 }

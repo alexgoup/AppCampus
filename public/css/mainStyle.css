@@ -43,12 +43,12 @@ html, body {
 	top: 13%;
 	left: 1%;
 	width: 15%;
-	height: 75%;
+	height: auto;
 	margin:0px;
 	border: 0px solid transparent;
 	border-color: #346562;
 	border-radius: 4px;
-	background-color: rgba(0,0,0,0.2)
+	background-color: rgba(0,0,0,0)
  }
 
 .controlSlider {
@@ -75,38 +75,98 @@ html, body {
 }
 
 .controlpanelSection { 
-	background-color: rgba(120,120,120,0.15);
+	background-color: rgba(120,120,120,0.2);
  	border: 0px solid transparent;
 	border-radius: 6px;
 	/*border-color: #346562;*/
  }
-
  #monthpicker { 
  	padding:0px;
  	height: 20%;
- 	background-color: rgba(120,120,120,0.15);
+ 	background-color: rgba(120,120,120,0);
  	border:0px;
 
  }
  #monthpicker > div { 
  	padding:0px;
-/* 	margin:0px;
- 	height:0%;*/
- 	background-color: rgba(120,120,120,0.15);
+ 	background-color: rgba(120,120,120,0);
  	border:0px;
-
  }
-
-  #monthpicker > div > div > table { 
+#monthpicker > div > div > table { 
   	width:100%;
  	padding:0px;
+ 	background-color: rgba(120,120,120,0);
+ 	border:0px;
+ }
+#monthpicker > div > div > table > thead > tr > th > button { 
  	background-color: rgba(120,120,120,0.15);
+ }
+#monthpicker > div > div > table > thead > tr > th > button > strong { 
+ 	color: rgb(255,255,255);
+ }
+ #monthpicker > div > div > table > thead > tr > th > button > i { 
+ 	color: rgb(255,255,255);
+ }
+#monthpicker > div > div > table > tbody > tr > td > button { 
+ 	background-color: rgba(120,120,120,0.15);
+ }
+#monthpicker > div > div > table > tbody > tr > td > button.active { 
+ 	background-color: rgba(120,120,120,0.35);
+ }
+#monthpicker > div > div > table > tbody > tr > td > button[disabled] { 
+ 	background-color: rgba(120,120,120,0.9);
+ }
+#monthpicker > div > div > table > tbody > tr > td > button > span { 
+ 	color: rgb(255,255,255)
+ } 
+
+#footprint_monthpicker { 
+ 	padding:0px;
+ 	height: 20%;
+ 	background-color: rgba(120,120,120,0);
  	border:0px;
 
  }
+ #footprint_monthpicker > div { 
+ 	padding:0px;
+ 	background-color: rgba(120,120,120,0);
+ 	border:0px;
+ }
+#footprint_monthpicker > div > div > table { 
+  	width:100%;
+ 	padding:0px;
+ 	background-color: rgba(120,120,120,0);
+ 	border:0px;
+ }
+#footprint_monthpicker > div > div > table > thead > tr > th > button { 
+ 	background-color: rgba(120,120,120,0.15);
+ }
+#footprint_monthpicker > div > div > table > thead > tr > th > button > strong { 
+ 	color: rgb(255,255,255);
+ }
+ #footprint_monthpicker > div > div > table > thead > tr > th > button > i { 
+ 	color: rgb(255,255,255);
+ }
+#footprint_monthpicker > div > div > table > tbody > tr > td > button { 
+ 	background-color: rgba(120,120,120,0.15);
+ }
+#footprint_monthpicker > div > div > table > tbody > tr > td > button.active { 
+ 	background-color: rgba(120,120,120,0.35);
+ }
+#footprint_monthpicker > div > div > table > tbody > tr > td > button[disabled] { 
+ 	background-color: rgba(120,120,120,0.9);
+ }
+#footprint_monthpicker > div > div > table > tbody > tr > td > button > span { 
+ 	color: rgb(255,255,255)
+ }
+
 
 
  #energycontrolpanelSection { 
+    margin-top:5%;
+    margin-bottom:2%;
+ } 
+ #footprintcontrolpanelSection { 
     margin-top:5%;
     margin-bottom:2%;
  }
@@ -181,6 +241,18 @@ html, body {
 #ConsumptionPanel { 
  	position: absolute;
 	top: 35%;
+	left: 74%;
+	width: 25%;
+	height: 25%;
+	margin:0px;
+	border: 3px solid transparent;
+	border-color: #346562;
+	border-radius: 4px;
+	background-color: rgba(0,0,0,0.2); 
+}
+#FootprintPanel { 
+ 	position: absolute;
+	top: 65%;
 	left: 74%;
 	width: 25%;
 	height: 25%;
