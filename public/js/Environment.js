@@ -321,7 +321,7 @@ Environment.prototype = {
 		}
 
 		this.scope.buildingsList = this.currentBlist;
-		console.log(this.currentBlist)
+		/*console.log(this.currentBlist)*/
 	}
 
 

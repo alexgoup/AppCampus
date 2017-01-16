@@ -73,6 +73,42 @@ function getMonthly(building,request){
 	        }];
 
         }
+
+		if(building.params.monthly_footprint != undefined){ 
+			building.environment.scope.footprintchartOptions.series = [{
+	            name: '2012',
+	            data: [null,null,null,null,null,null,null,null,null, building.params.monthly_footprint["Oct-12"], building.params.monthly_footprint["Nov-12"], building.params.monthly_footprint["Dec-12"]]
+	        }, {
+	            name: '2013',
+	            data: [building.params.monthly_footprint["Jan-13"],building.params.monthly_footprint["Feb-13"],building.params.monthly_footprint["Mar-13"],building.params.monthly_footprint["Apr-13"],building.params.monthly_footprint["May-13"],building.params.monthly_footprint["Jun-13"],building.params.monthly_footprint["Jul-13"],building.params.monthly_footprint["Aug-13"],building.params.monthly_footprint["Sep-13"],building.params.monthly_footprint["Oct-13"],building.params.monthly_footprint["Nov-13"],building.params.monthly_footprint["Dec-13"]]
+	        }, {
+	            name: '2014',
+	            data: [building.params.monthly_footprint["Jan-14"],building.params.monthly_footprint["Feb-14"],building.params.monthly_footprint["Mar-14"],building.params.monthly_footprint["Apr-14"],building.params.monthly_footprint["May-14"],building.params.monthly_footprint["Jun-14"],building.params.monthly_footprint["Jul-14"],building.params.monthly_footprint["Aug-14"],building.params.monthly_footprint["Sep-14"],building.params.monthly_footprint["Oct-14"],building.params.monthly_footprint["Nov-14"],building.params.monthly_footprint["Dec-14"]]
+	        }, {
+	            name: '2015',
+	            data: [building.params.monthly_footprint["Jan-15"],building.params.monthly_footprint["Feb-15"],building.params.monthly_footprint["Mar-15"],building.params.monthly_footprint["Apr-15"],building.params.monthly_footprint["May-15"],building.params.monthly_footprint["Jun-15"],building.params.monthly_footprint["Jul-15"],building.params.monthly_footprint["Aug-15"],building.params.monthly_footprint["Sep-15"],building.params.monthly_footprint["Oct-15"],building.params.monthly_footprint["Nov-15"],building.params.monthly_footprint["Dec-15"]]
+	        }];
+	        building.environment.scope.footprintchartOptions.title.text = building.name + " Footprint";
+        }
+        else{ 
+        	building.environment.scope.footprintchartOptions.title.text ="No Data Available for this building...";
+        	building.environment.scope.footprintchartOptions.series =  [{
+	            name: '2012',
+	            data: []
+	        }, {
+	            name: '2013',
+	            data: []
+	        }, {
+	            name: '2014',
+	            data: []
+	        }, {
+	            name: '2015',
+	            data: []
+	        }];
+
+        }
+
+
 		});
 	}
 

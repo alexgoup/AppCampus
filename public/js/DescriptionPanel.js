@@ -3,7 +3,7 @@ return{
     restrict: 'E', // restrict to element
     template: '<div class="panel-heading" id=buildingPanelHeading><h3 class="panel-title" id="buildingPanelTitle"> <span> {{mouseOverBuildingName}} </span> </h3> </div> <div class="panel-body" id="buildingPanelBody" > <table class="table" id="paramstable"> <tr ng-repeat="param in currentparams"> <td>{{param.name}}</td> <td>{{param.value}}</td> </tr> </table> </div>',
     link: function(scope,element){ 
-        element.dblclick(function() { 
+/*        element.dblclick(function() { 
 
           if(scope.zoomState.description == "right") { 
 
@@ -13,30 +13,12 @@ return{
                "top":"25%", 
                "width":"50%", 
                "height":"50%", 
-               "background-color": "rgba(0,0,0,0.6)"
+               "background-color": "rgba(60,60,60,0.2)"
               },
               {
                 duration:300
              }
               );
-              if(scope.zoomState.plot == "centered"){
-               element.next().animate(
-	              {
-	              "left": "74%", 
-	               "top":"35%", 
-	               "width":"25%", 
-	               "height":"25%", 
-	               "background-color": "rgba(0,0,0,0.2)"
-	              },
-	              {
-	                duration:300,
-	                step: function() {
-	                    scope.chart.reflow();
-	                }
-	             }
-	              );
-                scope.zoomState.plot = "right";  
-              }
               scope.zoomState.description = "centered";
             }
             else if (scope.zoomState.description == "centered"){
@@ -46,7 +28,7 @@ return{
                "top":"5%", 
                "width":"25%", 
                "height":"25%", 
-               "background-color": "rgba(0,0,0,0.2)"
+               "background-color": "rgba(60,60,60,0.2)"
               },
               {
                 duration:300
@@ -65,7 +47,7 @@ return{
 		               "top":"5%", 
 		               "width":"25%", 
 		               "height":"25%", 
-		               "background-color": "rgba(0,0,0,0.2)"
+		               "background-color": "rgba(60,60,60,0.2)"
 		              },
 		              {
 		                duration:300
@@ -74,7 +56,7 @@ return{
 		              scope.zoomState.description = "right";  		            
 		        }
 		    }        
-		})
+		})*/
     }
 }
 });

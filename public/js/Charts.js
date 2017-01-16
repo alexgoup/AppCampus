@@ -12,7 +12,7 @@ myapp.directive('hcChart',function() {
                             scope.$parent.chart = chart;
                         },true); 
                         scope.$parent.zoomState.plot = "right"
-                        element.dblclick(function() { 
+/*                        element.dblclick(function() { 
 
                           if(scope.$parent.zoomState.plot == "right") { 
 
@@ -22,7 +22,7 @@ myapp.directive('hcChart',function() {
                                "top":"25%", 
                                "width":"50%", 
                                "height":"50%", 
-                               "background-color": "rgba(0,0,0,0.6)"
+                               "background-color": "rgba(60,60,60,0.2)"
                               },
                               {
                                 duration:300,
@@ -32,22 +32,7 @@ myapp.directive('hcChart',function() {
                                 queue:false
                              }
                               );
-                              if(scope.$parent.zoomState.description == "centered"){
-                                 element.prev().animate(
-                                      {
-                                      "left": "74%", 
-                                       "top":"5%", 
-                                       "width":"25%", 
-                                       "height":"25%", 
-                                       "background-color": "rgba(0,0,0,0.2)"
-                                      },
-                                      {
-                                        duration:300,
-                                        queue:false
-                                     }
-                                  );
-                                scope.$parent.zoomState.description = "right";  
-                              }
+
                               scope.$parent.zoomState.plot = "centered";
                             }
                             else if (scope.$parent.zoomState.plot == "centered"){
@@ -57,7 +42,7 @@ myapp.directive('hcChart',function() {
                                "top":"35%", 
                                "width":"25%", 
                                "height":"25%", 
-                               "background-color": "rgba(0,0,0,0.2)"
+                               "background-color": "rgba(60,60,60,0.2)"
                               },
                               {
                                 duration:300,
@@ -80,7 +65,7 @@ myapp.directive('hcChart',function() {
                                      "top":"35%", 
                                      "width":"25%", 
                                      "height":"25%", 
-                                     "background-color": "rgba(0,0,0,0.2)"
+                                     "background-color": "rgba(60,60,60,0.2)"
                                     },
                                     {
                                       duration:300,
@@ -92,7 +77,7 @@ myapp.directive('hcChart',function() {
                                     scope.$parent.zoomState.plot = "right";                  
                                   }
                               }        
-                          })
+                          })*/
                     }
 };
 

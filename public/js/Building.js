@@ -85,14 +85,18 @@ Building.prototype = {
           _this.environment.currentTarget = ""; 
     },
 
-    footprintModel: function(){ 
+    footprintModel: function(){
         var factor = 0.61420489; // in kg CO2 by kwH
-        this.params.monthly_footprint = this.params.monthly_energy; 
-        this.params.tot_footprint2014 = this.params.tot_energy2014*factor; 
-        for(var key in this.params.monthly_footprint){
+        var energycopy = {};
+        this.params.tot_footprint2014 = this.params.tot_energy2014*factor;
+        for(var key in this.params.monthly_energy){ 
             if(key != "_id" && key != "id"){
-                this.params.monthly_footprint[key] *= factor; // MODEL HERE
+                energycopy[key] = this.params.monthly_energy[key] * factor; // MODEL HERE
+            }
+            else{
+                energycopy[key] = this.params.monthly_energy[key];
             }
         } 
+        this.params.monthly_footprint = energycopy;
     }
 }
