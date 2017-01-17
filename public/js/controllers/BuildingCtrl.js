@@ -11,6 +11,21 @@ app.controller('BuildingController',
 		var max_footprint_month = 1500*0.614; //KwH per day 
 		var max_footprint_year = 9000; //KwH per day 
 
+		$scope.showEnergyGraph = true;
+		$scope.showFootprintGraph = false;
+
+		$scope.toggleEnergyGraph = function() {
+			if($scope.showEnergyGraph){
+				$scope.showFootprintGraph = false;
+			}
+		}	
+
+		$scope.toggleFootprintGraph = function() {
+			if($scope.showFootprintGraph){
+				$scope.showEnergyGraph = false;
+			}
+		}
+
 		$scope.coststate = true;
 		$scope.costimg = $scope.coststate ? "/img/logos/green-dollar.png" : "/img/logos/white-dollar.png"; 
 		

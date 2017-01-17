@@ -1,5 +1,5 @@
 		    	<!-- <div id="rightContainer" > -->
-			    	<descriptionpanel-directive class="panel panel-default" id="buildingPanel">
+			    	<descriptionpanel-directive  id="buildingPanel">
 																												  
 <!-- 			    	
 						<div class="panel-heading" id=buildingPanelHeading>
@@ -56,7 +56,7 @@
 							<slider floor="0" ceiling="15000" step="1" precision="2" ng-model-low="energyLow" ng-model-high="energyHigh" class="controlSlider"></slider>
 							<span class="plotchoiceSpans"> Min Yearly Energy: {{energyLow}} kwH </span>
 							<span class="plotchoiceSpans"> Max Yearly Energy: {{energyHigh}} kwH </span>
-							<div> <span class="plotchoiceSpans"> Energy Heatmap </span> <input type="checkbox" ng-model="energyheatmapBool"></div>
+							<div> <span class="plotchoiceSpans"> Energy Heatmap </span> <input type="checkbox" ng-model="energyheatmapBool"><span class="plotchoiceSpans"> Show graph </span> <input type="checkbox" ng-model="showEnergyGraph" ng-click="toggleEnergyGraph()"></div> 
 						</div>
 						 <!-- <div class="controlpanelSection" ng-show="energyheatmapBool"> -->
 					  	<div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="monthPickerOptions" class="controlpanelSection" ng-show="energyheatmapBool" id="monthpicker"></div>
@@ -66,13 +66,13 @@
 							<slider floor="0" ceiling="9000" step="1" precision="2" ng-model-low="footprintLow" ng-model-high="footprintHigh" class="controlSlider" ng-show="footprintstate"></slider>
 							<span class="plotchoiceSpans"> Min Yearly Footprint: {{footprintLow}} kg CO2 </span>
 							<span class="plotchoiceSpans"> Max Yearly Footprint: {{footprintHigh}} kg CO2 </span>
-							<div> <span class="plotchoiceSpans"> Footprint Heatmap </span> <input type="checkbox" ng-model="footprintheatmapBool"></div>
+							<div> <span class="plotchoiceSpans"> Footprint Heatmap </span> <input type="checkbox" ng-model="footprintheatmapBool"><span class="plotchoiceSpans"> Show graph </span> <input type="checkbox" ng-model="showFootprintGraph" ng-click="toggleFootprintGraph()"></div>
 						</div>
 					  	<div uib-datepicker ng-model="footprint_dt" class="well well-sm" datepicker-options="monthPickerOptions" class="controlpanelSection" ng-show="footprintheatmapBool" id="footprint_monthpicker"></div>
 					</div>
-					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="energystate">
+					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="energystate && showEnergyGraph">
 					</hc-chart>					
-					<hc-chart options="footprintchartOptions" id="FootprintPanel" ng-show="footprintstate">
+					<hc-chart options="footprintchartOptions" id="ConsumptionPanel" ng-show="footprintstate && showFootprintGraph">
 					</hc-chart>
 					<!-- <div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div> -->
    
