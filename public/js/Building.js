@@ -1,3 +1,4 @@
+
 function Building(id,name,bClass,environment) {
     this.id=id;
     this.meshList = []; 
