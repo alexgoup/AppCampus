@@ -83,7 +83,7 @@ Environment = function(application) {
 	            if(meshClicked != ground){
 	            	scene.hoverCursor = "pointer";
 		            var bldgClicked = meshClicked.building;
-		            if(!_this.scope.heatmapBool && !_this.scope.energyheatmapBool){
+		            if(!_this.scope.heatmapBool && !_this.scope.energyheatmapBool && !_this.scope.areaenergyheatmapBool && !_this.scope.footprintheatmapBool){
 		            	meshClicked.material = brightmaterialBuilding; 
 		            }
 	            }
@@ -100,7 +100,7 @@ Environment = function(application) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
 	            var bldgClicked = meshClicked.building; 
-	            if(!_this.scope.heatmapBool && !_this.scope.energyheatmapBool){
+	            if(!_this.scope.heatmapBool && !_this.scope.energyheatmapBool && !_this.scope.areaenergyheatmapBool && !_this.scope.footprintheatmapBool){
 		        	meshClicked.material = materialBuilding;
 		  		}
 	        }

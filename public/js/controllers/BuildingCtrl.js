@@ -5,24 +5,37 @@ app.controller('BuildingController',
 		var max_cost = 100; //Millions of dollars
 		var min_cost = 0;
 		var min_energy = 0;
+		var min_areaenergy = 0;
 		var min_footprint = 0;
 		var max_energy_year = 15000; //KwH per day 
-		var max_energy_month = 1500; //KwH per day 
+		var max_energy_month = 1500; //KwH per day 	
+		var max_areaenergy_year = 2.4; //KwH/msq per day 
+		var max_areaenergy_month = 0.25; //KwH/msq per day 
 		var max_footprint_month = 1500*0.614; //KwH per day 
 		var max_footprint_year = 9000; //KwH per day 
 
 		$scope.showEnergyGraph = true;
+		$scope.showAreaEnergyGraph = false;
 		$scope.showFootprintGraph = false;
 
 		$scope.toggleEnergyGraph = function() {
 			if($scope.showEnergyGraph){
 				$scope.showFootprintGraph = false;
+				$scope.showAreaEnergyGraph = false;
+			}
+		}			
+
+		$scope.toggleAreaEnergyGraph = function() {
+			if($scope.showAreaEnergyGraph){
+				$scope.showFootprintGraph = false;
+				$scope.showEnergyGraph = false;
 			}
 		}	
 
 		$scope.toggleFootprintGraph = function() {
 			if($scope.showFootprintGraph){
 				$scope.showEnergyGraph = false;
+				$scope.showAreaEnergyGraph = false;
 			}
 		}
 
@@ -99,23 +112,28 @@ app.controller('BuildingController',
         $scope.costHigh = max_cost; 
 
         $scope.energyLow = min_energy;
-        $scope.energyHigh = max_energy_year;
+        $scope.energyHigh = max_energy_year; 
+
+        $scope.areaenergyLow = min_areaenergy;
+        $scope.areaenergyHigh = max_areaenergy_year;
 
         $scope.footprintLow = min_footprint;
         $scope.footprintHigh = max_footprint_year;
 
-        $scope.$watchGroup(['costLow','costHigh','energyLow','energyHigh','footprintLow','footprintHigh'], function(newValues,oldValues,scope) {
+        $scope.$watchGroup(['costLow','costHigh','energyLow','energyHigh','areaenergyLow','areaenergyHigh','footprintLow','footprintHigh'], function(newValues,oldValues,scope) {
 	        $rootScope.costLow = newValues[0]; 
 	        $rootScope.costHigh = newValues[1];
 	        $rootScope.energyLow = newValues[2];
 	        $rootScope.energyHigh = newValues[3];
-	        $rootScope.footprintLow = newValues[4];
-	        $rootScope.footprintHigh = newValues[5];
+	        $rootScope.areaenergyLow = newValues[4];
+	        $rootScope.areaenergyHigh = newValues[5];
+	        $rootScope.footprintLow = newValues[6];
+	        $rootScope.footprintHigh = newValues[7];
 	        if($rootScope.buildingsList != undefined){
 		        for(var i=0; i<$rootScope.buildingsList.length;i++){ 
 		        	var building = $rootScope.buildingsList[i];
 		        	if(building.mesh != undefined){
-			        	if($rootScope.costLow*1000000 > building.params.bCost || $rootScope.costHigh*1000000 < building.params.bCost || $rootScope.energyLow > building.params.tot_energy2014 || $rootScope.energyHigh < building.params.tot_energy2014 || $rootScope.footprintLow > building.params.tot_footprint2014 || $rootScope.footprintHigh < building.params.tot_footprint2014){
+			        	if($rootScope.costLow*1000000 > building.params.bCost || $rootScope.costHigh*1000000 < building.params.bCost || $rootScope.energyLow > building.params.tot_energy2014 || $rootScope.energyHigh < building.params.tot_energy2014 || $rootScope.areaenergyLow > building.params.tot_areaenergy2014 || $rootScope.areaenergyHigh < building.params.tot_areaenergy2014 || $rootScope.footprintLow > building.params.tot_footprint2014 || $rootScope.footprintHigh < building.params.tot_footprint2014){
 			        		building.mesh.isVisible = false; 
 			        	}
 			        	else{ 
@@ -133,6 +151,8 @@ app.controller('BuildingController',
         $rootScope.heatmapBool = false;
         $scope.energyheatmapBool = false;
         $rootScope.energyheatmapBool = false;
+        $scope.areaenergyheatmapBool = false;
+        $rootScope.areaenergyheatmapBool = false;
         $scope.footprintheatmapBool = false;
         $rootScope.footprintheatmapBool = false;
         var firstrender = true;
@@ -142,6 +162,9 @@ app.controller('BuildingController',
         	if(!firstrender){ 
 	    		$rootScope.heatmapBool = $scope.heatmapBool;
 	        	if($scope.heatmapBool && $rootScope.energyheatmapBool){
+	        		$scope.energyheatmapBool = false;
+	        	}
+	        	if($scope.heatmapBool && $rootScope.areaenergyheatmapBool){
 	        		$scope.energyheatmapBool = false;
 	        	}
 	        	if($scope.heatmapBool && $rootScope.footprintheatmapBool){ //ADD
@@ -182,12 +205,15 @@ app.controller('BuildingController',
 				        		}
 			        		}
 			        		else{
-			        			if(building.mesh != undefined && !$scope.energyheatmapBool && !$scope.footprintheatmapBool){ //ADD
+			        			if(building.mesh != undefined && !$scope.energyheatmapBool && !$scope.areaenergyheatmapBool && !$scope.footprintheatmapBool ){ //ADD
 			        				building.mesh.material = $rootScope.materialBuilding;
 			        			}
 		        			}	
 		        		}
 		        		if(!$scope.heatmapBool && $scope.energyheatmapBool && building.params.noEnergy && building.mesh != undefined){
+		        			building.mesh.material = $rootScope.materialBuilding;
+		        		}		        		
+		        		if(!$scope.heatmapBool && $scope.areaenergyheatmapBool && building.params.noEnergy && building.mesh != undefined){
 		        			building.mesh.material = $rootScope.materialBuilding;
 		        		}		        	
 	        			if(!$scope.heatmapBool && $scope.footprintheatmapBool && building.params.noEnergy && building.mesh != undefined){ //ADD
@@ -250,7 +276,6 @@ app.controller('BuildingController',
 					                rotation: -90,
 					                color: '#FFFFFF',
 					                align: 'right',
-					                format: '{point.y:.1f}', // one decimal
 					                y: 10, // 10 pixels down from the top
 					                style: {
 					                    fontSize: '13px',
@@ -278,6 +303,9 @@ app.controller('BuildingController',
 
 	        	if($scope.energyheatmapBool && $rootScope.heatmapBool){
 	        		$scope.heatmapBool = false;
+	        	}		        	
+	        	if($scope.energyheatmapBool && $rootScope.areaenergyheatmapBool){
+	        		$scope.areaenergyheatmapBool = false;
 	        	}	        	
 	        	if($scope.energyheatmapBool && $rootScope.footprintheatmapBool){
 	        		$scope.footprintheatmapBool = false;
@@ -318,12 +346,15 @@ app.controller('BuildingController',
 				        		}
 			        		}
 			        		else{
-			        			if(building.mesh != undefined && !$scope.heatmapBool && !$scope.footprintheatmapBool){
+			        			if(building.mesh != undefined && !$scope.heatmapBool && !$scope.areaenergyheatmapBool && !$scope.footprintheatmapBool){
 			        				building.mesh.material = $rootScope.materialBuilding;
 			        			}
 		        			}	
 		        		}
 		        		if(!$scope.energyheatmapBool && $scope.heatmapBool && building.params.noCost && building.mesh != undefined){
+		        			building.mesh.material = $rootScope.materialBuilding;
+		        		}			        		
+		        		if(!$scope.energyheatmapBool && $scope.areaenergyheatmapBool && building.params.noEnergy && building.mesh != undefined){
 		        			building.mesh.material = $rootScope.materialBuilding;
 		        		}		        		
 		        		if(!$scope.energyheatmapBool && $scope.footprintheatmapBool && building.params.noEnergy && building.mesh != undefined){
@@ -385,7 +416,143 @@ app.controller('BuildingController',
 					                rotation: -90,
 					                color: '#FFFFFF',
 					                align: 'right',
-					                format: '{point.y:.1f}', // one decimal
+					                y: 10, // 10 pixels down from the top
+					                style: {
+					                    fontSize: '13px',
+					                    fontFamily: 'Verdana, sans-serif'
+					                }
+					            }
+					        }]
+					    };
+		        	}
+	        	}
+        	} 
+        	firstrender = false; 
+        }, true);
+
+        $scope.$watchGroup(['areaenergyheatmapBool','dt'], function(newValues,oldValues,scope) { 
+        	if(!firstrender){
+        		$scope.areaenergyheatmapBool = newValues[0];
+        		var month = newValues[1].getMonth(); 
+        		var year = newValues[1].getFullYear(); 
+        		var date_str = monthToStr(month,year);
+	        	$rootScope.areaenergyheatmapBool = $scope.areaenergyheatmapBool;
+
+	        	if($scope.areaenergyheatmapBool && $rootScope.heatmapBool){
+	        		$scope.heatmapBool = false;
+	        	}	        	
+	        	if($scope.areaenergyheatmapBool && $rootScope.energyheatmapBool){
+	        		$scope.energyheatmapBool = false;
+	        	}	        	
+	        	if($scope.areaenergyheatmapBool && $rootScope.footprintheatmapBool){
+	        		$scope.footprintheatmapBool = false;
+	        	}
+
+	        	if($rootScope.buildingsList != undefined){
+	        		if($scope.areaenergyheatmapBool){ var rankedAreaEnergy = [];}
+		        	for(var i=0; i<$rootScope.buildingsList.length;i++){
+		        		var building = $rootScope.buildingsList[i]; 
+		        		if(!building.params.noEnergy){
+			        		if($scope.areaenergyheatmapBool){ 
+				        		/*var areaenergy = building.params.tot_areaenergy2014; */
+				        		var areaenergy = building.params.monthly_areaenergy[date_str]; 
+				        		if(i==0){rankedAreaEnergy.push([building.name,areaenergy]);}
+				        		else{
+				        			for(var k=0; k<rankedAreaEnergy.length; k++){
+				        				if(areaenergy > rankedAreaEnergy[k][1]){
+				        					rankedAreaEnergy.splice(k,0,[building.name,areaenergy]);
+				        					if(rankedAreaEnergy.length > rankingSize){
+				        						rankedAreaEnergy.splice(rankingSize,1);
+				        					}
+				        					break;
+				        				}
+			        				}
+			        				if(rankedAreaEnergy.length < rankingSize){
+			        					rankedAreaEnergy.push([building.name,areaenergy]);
+			        				}
+				        		}
+				        		var ratio = (areaenergy-min_areaenergy)/(max_areaenergy_month-min_areaenergy);
+				        		var mod_ratio = Math.log(1+ratio)/Math.log(2);
+				        		var bendpower = 4;
+				        		for(var k=0; k<bendpower;k++){
+				        			var mod_ratio = Math.log(1+mod_ratio)/Math.log(2);
+				        		}
+				        		var heatMaterials_index = 50-Math.floor(50*mod_ratio);
+				        		if(building.mesh != undefined ){
+				        			building.mesh.material = $rootScope.heatMaterials[heatMaterials_index];
+				        		}
+			        		}
+			        		else{
+			        			if(building.mesh != undefined && !$scope.heatmapBool && !$scope.footprintheatmapBool && !$scope.energyheatmapBool){
+			        				building.mesh.material = $rootScope.materialBuilding;
+			        			}
+		        			}	
+		        		}
+		        		if(!$scope.areaenergyheatmapBool && $scope.heatmapBool && building.params.noCost && building.mesh != undefined){
+		        			building.mesh.material = $rootScope.materialBuilding;
+		        		}		
+		        		if(!$scope.areaenergyheatmapBool && $scope.energyheatmapBool && building.params.noEnergy && building.mesh != undefined){
+		        			building.mesh.material = $rootScope.materialBuilding;
+		        		}        		
+		        		if(!$scope.areaenergyheatmapBool && $scope.footprintheatmapBool && building.params.noEnergy && building.mesh != undefined){
+		        			building.mesh.material = $rootScope.materialBuilding;
+		        		}
+		        	} 
+		        	if($scope.areaenergyheatmapBool){
+		        		$scope.dataRankingChart = rankedAreaEnergy; 
+		        	    $scope.yAxisRankingChart = 'Average Energy/GSF/Day (KwH/m. sq)';
+		        	    $scope.tooltipRankingChart = 'Energy/GSF: <b>{point.y:.3f} KwH/m. sq</b>';
+		        	    $scope.nameSeriesRankingChart = 'Energy per Gross Square Footage';
+		        	    $scope.titleRankingChart = 'Energy per Gross Square Footage ranking'
+	        	    	$rootScope.rankchartOptions = {
+					        chart: {
+					            type: 'column',
+					            backgroundColor: null,
+					        },
+					        title: {
+					            text: $scope.titleRankingChart,
+				                     style: {
+							             color: 'white',
+							             font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+							         }
+					        },
+					        xAxis: {
+					            type: 'category',
+					            labels: {
+					                rotation: -45,
+					                style: {
+					                    fontSize: '13px',
+					                    fontFamily: 'Verdana, sans-serif',
+					                    color:'white'
+					                }
+					            }
+					        },
+					        yAxis: {
+					            min: 0,
+					            title: {
+					                text: $scope.yAxisRankingChart,
+	                                style:{
+					                	color: "white"
+					                }
+					            }
+					        },
+					        legend: {
+					            enabled: false
+					        },
+					        tooltip: {
+					            pointFormat: $scope.tooltipRankingChart,
+					        },
+					        credits: { 
+					            enabled: false
+					        },
+					        series: [{
+					            name: $scope.nameSeriesRankingChart,
+					            data: $scope.dataRankingChart,
+					            dataLabels: {
+					                enabled: true,
+					                rotation: -90,
+					                color: '#FFFFFF',
+					                align: 'right',
 					                y: 10, // 10 pixels down from the top
 					                style: {
 					                    fontSize: '13px',
@@ -413,6 +580,9 @@ app.controller('BuildingController',
 	        	}	        	
 	        	if($scope.footprintheatmapBool && $rootScope.energyheatmapBool){
 	        		$scope.energyheatmapBool = false;
+	        	}	        	
+	        	if($scope.footprintheatmapBool && $rootScope.areaenergyheatmapBool){
+	        		$scope.areaenergyheatmapBool = false;
 	        	}
 
 	        	if($rootScope.buildingsList != undefined){
@@ -434,7 +604,7 @@ app.controller('BuildingController',
 				        		}
 			        		}
 			        		else{
-			        			if(building.mesh != undefined && !$scope.heatmapBool && !$scope.energyheatmapBool){
+			        			if(building.mesh != undefined && !$scope.heatmapBool && !$scope.energyheatmapBool && !$scope.areaenergyheatmapBool){
 			        				building.mesh.material = $rootScope.materialBuilding;
 			        			}
 		        			}	
@@ -443,6 +613,9 @@ app.controller('BuildingController',
 		        			building.mesh.material = $rootScope.materialBuilding;
 		        		}		        		
 		        		if(!$scope.footprintheatmapBool && $scope.energyheatmapBool && building.params.noEnergy && building.mesh != undefined){
+		        			building.mesh.material = $rootScope.materialBuilding;
+		        		}		        		
+		        		if(!$scope.footprintheatmapBool && $scope.areaenergyheatmapBool && building.params.noEnergy && building.mesh != undefined){
 		        			building.mesh.material = $rootScope.materialBuilding;
 		        		}
 		        	} 
@@ -552,6 +725,73 @@ app.controller('BuildingController',
         },
         tooltip: {
             valueSuffix: 'KwH'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        credits: { 
+            enabled: false
+        },
+        series: [{
+            name: '2012',
+            data: []
+        }, {
+            name: '2013',
+            data: []
+        }, {
+            name: '2014',
+            data: []
+        }, {
+            name: '2015',
+            data: []
+        }]
+    }; 		
+
+    $rootScope.areaenergychartOptions = {
+        chart: {
+            backgroundColor: null,
+            
+        },
+        title: {
+            text: 'Select a building...',
+         style: {
+             color: 'white',
+             font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+         }
+        },
+        xAxis: {
+            categories:  ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: {
+	            style:{
+            		color: "white"
+            	}
+            }
+
+        },
+        yAxis: {
+            title: {
+                text: 'Average Energy/GSF (KwH/m. sq)',
+                style:{
+                	color: "white"
+                }
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }],
+            labels: {
+	            style:{
+            		color: "white"
+            	}
+            }
+        },
+        tooltip: {
+            valueSuffix: 'KwH/m. sq'
         },
         legend: {
             layout: 'vertical',

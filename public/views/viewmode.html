@@ -44,39 +44,53 @@
 						 	</div>
 						</div> -->
 						<div class="controlpanelSection" id="costcontrolpanelSection" ng-style="costStyle" ng-show="coststate">
-							<h4 class="controlPanelHeaders"> <span> Cost filter </span> </h4>
+							<h4 class="controlPanelHeaders"> <span> Construction cost filter </span> </h4>
 							<slider floor="0" ceiling="100" step="1" precision="2" ng-model-low="costLow" ng-model-high="costHigh" class="controlSlider"></slider>
 							<span class="plotchoiceSpans"> Min Cost: {{costLow}} M$ - Max Cost: {{costHigh}} M$ </span>
-							<div> <span class="plotchoiceSpans"> Cost Heatmap </span> <input type="checkbox" ng-model="heatmapBool"></div>
-
-
+							<div> <span class="plotchoiceSpans"> Heatmap </span> <input type="checkbox" ng-model="heatmapBool"></div>
 						</div>
+
 						<div class="controlpanelSection" id="energycontrolpanelSection" ng-style="energyStyle" ng-show="energystate">
-							<h4 class="controlPanelHeaders"> <span> Energy filter </span> </h4>
+							<h4 class="controlPanelHeaders"> <span> Energy consumption filter </span> </h4>
 							<slider floor="0" ceiling="15000" step="1" precision="2" ng-model-low="energyLow" ng-model-high="energyHigh" class="controlSlider"></slider>
 							<span class="plotchoiceSpans"> Min Yearly Energy: {{energyLow}} kwH </span>
 							<span class="plotchoiceSpans"> Max Yearly Energy: {{energyHigh}} kwH </span>
-							<div> <span class="plotchoiceSpans"> Energy Heatmap </span> <input type="checkbox" ng-model="energyheatmapBool"><span class="plotchoiceSpans"> Show graph </span> <input type="checkbox" ng-model="showEnergyGraph" ng-click="toggleEnergyGraph()"></div> 
+							<div> <span class="plotchoiceSpans"> Heatmap </span> <input type="checkbox" ng-model="energyheatmapBool"><span class="plotchoiceSpans"> Show graph </span> <input type="checkbox" ng-model="showEnergyGraph" ng-click="toggleEnergyGraph()"></div> 
 						</div>
-						 <!-- <div class="controlpanelSection" ng-show="energyheatmapBool"> -->
+
 					  	<div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="monthPickerOptions" class="controlpanelSection" ng-show="energyheatmapBool" id="monthpicker"></div>
-						 <!-- </div> -->
+
+						<div class="controlpanelSection" id="areaenergycontrolpanelSection" ng-style="areaenergyStyle" ng-show="energystate">
+							<h4 class="controlPanelHeaders"> <span> Energy per Area filter </span> </h4>
+							<slider floor="0" ceiling="2.4" step="0.01" precision="2" ng-model-low="areaenergyLow" ng-model-high="areaenergyHigh" class="controlSlider"></slider>
+							<span class="plotchoiceSpans"> Min Yearly energy/GSF: {{areaenergyLow}} kwH/m. sq </span>
+							<span class="plotchoiceSpans"> Max Yearly energy/GSF: {{areaenergyHigh}} kwH/m. sq </span>
+							<div> <span class="plotchoiceSpans"> Heatmap </span> <input type="checkbox" ng-model="areaenergyheatmapBool"><span class="plotchoiceSpans"> Show graph </span> <input type="checkbox" ng-model="showAreaEnergyGraph" ng-click="toggleAreaEnergyGraph()"></div> 
+						</div>
+
+					  	<div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="monthPickerOptions" class="controlpanelSection" ng-show="areaenergyheatmapBool" id="monthpicker"></div>
+
  						<div class="controlpanelSection" id="footprintcontrolpanelSection" ng-style="footprintStyle" ng-show="footprintstate">
 							<h4 class="controlPanelHeaders"> <span> CO2 Footprint filter </span> </h4>
 							<slider floor="0" ceiling="9000" step="1" precision="2" ng-model-low="footprintLow" ng-model-high="footprintHigh" class="controlSlider" ng-show="footprintstate"></slider>
 							<span class="plotchoiceSpans"> Min Yearly Footprint: {{footprintLow}} kg CO2 </span>
 							<span class="plotchoiceSpans"> Max Yearly Footprint: {{footprintHigh}} kg CO2 </span>
-							<div> <span class="plotchoiceSpans"> Footprint Heatmap </span> <input type="checkbox" ng-model="footprintheatmapBool"><span class="plotchoiceSpans"> Show graph </span> <input type="checkbox" ng-model="showFootprintGraph" ng-click="toggleFootprintGraph()"></div>
+							<div> <span class="plotchoiceSpans"> Heatmap </span> <input type="checkbox" ng-model="footprintheatmapBool"><span class="plotchoiceSpans"> Show graph </span> <input type="checkbox" ng-model="showFootprintGraph" ng-click="toggleFootprintGraph()"></div>
 						</div>
+
 					  	<div uib-datepicker ng-model="footprint_dt" class="well well-sm" datepicker-options="monthPickerOptions" class="controlpanelSection" ng-show="footprintheatmapBool" id="footprint_monthpicker"></div>
+
 					</div>
 					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="energystate && showEnergyGraph">
+					</hc-chart>
+
+					<hc-chart options="areaenergychartOptions" id="ConsumptionPanel" ng-show="energystate && showAreaEnergyGraph">
 					</hc-chart>					
 
 					<hc-chart options="footprintchartOptions" id="ConsumptionPanel" ng-show="footprintstate && showFootprintGraph">
 					</hc-chart>
 			
-					<rank-chart options="rankchartOptions" id="RankingPanel" ng-show="heatmapBool || footprintheatmapBool || energyheatmapBool">
+					<rank-chart options="rankchartOptions" id="RankingPanel" ng-show="heatmapBool || footprintheatmapBool || energyheatmapBool || areaenergyheatmapBool">
 					</rank-chart>
 
 					<!-- <div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div> -->

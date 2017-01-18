@@ -30,7 +30,7 @@ Building.prototype = {
           if(_this.firstTimeAnimate){
                  _this.environment.scene.registerAfterRender(function () { 
                 if(_this.animateState == 1) { 
-                    if(!_this.environment.scope.heatmapBool && !_this.environment.scope.energyheatmapBool){
+                    if(!_this.environment.scope.heatmapBool && !_this.environment.scope.energyheatmapBool && !_this.environment.scope.areaenergyheatmapBool && !_this.environment.scope.footprintheatmapBool ){
                         _this.mesh.material = _this.environment.brightermaterialBuilding; 
                     }
                     _this.mesh.rotation.y += 2*Math.PI/750; 
@@ -53,7 +53,7 @@ Building.prototype = {
             if(_this.firstTimeDesanimate){
                 _this.environment.scene.registerAfterRender(function () { 
                 if(_this.animateState == 2){
-                    if(!_this.environment.scope.heatmapBool && !_this.environment.scope.energyheatmapBool){
+                    if(!_this.environment.scope.heatmapBool && !_this.environment.scope.energyheatmapBool && !_this.environment.scope.areaenergyheatmapBool && !_this.environment.scope.footprintheatmapBool){
                         _this.mesh.material = _this.environment.materialBuilding; 
                     }
                     if(_this.mesh.position.y > _this.inity ){ 
@@ -99,5 +99,20 @@ Building.prototype = {
             }
         } 
         this.params.monthly_footprint = energycopy;
+    },    
+
+    areaenergyModel: function(){
+        var energycopy = {};
+        var ftsq_into_msq = 0.092903;
+        for(var key in this.params.monthly_energy){ 
+            if(key != "_id" && key != "id"){
+                energycopy[key] = this.params.monthly_energy[key]/this.params.bGSF/ftsq_into_msq; // MODEL HERE
+            }
+            else{
+                energycopy[key] = this.params.monthly_energy[key];
+            }
+        } 
+        this.params.monthly_areaenergy = energycopy;
+        this.params.tot_areaenergy2014 = energycopy["Jan-14"]+energycopy["Feb-14"]+energycopy["Mar-14"]+energycopy["Apr-14"]+energycopy["May-14"]+energycopy["Jun-14"]+energycopy["Jul-14"]+energycopy["Aug-14"]+energycopy["Sep-14"]+energycopy["Oct-14"]+energycopy["Nov-14"]+energycopy["Dec-14"];
     }
 }
