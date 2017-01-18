@@ -72,7 +72,12 @@
 					</div>
 					<hc-chart options="chartOptions" id="ConsumptionPanel" ng-show="energystate && showEnergyGraph">
 					</hc-chart>					
+
 					<hc-chart options="footprintchartOptions" id="ConsumptionPanel" ng-show="footprintstate && showFootprintGraph">
 					</hc-chart>
+			
+					<rank-chart options="rankchartOptions" id="RankingPanel" ng-show="heatmapBool || footprintheatmapBool || energyheatmapBool">
+					</rank-chart>
+
 					<!-- <div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div> -->
    

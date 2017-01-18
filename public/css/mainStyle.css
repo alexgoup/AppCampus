@@ -264,6 +264,19 @@ html, body {
 	background-color: rgba(60,60,60,0.2); 
 }
 
+#RankingPanel { 
+ 	position: absolute;
+	top: 65%;
+	left: 74%;
+	width: 25%;
+	height: 25%;
+	margin:0px;
+/*	border: 3px solid transparent;
+	border-color: #346562;*/
+	border-radius: 6px;
+	background-color: rgba(60,60,60,0.2); 
+}
+
 #otherPanel { 
  	position: absolute;
 	top: 35%;

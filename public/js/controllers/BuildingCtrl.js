@@ -136,6 +136,7 @@ app.controller('BuildingController',
         $scope.footprintheatmapBool = false;
         $rootScope.footprintheatmapBool = false;
         var firstrender = true;
+        var rankingSize = 10;
 
         $scope.$watch('heatmapBool', function() { 
         	if(!firstrender){ 
@@ -148,11 +149,27 @@ app.controller('BuildingController',
 	        	}
 
 	        	if($rootScope.buildingsList != undefined){
+	        		if($scope.heatmapBool){var rankedCost = [];}
 		        	for(var i=0; i<$rootScope.buildingsList.length;i++){
 		        		var building = $rootScope.buildingsList[i];
 		        		if(!building.params.noCost){
 			        		if($scope.heatmapBool){
 				        		var cost = building.params.bCost; 
+				        		if(i==0){rankedCost.push([building.name,cost]);}
+				        		else{
+				        			for(var k=0; k<rankedCost.length; k++){
+				        				if(cost > rankedCost[k][1]){
+				        					rankedCost.splice(k,0,[building.name,cost]);
+				        					if(rankedCost.length > rankingSize){
+				        						rankedCost.splice(rankingSize,1);
+				        					}
+				        					break;
+				        				}
+			        				}
+			        				if(rankedCost.length < rankingSize){
+			        					rankedCost.push([building.name,cost]);
+			        				}
+				        		}
 				        		var ratio = (cost-min_cost*1000000)/(max_cost*1000000-min_cost*1000000);
 				        		var mod_ratio = Math.log(1+ratio)/Math.log(2);
 				        		var bendpower = 5;
@@ -178,7 +195,73 @@ app.controller('BuildingController',
 		        		}
 
 		        	} 
-	        	}
+		        	if($scope.heatmapBool){
+			        	$scope.dataRankingChart = rankedCost; 
+		        	    $scope.yAxisRankingChart = 'Cost (Millions of $)';
+		        	    $scope.tooltipRankingChart = 'Construction cost: <b>{point.y:.1f} $</b>';
+		        	    $scope.nameSeriesRankingChart = 'Cost';
+		        	    $scope.titleRankingChart = 'Construction Cost Ranking';
+	        	    	$rootScope.rankchartOptions = {
+					        chart: {
+					            type: 'column',
+					            backgroundColor: null,
+					        },
+					        title: {
+					            text: $scope.titleRankingChart,
+				                     style: {
+							             color: 'white',
+							             font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+							         }
+					        },
+					        xAxis: {
+					            type: 'category',
+					            labels: {
+					                rotation: -45,
+					                style: {
+					                    fontSize: '13px',
+					                    fontFamily: 'Verdana, sans-serif',
+					                    color:'white'
+					                }
+					            }
+					        },
+					        yAxis: {
+					            min: 0,
+					            title: {
+					                text: $scope.yAxisRankingChart,
+	                                style:{
+					                	color: "white"
+					                }
+					            }
+					        },
+					        legend: {
+					            enabled: false
+					        },
+					        tooltip: {
+					            pointFormat: $scope.tooltipRankingChart,
+					        },
+					        credits: { 
+					            enabled: false
+					        },
+					        series: [{
+					            name: $scope.nameSeriesRankingChart,
+					            data: $scope.dataRankingChart,
+					            dataLabels: {
+					                enabled: true,
+					                rotation: -90,
+					                color: '#FFFFFF',
+					                align: 'right',
+					                format: '{point.y:.1f}', // one decimal
+					                y: 10, // 10 pixels down from the top
+					                style: {
+					                    fontSize: '13px',
+					                    fontFamily: 'Verdana, sans-serif'
+					                }
+					            }
+					        }]
+					    };
+		        	}
+
+	        	} 
         	}
 			firstrender = false; 
         }, true);
@@ -201,12 +284,28 @@ app.controller('BuildingController',
 	        	}
 
 	        	if($rootScope.buildingsList != undefined){
+	        		if($scope.energyheatmapBool){ var rankedEnergy = [];}
 		        	for(var i=0; i<$rootScope.buildingsList.length;i++){
 		        		var building = $rootScope.buildingsList[i]; 
 		        		if(!building.params.noEnergy){
 			        		if($scope.energyheatmapBool){ 
 				        		/*var energy = building.params.tot_energy2014; */
 				        		var energy = building.params.monthly_energy[date_str]; 
+				        		if(i==0){rankedEnergy.push([building.name,energy]);}
+				        		else{
+				        			for(var k=0; k<rankedEnergy.length; k++){
+				        				if(energy > rankedEnergy[k][1]){
+				        					rankedEnergy.splice(k,0,[building.name,energy]);
+				        					if(rankedEnergy.length > rankingSize){
+				        						rankedEnergy.splice(rankingSize,1);
+				        					}
+				        					break;
+				        				}
+			        				}
+			        				if(rankedEnergy.length < rankingSize){
+			        					rankedEnergy.push([building.name,energy]);
+			        				}
+				        		}
 				        		var ratio = (energy-min_energy)/(max_energy_month-min_energy);
 				        		var mod_ratio = Math.log(1+ratio)/Math.log(2);
 				        		var bendpower = 3;
@@ -231,6 +330,71 @@ app.controller('BuildingController',
 		        			building.mesh.material = $rootScope.materialBuilding;
 		        		}
 		        	} 
+		        	if($scope.energyheatmapBool){
+		        		$scope.dataRankingChart = rankedEnergy; 
+		        	    $scope.yAxisRankingChart = 'Average Energy/Day (KwH)';
+		        	    $scope.tooltipRankingChart = 'Energy: <b>{point.y:.1f} KwH</b>';
+		        	    $scope.nameSeriesRankingChart = 'Energy Consumption per day';
+		        	    $scope.titleRankingChart = 'Energy per day consumption ranking'
+	        	    	$rootScope.rankchartOptions = {
+					        chart: {
+					            type: 'column',
+					            backgroundColor: null,
+					        },
+					        title: {
+					            text: $scope.titleRankingChart,
+				                     style: {
+							             color: 'white',
+							             font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+							         }
+					        },
+					        xAxis: {
+					            type: 'category',
+					            labels: {
+					                rotation: -45,
+					                style: {
+					                    fontSize: '13px',
+					                    fontFamily: 'Verdana, sans-serif',
+					                    color:'white'
+					                }
+					            }
+					        },
+					        yAxis: {
+					            min: 0,
+					            title: {
+					                text: $scope.yAxisRankingChart,
+	                                style:{
+					                	color: "white"
+					                }
+					            }
+					        },
+					        legend: {
+					            enabled: false
+					        },
+					        tooltip: {
+					            pointFormat: $scope.tooltipRankingChart,
+					        },
+					        credits: { 
+					            enabled: false
+					        },
+					        series: [{
+					            name: $scope.nameSeriesRankingChart,
+					            data: $scope.dataRankingChart,
+					            dataLabels: {
+					                enabled: true,
+					                rotation: -90,
+					                color: '#FFFFFF',
+					                align: 'right',
+					                format: '{point.y:.1f}', // one decimal
+					                y: 10, // 10 pixels down from the top
+					                style: {
+					                    fontSize: '13px',
+					                    fontFamily: 'Verdana, sans-serif'
+					                }
+					            }
+					        }]
+					    };
+		        	}
 	        	}
         	} 
         	firstrender = false; 
@@ -479,6 +643,59 @@ app.controller('BuildingController',
             data: []
         }]
     }; 
+
+ 
+
+	$rootScope.rankchartOptions = {
+        chart: {
+            type: 'column',
+            backgroundColor: null,
+        },
+        title: {
+            text: 'Ranking'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '',
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat:'',
+        },
+        credits: { 
+            enabled: false
+        },
+        series: [{
+            name: '',
+            data: [],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    };
 
 		
 
