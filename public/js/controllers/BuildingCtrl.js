@@ -586,12 +586,27 @@ app.controller('BuildingController',
 	        	}
 
 	        	if($rootScope.buildingsList != undefined){
+	        		if($scope.footprintheatmapBool){ var rankedFootprint = [];}
 		        	for(var i=0; i<$rootScope.buildingsList.length;i++){
 		        		var building = $rootScope.buildingsList[i]; 
 		        		if(!building.params.noEnergy){
 			        		if($scope.footprintheatmapBool){ 
-				        		/*var energy = building.params.tot_energy2014; */
 				        		var footprint = building.params.monthly_footprint[date_str]; 
+				        		if(i==0){rankedFootprint.push([building.name,footprint]);}
+				        		else{
+				        			for(var k=0; k<rankedFootprint.length; k++){
+				        				if(footprint > rankedFootprint[k][1]){
+				        					rankedFootprint.splice(k,0,[building.name,footprint]);
+				        					if(rankedFootprint.length > rankingSize){
+				        						rankedFootprint.splice(rankingSize,1);
+				        					}
+				        					break;
+				        				}
+			        				}
+			        				if(rankedFootprint.length < rankingSize){
+			        					rankedFootprint.push([building.name,footprint]);
+			        				}
+				        		}
 				        		var ratio = (footprint-min_footprint)/(max_footprint_month-min_footprint);
 				        		var mod_ratio = Math.log(1+ratio)/Math.log(2);
 				        		var bendpower = 3;
@@ -600,7 +615,7 @@ app.controller('BuildingController',
 				        		}
 				        		var heatMaterials_index = 50-Math.floor(50*mod_ratio);
 				        		if(building.mesh != undefined ){
-				        			building.mesh.material = $rootScope.heatMaterials[heatMaterials_index];
+				        			building.mesh.material = $rootScope.heatMaterials_footprint[heatMaterials_index];
 				        		}
 			        		}
 			        		else{
@@ -619,6 +634,70 @@ app.controller('BuildingController',
 		        			building.mesh.material = $rootScope.materialBuilding;
 		        		}
 		        	} 
+		        	if($scope.footprintheatmapBool){
+		        		$scope.dataRankingChart = rankedFootprint; 
+		        	    $scope.yAxisRankingChart = 'Average Footprint/Day (kg of CO2)';
+		        	    $scope.tooltipRankingChart = 'Footprint: <b>{point.y:.3f} kg CO2</b>';
+		        	    $scope.nameSeriesRankingChart = 'Footprint';
+		        	    $scope.titleRankingChart = 'Footprint ranking'
+	        	    	$rootScope.rankchartOptions = {
+					        chart: {
+					            type: 'column',
+					            backgroundColor: null,
+					        },
+					        title: {
+					            text: $scope.titleRankingChart,
+				                     style: {
+							             color: 'white',
+							             font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+							         }
+					        },
+					        xAxis: {
+					            type: 'category',
+					            labels: {
+					                rotation: -45,
+					                style: {
+					                    fontSize: '13px',
+					                    fontFamily: 'Verdana, sans-serif',
+					                    color:'white'
+					                }
+					            }
+					        },
+					        yAxis: {
+					            min: 0,
+					            title: {
+					                text: $scope.yAxisRankingChart,
+	                                style:{
+					                	color: "white"
+					                }
+					            }
+					        },
+					        legend: {
+					            enabled: false
+					        },
+					        tooltip: {
+					            pointFormat: $scope.tooltipRankingChart,
+					        },
+					        credits: { 
+					            enabled: false
+					        },
+					        series: [{
+					            name: $scope.nameSeriesRankingChart,
+					            data: $scope.dataRankingChart,
+					            dataLabels: {
+					                enabled: true,
+					                rotation: -90,
+					                color: '#FFFFFF',
+					                align: 'right',
+					                y: 10, // 10 pixels down from the top
+					                style: {
+					                    fontSize: '13px',
+					                    fontFamily: 'Verdana, sans-serif'
+					                }
+					            }
+					        }]
+					    };
+		        	}
 	        	}
         	} 
         	firstrender = false; 

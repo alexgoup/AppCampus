@@ -73,6 +73,20 @@ Environment = function(application) {
     }
     this.scope.heatMaterials = heatMaterials;
 
+    var heatMaterials_footprint = []; 
+    for(var i=0; i< 51;i++){
+    	var heatMaterial = new BABYLON.StandardMaterial("wallTexture", scene);
+    	/*heatMaterial.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); */
+    	var r_value = (i+1)*2;
+    	var b_value = (i+1)*2;
+    	var g_value = (i+1)*4;
+    	/*heatMaterial.emissiveColor = new BABYLON.Color3(255/255,g_value/255,0/255);*/
+    	/*heatMaterial.diffuseColor = new BABYLON.Color3(0/255,g_value/255,0/255);*/
+    	heatMaterial.diffuseColor = new BABYLON.Color3((102-r_value)/255,g_value/255,(102-b_value)/255);
+    	heatMaterials_footprint.push(heatMaterial);
+    }
+    this.scope.heatMaterials_footprint = heatMaterials_footprint;
+
     this.currentTarget = "";
 
     this.pointerMeshActionOPOverT = new BABYLON.ExecuteCodeAction( // HOVER ON A MESH
