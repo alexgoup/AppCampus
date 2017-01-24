@@ -21,7 +21,8 @@ Application = function(canvasId) {
 
     // Permet au jeu de tourner
     engine.runRenderLoop(function () {
-
+        //console.log("radius :" + _user.camera.radius);
+        //console.log("alpha :" + _user.camera.alpha);
         // Récuperet le ratio par les fps
         //_this.fps = Math.round(1000/engine.getDeltaTime());
 

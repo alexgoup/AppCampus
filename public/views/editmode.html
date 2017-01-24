@@ -1,1 +1,11 @@
-<span> {{caca}} </span>
+<div class="panel panel-default" id="editbuildingPanel" > 
+	<h4 class="controlPanelHeaders"> <span> Edit the chosen building :  </span> </h4>
+	<span class="plotchoiceSpans"> Build Date: {{buildDate}}</span>
+	<slider floor="1900" ceiling="2017" step="1" precision="1" ng-model="buildDate" class="controlSlider"></slider>	
+	<span class="plotchoiceSpans"> Renovation Date: {{renovationDate}}</span>
+	<slider floor="{{buildDate}}" ceiling="2017" step="1" precision="1" ng-model="renovationDate" class="controlSlider"></slider>	
+	<span class="plotchoiceSpans"> Cost: {{cost}}</span>
+	<slider floor="0" ceiling="100000000" step="1000" precision="1" ng-model="cost" class="controlSlider"></slider>	
+	<span class="plotchoiceSpans"> Material : (Dropdown list)</span>
+	<span class="plotchoiceSpans"> Energy usage: piechart to change</span>
+</div>

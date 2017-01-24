@@ -51,6 +51,19 @@ html, body {
 	background-color: rgba(0,0,0,0)
  }
 
+ #editbuildingPanel { 
+	position: absolute;
+	top: 13%;
+	left: 1%;
+	width: 15%;
+	height: auto;
+	margin:0px;
+	border: 0px solid transparent;
+	border-color: #346562;
+	border-radius: 4px;
+	background-color: rgba(60,60,60,0.5)
+ }
+
 .controlSlider {
 	margin-left:10px;
 	margin-top:10px;
