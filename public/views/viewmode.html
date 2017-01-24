@@ -31,6 +31,18 @@
 							<img ng-src="{{footprintimg}}" class="buttonLogoImg" ng-click="togglefootprint()"/>
 						</div>
 					</a>
+					<div class="heatmapLegend">
+						<img src="/img/yellowtored_lgd_energy.png" ng-show="energyheatmapBool"/>
+					</div>
+					<div class="heatmapLegend">
+						<img src="/img/yellowtored_lgd_cost.png" ng-show="heatmapBool"/>
+					</div>
+					<div class="heatmapLegend">
+						<img src="/img/yellowtored_lgd_energyperarea.png" ng-show="areaenergyheatmapBool"/>
+					</div>	
+					<div class="heatmapLegend">
+						<img src="/img/greentopurple_lgd_footprint.png" ng-show="footprintheatmapBool"/>
+					</div>
 					<div class="panel panel-default" id="controlPanel" > 
 <!-- 						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>

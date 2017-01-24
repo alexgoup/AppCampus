@@ -174,7 +174,7 @@ html, body {
 
 #buildingPanel { 
 	position: absolute;
-	top: 5%;
+	top: 3.5%;
 	left: 74%;
 	width: 25%;
 	height: 25%;
@@ -185,10 +185,30 @@ html, body {
 	background-color: rgba(120,120,120,0.2)
  }
 
- #costButtonPanel { 
+
+ .heatmapLegend { 
 	position: absolute;
-	top: 7%;
-	left: 20%;
+	top: 3.5%;
+	left: 60%;
+	height: 14%;
+	width: 8%; 
+/*	margin:0px;
+	border: 0px solid transparent;
+	border-color: #346562;
+	border-radius: 6px;*/
+/*	background-color: rgba(150,150,150,0.2);*/
+
+ } 
+
+ .heatmapLegend img{
+ 	height: 100%; 
+ 	width: 100%;
+ }
+
+ #energyButtonPanel { 
+	position: absolute;
+	top: 3.5%;
+	left: 30%;
 	width: 7%;
 	height: 12%;
 	margin:0px;
@@ -196,12 +216,12 @@ html, body {
 	border-color: #346562;
 	border-radius: 6px;
 	background-color: rgba(150,150,150,0.2)
- } 
+ }  
 
- #energyButtonPanel { 
+ #costButtonPanel { 
 	position: absolute;
-	top: 7%;
-	left: 30%;
+	top: 3.5%;
+	left: 20%;
 	width: 7%;
 	height: 12%;
 	margin:0px;
@@ -215,7 +235,7 @@ html, body {
 
  #footprintButtonPanel { 
 	position: absolute;
-	top: 7%;
+	top: 3.5%;
 	left: 40%;
 	width: 7%;
 	height: 12%;
@@ -236,6 +256,7 @@ html, body {
 	width: auto;
 	height: 90%;
  }
+
 
 
 #ConsumptionPanel { 

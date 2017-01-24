@@ -609,7 +609,7 @@ app.controller('BuildingController',
 				        		}
 				        		var ratio = (footprint-min_footprint)/(max_footprint_month-min_footprint);
 				        		var mod_ratio = Math.log(1+ratio)/Math.log(2);
-				        		var bendpower = 3;
+				        		var bendpower = 2;
 				        		for(var k=0; k<bendpower;k++){
 				        			var mod_ratio = Math.log(1+mod_ratio)/Math.log(2);
 				        		}
