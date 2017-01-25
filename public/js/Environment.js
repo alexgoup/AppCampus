@@ -22,7 +22,7 @@ Environment = function(application) {
  	var $rootScope = injector.get('$rootScope'); 
  	this.scope = $rootScope; 
 
-
+ 	scene.clearColor = new BABYLON.Color3(0, 0, 10/255);
     initBuildings(this);
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
     light.diffuse = new BABYLON.Color3(1, 1, 1);
@@ -32,7 +32,7 @@ Environment = function(application) {
 
     var materialGround = new BABYLON.StandardMaterial("groundTexture", scene);
    /* materialGround.emissiveTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);*/
-    materialGround.diffuseTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);
+    materialGround.diffuseTexture = new BABYLON.Texture("/img/campus_ground_resized_ps.png", scene);
 /*    materialGround.emissiveTexture.uScale = 1;
     materialGround.emissiveTexture.vScale = 1;*/
 
@@ -137,6 +137,7 @@ Environment = function(application) {
 			            bldgClicked.animate(); 
 			            getMonthly(bldgClicked,false); 
 				        _this.scope.$apply(function(){ 
+				        	_this.scope.bldgClicked = bldgClicked; 
 				        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
 				        	if(bldgClicked.params != undefined){
 					            _this.scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
@@ -332,6 +333,8 @@ Environment.prototype = {
 				this.currentBlist[i].mesh = newMesh;
 			}
 			getMonthly(this.currentBlist[i],true); 
+			this.currentBlist[i].populationModel(); 
+			this.currentBlist[i].energyusageModel(); 
 		}
 
 		this.scope.buildingsList = this.currentBlist;

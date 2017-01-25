@@ -114,5 +114,24 @@ Building.prototype = {
         } 
         this.params.monthly_areaenergy = energycopy;
         this.params.tot_areaenergy2014 = energycopy["Jan-14"]+energycopy["Feb-14"]+energycopy["Mar-14"]+energycopy["Apr-14"]+energycopy["May-14"]+energycopy["Jun-14"]+energycopy["Jul-14"]+energycopy["Aug-14"]+energycopy["Sep-14"]+energycopy["Oct-14"]+energycopy["Nov-14"]+energycopy["Dec-14"];
-    }
+    },
+
+    energyusageModel: function(){
+        this.params.energyUsage = {
+            plugLoad : (Math.random() * 100) + 1 ,
+            hvac: (Math.random() * 100) + 1,
+            lighting: (Math.random() * 100) + 1,
+            waterHeating: (Math.random() * 100) + 1 ,
+        }
+
+    },
+
+    populationModel: function(){
+        this.params.population = {
+            engineering : (Math.random() * 1000) + 1 ,
+            design: (Math.random() * 100) + 1,
+            computing: (Math.random() * 500) + 1,
+            sciences: (Math.random() * 200) + 1 ,
+        }
+    },
 }
