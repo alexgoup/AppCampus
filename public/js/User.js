@@ -4,6 +4,9 @@ User = function(application, canvas) {
 
     this.application = application;
 
+    this.initAlpha = 4.3972; 
+    this.initBeta = 0.89864; 
+
     //this.angularSensibility = 100;
     //this.speed = 1;
 
@@ -27,8 +30,10 @@ User.prototype = {
         this.camera.initposition = new BABYLON.Vector3(-104, 267, -319);
         this.camera.setPosition(this.camera.initposition); 
         this.camera.setTarget(BABYLON.Vector3.Zero());
+      /*  this.camera.setTarget(new BABYLON.Vector3(0, 50, 0));*/
         this.camera.upperBetaLimit = Math.PI / 2;
         this.camera.attachControl(canvas, true);
+
 
         
 

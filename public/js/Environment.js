@@ -125,18 +125,22 @@ Environment = function(application) {
 	    BABYLON.ActionManager.OnPickTrigger,
 	    function(evt, pickResult) {
 	        if (evt.source ) { 
-	            var meshClicked = evt.source; console.log(evt);
-	        	if (meshClicked != ground) { 
+	            var meshClicked = evt.source; 
+	        	if (meshClicked != ground) { console.log(meshClicked.position);
 		            var bldgClicked = meshClicked.building; 
 		            if(bldgClicked != _this.currentTarget){
 		            	if(_this.currentTarget != ""){ 
 		            		_this.currentTarget.animateState = 2; 
 		            		_this.currentTarget.desanimate(); 
+		            		/*_this.scene.registerBeforeRender(tiltDesanimate);*/
 		            	}
 		            	bldgClicked.animateState = 1;
 			            bldgClicked.animate(); 
+			            /*_this.scene.registerBeforeRender(tiltAnimate);*/
 			            getMonthly(bldgClicked,false); 
 				        _this.scope.$apply(function(){ 
+				        	_this.scope.currentEvt = evt; 
+				        	_this.scope.isBldgClicked = true;
 				        	_this.scope.bldgClicked = bldgClicked; 
 				        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
 				        	if(bldgClicked.params != undefined){
@@ -160,6 +164,10 @@ Environment = function(application) {
 
 	        	}
 	        	else{ 
+	        		 _this.scope.$apply(function(){ 
+	        		 	_this.scope.bldgClicked = ground; 
+	        		 	_this.scope.isBldgClicked = false; 
+        		 	});
 	        		if(_this.currentTarget != ""){
 	        			_this.currentTarget.animateState = 2;
 	        			_this.currentTarget.desanimate();
@@ -335,6 +343,7 @@ Environment.prototype = {
 			getMonthly(this.currentBlist[i],true); 
 			this.currentBlist[i].populationModel(); 
 			this.currentBlist[i].energyusageModel(); 
+			this.currentBlist[i].tiltingParams(); 
 		}
 
 		this.scope.buildingsList = this.currentBlist;

@@ -103,7 +103,13 @@
 					</hc-chart>
 			
 					<rank-chart options="rankchartOptions" id="RankingPanel" ng-show="heatmapBool || footprintheatmapBool || energyheatmapBool || areaenergyheatmapBool">
-					</rank-chart>
+					</rank-chart>					
+
+					<pie-chart options="populationPieChartOptions" id="populationPieChart" ng-show="isBldgClicked" ng-style="populationPieChartStyle">
+					</pie-chart>					
+
+<!-- 					<pie-chart options="energyusePieChartOptions" id="energyusePieChart" ng-show="isBldgClicked">
+					</pie-chart> -->
 
 					<!-- <div class="panel panel-default" id="otherPanel" ng-show="outputConsumption == 'EnergyDistribution'" > ANOTHER PLOT...</div> -->
    

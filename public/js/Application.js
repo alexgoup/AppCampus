@@ -16,13 +16,15 @@ Application = function(canvasId) {
     this.scene = this._initScene(engine);
 
     var _user = new User(_this, canvas);
+    this.user = _user; 
 
     var _environment = new Environment(_this);
 
     // Permet au jeu de tourner
     engine.runRenderLoop(function () {
-        //console.log("radius :" + _user.camera.radius);
-        //console.log("alpha :" + _user.camera.alpha);
+ /*       console.log("radius :" + _user.camera.radius);
+        console.log("alpha :" + _user.camera.alpha);
+        console.log("beta :" + _user.camera.beta);*/
         // Récuperet le ratio par les fps
         //_this.fps = Math.round(1000/engine.getDeltaTime());
 

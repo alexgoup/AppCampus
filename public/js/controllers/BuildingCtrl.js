@@ -18,6 +18,9 @@ app.controller('BuildingController',
 		$scope.showAreaEnergyGraph = false;
 		$scope.showFootprintGraph = false;
 
+		$rootScope.isBldgClicked = false; 
+	/*	$rootScope.bldgClicked = ""; */
+
 		$scope.toggleEnergyGraph = function() {
 			if($scope.showEnergyGraph){
 				$scope.showFootprintGraph = false;
@@ -760,6 +763,113 @@ app.controller('BuildingController',
 
 		]; 
 		$rootScope.currentparams = $rootScope.defaultcurrentparams; 
+
+		$rootScope.populationPieChartOptions = {
+	        chart: {
+	        	marginTop:0,
+	        	backgroundColor:null,
+	            plotBackgroundColor: null,
+	            plotBorderWidth: null,
+	            plotShadow: false,
+	            type: 'pie'
+	        },
+	        title: {
+	            text: '<b>Population per department</b>',
+	            style:{
+	            	color:'rgb(204, 82, 0)',
+	            	fontSize:'12',
+	            }
+	        },
+/*	        subtitle: {
+	            text: '',
+	            style:{
+	            	color:'white',
+	            	fontSize:'10',
+	            }
+	        },*/
+	        tooltip: {
+	            pointFormat: '{series.name}: <b>{point.percentage:.1f}</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	            	size: '20%',
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                dataLabels: {
+	                	padding:0,
+	                	allowOverlap: true,
+	                    enabled: true,
+	                    format: '<b>{point.name}</b>: {point.y}',
+	                    style: {
+	                    	fontSize: 10,
+	                        color: 'white'
+	                    }
+	                }
+	            }
+	        },
+	        credits: { 
+	            enabled: false
+	        },
+	        series: [{
+	            name: 'Departments',
+	            colorByPoint: true,
+	            data: [/*{
+	                name: 'Microsoft Internet Explorer',
+	                y: 56.33
+	            }, {
+	                name: 'Chrome',
+	                y: 24.03,
+	                sliced: true,
+	                selected: true
+	            }, {
+	                name: 'Firefox',
+	                y: 10.38
+	            }, {
+	                name: 'Safari',
+	                y: 4.77
+	            }, {
+	                name: 'Opera',
+	                y: 0.91
+	            }, {
+	                name: 'Proprietary or Undetectable',
+	                y: 0.2
+	            }*/]
+	        }]
+
+		}
+
+		$rootScope.populationPieChartStyle = {
+			 	'position': 'absolute',
+				'top': '15%',
+				'left': '50%',
+				'width': '20%',
+				'height': '20%',
+				'margin':'0px',
+				'background-color': 'rgba(0,0,0,0)',
+		}
+
+		$rootScope.$watch('bldgClicked', function() {
+			if($rootScope.bldgClicked != undefined){
+				if($rootScope.bldgClicked.params != undefined){
+					if($rootScope.currentEvt != undefined){
+						var xevt = $rootScope.currentEvt.pointerX; 
+						var yevt = $rootScope.currentEvt.pointerY; 
+					}
+					var screenx = $(window).width();
+					var screeny = $(window).height();
+					var xratio = xevt/screenx;
+					var yratio = yevt/screeny;
+					var offsetX = 0;
+					var offsetY = 15;
+					var width_perc_str = (Math.floor(xratio*100)-offsetX).toString() + "%"; 
+					var height_perc_str = (Math.floor(yratio*100)-offsetY).toString() + "%"; 
+/*					$rootScope.populationPieChartStyle.left = width_perc_str; 
+					$rootScope.populationPieChartStyle.top = height_perc_str; */
+					$rootScope.populationPieChartOptions.series[0].data = $rootScope.bldgClicked.params.population; 
+				}
+			}
+		});  
+
 
 
 		$rootScope.chartOptions = {

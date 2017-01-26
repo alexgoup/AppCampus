@@ -19,14 +19,16 @@ function Building(id,name,bClass,environment) {
     this.animateState = 0;
     this.firstTimeAnimate = true; 
     this.firstTimeDesanimate = true;
+    this.camera = this.environment.application.user.camera; 
+    this.user = this.environment.application.user;
 
 
 }
 
 Building.prototype = {
     
-    animate: function(){
-          var _this = this;
+    animate: function(){ 
+          var _this = this; 
           if(_this.firstTimeAnimate){
                  _this.environment.scene.registerAfterRender(function () { 
                 if(_this.animateState == 1) { 
@@ -37,7 +39,19 @@ Building.prototype = {
                     if(_this.mesh.position.y < 50 ){
                         _this.mesh.position.y +=1;
                     }
-                    _this.lastroty = _this.mesh.rotation.y;
+                    _this.lastroty = _this.mesh.rotation.y; 
+                    if(_this.camera.beta < _this.params.tiltingBeta){
+                        _this.camera.beta += 0.005;
+                    }                    
+                    if(_this.camera.alpha < _this.params.tiltingAlpha){
+                        _this.camera.alpha += 0.005;
+                    }                    
+                    if(_this.camera.beta > _this.params.tiltingBeta){
+                        _this.camera.beta -= 0.005;
+                    }                    
+                    if(_this.camera.alpha > _this.params.tiltingAlpha){
+                        _this.camera.alpha -= 0.005;
+                    }
                 }
 
               });
@@ -77,6 +91,18 @@ Building.prototype = {
                     if( (_this.mesh.rotation.y <= rotlimitmin || rotlimitplus <= _this.mesh.rotation.y) && _this.mesh.position.y <= _this.inity) { 
                         _this.animateState = 0;
                     } 
+                    if(_this.camera.beta < _this.user.initBeta){
+                        _this.camera.beta += 0.01;
+                    }                    
+                    if(_this.camera.alpha < _this.user.initAlpha){
+                        _this.camera.alpha += 0.01;
+                    }                    
+                    if(_this.camera.beta > _this.user.initBeta){
+                        _this.camera.beta -= 0.01;
+                    }                    
+                    if(_this.camera.alpha > _this.user.initAlpha){
+                        _this.camera.alpha -= 0.01;
+                    }
                 }
 
                 });
@@ -117,21 +143,55 @@ Building.prototype = {
     },
 
     energyusageModel: function(){
-        this.params.energyUsage = {
-            plugLoad : (Math.random() * 100) + 1 ,
-            hvac: (Math.random() * 100) + 1,
-            lighting: (Math.random() * 100) + 1,
-            waterHeating: (Math.random() * 100) + 1 ,
-        }
+        this.params.energyUsage = [
+            {
+                name: 'HVAC',
+                y: Math.floor((Math.random() * 100) + 1), 
+            },
+            {
+                name: 'plugLoad',
+                y: Math.floor((Math.random() * 100) + 1), 
+            },
+            {
+                name: 'lighting',
+                y: Math.floor((Math.random() * 100) + 1),
+            },
+            {
+                name: 'waterHeating',
+                y: Math.floor((Math.random() * 100) + 1), 
+            }
+        ];
 
     },
 
     populationModel: function(){
-        this.params.population = {
-            engineering : (Math.random() * 1000) + 1 ,
-            design: (Math.random() * 100) + 1,
-            computing: (Math.random() * 500) + 1,
-            sciences: (Math.random() * 200) + 1 ,
-        }
+        this.params.population = [
+            {
+                name: 'Engineering',
+                y: Math.floor((Math.random() * 100) + 1), 
+            },
+            {
+                name: 'Design',
+                y: Math.floor((Math.random() * 100) + 1), 
+            },
+            {
+                name: 'Computing',
+                y: Math.floor((Math.random() * 100) + 1), 
+            },
+            {
+                name: 'Sciences',
+                y: Math.floor((Math.random() * 100) + 1), 
+            }
+        ];
     },
+
+    tiltingParams: function(){
+        if(this.mesh != undefined){
+            var zpos = this.mesh.position.z; 
+            var a = (1.103-1.37)/(120+154);
+            var b = 1.103 -a*120; 
+            this.params.tiltingBeta = a*zpos + b; 
+            this.params.tiltingAlpha = 4.693; 
+        }
+    }
 }
