@@ -13,6 +13,13 @@ Environment = function(application) {
     this.pixelToPos = 0.415;
     this.hscale = 2;
 
+    this.isTilting = false;
+    this.isDetilting = false;
+    this.firstTimeDetilt = true;
+
+    this.camera = this.application.user.camera; 
+    this.user = this.application.user;
+
     var _this = this;
 
     var imgTexture_path = "/img/wood.jpg"
@@ -136,6 +143,7 @@ Environment = function(application) {
 		            	}
 		            	bldgClicked.animateState = 1;
 			            bldgClicked.animate(); 
+			            /*_this.scene.registerAfterRender(bldgClicked.tilt);*/
 			            /*_this.scene.registerBeforeRender(tiltAnimate);*/
 			            getMonthly(bldgClicked,false); 
 				        _this.scope.$apply(function(){ 
@@ -168,7 +176,8 @@ Environment = function(application) {
 	        		 	_this.scope.bldgClicked = ground; 
 	        		 	_this.scope.isBldgClicked = false; 
         		 	});
-	        		if(_this.currentTarget != ""){
+	        		if(_this.currentTarget != ""){ 
+	        			_this.scene.registerAfterRender(this.detilt);
 	        			_this.currentTarget.animateState = 2;
 	        			_this.currentTarget.desanimate();
 	        		}
@@ -348,7 +357,36 @@ Environment.prototype = {
 
 		this.scope.buildingsList = this.currentBlist;
 		/*console.log(this.currentBlist)*/
-	}
+	},
+
+    detilt: function(){ console.log("here");
+
+                if(Math.abs(this.camera.beta - this.user.initBeta) > 0.01){
+                    if(this.camera.beta - this.user.initBeta < 0){
+                        this.camera.beta += 0.005;
+                    }
+                    else{
+                        this.camera.beta -= 0.005;
+                    }
+                    /*this.isDetilting = true;*/
+                }                    
+                if(Math.abs(this.camera.alpha - this.user.initAlpha) > 0.01){
+                    if(this.camera.alpha - this.user.initAlpha < 0){
+                        this.camera.alpha += 0.005;
+                    }
+                    else{
+                        this.camera.alpha -= 0.005;
+                    }
+                   /* this.isDetilting = true;*/
+                }
+                if(Math.abs(this.camera.alpha - this.user.initAlpha) < 0.01 && Math.abs(this.camera.beta - this.user.initBeta) < 0.01){
+                    /*_this.isDetilting = false; */
+                    this.scene.unregisterAfterRender(detilt);
+                } 
+
+          
+
+    },
 
 
 

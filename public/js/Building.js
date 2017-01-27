@@ -19,6 +19,8 @@ function Building(id,name,bClass,environment) {
     this.animateState = 0;
     this.firstTimeAnimate = true; 
     this.firstTimeDesanimate = true;
+    this.firstTimeTilt = true;
+    
     this.camera = this.environment.application.user.camera; 
     this.user = this.environment.application.user;
 
@@ -40,18 +42,7 @@ Building.prototype = {
                         _this.mesh.position.y +=1;
                     }
                     _this.lastroty = _this.mesh.rotation.y; 
-                    if(_this.camera.beta < _this.params.tiltingBeta){
-                        _this.camera.beta += 0.005;
-                    }                    
-                    if(_this.camera.alpha < _this.params.tiltingAlpha){
-                        _this.camera.alpha += 0.005;
-                    }                    
-                    if(_this.camera.beta > _this.params.tiltingBeta){
-                        _this.camera.beta -= 0.005;
-                    }                    
-                    if(_this.camera.alpha > _this.params.tiltingAlpha){
-                        _this.camera.alpha -= 0.005;
-                    }
+
                 }
 
               });
@@ -91,18 +82,8 @@ Building.prototype = {
                     if( (_this.mesh.rotation.y <= rotlimitmin || rotlimitplus <= _this.mesh.rotation.y) && _this.mesh.position.y <= _this.inity) { 
                         _this.animateState = 0;
                     } 
-                    if(_this.camera.beta < _this.user.initBeta){
-                        _this.camera.beta += 0.01;
-                    }                    
-                    if(_this.camera.alpha < _this.user.initAlpha){
-                        _this.camera.alpha += 0.01;
-                    }                    
-                    if(_this.camera.beta > _this.user.initBeta){
-                        _this.camera.beta -= 0.01;
-                    }                    
-                    if(_this.camera.alpha > _this.user.initAlpha){
-                        _this.camera.alpha -= 0.01;
-                    }
+
+
                 }
 
                 });
@@ -111,6 +92,41 @@ Building.prototype = {
 
           _this.environment.currentTarget = ""; 
     },
+
+    tilt: function(){
+        var _this = this;
+        if(_this.firstTimeTilt){
+             _this.environment.scene.registerAfterRender(function () { 
+            if(!_this.environment.isDetilting){
+                if(Math.abs(_this.camera.beta - _this.params.tiltingBeta) > 0.01){
+                    if(_this.camera.beta - _this.params.tiltingBeta < 0){
+                        _this.camera.beta += 0.005;
+                    }
+                    else{
+                        _this.camera.beta -= 0.005;
+                    }
+                    
+                    _this.environment.isTilting = true;
+                }                    
+                if(Math.abs(_this.camera.alpha - _this.params.tiltingAlpha) > 0.01){
+                    if(_this.camera.alpha - _this.params.tiltingAlpha < 0){
+                        _this.camera.alpha += 0.005;
+                    }
+                    else{
+                        _this.camera.alpha -= 0.005;
+                    }
+                    _this.environment.isTilting = true;
+                }
+                if(Math.abs(_this.camera.alpha - _this.params.tiltingAlpha) < 0.01 && Math.abs(_this.camera.beta - _this.params.tiltingBeta) < 0.01){
+                    _this.environment.isTilting = false; console.log("tilting false")
+                }   
+            }
+            });
+             _this.firstTimeTilt = false;
+        }
+    },
+
+
 
     footprintModel: function(){
         var factor = 0.61420489; // in kg CO2 by kwH
