@@ -19,7 +19,7 @@ function Building(id,name,bClass,environment) {
     this.animateState = 0;
     this.firstTimeAnimate = true; 
     this.firstTimeDesanimate = true;
-    this.firstTimeTilt = true;
+   
     
     this.camera = this.environment.application.user.camera; 
     this.user = this.environment.application.user;
@@ -38,7 +38,7 @@ Building.prototype = {
                         _this.mesh.material = _this.environment.brightermaterialBuilding; 
                     }
                     _this.mesh.rotation.y += 2*Math.PI/750; 
-                    if(_this.mesh.position.y < 50 ){
+                    if(_this.mesh.position.y < 40 ){
                         _this.mesh.position.y +=1;
                     }
                     _this.lastroty = _this.mesh.rotation.y; 
@@ -93,38 +93,6 @@ Building.prototype = {
           _this.environment.currentTarget = ""; 
     },
 
-    tilt: function(){
-        var _this = this;
-        if(_this.firstTimeTilt){
-             _this.environment.scene.registerAfterRender(function () { 
-            if(!_this.environment.isDetilting){
-                if(Math.abs(_this.camera.beta - _this.params.tiltingBeta) > 0.01){
-                    if(_this.camera.beta - _this.params.tiltingBeta < 0){
-                        _this.camera.beta += 0.005;
-                    }
-                    else{
-                        _this.camera.beta -= 0.005;
-                    }
-                    
-                    _this.environment.isTilting = true;
-                }                    
-                if(Math.abs(_this.camera.alpha - _this.params.tiltingAlpha) > 0.01){
-                    if(_this.camera.alpha - _this.params.tiltingAlpha < 0){
-                        _this.camera.alpha += 0.005;
-                    }
-                    else{
-                        _this.camera.alpha -= 0.005;
-                    }
-                    _this.environment.isTilting = true;
-                }
-                if(Math.abs(_this.camera.alpha - _this.params.tiltingAlpha) < 0.01 && Math.abs(_this.camera.beta - _this.params.tiltingBeta) < 0.01){
-                    _this.environment.isTilting = false; console.log("tilting false")
-                }   
-            }
-            });
-             _this.firstTimeTilt = false;
-        }
-    },
 
 
 
@@ -205,7 +173,7 @@ Building.prototype = {
         if(this.mesh != undefined){
             var zpos = this.mesh.position.z; 
             var a = (1.103-1.37)/(120+154);
-            var b = 1.103 -a*120; 
+            var b = 1.203 -a*120; 
             this.params.tiltingBeta = a*zpos + b; 
             this.params.tiltingAlpha = 4.693; 
         }
