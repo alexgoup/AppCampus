@@ -43,6 +43,9 @@
 					<div class="heatmapLegend">
 						<img src="/img/greentopurple_lgd_footprint.png" ng-show="footprintheatmapBool"/>
 					</div>
+					<div id="heatmapTitle" ng-show="heatmapBool || footprintheatmapBool || energyheatmapBool || areaenergyheatmapBool">
+						<span> {{heatmapTitle}} heatmap</span>
+					</div>
 					<div class="panel panel-default" id="controlPanel" > 
 <!-- 						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>

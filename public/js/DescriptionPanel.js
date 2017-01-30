@@ -1,19 +1,19 @@
 myapp.directive('descriptionpanelDirective', function(){ 
 return{
     restrict: 'E', // restrict to element
-    template: '<div class="panel-heading" id=buildingPanelHeading><h3 class="panel-title" id="buildingPanelTitle"> <span> {{mouseOverBuildingName}} </span> </h3> </div> <div class="panel-body" id="buildingPanelBody" > <table class="table" id="paramstable"> <tr ng-repeat="param in currentparams"> <td>{{param.name}}</td> <td>{{param.value}}</td> </tr> </table> </div>',
+    template: '<div class="panel-heading" id=buildingPanelHeading><h2 class="panel-title" id="buildingPanelTitle"> <span id="buildingPanelTitleSpan"> {{mouseOverBuildingName}} </span> </h2> </div> <div class="panel-body" id="buildingPanelBody" > <table class="table" id="paramstable"> <tr ng-repeat="param in currentparams"> <td>{{param.name}}</td> <td>{{param.value}}</td> </tr> </table> </div>',
     link: function(scope,element){ 
-/*        element.dblclick(function() { 
+        element.dblclick(function() { 
 
           if(scope.zoomState.description == "right") { 
 
               element.animate(
               {
               "left": "25%", 
-               "top":"25%", 
+               "top":"40%", 
                "width":"50%", 
                "height":"50%", 
-               "background-color": "rgba(60,60,60,0.2)"
+               "background-color": "rgba(60,60,60,0.7)"
               },
               {
                 duration:300
@@ -56,7 +56,7 @@ return{
 		              scope.zoomState.description = "right";  		            
 		        }
 		    }        
-		})*/
+		})
     }
 }
 });

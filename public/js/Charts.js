@@ -12,17 +12,17 @@ myapp.directive('hcChart',function() {
                             scope.$parent.chart = chart;
                         },true); 
                         scope.$parent.zoomState.plot = "right"
-/*                        element.dblclick(function() { 
+                        element.dblclick(function() { 
 
                           if(scope.$parent.zoomState.plot == "right") { 
 
                               element.animate(
                               {
                               "left": "25%", 
-                               "top":"25%", 
+                               "top":"40%", 
                                "width":"50%", 
                                "height":"50%", 
-                               "background-color": "rgba(60,60,60,0.2)"
+                               "background-color": "rgba(60,60,60,0.7)"
                               },
                               {
                                 duration:300,
@@ -77,7 +77,7 @@ myapp.directive('hcChart',function() {
                                     scope.$parent.zoomState.plot = "right";                  
                                   }
                               }        
-                          })*/
+                          })
                     }
 };
 

@@ -164,11 +164,12 @@ app.controller('BuildingController',
         $scope.$watch('heatmapBool', function() { 
         	if(!firstrender){ 
 	    		$rootScope.heatmapBool = $scope.heatmapBool;
+	    		
 	        	if($scope.heatmapBool && $rootScope.energyheatmapBool){
 	        		$scope.energyheatmapBool = false;
 	        	}
 	        	if($scope.heatmapBool && $rootScope.areaenergyheatmapBool){
-	        		$scope.energyheatmapBool = false;
+	        		$scope.areaenergyheatmapBool = false;
 	        	}
 	        	if($scope.heatmapBool && $rootScope.footprintheatmapBool){ //ADD
 	        		$scope.footprintheatmapBool = false;
@@ -180,6 +181,7 @@ app.controller('BuildingController',
 		        		var building = $rootScope.buildingsList[i];
 		        		if(!building.params.noCost){
 			        		if($scope.heatmapBool){
+			        			$scope.heatmapTitle = "Construction cost";
 				        		var cost = building.params.bCost; 
 				        		if(i==0){rankedCost.push([building.name,cost]);}
 				        		else{
@@ -198,7 +200,7 @@ app.controller('BuildingController',
 				        		}
 				        		var ratio = (cost-min_cost*1000000)/(max_cost*1000000-min_cost*1000000);
 				        		var mod_ratio = Math.log(1+ratio)/Math.log(2);
-				        		var bendpower = 5;
+				        		var bendpower = 6;
 				        		for(var k=0; k<bendpower;k++){
 				        			var mod_ratio = Math.log(1+mod_ratio)/Math.log(2);
 				        		}
@@ -320,6 +322,7 @@ app.controller('BuildingController',
 		        		var building = $rootScope.buildingsList[i]; 
 		        		if(!building.params.noEnergy){
 			        		if($scope.energyheatmapBool){ 
+			        			$scope.heatmapTitle = "Energy consumption";
 				        		/*var energy = building.params.tot_energy2014; */
 				        		var energy = building.params.monthly_energy[date_str]; 
 				        		if(i==0){rankedEnergy.push([building.name,energy]);}
@@ -435,6 +438,7 @@ app.controller('BuildingController',
 
         $scope.$watchGroup(['areaenergyheatmapBool','dt'], function(newValues,oldValues,scope) { 
         	if(!firstrender){
+        		
         		$scope.areaenergyheatmapBool = newValues[0];
         		var month = newValues[1].getMonth(); 
         		var year = newValues[1].getFullYear(); 
@@ -457,6 +461,7 @@ app.controller('BuildingController',
 		        		var building = $rootScope.buildingsList[i]; 
 		        		if(!building.params.noEnergy){
 			        		if($scope.areaenergyheatmapBool){ 
+			        			$scope.heatmapTitle = "Energy per area";
 				        		/*var areaenergy = building.params.tot_areaenergy2014; */
 				        		var areaenergy = building.params.monthly_areaenergy[date_str]; 
 				        		if(i==0){rankedAreaEnergy.push([building.name,areaenergy]);}
@@ -572,6 +577,7 @@ app.controller('BuildingController',
 
         $scope.$watchGroup(['footprintheatmapBool','footprint_dt'], function(newValues,oldValues,scope) { 
         	if(!firstrender){
+        		
         		$scope.footprintheatmapBool = newValues[0];
         		var month = newValues[1].getMonth(); 
         		var year = newValues[1].getFullYear(); 
@@ -594,6 +600,7 @@ app.controller('BuildingController',
 		        		var building = $rootScope.buildingsList[i]; 
 		        		if(!building.params.noEnergy){
 			        		if($scope.footprintheatmapBool){ 
+			        			$scope.heatmapTitle = "Footprint";
 				        		var footprint = building.params.monthly_footprint[date_str]; 
 				        		if(i==0){rankedFootprint.push([building.name,footprint]);}
 				        		else{
@@ -777,7 +784,7 @@ app.controller('BuildingController',
 	            text: '<b>Population per department</b>',
 	            style:{
 	            	color:'rgb(204, 82, 0)',
-	            	fontSize:'12',
+	            	fontSize:'15',
 	            }
 	        },
 	        tooltip: {
@@ -824,7 +831,7 @@ app.controller('BuildingController',
 	            text: '<b>Energy use breakdown</b>',
 	            style:{
 	            	color:'rgb(204, 82, 0)',
-	            	fontSize:'12',
+	            	fontSize:'15',
 	            }
 	        },
 	        tooltip: {
