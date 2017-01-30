@@ -780,13 +780,6 @@ app.controller('BuildingController',
 	            	fontSize:'12',
 	            }
 	        },
-/*	        subtitle: {
-	            text: '',
-	            style:{
-	            	color:'white',
-	            	fontSize:'10',
-	            }
-	        },*/
 	        tooltip: {
 	            pointFormat: '{series.name}: <b>{point.percentage:.1f}</b>'
 	        },
@@ -813,37 +806,74 @@ app.controller('BuildingController',
 	        series: [{
 	            name: 'Departments',
 	            colorByPoint: true,
-	            data: [/*{
-	                name: 'Microsoft Internet Explorer',
-	                y: 56.33
-	            }, {
-	                name: 'Chrome',
-	                y: 24.03,
-	                sliced: true,
-	                selected: true
-	            }, {
-	                name: 'Firefox',
-	                y: 10.38
-	            }, {
-	                name: 'Safari',
-	                y: 4.77
-	            }, {
-	                name: 'Opera',
-	                y: 0.91
-	            }, {
-	                name: 'Proprietary or Undetectable',
-	                y: 0.2
-	            }*/]
+	            data: []
+	        }]
+
+		}		
+
+		$rootScope.energyusagePieChartOptions = {
+	        chart: {
+	        	marginTop:0,
+	        	backgroundColor:null,
+	            plotBackgroundColor: null,
+	            plotBorderWidth: null,
+	            plotShadow: false,
+	            type: 'pie'
+	        },
+	        title: {
+	            text: '<b>Energy use breakdown</b>',
+	            style:{
+	            	color:'rgb(204, 82, 0)',
+	            	fontSize:'12',
+	            }
+	        },
+	        tooltip: {
+	            pointFormat: '{series.name}: <b>{point.percentage:.1f}</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	            	size: '20%',
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                dataLabels: {
+	                	padding:0,
+	                	allowOverlap: true,
+	                    enabled: true,
+	                    format: '<b>{point.name}</b>: {point.y}KwH',
+	                    style: {
+	                    	fontSize: 10,
+	                        color: 'white'
+	                    }
+	                }
+	            }
+	        },
+	        credits: { 
+	            enabled: false
+	        },
+	        series: [{
+	            name: 'Usages',
+	            colorByPoint: true,
+	            data: []
 	        }]
 
 		}
 
 		$rootScope.populationPieChartStyle = {
 			 	'position': 'absolute',
-				'top': '15%',
+				'top': '20%',
 				'left': '50%',
-				'width': '20%',
-				'height': '20%',
+				'width': '25%',
+				'height': '25%',
+				'margin':'0px',
+				'background-color': 'rgba(0,0,0,0)',
+		}		
+
+		$rootScope.energyusagePieChartStyle = {
+			 	'position': 'absolute',
+				'top': '20%',
+				'left': '30%',
+				'width': '25%',
+				'height': '25%',
 				'margin':'0px',
 				'background-color': 'rgba(0,0,0,0)',
 		}
@@ -866,6 +896,7 @@ app.controller('BuildingController',
 /*					$rootScope.populationPieChartStyle.left = width_perc_str; 
 					$rootScope.populationPieChartStyle.top = height_perc_str; */
 					$rootScope.populationPieChartOptions.series[0].data = $rootScope.bldgClicked.params.population; 
+					$rootScope.energyusagePieChartOptions.series[0].data = $rootScope.bldgClicked.params.energyUsage; 
 				}
 			}
 		});  

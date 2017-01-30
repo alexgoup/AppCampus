@@ -133,15 +133,15 @@ Building.prototype = {
                 y: Math.floor((Math.random() * 100) + 1), 
             },
             {
-                name: 'plugLoad',
+                name: 'Plug Load',
                 y: Math.floor((Math.random() * 100) + 1), 
             },
             {
-                name: 'lighting',
+                name: 'Lighting',
                 y: Math.floor((Math.random() * 100) + 1),
             },
             {
-                name: 'waterHeating',
+                name: 'Water Heating',
                 y: Math.floor((Math.random() * 100) + 1), 
             }
         ];
@@ -149,24 +149,24 @@ Building.prototype = {
     },
 
     populationModel: function(){
-        this.params.population = [
-            {
-                name: 'Engineering',
-                y: Math.floor((Math.random() * 100) + 1), 
-            },
-            {
-                name: 'Design',
-                y: Math.floor((Math.random() * 100) + 1), 
-            },
-            {
-                name: 'Computing',
-                y: Math.floor((Math.random() * 100) + 1), 
-            },
-            {
-                name: 'Sciences',
-                y: Math.floor((Math.random() * 100) + 1), 
+        if(this.params != undefined && this.params.populationtot != undefined && this.totalAssignedArea != undefined && this.departmentList != undefined){
+            this.params.population = []; 
+            for(var i=0; i<this.departmentList.length; i++){
+                var dep = this.departmentList[i]; 
+                var depname = dep.name; 
+                var area = dep.assignedArea; 
+                var area_ratio = area/this.totalAssignedArea;
+                if(depname != "TOTALS"){
+                    this.params.population.push({
+                        name: depname, 
+                        y: Math.floor(this.params.populationtot*area_ratio)
+                    })
+                }
+
+
             }
-        ];
+        }
+
     },
 
     tiltingParams: function(){

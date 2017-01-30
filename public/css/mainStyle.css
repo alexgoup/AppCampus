@@ -334,7 +334,22 @@ html, body {
 	background-color: rgba(0,0,0,0.2); 
 }*/
 
+/*#energyusagePieChart{
+ 	position: absolute;
+	top: 3.5%;
+	left: 50%;
+	width: 8%;
+	height: 8%;
+	margin:0px;
+	background-color: rgba(0,0,0,0.2); 
+}*/
+
 #populationPieChart > div > svg > g{
+	background-color: rgba(0,0,0,0.2); 
+	width: 100%;
+	height: 100%;
+}
+#energyusagePieChart > div > svg > g{
 	background-color: rgba(0,0,0,0.2); 
 	width: 100%;
 	height: 100%;

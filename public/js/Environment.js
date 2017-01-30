@@ -277,6 +277,9 @@ Environment.prototype = {
 		   					assignedArea: buildingsparamsbisJSON[j].assignedArea, 
 		   					roomSpaceCount: buildingsparamsbisJSON[j].roomSpaceCount, 
 		   				});  
+		   				if(buildingsparamsbisJSON[j].department == "TOTALS"){
+		   					bldgObj.totalAssignedArea = buildingsparamsbisJSON[j].assignedArea; 
+		   				}
 		   			}
 		   		}
 		   		this.currentBlist.push(bldgObj);
