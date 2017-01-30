@@ -861,9 +861,9 @@ app.controller('BuildingController',
 		$rootScope.populationPieChartStyle = {
 			 	'position': 'absolute',
 				'top': '20%',
-				'left': '50%',
+				'left': '45%',
 				'width': '25%',
-				'height': '25%',
+				'height': '20%',
 				'margin':'0px',
 				'background-color': 'rgba(0,0,0,0)',
 		}		
@@ -871,9 +871,9 @@ app.controller('BuildingController',
 		$rootScope.energyusagePieChartStyle = {
 			 	'position': 'absolute',
 				'top': '20%',
-				'left': '30%',
+				'left': '25%',
 				'width': '25%',
-				'height': '25%',
+				'height': '20%',
 				'margin':'0px',
 				'background-color': 'rgba(0,0,0,0)',
 		}

@@ -30,7 +30,8 @@ Environment = function(application) {
  	var $rootScope = injector.get('$rootScope'); 
  	this.scope = $rootScope; 
 
- 	scene.clearColor = new BABYLON.Color3(0, 0, 10/255);
+ 	scene.clearColor = new BABYLON.Color3(0, 0, 16/255);
+ 	/*scene.clearColor = new BABYLON.Color3(1,1,1);*/
     initBuildings(this);
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
     light.diffuse = new BABYLON.Color3(1, 1, 1);
@@ -40,7 +41,7 @@ Environment = function(application) {
 
     var materialGround = new BABYLON.StandardMaterial("groundTexture", scene);
    /* materialGround.emissiveTexture = new BABYLON.Texture("/img/campus_ground_resized.png", scene);*/
-    materialGround.diffuseTexture = new BABYLON.Texture("/img/campus_ground_resized_ps.png", scene);
+    materialGround.diffuseTexture = new BABYLON.Texture("/img/campus_ground_resized_fadeblue.png", scene);
 /*    materialGround.emissiveTexture.uScale = 1;
     materialGround.emissiveTexture.vScale = 1;*/
 
