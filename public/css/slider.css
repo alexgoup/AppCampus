@@ -24,7 +24,7 @@ slider div.bar, [slider] div.bar {
 slider div.bar .selection, [slider] div.bar .selection {
   width: 0%;
   height: 100%;
-  background: #13b6ff;
+  background: #274f4f;
 }
 /* line 28, slider.scss */
 slider div.handle, [slider] div.handle {

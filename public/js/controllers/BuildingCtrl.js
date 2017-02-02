@@ -91,6 +91,68 @@ app.controller('BuildingController',
         		$scope.footprintimg = "/img/logos/white-footprint.png"; 
         		/*$scope.footprintStyle = { "opacity" : "0.2" };*/
         	}
+    	};    	
+
+    	$scope.populationstate = true;
+		$scope.populationimg = $scope.populationstate ? "/img/logos/green-population.png" : "/img/logos/white-population.png"; 
+		
+	    $scope.togglepopulation = function() {
+        	$scope.populationstate = !$scope.populationstate;
+        	if($scope.populationstate){
+        		$scope.populationimg = "/img/logos/green-population.png";
+        		/*$scope.footprintStyle = { "opacity" : "1" };*/
+        	}
+        	else
+        	{
+        		$scope.populationimg = "/img/logos/white-population.png"; 
+        		/*$scope.footprintStyle = { "opacity" : "0.2" };*/
+        	}
+    	};
+
+    	$scope.buildingsstate = true;
+		$scope.buildingsimg = $scope.buildingsstate ? "/img/logos/orange-buildings.png" : "/img/logos/white-buildings.png"; 
+		
+	    $scope.togglebuildings = function() {
+        	$scope.buildingsstate = !$scope.buildingsstate;
+        	if($scope.buildingsstate){
+        		$scope.buildingsimg = "/img/logos/orange-buildings.png";
+        		if($rootScope.buildingsList != undefined){
+		        	for(var i=0; i<$rootScope.buildingsList.length;i++){ 
+		        		var building = $rootScope.buildingsList[i];
+		        		if(building.mesh != undefined){
+		        			building.mesh.isVisible = true; 
+		        		}
+		        	}
+		        }
+        	}
+        	else
+        	{
+        		$scope.buildingsimg = "/img/logos/white-buildings.png"; 
+        		if($rootScope.buildingsList != undefined){
+		        	for(var i=0; i<$rootScope.buildingsList.length;i++){ 
+		        		var building = $rootScope.buildingsList[i];
+		        		if(building.mesh != undefined){
+		        			building.mesh.isVisible = false; 
+		        		}
+		        	}
+		        }
+        	}
+    	};    	
+
+    	$scope.transportationstate = true;
+		$scope.transportationimg = $scope.transportationstate ? "/img/logos/orange-transportation.png" : "/img/logos/white-transportation.png"; 
+		
+	    $scope.toggletransportation = function() {
+        	$scope.transportationstate = !$scope.transportationstate;
+        	if($scope.transportationstate){
+        		$scope.transportationimg = "/img/logos/orange-transportation.png";
+        		
+        	}
+        	else
+        	{
+        		$scope.transportationimg = "/img/logos/white-transportation.png"; 
+        		
+        	}
     	};
     	/*$scope.footprintStyle = { "opacity" : "0.2" };*/
 

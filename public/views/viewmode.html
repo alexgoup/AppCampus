@@ -31,6 +31,21 @@
 							<img ng-src="{{footprintimg}}" class="buttonLogoImg" ng-click="togglefootprint()"/>
 						</div>
 					</a>
+					<a href="#">
+						<div id="populationButtonPanel">
+							<img ng-src="{{populationimg}}" class="buttonLogoImg" ng-click="togglepopulation()"/>
+						</div>
+					</a>					
+					<a href="#">
+						<div id="buildingsButtonPanel">
+							<img ng-src="{{buildingsimg}}" class="buttonLogoImg" ng-click="togglebuildings()"/>
+						</div>
+					</a>					
+					<a href="#">
+						<div id="transportationButtonPanel">
+							<img ng-src="{{transportationimg}}" class="buttonLogoImg" ng-click="toggletransportation()"/>
+						</div>
+					</a>
 					<div class="heatmapLegend">
 						<img src="/img/yellowtored_lgd_energy.png" ng-show="energyheatmapBool"/>
 					</div>
@@ -62,8 +77,11 @@
 							<h4 class="controlPanelHeaders"> <span> Construction cost </span> </h4>
 							<slider floor="0" ceiling="100" step="1" precision="2" ng-model-low="costLow" ng-model-high="costHigh" class="controlSlider"></slider>
 							<span class="plotchoiceSpans"> Min Cost: {{costLow}} M$  </span><br>
-							<span class="plotchoiceSpans"> Max Cost: {{costHigh}} M$ </span>
-							<div> <span class="plotchoiceSpans"> Heatmap </span> <input type="checkbox" ng-model="heatmapBool"></div>
+							<span class="plotchoiceSpans"> Max Cost: {{costHigh}} M$ </span><br>
+							<div id ="checkboxdiv">
+								<span class="plotchoiceSpans"> Heatmap </span> 
+								<input type="checkbox" ng-model="heatmapBool">
+							</div>
 						</div>
 
 						<div class="controlpanelSection" id="energycontrolpanelSection" ng-style="energyStyle" ng-show="energystate">
@@ -109,7 +127,7 @@
 					<rank-chart options="rankchartOptions" id="RankingPanel" ng-show="heatmapBool || footprintheatmapBool || energyheatmapBool || areaenergyheatmapBool">
 					</rank-chart>					
 
-					<pie-chart options="populationPieChartOptions" id="populationPieChart" ng-show="isBldgClicked" ng-style="populationPieChartStyle">
+					<pie-chart options="populationPieChartOptions" id="populationPieChart" ng-show="isBldgClicked && populationstate" ng-style="populationPieChartStyle">
 					</pie-chart>					
 
 					<pie-chart options="energyusagePieChartOptions" id="energyusagePieChart" ng-show="isBldgClicked && energystate" ng-style="energyusagePieChartStyle">
