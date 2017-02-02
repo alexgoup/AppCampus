@@ -76,11 +76,13 @@ html, body {
  .plotchoiceSpans { 
  	color:white;
  	margin-bottom:5px;
+ 	font-family: Verdana, Geneva, sans-serif;
   }
 
 .controlPanelHeaders { 
  	margin:5px;
- 	color:white;
+ 	color:#ebb027;
+ 	font-family: Verdana, Geneva, sans-serif;
   }
 
 .btn-group { 
@@ -414,8 +416,8 @@ html, body {
 #gt_logo {
 	position: absolute;
 	top: 3.5%;
-	left: 3%;
-	width: 11%;
+	left: 1%;
+	width: 15%;
 	height: auto;
 }
 
@@ -484,8 +486,12 @@ html, body {
 	
 }
 
+/*#buildingPanelTitle{
+	color:#ebb027;
+}*/
+
 /*#buildingPanelTitleSpan {
-	font-size: 30;
+	color:#ebb027;
 }*/
 
 

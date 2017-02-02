@@ -30,7 +30,7 @@ Environment = function(application) {
  	var $rootScope = injector.get('$rootScope'); 
  	this.scope = $rootScope; 
 
- 	scene.clearColor = new BABYLON.Color3(0, 0, 16/255);
+ 	scene.clearColor = new BABYLON.Color3(0, 0, 20/255);
  	/*scene.clearColor = new BABYLON.Color3(1,1,1);*/
     initBuildings(this);
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);

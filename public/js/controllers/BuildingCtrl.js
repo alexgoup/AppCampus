@@ -381,7 +381,7 @@ app.controller('BuildingController',
 					        title: {
 					            text: $scope.titleRankingChart,
 				                     style: {
-							             color: 'white',
+							             color: '#ebb027',
 							             font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
 							         }
 					        },
@@ -520,7 +520,7 @@ app.controller('BuildingController',
 					        title: {
 					            text: $scope.titleRankingChart,
 				                     style: {
-							             color: 'white',
+							             color: '#ebb027',
 							             font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
 							         }
 					        },
@@ -658,7 +658,7 @@ app.controller('BuildingController',
 					        title: {
 					            text: $scope.titleRankingChart,
 				                     style: {
-							             color: 'white',
+							             color: '#ebb027',
 							             font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
 							         }
 					        },
@@ -918,7 +918,7 @@ app.controller('BuildingController',
         title: {
             text: 'Select a building...',
          style: {
-             color: 'white',
+             color: '#ebb027',
              font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
          }
         },
@@ -985,7 +985,7 @@ app.controller('BuildingController',
         title: {
             text: 'Select a building...',
          style: {
-             color: 'white',
+             color: '#ebb027',
              font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
          }
         },
@@ -1052,7 +1052,7 @@ app.controller('BuildingController',
         title: {
             text: 'Select a building...',
          style: {
-             color: 'white',
+             color: '#ebb027',
              font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
          }
         },

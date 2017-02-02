@@ -1,7 +1,7 @@
 myapp.directive('descriptionpanelDirective', function(){ 
 return{
     restrict: 'E', // restrict to element
-    template: '<div class="panel-heading" id=buildingPanelHeading><h2 class="panel-title" id="buildingPanelTitle"> <span id="buildingPanelTitleSpan"> {{mouseOverBuildingName}} </span> </h2> </div> <div class="panel-body" id="buildingPanelBody" > <table class="table" id="paramstable"> <tr ng-repeat="param in currentparams"> <td>{{param.name}}</td> <td>{{param.value}}</td> </tr> </table> </div>',
+    template: '<div class="panel-heading" id=buildingPanelHeading><h2 class="panel-title" id="buildingPanelTitle" style="color:#ebb027"> <span id="buildingPanelTitleSpan" style="color:#ebb027; font-family: Verdana, Geneva, sans-serif;"> {{mouseOverBuildingName}} </span> </h2> </div> <div class="panel-body" id="buildingPanelBody" > <table class="table" id="paramstable"> <tr ng-repeat="param in currentparams"> <td>{{param.name}}</td> <td>{{param.value}}</td> </tr> </table> </div>',
     link: function(scope,element){ 
         element.dblclick(function() { 
 
