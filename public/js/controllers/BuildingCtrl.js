@@ -139,18 +139,29 @@ app.controller('BuildingController',
         	}
     	};    	
 
-    	$scope.transportationstate = true;
+    	$scope.transportationstate = false;
 		$scope.transportationimg = $scope.transportationstate ? "/img/logos/orange-transportation.png" : "/img/logos/white-transportation.png"; 
 		
 	    $scope.toggletransportation = function() {
         	$scope.transportationstate = !$scope.transportationstate;
         	if($scope.transportationstate){
         		$scope.transportationimg = "/img/logos/orange-transportation.png";
-        		
+        		if($rootScope.busesList != undefined){
+		        	for(var i=0; i<$rootScope.busesList.length;i++){ 
+		        		var busMesh = $rootScope.busesList[i];
+		        			busMesh.isVisible = true; 
+		        	}
+		        }
         	}
         	else
         	{
         		$scope.transportationimg = "/img/logos/white-transportation.png"; 
+        		if($rootScope.busesList != undefined){
+		        	for(var i=0; i<$rootScope.busesList.length;i++){ 
+		        		var busMesh = $rootScope.busesList[i];
+		        			busMesh.isVisible = false; 
+		        	}
+		        }
         		
         	}
     	};

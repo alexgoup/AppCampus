@@ -3,6 +3,7 @@ Environment = function(application) {
     var scene = application.scene;
     this.scene = scene;
     this.currentBlist = []; 
+    this.busMeshList = []; 
     this.Zlist = []; 
 
     this.hPlate = 0; 
@@ -377,6 +378,7 @@ Environment.prototype = {
 	busesPositionList: function(){
 		console.log(busespositionJSON);
 		var busModel = BABYLON.Mesh.CreateBox("busModel",1,this.scene);
+		busModel.isVisible = false; 
 		busModel.scaling.x = 6; 
 		busModel.scaling.y = 2; 
 		busModel.scaling.z = 2; 
@@ -395,9 +397,13 @@ Environment.prototype = {
 			busMesh.position =  new BABYLON.Vector3(busPosx,((1/2)*busMesh.scaling.y),busPosz);
 			busMesh.rotation.y = dir_angle; 
 			busMesh.material = this.materialRoads;
-			//shapeDisc.rotation.x = Math.PI/2;
+			if(!this.scope.transportationstate){
+				busMesh.isVisible = false; 
+			}
+			this.busMeshList.push(busMesh); 
 
 		}
+		this.scope.busesList = this.busMeshList;
 
 	},
 
