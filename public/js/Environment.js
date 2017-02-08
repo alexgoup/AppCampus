@@ -21,6 +21,24 @@ Environment = function(application) {
     this.camera = this.user.camera; 
 
 
+/*    console.log(geo2coord(33.7778988487049,-84.39238339662552).x/95.6571428571429);
+    console.log(geo2coord(33.7778988487049,-84.39238339662552).y/34.59365079365082);
+    console.log(geo2coord(33.77103253145226,-84.40280109643936).x/(-94.14117647058825));
+    console.log(geo2coord(33.77103253145226,-84.40280109643936).y/(-118.52941176470588));*/
+
+    /* Techwood and 6th
+     33.7778988487049;
+    -84.39240753650665;
+    x=95.6571428571429;
+    z=34.59365079365082*/ 
+
+     /* Tech way building
+     33.77103253145226;
+    -84.40280109643936;
+    x=-94.14117647058825;
+    z=-118.52941176470588*/
+
+
     var _this = this;
 
     var imgTexture_path = "/img/wood.jpg"
@@ -33,6 +51,8 @@ Environment = function(application) {
  	scene.clearColor = new BABYLON.Color3(0, 0, 20/255);
  	/*scene.clearColor = new BABYLON.Color3(1,1,1);*/
     initBuildings(this);
+    busesPosition(this);
+    /*initBusesRoads(this);*/
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
     light.diffuse = new BABYLON.Color3(1, 1, 1);
 	light.specular = new BABYLON.Color3(0, 0, 0);
@@ -54,7 +74,14 @@ Environment = function(application) {
 	materialBuilding.diffuseColor = new BABYLON.Color3(199/255,172/255,163/255);
 /*	materialBuilding.alpha = 0.9;*/
 	this.materialBuilding = materialBuilding;
-	this.scope.materialBuilding = materialBuilding;
+	this.scope.materialBuilding = materialBuilding;	
+
+	var materialRoads = new BABYLON.StandardMaterial("wallTexture", scene);
+/*	materialRoads.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); */
+	materialRoads.diffuseColor = new BABYLON.Color3(199/255,1/255,1/255);
+/*	materialRoads.alpha = 0.9;*/
+	this.materialRoads = materialRoads;
+	this.scope.materialRoads = materialRoads;
 
     var brightmaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
     /*brightmaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);*/
@@ -135,14 +162,14 @@ Environment = function(application) {
 	    function(evt, pickResult) {
 	        if (evt.source ) { 
 	            var meshClicked = evt.source; 
-	        	if (meshClicked != ground) { console.log(meshClicked.position);
+	        	if (meshClicked != ground) { console.log(meshClicked.position); console.log(meshClicked.getBoundingInfo().boundingBox.extendSize);
 		            var bldgClicked = meshClicked.building; 
 		            if(bldgClicked != _this.currentTarget){
 		            	if(_this.currentTarget != ""){ 
 		            		_this.currentTarget.animateState = 2; 
 		            		_this.currentTarget.desanimate(); 
 		            		/*_this.scene.registerBeforeRender(tiltDesanimate);*/
-		            	}
+		            	}	
 		            	bldgClicked.animateState = 1;
 			            bldgClicked.animate(); 
 			            _this.nextCurrentTarget = bldgClicked; 
@@ -251,6 +278,17 @@ function tilt(){
         
 }
 
+/*function coord2geo(x,y){
+	var lat_ = y+centerLat;  
+	var long_ = x/Math.cos(centerLat)+centerLong;  
+	return {
+		long : long_, 
+		lat : lat_
+	}
+}*/
+
+
+
 };
 
 Environment.prototype = {
@@ -316,6 +354,50 @@ Environment.prototype = {
 		   		}
 	    }
    		this.drawInitMeshes(); 
+
+	},
+
+	initBusesRoadsList: function(){
+		console.log(busesshapeJSON);
+		var shapeDisc = BABYLON.MeshBuilder.CreateDisc("discModel", {radius:0.75}, this.scene);
+		for(var k=0; k<busesshapeJSON.length; k++){
+			var shapeObj = busesshapeJSON[k]; 
+			var shapeLat = Number(shapeObj.shape_pt_lat);
+			var shapeLong = Number(shapeObj.shape_pt_lon);
+			var shapePosx = geo2coord(shapeLat,shapeLong).x; 
+			var shapePosz = geo2coord(shapeLat,shapeLong).y; 
+			discInstance = shapeDisc.clone("shapeDisc"+k); 
+			shapeDisc.position =  new BABYLON.Vector3(shapePosx,0,shapePosz);
+			shapeDisc.rotation.x = Math.PI/2;
+			
+		}
+
+	},	
+
+	busesPositionList: function(){
+		console.log(busespositionJSON);
+		var busModel = BABYLON.Mesh.CreateBox("busModel",1,this.scene);
+		busModel.scaling.x = 6; 
+		busModel.scaling.y = 2; 
+		busModel.scaling.z = 2; 
+		for(var k=0; k<busespositionJSON.length; k++){
+			var busObj = busespositionJSON[k]; 
+			var busLat = Number(busObj.lat);
+			var busLong = Number(busObj.lng);
+			var busLatDir = Number(busObj.plat);
+			var busLongDir = Number(busObj.plng);
+			var busPosx = geo2coord(busLat,busLong).x; 
+			var busPosz = geo2coord(busLat,busLong).y; 
+			var busPosxDir = geo2coord(busLatDir,busLongDir).x; 
+			var busPoszDir = geo2coord(busLatDir,busLongDir).y; 
+			var dir_angle = Math.atan2(busPoszDir - busPosz, busPosxDir - busPosx); 
+			var busMesh = busModel.clone("bus"+k); 
+			busMesh.position =  new BABYLON.Vector3(busPosx,((1/2)*busMesh.scaling.y),busPosz);
+			busMesh.rotation.y = dir_angle; 
+			busMesh.material = this.materialRoads;
+			//shapeDisc.rotation.x = Math.PI/2;
+
+		}
 
 	},
 
@@ -429,4 +511,18 @@ Environment.prototype = {
 function degToRad(deg)
 {
    return (Math.PI*deg)/180
+}
+
+function geo2coord(lat,long){
+    var centerLat = degToRad(33.7762891710934); 
+    var centerLong = degToRad(-84.39764186739922); 
+    var geoscale = 7.95*Math.pow(10,-7); 
+	lat = degToRad(lat); 
+	long = degToRad(long); 
+	var x_ = Math.cos(centerLat)*(long-centerLong)/geoscale; 
+	var y_ = (lat-centerLat)/geoscale;
+	return {
+	 	x: x_,
+	 	y: y_
+	} 
 }

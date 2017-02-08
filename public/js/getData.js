@@ -215,6 +215,23 @@ function initBuildings(environment) {
 
 
 }
+
+function initBusesRoads(environment) { 
+	rClient = new HttpClient();
+	rClient.get('http://m.gatech.edu/api/buses/shape', function(response) {
+    	busesshapeJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+	   	environment.initBusesRoadsList(); 
+	   })
+	}
+
+function busesPosition(environment) { 
+	pClient = new HttpClient();
+	pClient.get('http://m.gatech.edu/api/buses/position', function(response) {
+    	busespositionJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+	   	environment.busesPositionList(); 
+	   })
+}
+
 /*
 function initBuildingsMeshes(environment){
 
