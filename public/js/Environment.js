@@ -4,6 +4,17 @@ Environment = function(application) {
     this.scene = scene;
     this.currentBlist = []; 
     this.busMeshList = []; 
+    this.busList = []; 
+	this.shapeRoads = {
+		'redRoad': [],
+		'blueRoad': [],
+		'greenRoad': [],
+		'nullRoad': [],
+		'trolleyRoad': [],
+		'nightRoad': [],
+		'expressRoad': [],
+		'emoryRoad': [],
+	};
     this.Zlist = []; 
 
     this.hPlate = 0; 
@@ -52,8 +63,8 @@ Environment = function(application) {
  	scene.clearColor = new BABYLON.Color3(0, 0, 20/255);
  	/*scene.clearColor = new BABYLON.Color3(1,1,1);*/
     initBuildings(this);
+    initBusesRoads(this);
     busesPosition(this);
-    /*initBusesRoads(this);*/
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
     light.diffuse = new BABYLON.Color3(1, 1, 1);
 	light.specular = new BABYLON.Color3(0, 0, 0);
@@ -376,18 +387,40 @@ Environment.prototype = {
 
 	initBusesRoadsList: function(){
 		console.log(busesshapeJSON);
-		var shapeDisc = BABYLON.MeshBuilder.CreateDisc("discModel", {radius:0.75}, this.scene);
+		/*var shapeDisc = BABYLON.MeshBuilder.CreateDisc("discModel", {radius:0.75}, this.scene);*/
 		for(var k=0; k<busesshapeJSON.length; k++){
 			var shapeObj = busesshapeJSON[k]; 
 			var shapeLat = Number(shapeObj.shape_pt_lat);
 			var shapeLong = Number(shapeObj.shape_pt_lon);
 			var shapePosx = geo2coord(shapeLat,shapeLong).x; 
 			var shapePosz = geo2coord(shapeLat,shapeLong).y; 
-			discInstance = shapeDisc.clone("shapeDisc"+k); 
-			shapeDisc.position =  new BABYLON.Vector3(shapePosx,0,shapePosz);
-			shapeDisc.rotation.x = Math.PI/2;
+
+			var str_road = shapeObj.route_id + 'Road'; 
+			this.shapeRoads[str_road].push({
+				x : shapePosx, 
+				z : shapePosz, 
+			}); 
+
+
+
+
+/*			discInstance = shapeDisc.clone("shapeDisc"+k); 
+			discInstance.position =  new BABYLON.Vector3(shapePosx,0,shapePosz);
+			discInstance.rotation.x = Math.PI/2;
+			if(shapeObj.route_id == "red"){ 
+				discInstance.material = this.materialRed;
+			}
+			else if(shapeObj.route_id == "green"){
+				discInstance.material = this.materialGreen;
+			}
+			else if(shapeObj.route_id == "blue"){
+				discInstance.material = this.materialBlue;
+			}
+			else{
+				discInstance.material = this.materialYellow;
+			}*/
 			
-		}
+		} 
 
 	},	
 
@@ -426,8 +459,16 @@ Environment.prototype = {
 			var busPoszDir = geo2coord(busLatDir,busLongDir).y; 
 			var dir_angle = Math.atan2(busPoszDir - busPosz, busPosxDir - busPosx); 
 			var busMesh = busModel.clone("bus"+k); 
+			var bus = new Bus(busObj.id,busObj.route,this); 
+			bus.position = {
+				x: busPosx, 
+				z: busPosz, 
+			}
+			bus.road = this.shapeRoads[busObj.route + 'Road']; 
+			bus.getDirection(); 
+			bus.angle_from_previous = dir_angle; 
 			busMesh.position =  new BABYLON.Vector3(busPosx,0,busPosz);
-			busMesh.rotation.y = dir_angle; console.log(busObj.route);
+			busMesh.rotation.y = dir_angle;
 			if(busObj.route == "red"){ 
 				busMesh.material = this.materialRed;
 			}
@@ -443,8 +484,10 @@ Environment.prototype = {
 			if(!this.scope.transportationstate){
 				busMesh.isVisible = false; 
 			}
-			this.busMeshList.push(busMesh); 
 
+			bus.mesh = busMesh; 
+			this.busMeshList.push(busMesh); 
+			this.busList.push(bus); 
 		}
 		this.scope.busesList = this.busMeshList;
 
