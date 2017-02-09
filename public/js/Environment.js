@@ -77,12 +77,28 @@ Environment = function(application) {
 	this.materialBuilding = materialBuilding;
 	this.scope.materialBuilding = materialBuilding;	
 
-	var materialRoads = new BABYLON.StandardMaterial("wallTexture", scene);
-/*	materialRoads.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); */
-	materialRoads.diffuseColor = new BABYLON.Color3(199/255,1/255,1/255);
-/*	materialRoads.alpha = 0.9;*/
-	this.materialRoads = materialRoads;
-	this.scope.materialRoads = materialRoads;
+	var materialRed = new BABYLON.StandardMaterial("wallTexture", scene);
+/*	materialRed.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); */
+	materialRed.diffuseColor = new BABYLON.Color3(199/255,1/255,1/255);
+/*	materialRed.alpha = 0.9;*/
+	this.materialRed = materialRed;
+	this.scope.materialRed = materialRed;
+
+	var materialGreen = new BABYLON.StandardMaterial("wallTexture", scene);; 
+	materialGreen.diffuseColor = new BABYLON.Color3(1/255,200/255,1/255);
+	this.materialGreen = materialGreen;
+	this.scope.materialGreen = materialGreen;	
+
+	var materialBlue = new BABYLON.StandardMaterial("wallTexture", scene);; 
+	materialBlue.diffuseColor = new BABYLON.Color3(1/255,1/255,200/255);
+	this.materialBlue = materialBlue;
+	this.scope.materialBlue = materialBlue;	
+
+	var materialYellow = new BABYLON.StandardMaterial("wallTexture", scene);; 
+	materialYellow.diffuseColor = new BABYLON.Color3(240/255,240/255,1/255);
+	this.materialYellow = materialYellow;
+	this.scope.materialYellow = materialYellow;
+
 
     var brightmaterialBuilding = new BABYLON.StandardMaterial("wallTexture", scene); 
     /*brightmaterialBuilding.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene);*/
@@ -377,11 +393,27 @@ Environment.prototype = {
 
 	busesPositionList: function(){
 		console.log(busespositionJSON);
-		var busModel = BABYLON.Mesh.CreateBox("busModel",1,this.scene);
+		var busMeshesList = []; 
+		var busRectModel = BABYLON.Mesh.CreateBox("busRectModel",1,this.scene);
+		busRectModel.isVisible = false; 
+		busRectModel.scaling.x = 6; 
+		busRectModel.scaling.y = 2; 
+		busRectModel.scaling.z = 2; 
+		var wheelDiameter = busRectModel.scaling.z/3; 
+		busRectModel.position.y = (busRectModel.scaling.y/2 + wheelDiameter*0.6);
+		busMeshesList.push(busRectModel);
+		var wheelModel = BABYLON.Mesh.CreateCylinder("busWheel", busRectModel.scaling.z/8, wheelDiameter, wheelDiameter , 12, 4, this.scene);
+		wheelModel.isVisible = false; 
+		for(var j=1; j<5; j++){
+			var wheel = wheelModel.clone("wheel"+j); 
+			wheel.position.x = (j==1 || j==2) ? 1/3*busRectModel.scaling.x : -1/3*busRectModel.scaling.x;  
+			wheel.position.y = (1/2)*wheelDiameter;
+			wheel.position.z = (j==1 || j==3) ? 1/3*busRectModel.scaling.z : -1/3*busRectModel.scaling.z; 
+			wheel.rotation.x = Math.PI/2; 
+			busMeshesList.push(wheel); 
+		}
+		var busModel = BABYLON.Mesh.MergeMeshes(busMeshesList,true);
 		busModel.isVisible = false; 
-		busModel.scaling.x = 6; 
-		busModel.scaling.y = 2; 
-		busModel.scaling.z = 2; 
 		for(var k=0; k<busespositionJSON.length; k++){
 			var busObj = busespositionJSON[k]; 
 			var busLat = Number(busObj.lat);
@@ -394,9 +426,20 @@ Environment.prototype = {
 			var busPoszDir = geo2coord(busLatDir,busLongDir).y; 
 			var dir_angle = Math.atan2(busPoszDir - busPosz, busPosxDir - busPosx); 
 			var busMesh = busModel.clone("bus"+k); 
-			busMesh.position =  new BABYLON.Vector3(busPosx,((1/2)*busMesh.scaling.y),busPosz);
-			busMesh.rotation.y = dir_angle; 
-			busMesh.material = this.materialRoads;
+			busMesh.position =  new BABYLON.Vector3(busPosx,0,busPosz);
+			busMesh.rotation.y = dir_angle; console.log(busObj.route);
+			if(busObj.route == "red"){ 
+				busMesh.material = this.materialRed;
+			}
+			else if(busObj.route == "green"){
+				busMesh.material = this.materialGreen;
+			}
+			else if(busObj.route == "blue"){
+				busMesh.material = this.materialBlue;
+			}
+			else{
+				busMesh.material = this.materialYellow;
+			}
 			if(!this.scope.transportationstate){
 				busMesh.isVisible = false; 
 			}
