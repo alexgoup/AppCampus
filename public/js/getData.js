@@ -221,6 +221,7 @@ function initBusesRoads(environment) {
 	rClient.get('http://m.gatech.edu/api/buses/shape', function(response) {
     	busesshapeJSON = JSON && JSON.parse(response) || $.parseJSON(response);
 	   	environment.initBusesRoadsList(); 
+	   	busesPosition(environment); 
 	   })
 	}
 
@@ -228,7 +229,7 @@ function busesPosition(environment) {
 	pClient = new HttpClient();
 	pClient.get('http://m.gatech.edu/api/buses/position', function(response) {
     	busespositionJSON = JSON && JSON.parse(response) || $.parseJSON(response);
-	   	environment.busesPositionList(); 
+	   		environment.busesPositionList(); 
 	   })
 }
 

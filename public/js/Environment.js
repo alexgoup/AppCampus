@@ -9,12 +9,12 @@ Environment = function(application) {
 		'redRoad': [],
 		'blueRoad': [],
 		'greenRoad': [],
-		'nullRoad': [],
 		'trolleyRoad': [],
 		'nightRoad': [],
 		'expressRoad': [],
 		'emoryRoad': [],
 	};
+	this.shapeAllRoads = []; 
     this.Zlist = []; 
 
     this.hPlate = 0; 
@@ -64,7 +64,7 @@ Environment = function(application) {
  	/*scene.clearColor = new BABYLON.Color3(1,1,1);*/
     initBuildings(this);
     initBusesRoads(this);
-    busesPosition(this);
+    //busesPosition(this);
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
     light.diffuse = new BABYLON.Color3(1, 1, 1);
 	light.specular = new BABYLON.Color3(0, 0, 0);
@@ -387,15 +387,18 @@ Environment.prototype = {
 
 	initBusesRoadsList: function(){
 		console.log(busesshapeJSON);
-		/*var shapeDisc = BABYLON.MeshBuilder.CreateDisc("discModel", {radius:0.75}, this.scene);*/
+		
 		for(var k=0; k<busesshapeJSON.length; k++){
 			var shapeObj = busesshapeJSON[k]; 
 			var shapeLat = Number(shapeObj.shape_pt_lat);
 			var shapeLong = Number(shapeObj.shape_pt_lon);
 			var shapePosx = geo2coord(shapeLat,shapeLong).x; 
 			var shapePosz = geo2coord(shapeLat,shapeLong).y; 
-
 			var str_road = shapeObj.route_id + 'Road'; 
+			this.shapeAllRoads.push({
+				x : shapePosx, 
+				z : shapePosz, 
+			})
 			this.shapeRoads[str_road].push({
 				x : shapePosx, 
 				z : shapePosz, 
@@ -403,8 +406,8 @@ Environment.prototype = {
 
 
 
-
-/*			discInstance = shapeDisc.clone("shapeDisc"+k); 
+/*			var shapeDisc = BABYLON.MeshBuilder.CreateDisc("discModel", {radius:0.75}, this.scene);
+			discInstance = shapeDisc.clone("shapeDisc"+k); 
 			discInstance.position =  new BABYLON.Vector3(shapePosx,0,shapePosz);
 			discInstance.rotation.x = Math.PI/2;
 			if(shapeObj.route_id == "red"){ 
@@ -425,7 +428,6 @@ Environment.prototype = {
 	},	
 
 	busesPositionList: function(){
-		console.log(busespositionJSON);
 		var busMeshesList = []; 
 		var busRectModel = BABYLON.Mesh.CreateBox("busRectModel",1,this.scene);
 		busRectModel.isVisible = false; 
@@ -464,11 +466,16 @@ Environment.prototype = {
 				x: busPosx, 
 				z: busPosz, 
 			}
-			bus.road = this.shapeRoads[busObj.route + 'Road']; 
-			bus.getDirection(); 
 			bus.angle_from_previous = dir_angle; 
+			bus.allroads = this.shapeAllRoads; console.log(bus.allroads)
+			if(busObj.route != null){
+				bus.road = this.shapeRoads[busObj.route + 'Road']; 
+				bus.getDirection(); 
+			}
+			else{
+				busMesh.rotation.y = dir_angle;
+			}
 			busMesh.position =  new BABYLON.Vector3(busPosx,0,busPosz);
-			busMesh.rotation.y = dir_angle;
 			if(busObj.route == "red"){ 
 				busMesh.material = this.materialRed;
 			}
@@ -484,7 +491,12 @@ Environment.prototype = {
 			if(!this.scope.transportationstate){
 				busMesh.isVisible = false; 
 			}
-
+			else{
+				busMesh.isVisible = true; 
+			}
+			if(busObj.route != null){
+				busMesh.rotation.y = bus.angle; //calculated in the bus method getDirection() 
+			}
 			bus.mesh = busMesh; 
 			this.busMeshList.push(busMesh); 
 			this.busList.push(bus); 
