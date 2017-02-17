@@ -144,6 +144,7 @@ app.controller('BuildingController',
 		
 	    $scope.toggletransportation = function() {
         	$scope.transportationstate = !$scope.transportationstate;
+        	$rootScope.transportationstate = $scope.transportationstate;
         	if($scope.transportationstate){
         		$scope.transportationimg = "/img/logos/orange-transportation.png";
         		if($rootScope.busesList != undefined){

@@ -4,10 +4,12 @@ function Bus(id,route,environment) {
     this.route = route; 
     this.environment = environment; 
     this.position; 
+    this.previous_position; 
     this.mesh;
     this.road; 
     this.angle_from_previous; 
     this.angle; 
+    this.previous_angle; 
     this.allroads;
 
 
@@ -34,10 +36,7 @@ Bus.prototype = {
                 closerPoints.splice(1,1,roadPoint); 
             }
         } 
-        var angle = Math.atan2(closerPoints[0].z - closerPoints[1].z, closerPoints[0].x - closerPoints[1].x); if(this.id == "434"){console.log(closerPoints); console.log( "angle : " + angle); 
-        console.log(this.position);
-        console.log(this.angle_from_previous);
-    }
+        var angle = Math.atan2(closerPoints[0].z - closerPoints[1].z, closerPoints[0].x - closerPoints[1].x);
 /*        if(Math.abs(angle + Math.PI - this.angle_from_previous) < Math.abs(angle - this.angle_from_previous)){ 
             angle = angle + Math.PI; 
         }*/
@@ -45,4 +44,32 @@ Bus.prototype = {
         else{ this.angle = angle;}*/
         this.angle = angle; 
     },
+
+    animatePos: function(){
+        var prev_x = this.previous_position.x; 
+        var prev_z = this.previous_position.z; 
+        var new_x = this.position.x;
+        var new_z = this.position.z;
+        var new_angle = this.angle; 
+        var prev_angle = this.previous_angle; 
+        var xrate = Math.abs(prev_x-new_x)/500; 
+        var zrate = Math.abs(prev_z-new_z)/500; 
+        var anglerate = Math.abs(prev_angle-new_angle)/500; 
+        var xdir = (this.mesh.position.x - new_x) < 0 ? 1 : -1; 
+        var zdir = (this.mesh.position.z - new_z) < 0 ? 1 : -1; 
+        var angledir = (this.mesh.rotation.y - new_angle) < 0 ? 1 : -1; 
+        if(Math.abs(this.mesh.position.x - new_x) > 0.001){
+            this.mesh.position.x += xrate*xdir; 
+        }       
+        if(Math.abs(this.mesh.position.z - new_z) > 0.001){
+            this.mesh.position.z += zrate*zdir; 
+        }        
+        if(Math.abs(this.mesh.rotation.y - new_angle) > 0.001){
+            this.mesh.rotation.y += anglerate*angledir; 
+        }
+    if(Math.abs(this.mesh.position.x - new_x) < 0.001 && Math.abs(this.mesh.position.z - new_z) < 0.001 && Math.abs(this.mesh.rotation.y - new_angle) < 0.001){
+        _this.scene.unregisterAfterRender(animatePos);
+    }
+  
+    }
 }

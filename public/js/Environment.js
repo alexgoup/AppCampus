@@ -190,7 +190,7 @@ Environment = function(application) {
 	    function(evt, pickResult) {
 	        if (evt.source ) { 
 	            var meshClicked = evt.source; 
-	        	if (meshClicked != ground) { console.log(meshClicked.position); console.log(meshClicked.getBoundingInfo().boundingBox.extendSize);
+	        	if (meshClicked != ground) { 
 		            var bldgClicked = meshClicked.building; 
 		            if(bldgClicked != _this.currentTarget){
 		            	if(_this.currentTarget != ""){ 
@@ -448,6 +448,7 @@ Environment.prototype = {
 			busMeshesList.push(wheel); 
 		}
 		var busModel = BABYLON.Mesh.MergeMeshes(busMeshesList,true);
+		this.busModel = busModel;
 		busModel.isVisible = false; 
 		for(var k=0; k<busespositionJSON.length; k++){
 			var busObj = busespositionJSON[k]; 
@@ -460,14 +461,14 @@ Environment.prototype = {
 			var busPosxDir = geo2coord(busLatDir,busLongDir).x; 
 			var busPoszDir = geo2coord(busLatDir,busLongDir).y; 
 			var dir_angle = Math.atan2(busPoszDir - busPosz, busPosxDir - busPosx); 
-			var busMesh = busModel.clone("bus"+k); 
+			var busMesh = busModel.clone("bus"+busObj.id); 
 			var bus = new Bus(busObj.id,busObj.route,this); 
 			bus.position = {
 				x: busPosx, 
 				z: busPosz, 
 			}
 			bus.angle_from_previous = dir_angle; 
-			bus.allroads = this.shapeAllRoads; console.log(bus.allroads)
+			bus.allroads = this.shapeAllRoads; 
 			if(busObj.route != null){
 				bus.road = this.shapeRoads[busObj.route + 'Road']; 
 				bus.getDirection(); 
@@ -502,7 +503,91 @@ Environment.prototype = {
 			this.busList.push(bus); 
 		}
 		this.scope.busesList = this.busMeshList;
+		this.updatePosition(); 
+	},
 
+	updatePosition: function(){
+		var _this = this; 
+		if(_this.scope.transportationstate){
+			pClient = new HttpClient(); 
+			pClient.get('http://m.gatech.edu/api/buses/position', function(response) { 
+	    		busespositionJSON = JSON && JSON.parse(response) || $.parseJSON(response); console.log(busespositionJSON.length);
+				for(var k=0; k<busespositionJSON.length; k++){
+					var busObj = busespositionJSON[k]; 
+					var busLat = Number(busObj.lat);
+					var busLong = Number(busObj.lng);
+					var busLatDir = Number(busObj.plat);
+					var busLongDir = Number(busObj.plng);
+					var busPosx = geo2coord(busLat,busLong).x; 
+					var busPosz = geo2coord(busLat,busLong).y; 
+					var busPosxDir = geo2coord(busLatDir,busLongDir).x; 
+					var busPoszDir = geo2coord(busLatDir,busLongDir).y; 
+					var dir_angle = Math.atan2(busPoszDir - busPosz, busPosxDir - busPosx); 
+					var busRoute = busObj.route; 
+					var bus = _this.getBus(busObj.id,busObj.route); // create new bus object if bus not in initial list, else return bus with given id
+					bus.previous_angle = bus.angle; 
+					bus.previous_position = bus.position; 
+					bus.position = {
+						x: busPosx, 
+						z: busPosz, 
+					}
+					bus.angle_from_previous = dir_angle; 
+					if(busObj.route != null){
+						bus.road = _this.shapeRoads[busObj.route + 'Road']; 
+						bus.getDirection(); 
+					}
+					else{
+						bus.mesh.rotation.y = dir_angle;
+					}
+					bus.mesh.position =  new BABYLON.Vector3(busPosx,0,busPosz);
+					if(busObj.route != null){
+						bus.mesh.rotation.y = bus.angle; //calculated in the bus method getDirection() 
+					}
+					_this.scene.registerAfterRender(bus.animatePosition); 
+			}
+		   		 
+		   })
+		}
+
+		setTimeout(function(){_this.updatePosition()}, 10000); 
+	},
+
+	getBus: function(input_id,route){ 
+		for(var k=0; k<this.busList.length ; k++){
+			if(this.busList[k].id == input_id){
+				var busReturned = this.busList[k]; 
+				var busIsInList = true; 
+			}
+		}
+		if(busIsInList){
+			return busReturned; 
+		}
+		else{ //create new bus
+			var bus = new Bus(input_id,route,this); 
+			var busMesh = busModel.clone("bus"+input_id); 
+			if(busObj.route == "red"){ 
+				busMesh.material = this.materialRed;
+			}
+			else if(busObj.route == "green"){
+				busMesh.material = this.materialGreen;
+			}
+			else if(busObj.route == "blue"){
+				busMesh.material = this.materialBlue;
+			}
+			else{
+				busMesh.material = this.materialYellow;
+			}
+			if(!this.scope.transportationstate){
+				busMesh.isVisible = false; 
+			}
+			else{
+				busMesh.isVisible = true; 
+			}
+			bus.mesh = busMesh; 
+			this.busMeshList.push(busMesh);
+			this.busList.push(bus); 
+			return bus;
+		}
 	},
 
 	drawInitMeshes: function(){
