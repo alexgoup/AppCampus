@@ -1,11 +1,28 @@
+<div class="panel panel-default" id="loadScenarioPanel" > 
+	<h4 class="controlPanelHeaders"> <span> Load a scenario </span> </h4>
+	<span class="plotchoiceSpans"> Please select a scenario to load :</span>
+	<select ng-model="currentScenario" >
+		<option ng-repeat="x in scenarioList" value="{{x.name}}">{{x.name}}</option>
+	</select>
+	<button ng-click="loadScenario()"> Load </button>
+	<button ng-click="deleteScenario()"> Delete </button>
+</div>
+
+<div class="panel panel-default" id="saveScenarioPanel" > 
+	<h4 class="controlPanelHeaders"> <span> Save the current scenario </span> </h4>
+	<input type="text" name="input" ng-model="saveScenarioName" placeholder="Scenario name...">
+	<button ng-click="saveScenario()"> Save </button>
+</div>
+
 <div class="panel panel-default" id="editbuildingPanel" > 
-	<h4 class="controlPanelHeaders"> <span> Edit the chosen building :  </span> </h4>
-	<span class="plotchoiceSpans"> Build Date: {{buildDate}}</span>
-	<slider floor="1900" ceiling="2017" step="1" precision="1" ng-model="buildDate" class="controlSlider"></slider>	
-	<span class="plotchoiceSpans"> Renovation Date: {{renovationDate}}</span>
-	<slider floor="{{buildDate}}" ceiling="2017" step="1" precision="1" ng-model="renovationDate" class="controlSlider"></slider>	
-	<span class="plotchoiceSpans"> Cost: {{cost}}</span>
-	<slider floor="0" ceiling="100000000" step="1000" precision="1" ng-model="cost" class="controlSlider"></slider>	
-	<span class="plotchoiceSpans"> Material : (Dropdown list)</span>
-	<span class="plotchoiceSpans"> Energy usage: piechart to change</span>
+	<h4 class="controlPanelHeaders"> <span> {{editPanelTitle}}  </span> </h4>
+	<span class="plotchoiceSpans"> Build Date: {{currentBuiltDate}}</span>
+	<slider floor="1900" ceiling="2017" step="1" precision="1" ng-model="currentBuiltDate" class="controlSlider"></slider>	
+	<span class="plotchoiceSpans"> Renovation Date: {{currentRenovDate}}</span>
+	<slider floor="{{currentBuiltDate}}" ceiling="2017" step="1" precision="1" ng-model="currentRenovDate" class="controlSlider"></slider>	
+	<span class="plotchoiceSpans"> Material </span>
+	<select ng-model="currentMaterialBuilding" >
+		<option ng-repeat="x in matBuildingList" value="{{x}}">{{x}}</option>
+	</select>
+	<button ng-click="saveBuildingParams()"> Save parameters </button>
 </div>

@@ -41,7 +41,7 @@
         .state('edit', {
             url: '/editmode',
             templateUrl: 'views/editmode.html',
-            controller: 'BuildingController'
+            controller: 'EditController'
         })
 
 

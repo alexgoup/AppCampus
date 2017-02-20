@@ -189,57 +189,107 @@ Environment = function(application) {
 	    BABYLON.ActionManager.OnPickTrigger,
 	    function(evt, pickResult) {
 	        if (evt.source ) { 
-	            var meshClicked = evt.source; 
-	        	if (meshClicked != ground) { 
-		            var bldgClicked = meshClicked.building; 
-		            if(bldgClicked != _this.currentTarget){
-		            	if(_this.currentTarget != ""){ 
-		            		_this.currentTarget.animateState = 2; 
-		            		_this.currentTarget.desanimate(); 
-		            		/*_this.scene.registerBeforeRender(tiltDesanimate);*/
-		            	}	
-		            	bldgClicked.animateState = 1;
-			            bldgClicked.animate(); 
-			            _this.nextCurrentTarget = bldgClicked; 
-			            _this.scene.registerAfterRender(tilt);
-			            /*_this.scene.registerBeforeRender(tiltAnimate);*/
-			            getMonthly(bldgClicked,false); 
-				        _this.scope.$apply(function(){ 
-				        	_this.scope.currentEvt = evt; 
-				        	_this.scope.isBldgClicked = true;
-				        	_this.scope.bldgClicked = bldgClicked; 
-				        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
-				        	if(bldgClicked.params != undefined){
-					            _this.scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
-					            _this.scope.currentparams[1].value = bldgClicked.params.bArchitect == "" ? "No information available" : bldgClicked.params.bArchitect;  
-					            _this.scope.currentparams[2].value = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
-					            _this.scope.currentparams[3].value = bldgClicked.params.bContractor == "" ? "No information available" : bldgClicked.params.bContractor;  
-					            _this.scope.currentparams[4].value = bldgClicked.params.bCost == "" ? "No information available" : bldgClicked.params.bCost;  
-					            _this.scope.currentparams[5].value = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
-					            _this.scope.currentparams[6].value = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType;  
-					            _this.scope.currentparams[7].value = bldgClicked.params.namedAfter == "" ? "No information available" : bldgClicked.params.namedAfter; 	        		
-				        	}
-				        	else{
-				        		for(var i=0; i<_this.scope.currentparams.length; i++){
-				        			_this.scope.currentparams[i].value = "No information available";
-				        		}
-				        	}
-		 
-				        });
-		            }
+	        	if(_this.scope.viewmode){
+		            var meshClicked = evt.source; 
+		        	if (meshClicked != ground) { 
+			            var bldgClicked = meshClicked.building; 
+			            if(bldgClicked != _this.currentTarget){
+			            	if(_this.currentTarget != ""){ 
+			            		_this.currentTarget.animateState = 2; 
+			            		_this.currentTarget.desanimate(); 
+			            		/*_this.scene.registerBeforeRender(tiltDesanimate);*/
+			            	}	
+			            	bldgClicked.animateState = 1;
+				            bldgClicked.animate(); 
+				            _this.nextCurrentTarget = bldgClicked; 
+				            _this.scene.registerAfterRender(tilt);
+				            /*_this.scene.registerBeforeRender(tiltAnimate);*/
+				            getMonthly(bldgClicked,false); 
+					        _this.scope.$apply(function(){ 
+					        	_this.scope.currentEvt = evt; 
+					        	_this.scope.isBldgClicked = true;
+					        	_this.scope.bldgClicked = bldgClicked; 
+					        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
+					        	if(bldgClicked.params != undefined){
+						            _this.scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
+						            _this.scope.currentparams[1].value = bldgClicked.params.bArchitect == "" ? "No information available" : bldgClicked.params.bArchitect;  
+						            _this.scope.currentparams[2].value = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
+						            _this.scope.currentparams[3].value = bldgClicked.params.bContractor == "" ? "No information available" : bldgClicked.params.bContractor;  
+						            _this.scope.currentparams[4].value = bldgClicked.params.bCost == "" ? "No information available" : bldgClicked.params.bCost;  
+						            _this.scope.currentparams[5].value = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
+						            _this.scope.currentparams[6].value = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType;  
+						            _this.scope.currentparams[7].value = bldgClicked.params.namedAfter == "" ? "No information available" : bldgClicked.params.namedAfter; 	
+					        	}
+					        	else{
+					        		for(var i=0; i<_this.scope.currentparams.length; i++){
+					        			_this.scope.currentparams[i].value = "No information available";
+					        		}
+					        	}
+			 
+					        });
+			            }
 
+		        	}
+		        	else{ 
+		        		 _this.scope.$apply(function(){ 
+		        		 	_this.scope.bldgClicked = ground; 
+		        		 	_this.scope.isBldgClicked = false; 
+	        		 	});
+		        		if(_this.currentTarget != ""){ 
+		        			_this.scene.registerAfterRender(detilt);
+		        			_this.currentTarget.animateState = 2;
+		        			_this.currentTarget.desanimate();
+		        		}
+		        	}
 	        	}
-	        	else{ 
-	        		 _this.scope.$apply(function(){ 
-	        		 	_this.scope.bldgClicked = ground; 
-	        		 	_this.scope.isBldgClicked = false; 
-        		 	});
-	        		if(_this.currentTarget != ""){ 
-	        			_this.scene.registerAfterRender(detilt);
-	        			_this.currentTarget.animateState = 2;
-	        			_this.currentTarget.desanimate();
-	        		}
+	        	else{
+		            var meshClicked = evt.source; 
+		        	if (meshClicked != ground) { 
+			            var bldgClicked = meshClicked.building; 
+			            if(bldgClicked != _this.currentTarget){
+			            	if(_this.currentTarget != ""){ 
+			            		_this.currentTarget.animateState = 2; 
+			            		_this.currentTarget.desanimate(); 
+			            	}	
+			            	bldgClicked.animateState = 1;
+				            bldgClicked.animate(); 
+				            _this.nextCurrentTarget = bldgClicked; 
+					        _this.scope.$apply(function(){ 
+					        	_this.scope.currentEvt = evt; 
+					        	_this.scope.isBldgClicked = true;
+					        	_this.scope.bldgClicked = bldgClicked; 
+					        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
+					        	if(bldgClicked.params != undefined){
+						            _this.scope.currentBuiltDate = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
+						            _this.scope.currentRenovDate = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
+						            _this.scope.currentMaterialBuilding = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType == "Steel or Concrete" ? "Steel/Concrete" : bldgClicked.params.bType == "Wood Frame/Brick (perm)" ? "Wood Frame/Brick" : bldgClicked.params.bType == "Heavy Timber or Laminate" ? "Heavy Timber/Laminate" : bldgClicked.params.bType == "Metal Building (perm)" ? "Metal" : "Other"; 
+						            _this.scope.currentMaterialIndex = bldgClicked.params.bType == "" ? undefined : bldgClicked.params.bType == "Steel or Concrete" ? 0 : bldgClicked.params.bType == "Wood Frame/Brick (perm)" ? 2 : bldgClicked.params.bType == "Heavy Timber or Laminate" ? 1 : bldgClicked.params.bType == "Metal Building (perm)" ? 3 : -1; 
+						            _this.scope.editPanelTitle = "Edit the chosen building...";
+        		
+					        	}
+					        	else{
+					        			_this.scope.currentBuiltDate =  "No information available";  
+							            _this.scope.currentRenovDate = "No information available";  
+							            _this.scope.currentMaterialBuilding = "No information available";
+					        	}
+			 
+					        });
+			            }
+
+		        	}
+		        	else{ 
+		        		 _this.scope.$apply(function(){ 
+		        		 	_this.scope.editPanelTitle = "Please select a building to edit";
+		        		 	_this.scope.bldgClicked = ground; 
+		        		 	_this.scope.isBldgClicked = false; 
+	        		 	});
+		        		if(_this.currentTarget != ""){ 
+		        			_this.currentTarget.animateState = 2;
+		        			_this.currentTarget.desanimate();
+		        		}
+		        	}
 	        	}
+
 
 
 
@@ -386,7 +436,6 @@ Environment.prototype = {
 	},
 
 	initBusesRoadsList: function(){
-		console.log(busesshapeJSON);
 		
 		for(var k=0; k<busesshapeJSON.length; k++){
 			var shapeObj = busesshapeJSON[k]; 
@@ -686,8 +735,10 @@ Environment.prototype = {
 			this.currentBlist[i].energyusageModel(); 
 			this.currentBlist[i].tiltingParams(); 
 		}
-
-		this.scope.buildingsList = this.currentBlist;
+		var _this = this;
+		_this.scope.$apply(function(){ 
+			_this.scope.buildingsList = _this.currentBlist;
+		});
 		/*console.log(this.currentBlist)*/
 	},
 

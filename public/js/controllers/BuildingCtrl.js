@@ -1,7 +1,7 @@
 var app = angular.module('BuildingCtrl', ['MainService']);
 
 app.controller('BuildingController', 
-	function($scope,$rootScope){ 
+	function($scope,$rootScope){ console.log("starting bldg ctrl")
 		var max_cost = 100; //Millions of dollars
 		var min_cost = 0;
 		var min_energy = 0;
@@ -20,6 +20,7 @@ app.controller('BuildingController',
 
 		$rootScope.isBldgClicked = false; 
 	/*	$rootScope.bldgClicked = ""; */
+		$rootScope.viewmode = true; 
 
 		$scope.toggleEnergyGraph = function() {
 			if($scope.showEnergyGraph){

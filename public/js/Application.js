@@ -17,6 +17,7 @@ Application = function(canvasId) {
 
     var _user = new User(_this, canvas);
     this.user = _user; 
+    console.log("stating new Environment...")
 
     var _environment = new Environment(_this);
 
