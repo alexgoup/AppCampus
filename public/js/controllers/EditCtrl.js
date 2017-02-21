@@ -18,7 +18,7 @@ app.controller('EditController',
         $rootScope.$watchGroup(['currentBuiltDate','currentRenovDate','currentMaterialBuilding','editPanelTitle'], function(newValues,oldValues,scope) {  
         	$scope.currentBuiltDate = newValues[0];
         	$scope.currentRenovDate = newValues[1];
-        	$scope.currentMaterialBuilding = newValues[2];
+        	$scope.currentMaterialBuilding = newValues[2]; console.log(newValues[2]);
         }); 
 
 /*        $scope.$watch('currentBuiltDate', function() { 
@@ -37,16 +37,19 @@ app.controller('EditController',
 
         $scope.currentScenario = $rootScope.scenarioList[0]; 
 
-        $rootScope.loadScenario = function() { 
+        $rootScope.loadScenario = function() {
         	for(var k=0; k<$rootScope.scenarioList.length; k++){
-        		if($rootScope.scenarioList[k].name == $scope.chosenScenario.name){
-        			var ind = k; 
+        		if($rootScope.scenarioList[k].name == $scope.chosenScenario){
+        			var ind = k; console.log("loaded scenario has been founded in the list!")
         		}
         	}
         	$scope.currentScenario = $rootScope.scenarioList[ind]; 
         	for(var k=0; k<$rootScope.buildingsList.length; k++){ // loop on scene meshes to update building info.
-        		var mesh = $rootScope.buildingsList[k].mesh; 
-        		mesh.building = $scope.currentScenario.buildingsList[k]; // CHECK INDICES IF NEW MESHES CREATED  
+        		var mesh = $rootScope.buildingsList[k].mesh; //some of the buildings dont have meshes ie are not in the scene!
+        		if(mesh != undefined){
+	        		mesh.building = $scope.currentScenario.buildingsList[k]; // CHECK INDICES IF NEW MESHES CREATED  
+        		}
+
 
         	}
         	console.log("Loading scenario " + $rootScope.scenarioList[ind].name + '...'); 
@@ -75,6 +78,8 @@ app.controller('EditController',
         		}
         	} console.log(ind);
         	$rootScope.editableBuildingsList[ind].params.bBuilt = $scope.currentBuiltDate;
+        	$rootScope.editableBuildingsList[ind].params.bRenov = $scope.currentRenovDate;
+        	$rootScope.editableBuildingsList[ind].params.bType = $scope.currentMaterialBuilding;
         	$rootScope.buildingsList[ind].mesh.building = $rootScope.editableBuildingsList[ind]; // update DISPLAYED building. IF NEW MESH PAY ATTENTION TO INDICES
         	console.log($rootScope.buildingsList);
         	console.log($rootScope.editableBuildingsList);

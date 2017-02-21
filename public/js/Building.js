@@ -29,7 +29,7 @@ function Building(id,name,bClass,environment) {
 
 Building.prototype = {
     
-    animate: function(){ 
+    animate: function(){ console.log("here")
           var _this = this; 
           if(_this.firstTimeAnimate){
                  _this.environment.scene.registerAfterRender(function () { 
