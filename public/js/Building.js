@@ -177,5 +177,14 @@ Building.prototype = {
             this.params.tiltingBeta = a*zpos + b; 
             this.params.tiltingAlpha = 4.693; 
         }
+    },
+
+    copy: function(){
+        var newbldg = new Building(this.id,this.name,this.bClass,this.environment); 
+         for (var attr in this) {
+        if (this.hasOwnProperty(attr)) newbldg[attr] = this[attr];
+    }
+
+    return newbldg; 
     }
 }

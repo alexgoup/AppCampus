@@ -5,45 +5,80 @@ app.controller('EditController',
 		console.log("starting edit ctrl"); 
 		$rootScope.viewmode = false;
 		$rootScope.editPanelTitle = "Please select a building..."
-		$rootScope.currentBuiltDate =  "";  
-        $rootScope.currentRenovDate = "";  
-        $rootScope.currentMaterialBuilding = "";
+		$rootScope.editableBuiltDate =  "";  
+        $rootScope.editableRenovDate = "";  
+        $rootScope.editableMaterialBuilding = "";
         $rootScope.matBuildingList = ["Steel/Concrete" , "Heavy Timber/Laminate" , "Wood Frame/Brick" , "Metal"]; 
-        $scope.$watch('currentMaterialBuilding', function() { 
-        	console.log("detected");
-        })
 
+
+/*        $rootScope.$watch('currentBuiltDate', function() { 
+        	console.log("currentBuiltDate rootscope has changed ")
+        });   */   
+
+        $rootScope.$watchGroup(['currentBuiltDate','currentRenovDate','currentMaterialBuilding','editPanelTitle'], function(newValues,oldValues,scope) {  
+        	$scope.currentBuiltDate = newValues[0];
+        	$scope.currentRenovDate = newValues[1];
+        	$scope.currentMaterialBuilding = newValues[2];
+        }); 
+
+/*        $scope.$watch('currentBuiltDate', function() { 
+        	console.log("currentBuiltDate scope has changed ")
+        }); */
+        //$scope.currentBuiltDate = $rootScope.currentBuiltDate;
+
+        $rootScope.buildingsList;
+        $rootScope.editableBuildingsList;
         $rootScope.scenarioList = [
         {
         	name : "Initial Campus", 
-        	buildingList : $rootScope.buildingsList, 
+        	buildingsList : $rootScope.buildingsList, 
         }
         ]; 
 
-        $rootScope.currentScenario = $rootScope.scenarioList[0]; //baseline scenario campus
+        $scope.currentScenario = $rootScope.scenarioList[0]; 
 
         $rootScope.loadScenario = function() { 
-        	console.log("Loading scenario " + $rootScope.currentScenario.name + '...'); 
-        };         
-
-        $rootScope.deleteScenario = function() { 
-        	console.log("Deleting scenario " + $rootScope.currentScenario.name + '...'); 
-        };        
-
-        $rootScope.saveScenario = function() { 
-        	console.log("Saving scenario " + $rootScope.currentScenario.name + '...'); 
-        };
-
-/*        $rootScope.saveBuildingParams = function(){
-        	for(var k=0; k<$rootScope.currentScenario.buildingList.length; k++){
-        		if($rootScope.currentScenario.buildingList[k].id == $rootScope.bldgClicked.id){
+        	for(var k=0; k<$rootScope.scenarioList.length; k++){
+        		if($rootScope.scenarioList[k].name == $scope.chosenScenario.name){
         			var ind = k; 
         		}
         	}
-        	$rootScope.currentScenario.buildingList[ind].params.bBuilt = $rootScope.currentBuiltDate;
-        	console.log(ind);
+        	$scope.currentScenario = $rootScope.scenarioList[ind]; 
+        	for(var k=0; k<$rootScope.buildingsList.length; k++){ // loop on scene meshes to update building info.
+        		var mesh = $rootScope.buildingsList[k].mesh; 
+        		mesh.building = $scope.currentScenario.buildingsList[k]; // CHECK INDICES IF NEW MESHES CREATED  
+
+        	}
+        	console.log("Loading scenario " + $rootScope.scenarioList[ind].name + '...'); 
+        };         
+
+        $rootScope.deleteScenario = function() { 
+        	console.log("Deleting scenario " + $rootScope.editableScenario.name + '...'); 
+        };        
+
+        $rootScope.saveScenario = function() { 
+        	var copylist = [];
+			for(var k=0; k<$rootScope.editableBuildingsList.length;k++){
+				copylist.push(jQuery.extend(true, {}, $rootScope.editableBuildingsList[k])) ;
+			}
+			$rootScope.scenarioList.push({
+				name: $scope.saveScenarioName, 
+				buildingsList: copylist, 
+			}); 
+        	console.log("Saving scenario " + $scope.saveScenarioName + '...'); 
+        };
+
+        $rootScope.saveBuildingParams = function(){
+        	for(var k=0; k<$rootScope.editableBuildingsList.length; k++){ 
+        		if($rootScope.editableBuildingsList[k].id == $rootScope.bldgClicked.id){
+        			var ind = k; console.log("founded")
+        		}
+        	} console.log(ind);
+        	$rootScope.editableBuildingsList[ind].params.bBuilt = $scope.currentBuiltDate;
+        	$rootScope.buildingsList[ind].mesh.building = $rootScope.editableBuildingsList[ind]; // update DISPLAYED building. IF NEW MESH PAY ATTENTION TO INDICES
         	console.log($rootScope.buildingsList);
-        }*/
+        	console.log($rootScope.editableBuildingsList);
+        }
 
 
 	}

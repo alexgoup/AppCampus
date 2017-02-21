@@ -210,7 +210,7 @@ Environment = function(application) {
 					        	_this.scope.isBldgClicked = true;
 					        	_this.scope.bldgClicked = bldgClicked; 
 					        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
-					        	if(bldgClicked.params != undefined){
+					        	if(bldgClicked.params != undefined){ 
 						            _this.scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
 						            _this.scope.currentparams[1].value = bldgClicked.params.bArchitect == "" ? "No information available" : bldgClicked.params.bArchitect;  
 						            _this.scope.currentparams[2].value = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
@@ -246,7 +246,7 @@ Environment = function(application) {
 		            var meshClicked = evt.source; 
 		        	if (meshClicked != ground) { 
 			            var bldgClicked = meshClicked.building; 
-			            if(bldgClicked != _this.currentTarget){
+			            if(bldgClicked != _this.currentTarget){ 
 			            	if(_this.currentTarget != ""){ 
 			            		_this.currentTarget.animateState = 2; 
 			            		_this.currentTarget.desanimate(); 
@@ -259,7 +259,7 @@ Environment = function(application) {
 					        	_this.scope.isBldgClicked = true;
 					        	_this.scope.bldgClicked = bldgClicked; 
 					        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
-					        	if(bldgClicked.params != undefined){
+					        	if(bldgClicked.params != undefined){ 
 						            _this.scope.currentBuiltDate = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
 						            _this.scope.currentRenovDate = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
 						            _this.scope.currentMaterialBuilding = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType == "Steel or Concrete" ? "Steel/Concrete" : bldgClicked.params.bType == "Wood Frame/Brick (perm)" ? "Wood Frame/Brick" : bldgClicked.params.bType == "Heavy Timber or Laminate" ? "Heavy Timber/Laminate" : bldgClicked.params.bType == "Metal Building (perm)" ? "Metal" : "Other"; 
@@ -736,10 +736,18 @@ Environment.prototype = {
 			this.currentBlist[i].tiltingParams(); 
 		}
 		var _this = this;
+		var copylist = []; 
+		for(var k=0; k<_this.currentBlist.length;k++){
+				//copylist.push(_this.currentBlist[k].copy());
+				copylist.push(jQuery.extend(true, {}, _this.currentBlist[k])) ;
+		}
 		_this.scope.$apply(function(){ 
-			_this.scope.buildingsList = _this.currentBlist;
+			_this.scope.buildingsList = _this.currentBlist; 
+			_this.scope.editableBuildingsList = copylist;
+			_this.scope.scenarioList[0].buildingsList = _this.currentBlist; //initial campus
 		});
 		/*console.log(this.currentBlist)*/
+
 	},
 
 

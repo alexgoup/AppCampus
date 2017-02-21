@@ -1,7 +1,11 @@
+<div class="panel panel-default" id="titleScenarioPanel" > 
+	<h4 class="controlPanelHeaders"> <span> {{currentScenario.name}} </span> </h4>
+</div>
+
 <div class="panel panel-default" id="loadScenarioPanel" > 
 	<h4 class="controlPanelHeaders"> <span> Load a scenario </span> </h4>
 	<span class="plotchoiceSpans"> Please select a scenario to load :</span>
-	<select ng-model="currentScenario" >
+	<select ng-model="chosenScenario" >
 		<option ng-repeat="x in scenarioList" value="{{x.name}}">{{x.name}}</option>
 	</select>
 	<button ng-click="loadScenario()"> Load </button>
