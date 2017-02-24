@@ -3,6 +3,7 @@ var app = angular.module('EditCtrl', []);
 app.controller('EditController', 
 	function($scope,$rootScope){
 		console.log("starting edit ctrl"); 
+		$rootScope.transportationstate = false; 
 		$rootScope.viewmode = false;
 		$rootScope.editPanelTitle = "Please select a building..."
 		$rootScope.editableBuiltDate =  "";  
@@ -28,12 +29,18 @@ app.controller('EditController',
 
         $rootScope.buildingsList;
         $rootScope.editableBuildingsList;
-        $rootScope.scenarioList = [
-        {
-        	name : "Initial Campus", 
-        	buildingsList : $rootScope.buildingsList, 
+
+        if($rootScope.firstrender){ 
+	        $rootScope.scenarioList = [
+		        {
+		        	name : "Initial Campus", 
+		        	buildingsList : $rootScope.buildingsList, 
+		        }
+	        ]; 
+	        $rootScope.firstrender = false; 
         }
-        ]; 
+
+
 
         $scope.currentScenario = $rootScope.scenarioList[0]; 
 
@@ -64,25 +71,37 @@ app.controller('EditController',
 			for(var k=0; k<$rootScope.editableBuildingsList.length;k++){
 				copylist.push(jQuery.extend(true, {}, $rootScope.editableBuildingsList[k])) ;
 			}
-			$rootScope.scenarioList.push({
-				name: $scope.saveScenarioName, 
-				buildingsList: copylist, 
-			}); 
+			var scenarioNameAlreadyExists = false; 
+			for(var j=0; j<$rootScope.scenarioList.length; j++){
+				if($scope.saveScenarioName == $rootScope.scenarioList[j].name){
+					var scenarioNameAlreadyExists = true; 
+				}
+			}
+			if(!scenarioNameAlreadyExists){
+				$rootScope.scenarioList.push({
+					name: $scope.saveScenarioName, 
+					buildingsList: copylist, 
+				}); 
+				$scope.saveScenarioName = ""; 
+			}
+			else{
+				alert("This scenario name already exists in the scenario list!");
+			}
+
         	console.log("Saving scenario " + $scope.saveScenarioName + '...'); 
         };
 
         $rootScope.saveBuildingParams = function(){
         	for(var k=0; k<$rootScope.editableBuildingsList.length; k++){ 
         		if($rootScope.editableBuildingsList[k].id == $rootScope.bldgClicked.id){
-        			var ind = k; console.log("founded")
+        			var ind = k; 
         		}
-        	} console.log(ind);
+        	} 
         	$rootScope.editableBuildingsList[ind].params.bBuilt = $scope.currentBuiltDate;
         	$rootScope.editableBuildingsList[ind].params.bRenov = $scope.currentRenovDate;
         	$rootScope.editableBuildingsList[ind].params.bType = $scope.currentMaterialBuilding;
         	$rootScope.buildingsList[ind].mesh.building = $rootScope.editableBuildingsList[ind]; // update DISPLAYED building. IF NEW MESH PAY ATTENTION TO INDICES
-        	console.log($rootScope.buildingsList);
-        	console.log($rootScope.editableBuildingsList);
+        	alert("Parameters for this building have been successfully saved")
         }
 
 

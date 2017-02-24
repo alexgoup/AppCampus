@@ -59,6 +59,7 @@ Environment = function(application) {
 	var injector = elem.injector(); 
  	var $rootScope = injector.get('$rootScope'); 
  	this.scope = $rootScope; 
+ 	this.scope.firstrender = true; 
 
  	scene.clearColor = new BABYLON.Color3(0, 0, 20/255);
  	/*scene.clearColor = new BABYLON.Color3(1,1,1);*/

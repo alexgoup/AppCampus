@@ -140,34 +140,24 @@ app.controller('BuildingController',
         	}
     	};    	
 
-    	$scope.transportationstate = false;
-		$scope.transportationimg = $scope.transportationstate ? "/img/logos/orange-transportation.png" : "/img/logos/white-transportation.png"; 
+    	$rootScope.transportationstate = false;
+		$scope.transportationimg = $rootScope.transportationstate ? "/img/logos/orange-transportation.png" : "/img/logos/white-transportation.png"; 
+		/*$rootScope.transportationstate = $scope.transportationstate; */
 		
 	    $scope.toggletransportation = function() {
-        	$scope.transportationstate = !$scope.transportationstate;
-        	$rootScope.transportationstate = $scope.transportationstate;
-        	if($scope.transportationstate){
-        		$scope.transportationimg = "/img/logos/orange-transportation.png";
-        		if($rootScope.busesList != undefined){
-		        	for(var i=0; i<$rootScope.busesList.length;i++){ 
-		        		var busMesh = $rootScope.busesList[i];
-		        			busMesh.isVisible = true; 
-		        	}
-		        }
-        	}
-        	else
-        	{
-        		$scope.transportationimg = "/img/logos/white-transportation.png"; 
-        		if($rootScope.busesList != undefined){
-		        	for(var i=0; i<$rootScope.busesList.length;i++){ 
-		        		var busMesh = $rootScope.busesList[i];
-		        			busMesh.isVisible = false; 
-		        	}
-		        }
-        		
-        	}
+        	$rootScope.transportationstate = !$rootScope.transportationstate;
     	};
-    	/*$scope.footprintStyle = { "opacity" : "0.2" };*/
+
+    	$rootScope.$watch('transportationstate', function() {
+    		$scope.transportationimg = $rootScope.transportationstate ? "/img/logos/orange-transportation.png" : "/img/logos/white-transportation.png";
+			if($rootScope.busesList != undefined){
+	        	for(var i=0; i<$rootScope.busesList.length;i++){ 
+	        		var busMesh = $rootScope.busesList[i];
+	        			busMesh.isVisible = $rootScope.transportationstate; 
+	        	}
+	        }
+    	}); 
+
 
     	  $scope.dt = new Date("September 13, 2015 11:13:00");		
     	  $scope.footprint_dt = new Date("September 13, 2015 11:13:00");		
