@@ -16,6 +16,9 @@
 						    </table>
 						</div> -->
 					</descriptionpanel-directive>
+					<div  ng-show="isBusClicked" ng-style="busTooltipStyle">
+						<h4 class="controlPanelHeaders"> <span> {{busTooltipTitle}} </span> </h4>
+					</div>
 					<a href="#">
 						<div id="costButtonPanel">
 							<img ng-src="{{costimg}}" class="buttonLogoImg" ng-click="togglecost()"/>

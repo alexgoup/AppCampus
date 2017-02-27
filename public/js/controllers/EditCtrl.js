@@ -31,7 +31,7 @@ app.controller('EditController',
         $rootScope.editableBuildingsList;
 
         if($rootScope.firstrender){ 
-	        $rootScope.scenarioList = [
+	        $rootScope.scenarioList = [ //IN THEORY SHOULD GET INITIAL SCENARIO LIST FROM THE DB, JUST THE NAMES OR ID
 		        {
 		        	name : "Initial Campus", 
 		        	buildingsList : $rootScope.buildingsList, 
@@ -66,7 +66,7 @@ app.controller('EditController',
         	console.log("Deleting scenario " + $rootScope.editableScenario.name + '...'); 
         };        
 
-        $rootScope.saveScenario = function() { 
+        $rootScope.saveScenario = function() { //should write the scenarios in the db
         	var copylist = [];
 			for(var k=0; k<$rootScope.editableBuildingsList.length;k++){
 				copylist.push(jQuery.extend(true, {}, $rootScope.editableBuildingsList[k])) ;

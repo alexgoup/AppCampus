@@ -154,9 +154,45 @@ app.controller('BuildingController',
 	        	for(var i=0; i<$rootScope.busesList.length;i++){ 
 	        		var busMesh = $rootScope.busesList[i];
 	        			busMesh.isVisible = $rootScope.transportationstate; 
+	        			if(busMesh.bus.id == 408){
+	        				busMesh.isVisible = false;
+	        			}
 	        	}
 	        }
     	}); 
+    	$rootScope.busClicked = ''; 
+    	$scope.isBusClicked = false; 
+    	$scope.busTooltipStyle = {
+            'background-color': 'rgba(120,120,120,0.2)',
+			 'border': '0px solid transparent',
+			'border-radius': '6px',
+			'width' : '15%',
+			'height' : '5%',
+         }; 
+    	$scope.busTooltipTitle = ''; 
+    	$rootScope.$watch('busClicked', function() {
+			$scope.isBusClicked = ($rootScope.busClicked != ''); 
+			if($scope.isBusClicked){
+				var bus = $rootScope.busClicked; 
+				$scope.busTooltipTitle = bus.route + " Route";
+				if($rootScope.currentEvt != undefined){
+					var xevt = $rootScope.currentEvt.pointerX; 
+					var yevt = $rootScope.currentEvt.pointerY; 
+				}
+				var screenx = $(window).width();
+				var screeny = $(window).height();
+				var xratio = xevt/screenx;
+				var yratio = yevt/screeny;
+				var offsetX = 15;
+				var offsetY = 15;
+				var width_perc_str = (Math.floor(xratio*100)-offsetX).toString() + "%"; 
+				var height_perc_str = (Math.floor(yratio*100)-offsetY).toString() + "%"; 
+				$scope.busTooltipStyle.left = width_perc_str; 
+				$scope.busTooltipStyle.top = height_perc_str; 
+			}
+    	}); 
+
+
 
 
     	  $scope.dt = new Date("September 13, 2015 11:13:00");		

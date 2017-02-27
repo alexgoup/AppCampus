@@ -191,50 +191,63 @@ Environment = function(application) {
 	    function(evt, pickResult) {
 	        if (evt.source ) { 
 	        	if(_this.scope.viewmode){
-		            var meshClicked = evt.source; 
+		            var meshClicked = evt.source; console.log(meshClicked)
 		        	if (meshClicked != ground) { 
-			            var bldgClicked = meshClicked.building; 
-			            if(bldgClicked != _this.currentTarget){
-			            	if(_this.currentTarget != ""){ 
-			            		_this.currentTarget.animateState = 2; 
-			            		_this.currentTarget.desanimate(); 
-			            		/*_this.scene.registerBeforeRender(tiltDesanimate);*/
-			            	}	
-			            	bldgClicked.animateState = 1;
-				            bldgClicked.animate(); 
-				            _this.nextCurrentTarget = bldgClicked; 
-				            _this.scene.registerAfterRender(tilt);
-				            /*_this.scene.registerBeforeRender(tiltAnimate);*/
-				            getMonthly(bldgClicked,false); 
-					        _this.scope.$apply(function(){ 
-					        	_this.scope.currentEvt = evt; 
-					        	_this.scope.isBldgClicked = true;
-					        	_this.scope.bldgClicked = bldgClicked; 
-					        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
-					        	if(bldgClicked.params != undefined){ 
-						            _this.scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
-						            _this.scope.currentparams[1].value = bldgClicked.params.bArchitect == "" ? "No information available" : bldgClicked.params.bArchitect;  
-						            _this.scope.currentparams[2].value = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
-						            _this.scope.currentparams[3].value = bldgClicked.params.bContractor == "" ? "No information available" : bldgClicked.params.bContractor;  
-						            _this.scope.currentparams[4].value = bldgClicked.params.bCost == "" ? "No information available" : bldgClicked.params.bCost;  
-						            _this.scope.currentparams[5].value = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
-						            _this.scope.currentparams[6].value = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType;  
-						            _this.scope.currentparams[7].value = bldgClicked.params.namedAfter == "" ? "No information available" : bldgClicked.params.namedAfter; 	
-					        	}
-					        	else{
-					        		for(var i=0; i<_this.scope.currentparams.length; i++){
-					        			_this.scope.currentparams[i].value = "No information available";
-					        		}
-					        	}
-			 
-					        });
-			            }
+		        		if(meshClicked.building != undefined){
+				            var bldgClicked = meshClicked.building; 
+				            if(bldgClicked != _this.currentTarget){
+				            	if(_this.currentTarget != ""){ 
+				            		_this.currentTarget.animateState = 2; 
+				            		_this.currentTarget.desanimate(); 
+				            		/*_this.scene.registerBeforeRender(tiltDesanimate);*/
+				            	}	
+				            	bldgClicked.animateState = 1;
+					            bldgClicked.animate(); 
+					            _this.nextCurrentTarget = bldgClicked; 
+					            _this.scene.registerAfterRender(tilt);
+					            /*_this.scene.registerBeforeRender(tiltAnimate);*/
+					            getMonthly(bldgClicked,false); 
+						        _this.scope.$apply(function(){ 
+						        	_this.scope.currentEvt = evt; 
+						        	_this.scope.isBldgClicked = true;
+						        	_this.scope.bldgClicked = bldgClicked; 
+						        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
+						        	if(bldgClicked.params != undefined){ 
+							            _this.scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
+							            _this.scope.currentparams[1].value = bldgClicked.params.bArchitect == "" ? "No information available" : bldgClicked.params.bArchitect;  
+							            _this.scope.currentparams[2].value = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
+							            _this.scope.currentparams[3].value = bldgClicked.params.bContractor == "" ? "No information available" : bldgClicked.params.bContractor;  
+							            _this.scope.currentparams[4].value = bldgClicked.params.bCost == "" ? "No information available" : bldgClicked.params.bCost;  
+							            _this.scope.currentparams[5].value = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
+							            _this.scope.currentparams[6].value = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType;  
+							            _this.scope.currentparams[7].value = bldgClicked.params.namedAfter == "" ? "No information available" : bldgClicked.params.namedAfter; 	
+						        	}
+						        	else{
+						        		for(var i=0; i<_this.scope.currentparams.length; i++){
+						        			_this.scope.currentparams[i].value = "No information available";
+						        		}
+						        	}
+				 
+						        });
+				            }
+		        		}
+		        		else if(meshClicked.bus != undefined){
+		        			var busClicked = meshClicked.bus; 
+		        			_this.scope.$apply(function(){ 
+		        				_this.scope.isBusClicked = true;
+					        	_this.scope.busClicked = busClicked; 
+					        	_this.scope.currentEvt = evt;
+		        			});
+		        		}
+
 
 		        	}
 		        	else{ 
 		        		 _this.scope.$apply(function(){ 
 		        		 	_this.scope.bldgClicked = ground; 
 		        		 	_this.scope.isBldgClicked = false; 
+		        		 	_this.scope.BusClicked = ""; 
+		        		 	_this.scope.isBusClicked = false; 
 	        		 	});
 		        		if(_this.currentTarget != ""){ 
 		        			_this.scene.registerAfterRender(detilt);
@@ -455,8 +468,8 @@ Environment.prototype = {
 			}); 
 
 
-
-/*			var shapeDisc = BABYLON.MeshBuilder.CreateDisc("discModel", {radius:0.75}, this.scene);
+/*
+			var shapeDisc = BABYLON.MeshBuilder.CreateDisc("discModel", {radius:0.75}, this.scene);
 			discInstance = shapeDisc.clone("shapeDisc"+k); 
 			discInstance.position =  new BABYLON.Vector3(shapePosx,0,shapePosz);
 			discInstance.rotation.x = Math.PI/2;
@@ -512,6 +525,10 @@ Environment.prototype = {
 			var busPoszDir = geo2coord(busLatDir,busLongDir).y; 
 			var dir_angle = Math.atan2(busPoszDir - busPosz, busPosxDir - busPosx); 
 			var busMesh = busModel.clone("bus"+busObj.id); 
+			busMesh.actionManager = new BABYLON.ActionManager(this.scene);
+/*			busMesh.actionManager.registerAction(this.pointerMeshActionOPOverT);
+			busMesh.actionManager.registerAction(this.pointerMeshActionOPOutT);*/
+			busMesh.actionManager.registerAction(this.pointerMeshActionOPickT);
 			var bus = new Bus(busObj.id,busObj.route,this); 
 			bus.position = {
 				x: busPosx, 
@@ -536,8 +553,11 @@ Environment.prototype = {
 			else if(busObj.route == "blue"){
 				busMesh.material = this.materialBlue;
 			}
-			else{
+			else if(busObj.route == "trolley"){
 				busMesh.material = this.materialYellow;
+			}
+			else{
+				busMesh.isVisible = false; 
 			}
 			if(!this.scope.transportationstate){
 				busMesh.isVisible = false; 
@@ -549,6 +569,7 @@ Environment.prototype = {
 				busMesh.rotation.y = bus.angle; //calculated in the bus method getDirection() 
 			}
 			bus.mesh = busMesh; 
+			busMesh.bus = bus; 
 			this.busMeshList.push(busMesh); 
 			this.busList.push(bus); 
 		}
