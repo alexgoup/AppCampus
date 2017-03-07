@@ -159,7 +159,22 @@ app.controller('BuildingController',
 	        			}
 	        	}
 	        }
+    	});     	
+
+    	$rootScope.safetystate = false;
+		$scope.safetyimg = $rootScope.safetystate ? "/img/logos/orange-safety.png" : "/img/logos/white-safety.png"; 
+		/*$rootScope.safetystate = $scope.safetystate; */
+		
+	    $scope.togglesafety = function() {
+        	$rootScope.safetystate = !$rootScope.safetystate;
+    	};
+
+    	$rootScope.$watch('safetystate', function() {
+    		$scope.safetyimg = $rootScope.safetystate ? "/img/logos/orange-safety.png" : "/img/logos/white-safety.png";
     	}); 
+
+
+
     	$rootScope.busClicked = ''; 
     	$scope.isBusClicked = false; 
     	$scope.busTooltipStyle = {

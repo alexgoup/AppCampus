@@ -303,6 +303,19 @@ html, body {
 	background-color: rgba(150,150,150,0.2)
  } 
 
+ #safetyButtonPanel { 
+	position: absolute;
+	top: 3.5%;
+	left: 30%;
+	width: 4%;
+	height: 7%;
+	margin:0px;
+	border: 0px solid transparent;
+	border-color: #346562;
+	border-radius: 6px;
+	background-color: rgba(150,150,150,0.2)
+ } 
+
  #costButtonPanel { 
 	position: absolute;
 	top: 12%;

@@ -9,6 +9,7 @@ function Building(id,name,bClass,environment) {
     this.params;
     this.departmentList = []; 
     this.mesh; 
+    this.solarPanelMesh; 
     this.savex;
     this.savey;
     this.savez;
@@ -29,7 +30,7 @@ function Building(id,name,bClass,environment) {
 
 Building.prototype = {
     
-    animate: function(){ console.log("here")
+    animate: function(){ 
           var _this = this; 
           if(_this.firstTimeAnimate){
                  _this.environment.scene.registerAfterRender(function () { 
@@ -96,20 +97,20 @@ Building.prototype = {
 
 
 
-    footprintModel: function(){
+    footprintModel: function(renewableFraction){
         var factor = 0.61420489; // in kg CO2 by kwH
         var energycopy = {};
         this.params.tot_footprint2014 = this.params.tot_energy2014*factor;
         for(var key in this.params.monthly_energy){ 
             if(key != "_id" && key != "id"){
-                energycopy[key] = this.params.monthly_energy[key] * factor; // MODEL HERE
+                energycopy[key] = this.params.monthly_energy[key]*(1-renewableFraction) * factor; // MODEL HERE
             }
             else{
                 energycopy[key] = this.params.monthly_energy[key];
             }
         } 
         this.params.monthly_footprint = energycopy;
-    },    
+    },
 
     areaenergyModel: function(){
         var energycopy = {};

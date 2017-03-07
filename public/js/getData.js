@@ -30,7 +30,16 @@ function getMonthly(building,request){
 				building.params.monthly_energy = obj;
 				building.params.tot_energy2014 = obj["Jan-14"]+obj["Feb-14"]+obj["Mar-14"]+obj["Apr-14"]+obj["May-14"]+obj["Jun-14"]+obj["Jul-14"]+obj["Aug-14"]+obj["Sep-14"]+obj["Oct-14"]+obj["Nov-14"]+obj["Dec-14"];
 				building.params.noEnergy = false; 
-				building.footprintModel();
+				building.footprintModel(0);
+				/*if(building.id == 166){ //Clough commons: 4% of energy consumption is renewable due to solar panels on the roof
+					building.footprintModel(0.04); 
+				}
+				else if(building.id == ){ //CRC: 
+
+				}
+				else{
+					building.footprintModel(0);
+				}*/
 				building.areaenergyModel();
 			}
 			else{

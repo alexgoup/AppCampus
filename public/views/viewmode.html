@@ -16,9 +16,9 @@
 						    </table>
 						</div> -->
 					</descriptionpanel-directive>
-					<div  ng-show="isBusClicked" ng-style="busTooltipStyle">
+<!-- 					<div  ng-show="isBusClicked" ng-style="busTooltipStyle">
 						<h4 class="controlPanelHeaders"> <span> {{busTooltipTitle}} </span> </h4>
-					</div>
+					</div> -->
 					<a href="#">
 						<div id="costButtonPanel">
 							<img ng-src="{{costimg}}" class="buttonLogoImg" ng-click="togglecost()"/>
@@ -47,6 +47,11 @@
 					<a href="#">
 						<div id="transportationButtonPanel">
 							<img ng-src="{{transportationimg}}" class="buttonLogoImg" ng-click="toggletransportation()"/>
+						</div>
+					</a>					
+					<a href="#">
+						<div id="safetyButtonPanel">
+							<img ng-src="{{safetyimg}}" class="buttonLogoImg" ng-click="togglesafety()"/>
 						</div>
 					</a>
 					<div class="heatmapLegend">

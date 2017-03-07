@@ -89,6 +89,10 @@ Environment = function(application) {
 	this.materialBuilding = materialBuilding;
 	this.scope.materialBuilding = materialBuilding;	
 
+	var materialSolar = new BABYLON.StandardMaterial("solarTexture", scene);
+	materialSolar.diffuseTexture = new BABYLON.Texture("/img/solarTexture.jpg", scene);
+	this.materialSolar = materialSolar;
+
 	var materialRed = new BABYLON.StandardMaterial("wallTexture", scene);
 /*	materialRed.emissiveTexture = new BABYLON.Texture(imgTexture_path, scene); */
 	materialRed.diffuseColor = new BABYLON.Color3(199/255,1/255,1/255);
@@ -191,10 +195,13 @@ Environment = function(application) {
 	    function(evt, pickResult) {
 	        if (evt.source ) { 
 	        	if(_this.scope.viewmode){
-		            var meshClicked = evt.source; console.log(meshClicked)
+		            var meshClicked = evt.source; 
 		        	if (meshClicked != ground) { 
 		        		if(meshClicked.building != undefined){
 				            var bldgClicked = meshClicked.building; 
+				            for(var i=0; i<bldgClicked.mesh3DList.length; i++){
+				            	console.log(bldgClicked.mesh3DList[i]);
+				            }
 				            if(bldgClicked != _this.currentTarget){
 				            	if(_this.currentTarget != ""){ 
 				            		_this.currentTarget.animateState = 2; 
@@ -712,10 +719,12 @@ Environment.prototype = {
 							mainBox.position.z -= 4.5;
 						}
 						mainBox.position.x -= this.currentBlist[i].savex;
-						mainBox.position.z -= this.currentBlist[i].savez;
+						mainBox.position.z -= this.currentBlist[i].savez; 
 						mainBox.rotation.y = -degToRad(p4);
 						mainBox.material = this.materialBuilding;
 						this.currentBlist[i].mesh3DList.push(mainBox);
+
+						
 					}
 					else if (type == 2){
 						var rTop = p1/szone;
@@ -740,6 +749,8 @@ Environment.prototype = {
 					}
 
 				}
+				// ADD other meshes ie solar panels to mesh3Dlist
+				// find principal box and take params from it for solar panels. console log mesh3dlist for clicked building
 				var newMesh = BABYLON.Mesh.MergeMeshes(this.currentBlist[i].mesh3DList,true);
 				newMesh.position.x = this.currentBlist[i].savex;
 				newMesh.position.z = this.currentBlist[i].savez;
@@ -750,6 +761,24 @@ Environment.prototype = {
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPOverT);
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPOutT);
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPickT);
+/*				if( this.currentBlist[i].id == 166){ // Select principal box mesh of Clough Commons building. 
+					var cloughSolar = BABYLON.Mesh.CreateBox("CloughSolarPanels",1,this.scene);
+					cloughSolar.scaling.x = 8; 
+					cloughSolar.scaling.z = 18; 
+					cloughSolar.scaling.y = 0.5; 
+					//cloughSolar.position =  new BABYLON.Vector3(xCube+this.dx0,((1/2)*mainBox.scaling.y),zCube+this.dz0);
+					cloughSolar.position.x = 0;  
+					cloughSolar.position.y = (1/2)*cloughSolar.scaling.y; 
+					cloughSolar.position.z = 0; 
+					cloughSolar.rotation.y = 0;
+					cloughSolar.material = this.materialSolar; 
+					cloughSolar.building = this.currentBlist[i];
+					cloughSolar.actionManager = new BABYLON.ActionManager(this.scene);
+					cloughSolar.actionManager.registerAction(this.pointerMeshActionOPOverT);
+					cloughSolar.actionManager.registerAction(this.pointerMeshActionOPOutT);
+					cloughSolar.actionManager.registerAction(this.pointerMeshActionOPickT);
+					this.currentBlist[i].solarPanelMesh = cloughSolar;
+				}*/
 				this.currentBlist[i].mesh = newMesh;
 			}
 			getMonthly(this.currentBlist[i],true); 
