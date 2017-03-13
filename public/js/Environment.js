@@ -200,7 +200,8 @@ Environment = function(application) {
 		        		if(meshClicked.building != undefined){
 				            var bldgClicked = meshClicked.building; 
 				            for(var i=0; i<bldgClicked.mesh3DList.length; i++){
-				            	console.log(bldgClicked.mesh3DList[i]);
+				            	console.log(bldgClicked.mesh3DList[i].position);
+				            	console.log(bldgClicked.mesh3DList[i].scaling);
 				            }
 				            if(bldgClicked != _this.currentTarget){
 				            	if(_this.currentTarget != ""){ 
@@ -376,6 +377,8 @@ function tilt(){
     }   
         
 }
+
+
 
 /*function coord2geo(x,y){
 	var lat_ = y+centerLat;  
@@ -761,24 +764,43 @@ Environment.prototype = {
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPOverT);
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPOutT);
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPickT);
-/*				if( this.currentBlist[i].id == 166){ // Select principal box mesh of Clough Commons building. 
+				if( this.currentBlist[i].id == 166){ // Solar panels for Clough commons. hardcoded for now but needs function .addsolar
+					// this.currentBlist[i].addSolarPanels(name); 
+					var edgefactor = 0.9; 
 					var cloughSolar = BABYLON.Mesh.CreateBox("CloughSolarPanels",1,this.scene);
-					cloughSolar.scaling.x = 8; 
-					cloughSolar.scaling.z = 18; 
+					cloughSolar.scaling.x = 8*edgefactor; 
+					cloughSolar.scaling.z = 18*edgefactor; 
 					cloughSolar.scaling.y = 0.5; 
 					//cloughSolar.position =  new BABYLON.Vector3(xCube+this.dx0,((1/2)*mainBox.scaling.y),zCube+this.dz0);
-					cloughSolar.position.x = 0;  
-					cloughSolar.position.y = (1/2)*cloughSolar.scaling.y; 
-					cloughSolar.position.z = 0; 
+					cloughSolar.position.x = this.currentBlist[i].savex+0;  
+					cloughSolar.position.y = (1/2)*cloughSolar.scaling.y + this.currentBlist[i].mesh3DList[0].scaling.y; 
+					cloughSolar.position.z = this.currentBlist[i].savez+0; 
 					cloughSolar.rotation.y = 0;
 					cloughSolar.material = this.materialSolar; 
 					cloughSolar.building = this.currentBlist[i];
 					cloughSolar.actionManager = new BABYLON.ActionManager(this.scene);
-					cloughSolar.actionManager.registerAction(this.pointerMeshActionOPOverT);
-					cloughSolar.actionManager.registerAction(this.pointerMeshActionOPOutT);
 					cloughSolar.actionManager.registerAction(this.pointerMeshActionOPickT);
 					this.currentBlist[i].solarPanelMesh = cloughSolar;
-				}*/
+				}				
+
+				if( this.currentBlist[i].id == 160){ // Solar panels for CRC. hardcoded for now but needs function .addsolar
+					var edgefactor = 0.9;
+					var crcSolar = BABYLON.Mesh.CreateBox("CRCSolarPanels",1,this.scene);
+					crcSolar.scaling.x = this.currentBlist[i].mesh3DList[3].scaling.x*edgefactor; 
+					crcSolar.scaling.z = this.currentBlist[i].mesh3DList[3].scaling.z*edgefactor; 
+					crcSolar.scaling.y = 0.5; 
+					//crcSolar.position =  new BABYLON.Vector3(xCube+this.dx0,((1/2)*mainBox.scaling.y),zCube+this.dz0);
+					crcSolar.position.x = this.currentBlist[i].savex+0;  
+					crcSolar.position.y = (1/2)*crcSolar.scaling.y + this.currentBlist[i].mesh3DList[3].scaling.y; 
+					crcSolar.position.z = this.currentBlist[i].savez+0; 
+					crcSolar.rotation.y = 0;
+					crcSolar.material = this.materialSolar; 
+					crcSolar.building = this.currentBlist[i];
+					crcSolar.actionManager = new BABYLON.ActionManager(this.scene);
+					crcSolar.actionManager.registerAction(this.pointerMeshActionOPickT);
+					this.currentBlist[i].solarPanelMesh = crcSolar;
+				}
+
 				this.currentBlist[i].mesh = newMesh;
 			}
 			getMonthly(this.currentBlist[i],true); 

@@ -254,9 +254,15 @@ app.controller('BuildingController',
 		        	if(building.mesh != undefined){
 			        	if($rootScope.costLow*1000000 > building.params.bCost || $rootScope.costHigh*1000000 < building.params.bCost || $rootScope.energyLow > building.params.tot_energy2014 || $rootScope.energyHigh < building.params.tot_energy2014 || $rootScope.areaenergyLow > building.params.tot_areaenergy2014 || $rootScope.areaenergyHigh < building.params.tot_areaenergy2014 || $rootScope.footprintLow > building.params.tot_footprint2014 || $rootScope.footprintHigh < building.params.tot_footprint2014){
 			        		building.mesh.isVisible = false; 
+			        		if(building.solarPanelMesh != undefined){
+			        			building.solarPanelMesh.isVisible = false; 
+			        		}
 			        	}
 			        	else{ 
 			        			building.mesh.isVisible = true; 
+				        		if(building.solarPanelMesh != undefined){
+				        			building.solarPanelMesh.isVisible = true; 
+				        		}
 			        		}
 			        	
 		        	}

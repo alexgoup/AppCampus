@@ -39,8 +39,14 @@ Building.prototype = {
                         _this.mesh.material = _this.environment.brightermaterialBuilding; 
                     }
                     _this.mesh.rotation.y += 2*Math.PI/750; 
+                    if(_this.solarPanelMesh != undefined){
+                        _this.solarPanelMesh.rotation.y += 2*Math.PI/750;
+                    }
                     if(_this.mesh.position.y < 40 ){
                         _this.mesh.position.y +=1;
+                    if(_this.solarPanelMesh != undefined){
+                        _this.solarPanelMesh.position.y += 1;
+                    }
                     }
                     _this.lastroty = _this.mesh.rotation.y; 
 
@@ -64,6 +70,9 @@ Building.prototype = {
                     }
                     if(_this.mesh.position.y > _this.inity ){ 
                         _this.mesh.position.y -=1;
+                    if(_this.solarPanelMesh != undefined){
+                        _this.solarPanelMesh.position.y -= 1;
+                    }
                     }
                     var rem = ((_this.lastroty - _this.initroty) % (2*Math.PI)); 
                     var rotlimitmin = _this.lastroty - rem; 
@@ -72,11 +81,17 @@ Building.prototype = {
                     if(_this.lastroty - rotlimitmin < rotlimitplus - _this.lastroty){
                         if(_this.mesh.rotation.y > rotlimitmin ){
                             _this.mesh.rotation.y -=2*Math.PI/750;
+                        if(_this.solarPanelMesh != undefined){
+                            _this.solarPanelMesh.rotation.y -= 2*Math.PI/750;
+                        }
                         }
                     }
                     else{ 
                         if(_this.mesh.rotation.y < rotlimitplus ){
                             _this.mesh.rotation.y +=2*Math.PI/750;
+                        if(_this.solarPanelMesh != undefined){
+                            _this.solarPanelMesh.rotation.y += 2*Math.PI/750;
+                        }
                         }
                     }
  
