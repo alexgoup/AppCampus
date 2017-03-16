@@ -62,6 +62,19 @@ html, body {
 	border-color: #346562;
 	border-radius: 4px;
 	background-color: rgba(60,60,60,0.5)
+ } 
+
+ #buildingcreatorPanel { 
+	position: absolute;
+	top: 5%;
+	left: 84%;
+	width: 15%;
+	height: auto;
+	margin:0px;
+	border: 0px solid transparent;
+	border-color: #346562;
+	border-radius: 4px;
+	background-color: rgba(60,60,60,0.5)
  }  
 
  #titleScenarioPanel { 

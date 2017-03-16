@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 Application = function(canvasId) {
     // Canvas et engine défini ici
     var canvas = document.getElementById(canvasId);
+    this.canvas = canvas;
     var engine = new BABYLON.Engine(canvas, true);
     this.engine = engine; 
     var _this = this;
@@ -23,9 +24,10 @@ Application = function(canvasId) {
 
     // Permet au jeu de tourner
     engine.runRenderLoop(function () {
- /*       console.log("radius :" + _user.camera.radius);
+/*        console.log("radius :" + _user.camera.radius);
         console.log("alpha :" + _user.camera.alpha);
         console.log("beta :" + _user.camera.beta);*/
+        //console.log(_user.camera.position);
         // Récuperet le ratio par les fps
         //_this.fps = Math.round(1000/engine.getDeltaTime());
 

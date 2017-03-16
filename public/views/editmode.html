@@ -30,3 +30,13 @@
 	</select>
 	<button ng-click="saveBuildingParams()"> Save parameters </button>
 </div>
+
+<div class="panel panel-default" id="buildingcreatorPanel" > 
+	<h4 class="controlPanelHeaders"> <span> Building creator  </span> </h4>
+	<span class="plotchoiceSpans"> Building type: </span>
+	<select ng-model="chosenBuildingType" >
+		<option ng-repeat="x in buildingTypeList" value="{{x.id}}">{{x.type}}</option>
+	</select>
+	<input type="text" name="input" ng-model="createdBuildingName" placeholder="Building name...">
+	<button ng-click="createBuilding()"> Create </button>
+</div>

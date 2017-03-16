@@ -16,6 +16,45 @@ app.controller('EditController',
         	console.log("currentBuiltDate rootscope has changed ")
         });   */   
 
+        $scope.buildingTypeList = [
+        	{
+        		type: "Sports Building", //CRC
+        		id : 160, 
+        	},
+        	{
+        		type: "Parking deck", //Student center parking deck
+        		id : 54, 
+        	},
+        	{
+        		type: "Stadium", //Bobby Dodd Stadium
+        		id: 17, 
+        	}, 
+        	{
+        		type: "Arena", //Mccamish pavilion
+        		id: 73,
+        	}, 
+        	{
+        		type: "Student Center", //Student center
+        		id: 114, 
+        	}, 
+        	{
+        		type: "Classroom building", //Skiles building
+        		id: 2, 
+        	},
+        	{
+        		type: "Modern Laboratory", //ASDL
+        		id: 84, 
+        	}, 
+        	{
+        		type: "Living Center", //GLC
+        		id: 52, 
+        	}
+
+
+        ];
+
+
+
         $rootScope.$watchGroup(['currentBuiltDate','currentRenovDate','currentMaterialBuilding','editPanelTitle'], function(newValues,oldValues,scope) {  
         	$scope.currentBuiltDate = newValues[0];
         	$scope.currentRenovDate = newValues[1];
@@ -44,10 +83,38 @@ app.controller('EditController',
 
         $scope.currentScenario = $rootScope.scenarioList[0]; 
 
+        $scope.createBuilding = function(){ 
+        	var bldgDuplicatedId = $scope.chosenBuildingType; 
+        	for(var k=0; k<$rootScope.buildingsList.length; k++){
+        		if($rootScope.buildingsList[k].id == bldgDuplicatedId){
+        			var ind = k; 
+        			break; 
+        		}
+        	}
+        	var bldgDuplicated = $rootScope.buildingsList[ind]; 
+        	console.log(bldgDuplicated);
+        	var newBldg = new Building(bldgDuplicatedId+1000,$scope.createdBuildingName,bldgDuplicated.bClass,bldgDuplicated.environment); 
+        	newBldg.params = bldgDuplicated.params; 
+        	newBldg.departmentList = bldgDuplicated.departmentList; 
+        	newBldg.isMovable = true; 
+        	var duplicatedMesh = bldgDuplicated.mesh; 
+        	var newMesh = duplicatedMesh.clone($scope.createdBuildingName + "dupli"); 
+        	newMesh.position.x = 0; 
+        	newMesh.position.z = -128; 
+        	newMesh.material = $rootScope.materialLightBlue; 
+        	newMesh.building = newBldg; 
+        	newBldg.mesh = newMesh; 
+        	$rootScope.editableBuildingsList.push(newBldg); 
+
+        	$scope.createdBuildingName = ""; 
+
+        }
+
         $rootScope.loadScenario = function() {
         	for(var k=0; k<$rootScope.scenarioList.length; k++){
         		if($rootScope.scenarioList[k].name == $scope.chosenScenario){
-        			var ind = k; console.log("loaded scenario has been founded in the list!")
+        			var ind = k; 
+        			break; 
         		}
         	}
         	$scope.currentScenario = $rootScope.scenarioList[ind]; 
@@ -56,8 +123,6 @@ app.controller('EditController',
         		if(mesh != undefined){
 	        		mesh.building = $scope.currentScenario.buildingsList[k]; // CHECK INDICES IF NEW MESHES CREATED  
         		}
-
-
         	}
         	console.log("Loading scenario " + $rootScope.scenarioList[ind].name + '...'); 
         };         
@@ -70,6 +135,12 @@ app.controller('EditController',
         	var copylist = [];
 			for(var k=0; k<$rootScope.editableBuildingsList.length;k++){
 				copylist.push(jQuery.extend(true, {}, $rootScope.editableBuildingsList[k])) ;
+				if($rootScope.editableBuildingsList[k].isMovable != undefined){
+					if($rootScope.editableBuildingsList[k].isMovable){
+						$rootScope.editableBuildingsList[k].mesh.material = $rootScope.materialBuilding; 
+						$rootScope.editableBuildingsList[k].isMovable = false; 
+					}
+				}
 			}
 			var scenarioNameAlreadyExists = false; 
 			for(var j=0; j<$rootScope.scenarioList.length; j++){
@@ -83,6 +154,7 @@ app.controller('EditController',
 					buildingsList: copylist, 
 				}); 
 				$scope.saveScenarioName = ""; 
+				$scope.currentScenario = $rootScope.scenarioList[$rootScope.scenarioList.length-1]; 
 			}
 			else{
 				alert("This scenario name already exists in the scenario list!");

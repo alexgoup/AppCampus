@@ -32,24 +32,7 @@ Environment = function(application) {
     this.user = this.application.user;
     this.camera = this.user.camera; 
 
-
-/*    console.log(geo2coord(33.7778988487049,-84.39238339662552).x/95.6571428571429);
-    console.log(geo2coord(33.7778988487049,-84.39238339662552).y/34.59365079365082);
-    console.log(geo2coord(33.77103253145226,-84.40280109643936).x/(-94.14117647058825));
-    console.log(geo2coord(33.77103253145226,-84.40280109643936).y/(-118.52941176470588));*/
-
-    /* Techwood and 6th
-     33.7778988487049;
-    -84.39240753650665;
-    x=95.6571428571429;
-    z=34.59365079365082*/ 
-
-     /* Tech way building
-     33.77103253145226;
-    -84.40280109643936;
-    x=-94.14117647058825;
-    z=-118.52941176470588*/
-
+	this.canvas = application.canvas; 
 
     var _this = this;
 
@@ -108,7 +91,12 @@ Environment = function(application) {
 	var materialBlue = new BABYLON.StandardMaterial("wallTexture", scene);; 
 	materialBlue.diffuseColor = new BABYLON.Color3(1/255,1/255,200/255);
 	this.materialBlue = materialBlue;
-	this.scope.materialBlue = materialBlue;	
+	this.scope.materialBlue = materialBlue;		
+
+	var materialLightBlue = new BABYLON.StandardMaterial("wallTexture", scene);; 
+	materialLightBlue.diffuseColor = new BABYLON.Color3(159/255,188/255,234/255);
+	this.materialLightBlue = materialLightBlue;
+	this.scope.materialLightBlue = materialLightBlue;	
 
 	var materialYellow = new BABYLON.StandardMaterial("wallTexture", scene);; 
 	materialYellow.diffuseColor = new BABYLON.Color3(240/255,240/255,1/255);
@@ -183,7 +171,7 @@ Environment = function(application) {
 	        if (evt.meshUnderPointer) { 
 	            var meshClicked = evt.meshUnderPointer; 
 	            var bldgClicked = meshClicked.building; 
-	            if(!_this.scope.heatmapBool && !_this.scope.energyheatmapBool && !_this.scope.areaenergyheatmapBool && !_this.scope.footprintheatmapBool){
+	            if(!_this.scope.heatmapBool && !_this.scope.energyheatmapBool && !_this.scope.areaenergyheatmapBool && !_this.scope.footprintheatmapBool && bldgClicked != _this.currentTarget){
 		        	meshClicked.material = materialBuilding;
 		  		}
 	        }
@@ -270,11 +258,14 @@ Environment = function(application) {
 			            var bldgClicked = meshClicked.building; 
 			            if(bldgClicked != _this.currentTarget){ 
 			            	if(_this.currentTarget != ""){ 
-			            		_this.currentTarget.animateState = 2; 
-			            		_this.currentTarget.desanimate(); 
+			            		/*_this.currentTarget.animateState = 2; 
+			            		_this.currentTarget.desanimate(); */
+			            		_this.currentTarget.mesh.material = _this.materialBuilding; 
 			            	}	
-			            	bldgClicked.animateState = 1;
-				            bldgClicked.animate(); 
+/*			            	bldgClicked.animateState = 1;
+				            bldgClicked.animate(); */
+				            bldgClicked.mesh.material = _this.brightermaterialBuilding; 
+				            _this.currentTarget = bldgClicked; 
 				            _this.nextCurrentTarget = bldgClicked; 
 					        _this.scope.$apply(function(){ 
 					        	_this.scope.currentEvt = evt; 
@@ -306,8 +297,10 @@ Environment = function(application) {
 		        		 	_this.scope.isBldgClicked = false; 
 	        		 	});
 		        		if(_this.currentTarget != ""){ 
-		        			_this.currentTarget.animateState = 2;
-		        			_this.currentTarget.desanimate();
+		        			_this.currentTarget.mesh.material = _this.materialBuilding; 
+		        			_this.currentTarget = "";
+		        			/*_this.currentTarget.animateState = 2;
+		        			_this.currentTarget.desanimate();*/
 		        		}
 		        	}
 	        	}
@@ -322,6 +315,82 @@ Environment = function(application) {
     ground.actionManager = new BABYLON.ActionManager(this.scene);
 	ground.actionManager.registerAction(this.pointerMeshActionOPOverT);
 	ground.actionManager.registerAction(this.pointerMeshActionOPickT);
+
+	var startingPoint;
+    var currentMesh;
+
+    var getGroundPosition = function () {
+        // Use a predicate to get position on the ground
+        var pickinfo = scene.pick(scene.pointerX, scene.pointerY, function (mesh) { return mesh == ground; });
+        if (pickinfo.hit) {
+            return pickinfo.pickedPoint;
+        }
+
+        return null;
+    }
+
+    var onPointerDown = function (evt) {
+        if (evt.button !== 0) {
+            return;
+        }
+
+        // check if we are under a isMovable mesh
+        var pickInfo = scene.pick(scene.pointerX, scene.pointerY, function (mesh) { 
+/*        	if(mesh.building.isMovable == undefined){
+        		return false; 
+        	}
+        	if(!mesh.building.isMovable){
+        		return false; 
+        	}
+        	else{*/
+        		return (mesh !== ground); 
+        	//}
+     	});
+        if (pickInfo.hit) {
+            currentMesh = pickInfo.pickedMesh; 
+            if(currentMesh.building.isMovable != undefined){
+            	if(currentMesh.building.isMovable){
+		            startingPoint = getGroundPosition(evt);
+		            if (startingPoint) { // we need to disconnect camera from canvas
+		                setTimeout(function () {
+		                    _this.camera.detachControl(_this.canvas);
+		                }, 0);
+		            }
+            	}
+            }
+
+        }
+    }
+
+    var onPointerUp = function () {
+        if (startingPoint) {
+            _this.camera.attachControl(_this.canvas, true);
+            startingPoint = null;
+            return;
+        }
+    }
+
+    var onPointerMove = function (evt) {
+        if (!startingPoint) {
+            return;
+        }
+
+        var current = getGroundPosition(evt);
+
+        if (!current) {
+            return;
+        }
+
+        var diff = current.subtract(startingPoint);
+        currentMesh.position.addInPlace(diff);
+
+        startingPoint = current;
+
+    }
+
+    this.canvas.addEventListener("pointerdown", onPointerDown, false);
+    this.canvas.addEventListener("pointerup", onPointerUp, false);
+    this.canvas.addEventListener("pointermove", onPointerMove, false);
 
 function detilt(){ 
 	_this.scene.unregisterAfterRender(tilt);
@@ -765,7 +834,7 @@ Environment.prototype = {
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPOutT);
 				newMesh.actionManager.registerAction(this.pointerMeshActionOPickT);
 				if( this.currentBlist[i].id == 166){ // Solar panels for Clough commons. hardcoded for now but needs function .addsolar
-					// this.currentBlist[i].addSolarPanels(name); 
+					// this.currentBlist[i].addSolarPanels(name,proportion); 
 					var edgefactor = 0.9; 
 					var cloughSolar = BABYLON.Mesh.CreateBox("CloughSolarPanels",1,this.scene);
 					cloughSolar.scaling.x = 8*edgefactor; 
