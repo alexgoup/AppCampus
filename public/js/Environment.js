@@ -164,6 +164,7 @@ Environment = function(application) {
             }
 	    }
     );
+    this.scope.pointerMeshActionOPOverT = this.pointerMeshActionOPOverT;
 
     this.pointerMeshActionOPOutT = new BABYLON.ExecuteCodeAction( // HOVER OFF A MESH
 	    BABYLON.ActionManager.OnPointerOutTrigger,
@@ -177,6 +178,7 @@ Environment = function(application) {
 	        }
 	    }
     );
+    this.scope.pointerMeshActionOPOutT = this.pointerMeshActionOPOutT;
 
     this.pointerMeshActionOPickT = new BABYLON.ExecuteCodeAction( //CLICK ON A MESH
 	    BABYLON.ActionManager.OnPickTrigger,
@@ -311,6 +313,7 @@ Environment = function(application) {
 	        }
 	    }
     );
+	this.scope.pointerMeshActionOPickT = this.pointerMeshActionOPickT;
 
     ground.actionManager = new BABYLON.ActionManager(this.scene);
 	ground.actionManager.registerAction(this.pointerMeshActionOPOverT);

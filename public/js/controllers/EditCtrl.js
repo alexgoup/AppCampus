@@ -103,10 +103,21 @@ app.controller('EditController',
         	newMesh.position.z = -128; 
         	newMesh.material = $rootScope.materialLightBlue; 
         	newMesh.building = newBldg; 
+			newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPOverT);
+			newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPOutT);
+			newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPickT);
         	newBldg.mesh = newMesh; 
         	$rootScope.editableBuildingsList.push(newBldg); 
 
         	$scope.createdBuildingName = ""; 
+
+        }
+
+        $scope.deleteBuilding = function(){
+
+        }
+
+        $scope.solarPanelToggle = function(){
 
         }
 
@@ -118,10 +129,24 @@ app.controller('EditController',
         		}
         	}
         	$scope.currentScenario = $rootScope.scenarioList[ind]; 
-        	for(var k=0; k<$rootScope.buildingsList.length; k++){ // loop on scene meshes to update building info.
-        		var mesh = $rootScope.buildingsList[k].mesh; //some of the buildings dont have meshes ie are not in the scene!
+        	        	console.log($scope.currentScenario.buildingsList.length); 
+        	console.log($rootScope.editableBuildingsList.length); 
+        	for(var k=0; k<$rootScope.editableBuildingsList.length; k++){ // loop on scene meshes to update building info.
+        		var mesh = $rootScope.editableBuildingsList[k].mesh; //some of the buildings dont have meshes ie are not in the scene!
         		if(mesh != undefined){
-	        		mesh.building = $scope.currentScenario.buildingsList[k]; // CHECK INDICES IF NEW MESHES CREATED  
+        			var bldgIsInList = false;
+        			for(var i=0; i<$scope.currentScenario.buildingsList.length;i++){
+/*        				if(k==200){console.log($scope.currentScenario.buildingsList[i].id); console.log(mesh.building.id);}*/
+        				if(mesh.building.id == $scope.currentScenario.buildingsList[i].id){ // update building info
+        					mesh.building = $scope.currentScenario.buildingsList[i];
+        					mesh.isVisible = true; 
+        					var bldgIsInList = true; 
+        					break; 
+        				}
+        			}
+        			if(!bldgIsInList){ 
+        				mesh.isVisible = false; 
+        			}
         		}
         	}
         	console.log("Loading scenario " + $rootScope.scenarioList[ind].name + '...'); 
