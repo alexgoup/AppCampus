@@ -12,12 +12,12 @@ app.controller('EditController',
         $rootScope.matBuildingList = ["Steel/Concrete" , "Heavy Timber/Laminate" , "Wood Frame/Brick" , "Metal"]; 
         $scope.isBuildingMovable = false; 
         $rootScope.isBldgClicked = false; 
-
+        $rootScope.predictedSolar = 0; 
 /*        $rootScope.$watch('currentBuiltDate', function() { 
         	console.log("currentBuiltDate rootscope has changed ")
         });   */   
 
-        $scope.buildingTypeList = [
+        $rootScope.buildingTypeList = [
         	{
         		type: "Sports Building", //CRC
         		id : 160, 
@@ -53,7 +53,7 @@ app.controller('EditController',
 
 
         ];
-
+     	$scope.chosenBuildingType = $rootScope.buildingTypeList[0].id;  
 
 
         $rootScope.$watchGroup(['currentBuiltDate','currentRenovDate','currentMaterialBuilding'], function(newValues,oldValues,scope) {  
@@ -78,6 +78,7 @@ app.controller('EditController',
 		        }
 	        ]; 
 	        $rootScope.firstrender = false; 
+	        $scope.chosenScenario = $rootScope.scenarioList[0];
         }
 
 
@@ -141,7 +142,7 @@ app.controller('EditController',
 
         }
 
-        $rootScope.loadScenario = function() {
+        $rootScope.loadScenario = function() { console.log($rootScope.scenarioList);
         	for(var k=0; k<$rootScope.scenarioList.length; k++){
         		if($rootScope.scenarioList[k].name == $scope.chosenScenario){
         			var ind = k; 

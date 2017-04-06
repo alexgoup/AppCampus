@@ -5,8 +5,8 @@
 <div class="panel panel-default" id="loadScenarioPanel" > 
 	<h4 class="controlPanelHeaders"> <span> Load or delete a scenario </span> </h4>
 	<span class="plotchoiceSpans"> Please select a scenario to load :</span>
-	<select ng-model="chosenScenario" >
-		<option ng-repeat="x in scenarioList" value="{{x.name}}">{{x.name}}</option>
+	<select ng-model="chosenScenario" ng-options="x.name for x in scenarioList">
+<!-- 		<option ng-repeat="x in scenarioList" value="{{x.name}}">{{x.name}}</option> -->
 	</select>
 	<button ng-click="loadScenario()"> Load </button>
 	<button ng-click="deleteScenario()"> Delete </button>
@@ -30,7 +30,9 @@
 	<span class="plotchoiceSpans"> Material </span>
 	<select ng-model="currentMaterialBuilding" >
 		<option ng-repeat="x in matBuildingList" value="{{x}}">{{x}}</option>
-	</select>
+	</select><br/>
+	<span class="plotchoiceSpans"> Add Solar Panels (predicted percentage of energy consumption : {{predictedSolar}}% )</span>
+	<input type="checkbox" ng-model="addsolarPanels"><br/>
 	<button ng-click="saveBuildingParams()"> Save parameters </button>
 	<button ng-click="deleteBuilding()"> Delete Building </button>
 </div>
@@ -38,8 +40,8 @@
 <div class="panel panel-default" id="buildingcreatorPanel" > 
 	<h4 class="controlPanelHeaders"> <span> Building creator  </span> </h4>
 	<span class="plotchoiceSpans"> Building type: </span>
-	<select ng-model="chosenBuildingType" >
-		<option ng-repeat="x in buildingTypeList" value="{{x.id}}">{{x.type}}</option>
+	<select ng-model="chosenBuildingType" ng-options="x.id as x.type for x in buildingTypeList">
+<!-- 		<option ng-repeat="x in buildingTypeList" value="{{x.id}}">{{x.type}}</option> -->
 	</select>
 	<input type="text" name="input" ng-model="createdBuildingName" placeholder="Building name...">
 	<button ng-click="createBuilding()"> Create </button> <br/>

@@ -271,6 +271,7 @@ Environment = function(application) {
 				            _this.currentTarget = bldgClicked; 
 				            _this.nextCurrentTarget = bldgClicked; 
 					        _this.scope.$apply(function(){ 
+					        	_this.scope.predictedSolar = Math.floor(Math.random() * (12)) + 3;
 					        	_this.scope.currentEvt = evt; 
 					        	_this.scope.isBldgClicked = true;
 					        	_this.scope.bldgClicked = bldgClicked; 
