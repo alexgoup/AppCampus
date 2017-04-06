@@ -43,7 +43,7 @@ Environment = function(application) {
  	var $rootScope = injector.get('$rootScope'); 
  	this.scope = $rootScope; 
  	this.scope.firstrender = true; 
-
+ 	this.scope.scene = scene;
  	scene.clearColor = new BABYLON.Color3(0, 0, 20/255);
  	/*scene.clearColor = new BABYLON.Color3(1,1,1);*/
     initBuildings(this);
@@ -209,6 +209,7 @@ Environment = function(application) {
 						        	_this.scope.currentEvt = evt; 
 						        	_this.scope.isBldgClicked = true;
 						        	_this.scope.bldgClicked = bldgClicked; 
+						        	_this.scope.buildingToEdit = bldgClicked;
 						        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
 						        	if(bldgClicked.params != undefined){ 
 							            _this.scope.currentparams[0].value = bldgClicked.params.bAddress == "" ? "No information available" : bldgClicked.params.bAddress;  
@@ -273,8 +274,9 @@ Environment = function(application) {
 					        	_this.scope.currentEvt = evt; 
 					        	_this.scope.isBldgClicked = true;
 					        	_this.scope.bldgClicked = bldgClicked; 
+					        	_this.scope.buildingToEdit = bldgClicked; 
 					        	_this.scope.mouseOverBuildingName = bldgClicked.name;  
-					        	if(bldgClicked.params != undefined){ 
+					        	if(bldgClicked.params != undefined){ console.log(bldgClicked.params); console.log(bldgClicked);
 						            _this.scope.currentBuiltDate = bldgClicked.params.bBuilt == "" ? "No information available" : bldgClicked.params.bBuilt;  
 						            _this.scope.currentRenovDate = bldgClicked.params.bRenov == "" ? "No information available" : bldgClicked.params.bRenov;  
 						            _this.scope.currentMaterialBuilding = bldgClicked.params.bType == "" ? "No information available" : bldgClicked.params.bType == "Steel or Concrete" ? "Steel/Concrete" : bldgClicked.params.bType == "Wood Frame/Brick (perm)" ? "Wood Frame/Brick" : bldgClicked.params.bType == "Heavy Timber or Laminate" ? "Heavy Timber/Laminate" : bldgClicked.params.bType == "Metal Building (perm)" ? "Metal" : bldgClicked.params.bType == "Steel/Concrete" ? "Steel/Concrete" : bldgClicked.params.bType == "Wood Frame/Brick" ? "Wood Frame/Brick" : bldgClicked.params.bType == "Heavy Timber/Laminate" ? "Heavy Timber/Laminate" : bldgClicked.params.bType ==  "Metal" ? "Metal" : "Other"; 

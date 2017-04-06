@@ -1,9 +1,9 @@
 <div class="panel panel-default" id="titleScenarioPanel" > 
-	<h4 class="controlPanelHeaders"> <span> {{currentScenario.name}} </span> </h4>
+	<h4 class="controlPanelHeaders"> <span> Current Scenario : {{currentScenario.name}} </span> </h4>
 </div>
 
 <div class="panel panel-default" id="loadScenarioPanel" > 
-	<h4 class="controlPanelHeaders"> <span> Load a scenario </span> </h4>
+	<h4 class="controlPanelHeaders"> <span> Load or delete a scenario </span> </h4>
 	<span class="plotchoiceSpans"> Please select a scenario to load :</span>
 	<select ng-model="chosenScenario" >
 		<option ng-repeat="x in scenarioList" value="{{x.name}}">{{x.name}}</option>
@@ -13,12 +13,15 @@
 </div>
 
 <div class="panel panel-default" id="saveScenarioPanel" > 
-	<h4 class="controlPanelHeaders"> <span> Save the current scenario </span> </h4>
+	<h4 class="controlPanelHeaders"> <span> Save scenario </span> </h4>
+	<span class="plotchoiceSpans"> Save as a new scenario...</span>
 	<input type="text" name="input" ng-model="saveScenarioName" placeholder="Scenario name...">
-	<button ng-click="saveScenario()"> Save </button>
+	<button ng-click="saveNewScenario()"> Save </button> <br/>
+	<span class="plotchoiceSpans"> Save current scenario : </span>
+	<button ng-click="saveCurrentScenario()"> Save </button>
 </div>
 
-<div class="panel panel-default" id="editbuildingPanel" > 
+<div class="panel panel-default" id="editbuildingPanel" ng-show="isBldgClicked"> 
 	<h4 class="controlPanelHeaders"> <span> {{editPanelTitle}}  </span> </h4>
 	<span class="plotchoiceSpans"> Build Date: {{currentBuiltDate}}</span>
 	<slider floor="1900" ceiling="2017" step="1" precision="1" ng-model="currentBuiltDate" class="controlSlider"></slider>	
@@ -29,6 +32,7 @@
 		<option ng-repeat="x in matBuildingList" value="{{x}}">{{x}}</option>
 	</select>
 	<button ng-click="saveBuildingParams()"> Save parameters </button>
+	<button ng-click="deleteBuilding()"> Delete Building </button>
 </div>
 
 <div class="panel panel-default" id="buildingcreatorPanel" > 
@@ -38,5 +42,6 @@
 		<option ng-repeat="x in buildingTypeList" value="{{x.id}}">{{x.type}}</option>
 	</select>
 	<input type="text" name="input" ng-model="createdBuildingName" placeholder="Building name...">
-	<button ng-click="createBuilding()"> Create </button>
+	<button ng-click="createBuilding()"> Create </button> <br/>
+	<button ng-click="saveBuildingPosition()"" ng-show="isBuildingMovable" > Save Building Position </button>
 </div>

@@ -10,7 +10,8 @@ app.controller('EditController',
         $rootScope.editableRenovDate = "";  
         $rootScope.editableMaterialBuilding = "";
         $rootScope.matBuildingList = ["Steel/Concrete" , "Heavy Timber/Laminate" , "Wood Frame/Brick" , "Metal"]; 
-
+        $scope.isBuildingMovable = false; 
+        $rootScope.isBldgClicked = false; 
 
 /*        $rootScope.$watch('currentBuiltDate', function() { 
         	console.log("currentBuiltDate rootscope has changed ")
@@ -55,10 +56,10 @@ app.controller('EditController',
 
 
 
-        $rootScope.$watchGroup(['currentBuiltDate','currentRenovDate','currentMaterialBuilding','editPanelTitle'], function(newValues,oldValues,scope) {  
+        $rootScope.$watchGroup(['currentBuiltDate','currentRenovDate','currentMaterialBuilding'], function(newValues,oldValues,scope) {  
         	$scope.currentBuiltDate = newValues[0];
         	$scope.currentRenovDate = newValues[1];
-        	$scope.currentMaterialBuilding = newValues[2]; console.log(newValues[2]);
+        	$scope.currentMaterialBuilding = newValues[2]; 
         }); 
 
 /*        $scope.$watch('currentBuiltDate', function() { 
@@ -82,6 +83,11 @@ app.controller('EditController',
 
 
         $scope.currentScenario = $rootScope.scenarioList[0]; 
+        function getRandomInt(min, max) {
+		  min = Math.ceil(min);
+		  max = Math.floor(max);
+		  return Math.floor(Math.random() * (max - min)) + min;
+		}
 
         $scope.createBuilding = function(){ 
         	var bldgDuplicatedId = $scope.chosenBuildingType; 
@@ -93,28 +99,42 @@ app.controller('EditController',
         	}
         	var bldgDuplicated = $rootScope.buildingsList[ind]; 
         	console.log(bldgDuplicated);
-        	var newBldg = new Building(bldgDuplicatedId+1000,$scope.createdBuildingName,bldgDuplicated.bClass,bldgDuplicated.environment); 
-        	newBldg.params = bldgDuplicated.params; 
+        	var newBldg = new Building(bldgDuplicatedId+getRandomInt(1000, 10000),$scope.createdBuildingName,bldgDuplicated.bClass,bldgDuplicated.environment); 
+        	newBldg.params = angular.copy(bldgDuplicated.params); 
         	newBldg.departmentList = bldgDuplicated.departmentList; 
         	newBldg.isMovable = true; 
+        	$scope.isBuildingMovable = true; 
         	var duplicatedMesh = bldgDuplicated.mesh; 
         	var newMesh = duplicatedMesh.clone($scope.createdBuildingName + "dupli"); 
         	newMesh.position.x = 0; 
         	newMesh.position.z = -128; 
         	newMesh.material = $rootScope.materialLightBlue; 
         	newMesh.building = newBldg; 
-			newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPOverT);
-			newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPOutT);
-			newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPickT);
+
         	newBldg.mesh = newMesh; 
         	$rootScope.editableBuildingsList.push(newBldg); 
-
+        	$rootScope.currentMovableBuilding = newBldg; 
+        	$rootScope.buildingToEdit = newBldg; 
+        	$rootScope.editPanelTitle = "Edit the newly created building...";
+        	$rootScope.isBldgClicked = true; 
         	$scope.createdBuildingName = ""; 
 
         }
 
         $scope.deleteBuilding = function(){
-
+        	if($rootScope.buildingToEdit == undefined){
+        		alert("You did not select any building to delete"); 
+        	}
+        	else{
+	        	for(var k=0; k<$rootScope.editableBuildingsList.length; k++){ 
+        			if($rootScope.editableBuildingsList[k].id == $rootScope.buildingToEdit.id){
+        			var ind = k;
+        			break;
+        			}
+        		}
+        		$rootScope.editableBuildingsList[ind].mesh.isVisible = false;  
+	        	alert("Building successfully deleted");
+        	}
         }
 
         $scope.solarPanelToggle = function(){
@@ -156,15 +176,11 @@ app.controller('EditController',
         	console.log("Deleting scenario " + $rootScope.editableScenario.name + '...'); 
         };        
 
-        $rootScope.saveScenario = function() { //should write the scenarios in the db
+        $rootScope.saveNewScenario = function() { //should write the scenarios in the db
         	var copylist = [];
 			for(var k=0; k<$rootScope.editableBuildingsList.length;k++){
-				copylist.push(jQuery.extend(true, {}, $rootScope.editableBuildingsList[k])) ;
-				if($rootScope.editableBuildingsList[k].isMovable != undefined){
-					if($rootScope.editableBuildingsList[k].isMovable){
-						$rootScope.editableBuildingsList[k].mesh.material = $rootScope.materialBuilding; 
-						$rootScope.editableBuildingsList[k].isMovable = false; 
-					}
+				if($rootScope.editableBuildingsList[k].mesh != undefined && $rootScope.editableBuildingsList[k].mesh.isVisible == true){
+					copylist.push(jQuery.extend(true, {}, $rootScope.editableBuildingsList[k]));
 				}
 			}
 			var scenarioNameAlreadyExists = false; 
@@ -188,20 +204,64 @@ app.controller('EditController',
         	console.log("Saving scenario " + $scope.saveScenarioName + '...'); 
         };
 
+        $rootScope.saveCurrentScenario = function(){
+        	var copylist = [];
+			for(var k=0; k<$rootScope.editableBuildingsList.length;k++){
+				if($rootScope.editableBuildingsList[k].mesh != undefined && $rootScope.editableBuildingsList[k].mesh.isVisible == true){
+					copylist.push(jQuery.extend(true, {}, $rootScope.editableBuildingsList[k]));
+				}
+				
+/*				if($rootScope.editableBuildingsList[k].isMovable != undefined){
+					if($rootScope.editableBuildingsList[k].isMovable){
+						$rootScope.editableBuildingsList[k].mesh.material = $rootScope.materialBuilding; 
+						$rootScope.editableBuildingsList[k].isMovable = false; 
+					}
+				}*/
+			}
+			for(var j=0; j<$rootScope.scenarioList.length; j++){
+				if($scope.currentScenario.name == $rootScope.scenarioList[j].name){
+					var ind = j; 
+					break; 
+				}
+			}
+			$rootScope.scenarioList[ind] = {
+				name: $scope.currentScenario.name, 
+				buildingsList: copylist, 
+			};
+
+        	alert("Scenario saved!"); 
+        };
+
         $rootScope.saveBuildingParams = function(){
-        	for(var k=0; k<$rootScope.editableBuildingsList.length; k++){ 
-        		if($rootScope.editableBuildingsList[k].id == $rootScope.bldgClicked.id){
-        			var ind = k; 
-        		}
-        	} 
-        	$rootScope.editableBuildingsList[ind].params.bBuilt = $scope.currentBuiltDate;
-        	$rootScope.editableBuildingsList[ind].params.bRenov = $scope.currentRenovDate;
-        	$rootScope.editableBuildingsList[ind].params.bType = $scope.currentMaterialBuilding;
-        	$rootScope.buildingsList[ind].mesh.building = $rootScope.editableBuildingsList[ind]; // update DISPLAYED building. IF NEW MESH PAY ATTENTION TO INDICES
-        	alert("Parameters for this building have been successfully saved")
+        	if($rootScope.buildingToEdit == undefined){
+        		alert("You did not select any building to edit"); 
+        	}
+        	else{
+	        	for(var k=0; k<$rootScope.editableBuildingsList.length; k++){ 
+        			if($rootScope.editableBuildingsList[k].id == $rootScope.buildingToEdit.id){
+        			var ind = k;
+        			break;
+        			}
+        		} 
+
+	        	$rootScope.editableBuildingsList[ind].params.bBuilt = angular.copy($scope.currentBuiltDate);
+	        	$rootScope.editableBuildingsList[ind].params.bRenov = angular.copy($scope.currentRenovDate);
+	        	$rootScope.editableBuildingsList[ind].params.bType = angular.copy($scope.currentMaterialBuilding);
+	        	$rootScope.editableBuildingsList[ind].mesh.building = $rootScope.editableBuildingsList[ind]; // update DISPLAYED building. IF NEW MESH PAY ATTENTION TO INDICES
+	        	alert("Parameters for this building have been successfully saved");
+        	}
+
+        };
+
+        $rootScope.saveBuildingPosition = function(){ 
+        	$rootScope.currentMovableBuilding.mesh.material = $rootScope.materialBuilding; 
+        	$rootScope.currentMovableBuilding.isMovable = false; 
+        	$scope.isBuildingMovable = false; 
+        	$rootScope.currentMovableBuilding.mesh.actionManager = new BABYLON.ActionManager($rootScope.scene);
+			$rootScope.currentMovableBuilding.mesh.actionManager.registerAction($rootScope.pointerMeshActionOPOverT);
+			$rootScope.currentMovableBuilding.mesh.actionManager.registerAction($rootScope.pointerMeshActionOPOutT);
+			$rootScope.currentMovableBuilding.mesh.actionManager.registerAction($rootScope.pointerMeshActionOPickT);
         }
-
-
 	}
 
 );
