@@ -17,6 +17,10 @@ Environment = function(application) {
 	this.shapeAllRoads = []; 
     this.Zlist = []; 
 
+    $.getJSON('jsons/infoBldg.json', function(data) {         
+    console.log(data);
+});	
+
     this.hPlate = 0; 
     this.sZ0 = 0.25; 
     this.sV = 0.35;
@@ -37,7 +41,7 @@ Environment = function(application) {
     var _this = this;
 
     var imgTexture_path = "/img/wood.jpg"
-
+    console.log("loading enviroment...")
     var elem = angular.element(document.querySelector('[ng-app]'));
 	var injector = elem.injector(); 
  	var $rootScope = injector.get('$rootScope'); 

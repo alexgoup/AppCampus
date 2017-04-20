@@ -9,6 +9,23 @@ var BuildingParamsBis = require('./models/BuildingsParamsBis');
 var BuildingFloors = require('./models/BuildingsFloors');
 var Zones = require('./models/Zones');
 
+var Datastore = require('nedb'); 
+fs = require('fs');
+
+var buildingparamsDB = new Datastore({ filename: './data/buildingparamsDB.db', autoload: true });
+
+
+/*buildingparamsDB.insert(JSON.parse(fs.readFileSync('./public/jsons/infoBldg.json', 'utf8')),function(err, newDoc){
+    
+});*/
+
+/*var Datastore = require('nedb'), 
+path = require('path'),
+db = new Datastore({
+  filename:path.join(require('nw.gui').App.dataPath, 'todo.db'),
+  autoload: true
+}); */
+
     module.exports = function(app) {
 
         // server routes ===========================================================
@@ -69,10 +86,10 @@ var Zones = require('./models/Zones');
             });
         });
 
-        app.get('/api/buildingsparams', function(req, res) {
+/*        app.get('/api/buildingsparams', function(req, res) {
             // use mongoose to get all nerds in the database
-           BuildingParams.find(function(err, buildingsparams) {
-
+           BuildingParams.find(function(err, buildingsparams) { 
+          
                 // if there is an error retrieving, send the error. 
                                 // nothing after res.send(err) will execute
                 if (err)
@@ -80,7 +97,18 @@ var Zones = require('./models/Zones');
 
                 res.json(buildingsparams); // return all nerds in JSON format
             });
-        }); 
+        }); */
+
+        app.get('/api/buildingsparams', function(req, res) {
+            
+           buildingparamsDB.find({},function(err, buildingsparams) { console.log(buildingsparams);
+                if (err)
+                    res.send(err);
+                res.json(buildingsparams); 
+            });
+        });
+
+
 
        app.get('/api/buildingsparamsbis', function(req, res) {
             // use mongoose to get all nerds in the database

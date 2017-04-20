@@ -37,6 +37,17 @@
 	<button ng-click="deleteBuilding()"> Delete Building </button>
 </div>
 
+<div class="panel panel-default" id="editFleetPanel"> 
+	<h4 class="controlPanelHeaders"> <span> {{editFleetTitle}}  </span> </h4> 	
+	<!-- <button popover-placement="top" popover="{{explainingText}}" class="btn btn-circle">?</button> -->
+	<span class="plotchoiceSpans"> Number of electric buses: {{nElectric}}</span>
+	<slider floor="0" ceiling="{{nFleet}}" step="1" precision="1" ng-model="nElectric" class="controlSlider"></slider>	
+	<span class="plotchoiceSpans"> Numbers of buses in the fleet: {{nFleet}}</span>
+	<slider floor="0" ceiling="50" step="1" precision="1" ng-model="nFleet" class="controlSlider"></slider>	
+	<span class="plotchoiceSpans"> Number of diesel buses: {{nFleet-nElectric}}</span>
+	<button ng-click="saveFleetParams()"> Save parameters </button>
+</div>
+
 <div class="panel panel-default" id="buildingcreatorPanel" > 
 	<h4 class="controlPanelHeaders"> <span> Building creator  </span> </h4>
 	<span class="plotchoiceSpans"> Building type: </span>

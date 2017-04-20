@@ -60,7 +60,7 @@ Building.prototype = {
 
     },
 
-    desanimate: function(){ 
+    desanimate: function(){ console.log(this.inity);
           var _this = this; 
             if(_this.firstTimeDesanimate){
                 _this.environment.scene.registerAfterRender(function () { 

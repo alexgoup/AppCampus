@@ -165,7 +165,7 @@ function getMonthly(building,request){
 
 function initBuildings(environment) { 
 	bClient = new HttpClient();
-	bClient.get('/api/buildingsnames', function(response) {
+	bClient.get('/api/buildingsnames', function(response) { 
 	   buildingsnamesJSON = JSON && JSON.parse(response) || $.parseJSON(response);
 	   nLoadJsonFinished ++; 
 	   if (njson == nLoadJsonFinished){
@@ -191,6 +191,10 @@ function initBuildings(environment) {
 	   	environment.initBuildingsList(); 
 	   }
 	});
+
+$.get('jsons/infoBldg.json', function(data) {         
+    console.log(data);
+});		
 
 	dClient = new HttpClient();
 	dClient.get('/api/buildingsparams', function(response) {

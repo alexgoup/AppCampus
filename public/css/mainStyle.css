@@ -77,6 +77,19 @@ html, body {
 	background-color: rgba(60,60,60,0.5)
  }  
 
+ #editFleetPanel { 
+	position: absolute;
+	top: 15%;
+	left: 84%;
+	width: 15%;
+	height: auto;
+	margin:0px;
+	border: 0px solid transparent;
+	border-color: #346562;
+	border-radius: 4px;
+	background-color: rgba(60,60,60,0.5)
+ }  
+
  #titleScenarioPanel { 
 	position: absolute;
 	top: 10%;
@@ -94,6 +107,19 @@ html, body {
 	position: absolute;
 	top: 16%;
 	left: 1%;
+	width: 15%;
+	height: auto;
+	margin:0px;
+	border: 0px solid transparent;
+	border-color: #346562;
+	border-radius: 4px;
+	background-color: rgba(60,60,60,0.5)
+ }  
+
+ #loadScenarioPanelViewmode { 
+	position: absolute;
+	top: 3.5%;
+	left: 55%;
 	width: 15%;
 	height: auto;
 	margin:0px;

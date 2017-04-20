@@ -12,6 +12,18 @@ var mongoose = require('mongoose');
 // config files
 var db = require('./config/db');
 
+/*var Datastore = require('nedb'), 
+path = require('path'),
+db2 = new Datastore({
+  filename:path.join(require('nw.gui').App.dataPath, 'todo.db'),
+  autoload: true
+});*/
+
+
+// TESTING NEDB INSTEAD OF MONGODB
+
+//
+
 // set our port
 var port = process.env.PORT || 8080; 
 

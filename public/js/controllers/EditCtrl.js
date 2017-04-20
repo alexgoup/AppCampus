@@ -11,11 +11,24 @@ app.controller('EditController',
         $rootScope.editableMaterialBuilding = "";
         $rootScope.matBuildingList = ["Steel/Concrete" , "Heavy Timber/Laminate" , "Wood Frame/Brick" , "Metal"]; 
         $scope.isBuildingMovable = false; 
-        $rootScope.isBldgClicked = false; 
+        $rootScope.chosenScenario = $scope.chosenScenario; 
+        $rootScope.currentScenario = $scope.currentScenario; 
+        //$rootScope.isBldgClicked = false; 
+        //$rootScope.nDiesel = $rootscope.nFleet - $rootScope.nElectric; 
+        $rootScope.nFleet = 10; 
+        $rootScope.nElectric = 0;
+        $rootScope.editFleetTitle = "Buses Editor"; 
         $rootScope.predictedSolar = 0; 
-/*        $rootScope.$watch('currentBuiltDate', function() { 
-        	console.log("currentBuiltDate rootscope has changed ")
-        });   */   
+        if($rootScope.isBldgClicked){
+        	$rootScope.bldgClicked.desanimate(); 
+        	$rootScope.bldgClicked.animateState = 2; 
+	 		$rootScope.bldgClicked = ""; 
+	 		$rootScope.isBldgClicked = false; 
+	 		$rootScope.BusClicked = ""; 
+	 		$rootScope.isBusClicked = false; 
+        }
+
+        $rootScope.chosenScenario = $rootScope.scenarioList[0];
 
         $rootScope.buildingTypeList = [
         	{
@@ -70,7 +83,7 @@ app.controller('EditController',
         $rootScope.buildingsList;
         $rootScope.editableBuildingsList;
 
-        if($rootScope.firstrender){ 
+/*        if($rootScope.firstrender){ 
 	        $rootScope.scenarioList = [ //IN THEORY SHOULD GET INITIAL SCENARIO LIST FROM THE DB, JUST THE NAMES OR ID
 		        {
 		        	name : "Initial Campus", 
@@ -78,12 +91,11 @@ app.controller('EditController',
 		        }
 	        ]; 
 	        $rootScope.firstrender = false; 
-	        $scope.chosenScenario = $rootScope.scenarioList[0];
-        }
+	        $rootScope.chosenScenario = $rootScope.scenarioList[0];
+        }*/
 
 
 
-        $scope.currentScenario = $rootScope.scenarioList[0]; 
         function getRandomInt(min, max) {
 		  min = Math.ceil(min);
 		  max = Math.floor(max);
@@ -111,7 +123,8 @@ app.controller('EditController',
         	newMesh.position.z = -128; 
         	newMesh.material = $rootScope.materialLightBlue; 
         	newMesh.building = newBldg; 
-
+			newMesh.building.inity = newMesh.position.y; 
+			newMesh.building.initroty = newMesh.rotation.y;
         	newBldg.mesh = newMesh; 
         	$rootScope.editableBuildingsList.push(newBldg); 
         	$rootScope.currentMovableBuilding = newBldg; 
@@ -142,24 +155,24 @@ app.controller('EditController',
 
         }
 
-        $rootScope.loadScenario = function() { console.log($rootScope.scenarioList);
+        $rootScope.loadScenario = function() {
         	for(var k=0; k<$rootScope.scenarioList.length; k++){
-        		if($rootScope.scenarioList[k].name == $scope.chosenScenario){
+        		if($rootScope.scenarioList[k].name == $scope.chosenScenario.name){
         			var ind = k; 
         			break; 
         		}
         	}
-        	$scope.currentScenario = $rootScope.scenarioList[ind]; 
-        	        	console.log($scope.currentScenario.buildingsList.length); 
-        	console.log($rootScope.editableBuildingsList.length); 
+        	console.log(ind);
+        	$rootScope.currentScenario = $rootScope.scenarioList[ind]; 
+
         	for(var k=0; k<$rootScope.editableBuildingsList.length; k++){ // loop on scene meshes to update building info.
         		var mesh = $rootScope.editableBuildingsList[k].mesh; //some of the buildings dont have meshes ie are not in the scene!
         		if(mesh != undefined){
         			var bldgIsInList = false;
-        			for(var i=0; i<$scope.currentScenario.buildingsList.length;i++){
-/*        				if(k==200){console.log($scope.currentScenario.buildingsList[i].id); console.log(mesh.building.id);}*/
-        				if(mesh.building.id == $scope.currentScenario.buildingsList[i].id){ // update building info
-        					mesh.building = $scope.currentScenario.buildingsList[i];
+        			for(var i=0; i<$rootScope.currentScenario.buildingsList.length;i++){
+/*        				if(k==200){console.log($rootScope.currentScenario.buildingsList[i].id); console.log(mesh.building.id);}*/
+        				if(mesh.building.id == $rootScope.currentScenario.buildingsList[i].id){ // update building info
+        					mesh.building = $rootScope.currentScenario.buildingsList[i];
         					mesh.isVisible = true; 
         					var bldgIsInList = true; 
         					break; 
@@ -196,7 +209,7 @@ app.controller('EditController',
 					buildingsList: copylist, 
 				}); 
 				$scope.saveScenarioName = ""; 
-				$scope.currentScenario = $rootScope.scenarioList[$rootScope.scenarioList.length-1]; 
+				$rootScope.currentScenario = $rootScope.scenarioList[$rootScope.scenarioList.length-1]; 
 			}
 			else{
 				alert("This scenario name already exists in the scenario list!");
@@ -220,13 +233,13 @@ app.controller('EditController',
 				}*/
 			}
 			for(var j=0; j<$rootScope.scenarioList.length; j++){
-				if($scope.currentScenario.name == $rootScope.scenarioList[j].name){
+				if($rootScope.currentScenario.name == $rootScope.scenarioList[j].name){
 					var ind = j; 
 					break; 
 				}
 			}
 			$rootScope.scenarioList[ind] = {
-				name: $scope.currentScenario.name, 
+				name: $rootScope.currentScenario.name, 
 				buildingsList: copylist, 
 			};
 

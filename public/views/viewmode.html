@@ -69,6 +69,16 @@
 <!-- 					<div id="heatmapTitle" ng-show="heatmapBool || footprintheatmapBool || energyheatmapBool || areaenergyheatmapBool">
 						<span> {{heatmapTitle}} heatmap</span>
 					</div> -->
+
+					<div class="panel panel-default" id="loadScenarioPanelViewmode" > 
+						<h4 class="controlPanelHeaders"> <span> Load or delete a scenario </span> </h4>
+						<span class="plotchoiceSpans"> Please select a scenario to load :</span>
+						<select ng-model="chosenScenarioViewmode" ng-options="x.name for x in scenarioList">
+					<!-- 		<option ng-repeat="x in scenarioList" value="{{x.name}}">{{x.name}}</option> -->
+						</select>
+						<button ng-click="loadScenarioViewmode()"> Load </button>
+					</div>
+
 					<div class="panel panel-default" id="controlPanel" > 
 <!-- 						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>

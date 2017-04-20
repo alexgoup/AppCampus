@@ -22,6 +22,19 @@ app.controller('BuildingController',
 	/*	$rootScope.bldgClicked = ""; */
 		$rootScope.viewmode = true; 
 
+
+        if($rootScope.firstrender){ 
+	        $rootScope.scenarioList = [ //IN THEORY SHOULD GET INITIAL SCENARIO LIST FROM THE DB, JUST THE NAMES OR ID
+		        {
+		        	name : "Initial Campus", 
+		        	buildingsList : $rootScope.buildingsList, 
+		        }
+	        ]; 
+	        $rootScope.firstrender = false; 
+	        $rootScope.chosenScenarioViewmode = $rootScope.scenarioList[0];
+	        $rootScope.currentScenario = $rootScope.scenarioList[0];
+        }
+
 		$scope.toggleEnergyGraph = function() {
 			if($scope.showEnergyGraph){
 				$scope.showFootprintGraph = false;
@@ -164,6 +177,37 @@ app.controller('BuildingController',
     	$rootScope.safetystate = false;
 		$scope.safetyimg = $rootScope.safetystate ? "/img/logos/orange-safety.png" : "/img/logos/white-safety.png"; 
 		/*$rootScope.safetystate = $scope.safetystate; */
+
+		 $rootScope.loadScenarioViewmode = function() { 
+        	for(var k=0; k<$rootScope.scenarioList.length; k++){
+        		if($rootScope.scenarioList[k].name == $scope.chosenScenarioViewmode.name){
+        			var ind = k; 
+        			break; 
+        		}
+        	}
+        	console.log(ind);
+        	$rootScope.currentScenario = $rootScope.scenarioList[ind]; 
+
+        	for(var k=0; k<$rootScope.editableBuildingsList.length; k++){ // loop on scene meshes to update building info.
+        		var mesh = $rootScope.editableBuildingsList[k].mesh; //some of the buildings dont have meshes ie are not in the scene!
+        		if(mesh != undefined){
+        			var bldgIsInList = false;
+        			for(var i=0; i<$rootScope.currentScenario.buildingsList.length;i++){
+/*        				if(k==200){console.log($rootScope.currentScenario.buildingsList[i].id); console.log(mesh.building.id);}*/
+        				if(mesh.building.id == $rootScope.currentScenario.buildingsList[i].id){ // update building info
+        					mesh.building = $rootScope.currentScenario.buildingsList[i];
+        					mesh.isVisible = true; 
+        					var bldgIsInList = true; 
+        					break; 
+        				}
+        			}
+        			if(!bldgIsInList){ 
+        				mesh.isVisible = false; 
+        			}
+        		}
+        	}
+        	console.log("Loading scenario " + $rootScope.scenarioList[ind].name + '...'); 
+        };         
 		
 	    $scope.togglesafety = function() {
         	$rootScope.safetystate = !$rootScope.safetystate;
