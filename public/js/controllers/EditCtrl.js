@@ -116,6 +116,7 @@ app.controller('EditController',
         	newBldg.params = angular.copy(bldgDuplicated.params); 
         	newBldg.departmentList = bldgDuplicated.departmentList; 
         	newBldg.isMovable = true; 
+        	newBldg.duplicatedID = bldgDuplicatedId;
         	$scope.isBuildingMovable = true; 
         	var duplicatedMesh = bldgDuplicated.mesh; 
         	var newMesh = duplicatedMesh.clone($scope.createdBuildingName + "dupli"); 
@@ -204,19 +205,80 @@ app.controller('EditController',
 				}
 			}
 			if(!scenarioNameAlreadyExists){
-				$rootScope.scenarioList.push({
+				var newScenario = {
 					name: $scope.saveScenarioName, 
 					buildingsList: copylist, 
-				}); 
-				$scope.saveScenarioName = ""; 
+				};
+				$rootScope.scenarioList.push(newScenario); 
 				$rootScope.currentScenario = $rootScope.scenarioList[$rootScope.scenarioList.length-1]; 
+
+				//decircularize the struct before saving it to json 
+				var datatosave = []; 
+				for(var i=0; i<copylist.length; i++){
+					var bldg = copylist[i];
+					var bldgtosave =  {}; 
+					bldgtosave.params = bldg.params; 
+					bldgtosave.bldgid = bldg.id; 
+					bldgtosave.inity = bldg.inity; 
+					bldgtosave.initroty = bldg.initroty; 
+					bldgtosave.name = bldg.name; 
+					if(bldg.duplicatedID != undefined){
+						bldgtosave.duplicatedID = bldg.duplicatedID;
+					}
+					if(bldg.mesh != undefined){
+						bldgtosave.meshposition = bldg.mesh.position; 
+					}
+					datatosave.push(bldgtosave);
+				}
+				var scenarioToSave = {
+						name: $scope.saveScenarioName, 
+						data: datatosave, 
+				};
+				var scenarioJSON = angular.toJson(scenarioToSave);
+				scenarioClient = new HttpClient();
+				scenarioClient.post('/api/testDB/', scenarioJSON ,function(response) { console.log(response)
+
+				});
+
+				$scope.saveScenarioName = ""; 
 			}
 			else{
 				alert("This scenario name already exists in the scenario list!");
 			}
 
-        	console.log("Saving scenario " + $scope.saveScenarioName + '...'); 
+        	
         };
+
+/*        reconstructCircularBldgFromData = function(data){ // do not forget mesh visib
+	        	for(var k=0; k<$rootScope.buildingsList.length; k++){
+	        		var isBldgCreated = data.duplicatedID != undefined;
+	        		var idtofind = data.duplicatedID == undefined ? data.bldgid : data.duplicatedID; 
+	        		if($rootScope.buildingsList[k].id == data.idtofind){
+	        			if(isBldgCreated){
+	        				var bldgDuplicated = $rootScope.buildingsList[k];
+	        				var returnedBldg = new Building(data.duplicatedID+getRandomInt(1000, 10000),data.name,bldgDuplicated.bClass,bldgDuplicated.environment); 
+	        				returnedBldg.params = data.params; 
+	        				returnedBldg.departmentList = bldgDuplicated.departmentList;
+	        				returnedBldg.isMovable = false; 
+				        	var duplicatedMesh = bldgDuplicated.mesh; 
+        					var newMesh = duplicatedMesh.clone(data.name + "dupli"); 
+        					newMesh.position = data.meshposition; 
+        					newMesh.material = $rootScope.materialBuilding;
+        					newMesh.building = returnedBldg;
+        					returnedBldg.inity = data.inity; 
+        					returnedBldg.initroty = data.initroty; 
+        					returnedBldg.mesh = newMesh; 
+        					return returnedBldg;
+	        			}
+	        			else{
+		        			var returnedBldg = jQuery.extend(true, {}, $rootScope.buildingsList[k]);
+		        			returnedBldg.params = data.params; //also change position? later
+		        			return returnedBldg; 
+	        			}
+	        		}
+	        	}
+
+        };*/
 
         $rootScope.saveCurrentScenario = function(){
         	var copylist = [];

@@ -1,0 +1,1165 @@
+{"bldg":"51","department":"TOTALS","assignedArea":15814,"roomSpaceCount":34,"_id":"01M4zLsmIrnYxRSR"}
+{"bldg":"850","department":"TOTALS","assignedArea":110058,"roomSpaceCount":275,"_id":"067XDxZnEgoKxGkQ"}
+{"bldg":"141","department":"GTRI-Director Office","assignedArea":1559,"roomSpaceCount":7,"_id":"080YcM2wsPO9m0aK"}
+{"bldg":"20","department":"WREK Radio Station","assignedArea":328,"roomSpaceCount":1,"_id":"08JGHaYrOeZ0g733"}
+{"bldg":"58","department":"Non-Assignable","assignedArea":12316,"roomSpaceCount":60,"_id":"0AAHzBJ36ftXZGVA"}
+{"bldg":"198","department":"Unassigned","assignedArea":11235,"roomSpaceCount":45,"_id":"0H5TUSK7gDHGxCbL"}
+{"bldg":"166","department":"Non-Assignable","assignedArea":97087,"roomSpaceCount":159,"_id":"0OMlHUdhTRdP7QKe"}
+{"bldg":"131","department":"Vending","assignedArea":93,"roomSpaceCount":1,"_id":"0Tn2XrrcrL4pXE7Y"}
+{"bldg":"135","department":"Vending","assignedArea":85,"roomSpaceCount":2,"_id":"0VZu2RDfjFDQ5TVm"}
+{"bldg":"116","department":"Housing Office","assignedArea":284,"roomSpaceCount":1,"_id":"0X6ZbAo1BPGyqcQ5"}
+{"bldg":"126","department":"Mechanical Engineering","assignedArea":21057,"roomSpaceCount":60,"_id":"0Xi0ne7JRJk4VRW1"}
+{"bldg":"128","department":"Environmental Health & Safety","assignedArea":3536,"roomSpaceCount":19,"_id":"0dFnQjrw9o9tFJAE"}
+{"bldg":"186","department":"Non-Assignable","assignedArea":570,"roomSpaceCount":7,"_id":"0ePBqJbHfhidOO4L"}
+{"bldg":"165","department":"TOTALS","assignedArea":90489,"roomSpaceCount":322,"_id":"0gz3JGyYmQDdnpoK"}
+{"bldg":"790","department":"GTRI-Signature Tech (GTRI-STL)","assignedArea":38501,"roomSpaceCount":135,"_id":"0ilZHRwfws3i1Rgs"}
+{"bldg":"160","department":"VPSA-Intramural Council","assignedArea":47784,"roomSpaceCount":67,"_id":"0pZwxrpxDbn0KeoG"}
+{"bldg":"803","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":5058,"roomSpaceCount":30,"_id":"0qYNzlCyMHLgxbxu"}
+{"bldg":"145","department":"Institute Classrooms","assignedArea":1060,"roomSpaceCount":1,"_id":"0tqrI881hh72sMx4"}
+{"bldg":"807","department":"GTRI-Non-Assignable","assignedArea":181,"roomSpaceCount":1,"_id":"0uHRs47rz58aSwTS"}
+{"bldg":"029A","department":"Financial Services AVP","assignedArea":898,"roomSpaceCount":4,"_id":"0wTb69LUjTvJZgHh"}
+{"bldg":"181","department":"Facilities-Management","assignedArea":188,"roomSpaceCount":1,"_id":"0wYaVajPnK8WsMz6"}
+{"bldg":"75","department":"Industrial Design","assignedArea":7676,"roomSpaceCount":13,"_id":"11Yq4Dfi78iysoHd"}
+{"bldg":"791","department":"TOTALS","assignedArea":10646,"roomSpaceCount":64,"_id":"11pzTNKG1BLIYfcN"}
+{"bldg":"132","department":"Residence Halls","assignedArea":85367,"roomSpaceCount":118,"_id":"12eB11yCzh461QNV"}
+{"bldg":"073B","department":"Non-Assignable","assignedArea":1593,"roomSpaceCount":12,"_id":"17FKLZ3nSsGk8Gpj"}
+{"bldg":"051B","department":"Non-Assignable","assignedArea":1504,"roomSpaceCount":14,"_id":"19dXwIOlgXDvJOug"}
+{"bldg":"100","department":"TOTALS","assignedArea":119447,"roomSpaceCount":348,"_id":"1BTncWfjEIQ6vqBQ"}
+{"bldg":"95","department":"TOTALS","assignedArea":89018,"roomSpaceCount":224,"_id":"1Dw7lDhDV46Rqbwe"}
+{"bldg":"94","department":"Non-Assignable","assignedArea":5699,"roomSpaceCount":24,"_id":"1EsUCWo75oz62J74"}
+{"bldg":"164","department":"TOTALS","assignedArea":26177,"roomSpaceCount":120,"_id":"1HCu3BGKA11oWFE0"}
+{"bldg":"146","department":"GT Emory Biomedical Engr","assignedArea":15158,"roomSpaceCount":70,"_id":"1MZB9E0oGiQoFRSL"}
+{"bldg":"30","department":"Vice Provost Graduate Education & Faculty Affairs","assignedArea":957,"roomSpaceCount":6,"_id":"1OT5g3fGEieLMNdZ"}
+{"bldg":"191","department":"Housing Office","assignedArea":2868,"roomSpaceCount":6,"_id":"1Pbd1IwLbxucSt3q"}
+{"bldg":"859","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":137,"roomSpaceCount":1,"_id":"1Po2qHfbHcMmxrpA"}
+{"bldg":"051D","department":"OIT-Information Security","assignedArea":1574,"roomSpaceCount":10,"_id":"1SvYy1HOuyB4HN12"}
+{"bldg":"118","department":"Housing Office","assignedArea":166,"roomSpaceCount":1,"_id":"1Xhr0YC1qwYQvOCM"}
+{"bldg":"99","department":"TOTALS","assignedArea":93384,"roomSpaceCount":399,"_id":"1bVw5oXHaMTeOXdC"}
+{"bldg":"41","department":"TOTALS","assignedArea":33981,"roomSpaceCount":106,"_id":"1cB0cuk31hDU93Sw"}
+{"bldg":"181","department":"Non-Assignable","assignedArea":76603,"roomSpaceCount":96,"_id":"1cCt723ss73yAMaJ"}
+{"bldg":"85","department":"Non-Assignable","assignedArea":53820,"roomSpaceCount":103,"_id":"1dVNaiISQQGIrXMC"}
+{"bldg":"174","department":"Non-Assignable","assignedArea":221088,"roomSpaceCount":78,"_id":"1gD8CFNtxuytm2c2"}
+{"bldg":"36","department":"Vice Provost Undergraduate Education","assignedArea":399,"roomSpaceCount":3,"_id":"1hG4uWS4DTzywgxL"}
+{"bldg":"807","department":"GTRI-Common","assignedArea":356,"roomSpaceCount":4,"_id":"1sUWWLt79iaxyRzQ"}
+{"bldg":"864","department":"GTRI-Non-Assignable","assignedArea":1194,"roomSpaceCount":8,"_id":"1yu5Cjwo006ATLT2"}
+{"bldg":"132","department":"Georgia Technology Auth","assignedArea":140,"roomSpaceCount":1,"_id":"1zlhkqJJWnEnV9jZ"}
+{"bldg":"182","department":"Housing Office","assignedArea":1069,"roomSpaceCount":5,"_id":"20jXBkEyXyYk5HvP"}
+{"bldg":"172","department":"College of Business","assignedArea":91169,"roomSpaceCount":423,"_id":"21UY0UBioFUgQXft"}
+{"bldg":"029A","department":"TOTALS","assignedArea":15687,"roomSpaceCount":90,"_id":"22MWozXTwNdbTmKP"}
+{"bldg":"774","department":"Natl Elec Energy Testing","assignedArea":20570,"roomSpaceCount":2,"_id":"2337A4dpr7WPNyxE"}
+{"bldg":"802","department":"Non-Assignable","assignedArea":106,"roomSpaceCount":1,"_id":"25JdVCYBeewxNR9A"}
+{"bldg":"61","department":"GTRI-Research Security","assignedArea":3740,"roomSpaceCount":25,"_id":"26HaHyjCkBSwS16H"}
+{"bldg":"061A","department":"GTRI-Non-Assignable","assignedArea":11918,"roomSpaceCount":45,"_id":"29fVCX4tJowbYp6j"}
+{"bldg":"10","department":"Residence Halls","assignedArea":14704,"roomSpaceCount":78,"_id":"2CR345FjgvCmo700"}
+{"bldg":"158","department":"Non-Assignable","assignedArea":1558,"roomSpaceCount":13,"_id":"2ChKkcnyxFvYNoVU"}
+{"bldg":"138","department":"OIT-Resource Management","assignedArea":4901,"roomSpaceCount":10,"_id":"2M9UdCOYbX9CBHop"}
+{"bldg":"40","department":"TOTALS","assignedArea":20061,"roomSpaceCount":61,"_id":"2SSniX1BVtBTuvBz"}
+{"bldg":"66","department":"Biology","assignedArea":8274,"roomSpaceCount":35,"_id":"2SiQa4cx6F6GGEor"}
+{"bldg":"101","department":"Aerospace Engineering","assignedArea":35022,"roomSpaceCount":85,"_id":"2Ynwy9gZikwYA8x8"}
+{"bldg":"170","department":"OIT-Information Tech Services","assignedArea":1373,"roomSpaceCount":1,"_id":"2eRNVKf3PQt8Asnj"}
+{"bldg":"201","department":"Non-Assignable","assignedArea":3503,"roomSpaceCount":5,"_id":"2fzEiVNo5YEUkIsk"}
+{"bldg":"119","department":"Non-Assignable","assignedArea":8685,"roomSpaceCount":51,"_id":"2hZbMvF4qQaxp1ru"}
+{"bldg":"84","department":"Non-Assignable","assignedArea":17450,"roomSpaceCount":44,"_id":"2l8rWGpHemq2mxoT"}
+{"bldg":"018A","department":"TOTALS","assignedArea":35158,"roomSpaceCount":158,"_id":"2r9oRwoUODR63MLQ"}
+{"bldg":"107","department":"TOTALS","assignedArea":21501,"roomSpaceCount":120,"_id":"2urnDmoAy16EgQLe"}
+{"bldg":"821A","department":"TOTALS","assignedArea":858,"roomSpaceCount":1,"_id":"2uzP9e8Vf9UjjlSG"}
+{"bldg":"167","department":"Unassigned","assignedArea":5050,"roomSpaceCount":17,"_id":"2vmGbhfBKcoxXEFh"}
+{"bldg":"067A","department":"TOTALS","assignedArea":6252,"roomSpaceCount":13,"_id":"33UxtNbcgBLrWReU"}
+{"bldg":"99","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":725,"roomSpaceCount":1,"_id":"3CkaOz3DYO4fcMtm"}
+{"bldg":"850","department":"Mechanical Engineering","assignedArea":16793,"roomSpaceCount":30,"_id":"3DkZkrTmp3vRd2Cb"}
+{"bldg":"051C","department":"TOTALS","assignedArea":6191,"roomSpaceCount":43,"_id":"3E6q88fXERZSsFNd"}
+{"bldg":"147","department":"Civil & Environmental Engr","assignedArea":18589,"roomSpaceCount":68,"_id":"3E7Q33zynDUrRnI7"}
+{"bldg":"12","department":"TOTALS","assignedArea":16805,"roomSpaceCount":50,"_id":"3EroYy2G8V3ajNXM"}
+{"bldg":"029B","department":"Internal Auditing","assignedArea":128,"roomSpaceCount":1,"_id":"3H6CIJDYoyqi9iek"}
+{"bldg":"33","department":"OIT-Information Tech Services","assignedArea":274,"roomSpaceCount":1,"_id":"3KpY6VV4dwcopDxK"}
+{"bldg":"117","department":"Residence Halls","assignedArea":13883,"roomSpaceCount":71,"_id":"3KrjvLyvcJw8l0Oh"}
+{"bldg":"123","department":"Counseling Center","assignedArea":5090,"roomSpaceCount":38,"_id":"3X2atpGttSWoGvoT"}
+{"bldg":"13","department":"Residence Halls","assignedArea":13832,"roomSpaceCount":71,"_id":"3XiuLMYo3a8AFIab"}
+{"bldg":"85","department":"TOTALS","assignedArea":148545,"roomSpaceCount":379,"_id":"3Z4DJCMhcB7T0zve"}
+{"bldg":"61","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":13070,"roomSpaceCount":63,"_id":"3eBis3q3ZpBqAxUA"}
+{"bldg":"178","department":"Unassigned","assignedArea":5076,"roomSpaceCount":7,"_id":"3hXK16JFkipQjU22"}
+{"bldg":"30","department":"Vice Provost Undergraduate Education","assignedArea":914,"roomSpaceCount":5,"_id":"3i0e0HTN7CDfISXM"}
+{"bldg":"146","department":"OIT-Information Tech Services","assignedArea":1527,"roomSpaceCount":1,"_id":"3izRVakZnBxpUhgN"}
+{"bldg":"199","department":"Unassigned","assignedArea":18057,"roomSpaceCount":29,"_id":"3sFCPGacILfIp3nB"}
+{"bldg":"196","department":"Non-Assignable","assignedArea":988,"roomSpaceCount":9,"_id":"3tzamK0LeP5IoZzV"}
+{"bldg":"185","department":"Non-Assignable","assignedArea":55,"roomSpaceCount":1,"_id":"3w1K7dhDVQbUoBW6"}
+{"bldg":"191","department":"TOTALS","assignedArea":856225,"roomSpaceCount":1740,"_id":"3xoT3RcaAMPOhuJ1"}
+{"bldg":"98","department":"TOTALS","assignedArea":31363,"roomSpaceCount":56,"_id":"3yhpVL1u2WK0WAGr"}
+{"bldg":"30","department":"Govt and Community Relations","assignedArea":1722,"roomSpaceCount":10,"_id":"40Q4p8LMF4S5t5Ov"}
+{"bldg":"203","department":"Athletic Association","assignedArea":44062,"roomSpaceCount":16,"_id":"436yPzsCG1qcQHet"}
+{"bldg":"185","department":"Parking Office","assignedArea":172,"roomSpaceCount":2,"_id":"45IMbrDKb8TMwSWp"}
+{"bldg":"9","department":"Parking Office","assignedArea":31,"roomSpaceCount":1,"_id":"45LKDM1k4qMhUHcD"}
+{"bldg":"161","department":"TOTALS","assignedArea":1986,"roomSpaceCount":8,"_id":"45tg7avl2LrsmkPu"}
+{"bldg":"26","department":"Non-Assignable","assignedArea":28613,"roomSpaceCount":18,"_id":"4Hg7vqkngnHZqhMB"}
+{"bldg":"40","department":"Aerospace Engineering","assignedArea":12703,"roomSpaceCount":33,"_id":"4MmovYXJjQHK9aYf"}
+{"bldg":"051B","department":"TOTALS","assignedArea":5908,"roomSpaceCount":45,"_id":"4QjwfIlQHfrIpwT0"}
+{"bldg":"838","department":"Library","assignedArea":33450,"roomSpaceCount":15,"_id":"4TfU7MiaWx0Fb0jH"}
+{"bldg":"838","department":"TOTALS","assignedArea":34178,"roomSpaceCount":19,"_id":"4VIYnalDbydGVVtl"}
+{"bldg":"071A","department":"TOTALS","assignedArea":1427,"roomSpaceCount":5,"_id":"4WQJBCClxQrysJbw"}
+{"bldg":"47","department":"Parking Decks","assignedArea":15663,"roomSpaceCount":7,"_id":"4cYFVYWwaO5pglDM"}
+{"bldg":"864","department":"GTRI-Common","assignedArea":1692,"roomSpaceCount":11,"_id":"4fK1zfHAZDzLYX70"}
+{"bldg":"141","department":"GTRI-Dep Dir Research Oper","assignedArea":1402,"roomSpaceCount":8,"_id":"4guxFU1qv4BGGH2u"}
+{"bldg":"173","department":"Tennenbaum Institute","assignedArea":3631,"roomSpaceCount":22,"_id":"4hyF9Mb4fJ8aAqeQ"}
+{"bldg":"38","department":"International Education","assignedArea":3260,"roomSpaceCount":26,"_id":"4oaV6Ec23nCFOmNC"}
+{"bldg":"061A","department":"GTRI-Information Systems","assignedArea":5291,"roomSpaceCount":32,"_id":"4sA2ToPnKw7fPsz0"}
+{"bldg":"84","department":"TOTALS","assignedArea":47142,"roomSpaceCount":161,"_id":"4uiGCs7ocq2VBjoB"}
+{"bldg":"30","department":"Aerospace Engineering","assignedArea":3259,"roomSpaceCount":3,"_id":"4xsg95PRIfY236Yp"}
+{"bldg":"77","department":"Library","assignedArea":63526,"roomSpaceCount":89,"_id":"554KHOPPQEjudSJa"}
+{"bldg":"180","department":"Non-Assignable","assignedArea":76525,"roomSpaceCount":846,"_id":"55V0g3RtrFVENmgn"}
+{"bldg":"130","department":"Housing Office","assignedArea":625,"roomSpaceCount":3,"_id":"5ES5XM2rsSHF8yrT"}
+{"bldg":"47","department":"President's Office","assignedArea":347,"roomSpaceCount":4,"_id":"5IJj35kdIrmkWCuk"}
+{"bldg":"874","department":"GTRI-Non-Assignable","assignedArea":1505,"roomSpaceCount":10,"_id":"5OEhuIUOLF933CiW"}
+{"bldg":"790","department":"GTRI-Information Systems","assignedArea":163,"roomSpaceCount":1,"_id":"5SL8pdC4TEpjMH6i"}
+{"bldg":"780","department":"GTRI-Cyber Tech & Info Sec Lab (CTISL)","assignedArea":10984,"roomSpaceCount":11,"_id":"5X3yYz3iJ7uhXDwE"}
+{"bldg":"104A","department":"TOTALS","assignedArea":5302,"roomSpaceCount":17,"_id":"5YFOZ5wJMBFB6KrZ"}
+{"bldg":"75","department":"Non-Assignable","assignedArea":14219,"roomSpaceCount":36,"_id":"5ZfyUkrUAktrbten"}
+{"bldg":"123","department":"Housing Office","assignedArea":3226,"roomSpaceCount":16,"_id":"5bH8vsCawNa2t0VU"}
+{"bldg":"30","department":"Provost & Exec VP Acad Aff","assignedArea":3354,"roomSpaceCount":15,"_id":"5cgdtXinlZpgpuSJ"}
+{"bldg":"141","department":"GTRI-Research Security","assignedArea":484,"roomSpaceCount":3,"_id":"5t7Kmm4fumApgYB0"}
+{"bldg":"175","department":"Electrical & Computer Engr","assignedArea":41516,"roomSpaceCount":81,"_id":"5thQW83cJLekxuFH"}
+{"bldg":"30","department":"GT Lorraine","assignedArea":878,"roomSpaceCount":6,"_id":"5tz8P1JvaKoetPFE"}
+{"bldg":"103","department":"Facilities-Management","assignedArea":3219,"roomSpaceCount":10,"_id":"5uPwLqOCm3gtde14"}
+{"bldg":"186","department":"TOTALS","assignedArea":11585,"roomSpaceCount":25,"_id":"5vCXKZe4yemR0tCK"}
+{"bldg":"823","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":5343,"roomSpaceCount":22,"_id":"5zZFWg2mipgnOMKu"}
+{"bldg":"806","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":3027,"roomSpaceCount":3,"_id":"6BWbZxthWOQQMw5e"}
+{"bldg":"110","department":"Residence Halls","assignedArea":18673,"roomSpaceCount":100,"_id":"6It4MYxV89AJoDtj"}
+{"bldg":"123","department":"Dean of Students","assignedArea":7124,"roomSpaceCount":36,"_id":"6LFgjGSU5n8H6k9j"}
+{"bldg":"57","department":"TOTALS","assignedArea":46368,"roomSpaceCount":223,"_id":"6MulhhkCvBHz9YNg"}
+{"bldg":"56","department":"Non-Assignable","assignedArea":13105,"roomSpaceCount":64,"_id":"6NIgEHT2cGL8j8FJ"}
+{"bldg":"124","department":"Center For The Arts","assignedArea":22402,"roomSpaceCount":35,"_id":"6PbBw5o33dHtXKhf"}
+{"bldg":"166","department":"TOTALS","assignedArea":212727,"roomSpaceCount":369,"_id":"6WIM8KEwyxZljvV9"}
+{"bldg":"76","department":"Institute Classrooms","assignedArea":5174,"roomSpaceCount":8,"_id":"6Wrn3OVqbcoL9IYF"}
+{"bldg":"051D","department":"Non-Assignable","assignedArea":11219,"roomSpaceCount":39,"_id":"6YAKvqRvly62dXCw"}
+{"bldg":"2","department":"Institute Classrooms","assignedArea":15440,"roomSpaceCount":23,"_id":"6dlrLd453y9HUrCr"}
+{"bldg":"41","department":"Aerospace Engineering","assignedArea":13267,"roomSpaceCount":49,"_id":"6mxVkQLS28SwKZUJ"}
+{"bldg":"93","department":"Residence Halls","assignedArea":14636,"roomSpaceCount":88,"_id":"6qshQG9cHYCxaPpM"}
+{"bldg":"116","department":"TOTALS","assignedArea":117709,"roomSpaceCount":352,"_id":"6uLlfJmgzEXVgDxj"}
+{"bldg":"601","department":"Georgia Tech Savannah","assignedArea":12641,"roomSpaceCount":33,"_id":"707vbaQn0cdzl7Ax"}
+{"bldg":"126","department":"Materials Science & Engr","assignedArea":3107,"roomSpaceCount":7,"_id":"70zQkdBSEgY6VD7e"}
+{"bldg":"167","department":"Earth & Atmospheric Sciences","assignedArea":1145,"roomSpaceCount":3,"_id":"719u20lzHb98X1YT"}
+{"bldg":"126","department":"Chemical and Biomolecular Engr","assignedArea":1101,"roomSpaceCount":1,"_id":"71veiGfkB3iKWHF7"}
+{"bldg":"131","department":"Housing Office","assignedArea":1551,"roomSpaceCount":8,"_id":"77Z8sugOZ9ya7Suf"}
+{"bldg":"98","department":"Institute Classrooms","assignedArea":5056,"roomSpaceCount":5,"_id":"79qI4qWE00iu8CqD"}
+{"bldg":"849","department":"GTRI-Strategic Initiative Ofc","assignedArea":290,"roomSpaceCount":2,"_id":"7DUQUttMlZjxqYBK"}
+{"bldg":"100","department":"Non-Assignable","assignedArea":28002,"roomSpaceCount":116,"_id":"7IqdARahj5xDtCYo"}
+{"bldg":"780","department":"TOTALS","assignedArea":13354,"roomSpaceCount":20,"_id":"7OIFnm99ykxrvrH7"}
+{"bldg":"41","department":"Unassigned","assignedArea":5597,"roomSpaceCount":10,"_id":"7OaiDykHJc2I3dIH"}
+{"bldg":"029C","department":"TOTALS","assignedArea":7158,"roomSpaceCount":25,"_id":"7W0SqY16xA1OFcdu"}
+{"bldg":"874","department":"GTRI-Strategic Initiative Ofc","assignedArea":512,"roomSpaceCount":3,"_id":"7Y0jBRI4xjMhnn4g"}
+{"bldg":"137","department":"TOTALS","assignedArea":25222,"roomSpaceCount":155,"_id":"7Y5sCYxr9Tqm7AyT"}
+{"bldg":"134","department":"Non-Assignable","assignedArea":7295,"roomSpaceCount":74,"_id":"7ZoEHhQSXo5OnJeP"}
+{"bldg":"602","department":"Georgia Tech Savannah","assignedArea":27560,"roomSpaceCount":93,"_id":"7aZWq4Pe1qII8dQO"}
+{"bldg":"144","department":"Materials Science & Engr","assignedArea":29315,"roomSpaceCount":127,"_id":"7bI3c4zZNwy8ESHt"}
+{"bldg":"126","department":"Packaging Research Ctr","assignedArea":9787,"roomSpaceCount":28,"_id":"7fg4ET8mMXJNtNIa"}
+{"bldg":"199","department":"Chemical and Biomolecular Engr","assignedArea":1597,"roomSpaceCount":2,"_id":"7keCbhX5MR2rXD8y"}
+{"bldg":"76","department":"Industrial Design","assignedArea":3848,"roomSpaceCount":3,"_id":"7pAv5UfSv621R9ps"}
+{"bldg":"051D","department":"OIT-Information Tech Services","assignedArea":2365,"roomSpaceCount":17,"_id":"7parQoLdLVXYMb7y"}
+{"bldg":"84","department":"Applied Physiology","assignedArea":675,"roomSpaceCount":4,"_id":"7r18DQvOY1u99Oy1"}
+{"bldg":"131","department":"TOTALS","assignedArea":112435,"roomSpaceCount":214,"_id":"7rQ6OGxTZBVhnMgv"}
+{"bldg":"120","department":"Special Programs-Ssc","assignedArea":832,"roomSpaceCount":12,"_id":"7y8JSx9rUF3ut6JA"}
+{"bldg":"114","department":"Student Government Assoc","assignedArea":708,"roomSpaceCount":4,"_id":"7zj3uHT03p2WyhOz"}
+{"bldg":"184","department":"GTRI-Support Services","assignedArea":4080,"roomSpaceCount":5,"_id":"7zshkhXEcLRvwhpR"}
+{"bldg":"033A","department":"Non-Assignable","assignedArea":5609,"roomSpaceCount":22,"_id":"7zuzHKmEfe4Ica4O"}
+{"bldg":"141","department":"GTRI-Support Services","assignedArea":158,"roomSpaceCount":1,"_id":"80dNkZ7hQMGnmWWY"}
+{"bldg":"38","department":"Div of Professional Practice","assignedArea":4866,"roomSpaceCount":28,"_id":"86fQOGbDSBNns4qd"}
+{"bldg":"155","department":"Grants & Contracts Accounting","assignedArea":4283,"roomSpaceCount":35,"_id":"87MYmATpHVmIDNGK"}
+{"bldg":"103","department":"TOTALS","assignedArea":136717,"roomSpaceCount":415,"_id":"88TQRd0pNNqXzkcQ"}
+{"bldg":"805","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":2832,"roomSpaceCount":10,"_id":"88wzv23WyjHHPB1s"}
+{"bldg":"170","department":"Auxiliary Services AVP","assignedArea":5518,"roomSpaceCount":5,"_id":"89DlHSAlzORl1DNV"}
+{"bldg":"58","department":"Economics","assignedArea":6902,"roomSpaceCount":37,"_id":"8CDhuTPR6UtbuWr5"}
+{"bldg":"175","department":"Georgia Electronic Design Cntr","assignedArea":36903,"roomSpaceCount":84,"_id":"8Csbfb4E4Jp4tPuu"}
+{"bldg":"81","department":"Institute Classrooms","assignedArea":16178,"roomSpaceCount":13,"_id":"8CtLuz81LGceDofX"}
+{"bldg":"167","department":"Facilities-Management","assignedArea":2085,"roomSpaceCount":9,"_id":"8OnnGkou4b7ZO9LK"}
+{"bldg":"32","department":"Non-Assignable","assignedArea":1560,"roomSpaceCount":16,"_id":"8PuyvCbUsuwUHfky"}
+{"bldg":"720","department":"TOTALS","assignedArea":3670,"roomSpaceCount":14,"_id":"8Ra2DBh15EaslvAS"}
+{"bldg":"50","department":"Music","assignedArea":306,"roomSpaceCount":1,"_id":"8T4bpKTF1VaWsM0G"}
+{"bldg":"176","department":"GTRI-Info&Comm Lab","assignedArea":16925,"roomSpaceCount":79,"_id":"8WdCRf0GwaL2YWmq"}
+{"bldg":"029A","department":"Executive VP Administration & Finance","assignedArea":537,"roomSpaceCount":2,"_id":"8YyxzhAIW7GLRsNx"}
+{"bldg":"067A","department":"Non-Assignable","assignedArea":258,"roomSpaceCount":2,"_id":"8Z8z2I0slnpbjWgZ"}
+{"bldg":"14","department":"Housing Office","assignedArea":817,"roomSpaceCount":2,"_id":"8iQjM8UsZ49BSfdG"}
+{"bldg":"803","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":12539,"roomSpaceCount":67,"_id":"8q1hWG5K0wuUPJf5"}
+{"bldg":"90","department":"TOTALS","assignedArea":22908,"roomSpaceCount":131,"_id":"8uaqugrlcKLmMTU0"}
+{"bldg":"99","department":"Non-Assignable","assignedArea":306,"roomSpaceCount":4,"_id":"90WZuNvqGgpOF1Dj"}
+{"bldg":"083C","department":"Landscape Services","assignedArea":8154,"roomSpaceCount":25,"_id":"92QRlBMNI4D6j8M2"}
+{"bldg":"111","department":"TOTALS","assignedArea":88127,"roomSpaceCount":282,"_id":"96ximakzde3j2NxE"}
+{"bldg":"93","department":"Non-Assignable","assignedArea":6311,"roomSpaceCount":22,"_id":"998pIGKR2tBMFNWr"}
+{"bldg":"771","department":"TOTALS","assignedArea":15550,"roomSpaceCount":1,"_id":"9C98lSYf031qN6t4"}
+{"bldg":"76","department":"Architecture","assignedArea":21950,"roomSpaceCount":69,"_id":"9E0YupGHJ0KL4dxt"}
+{"bldg":"151","department":"Non-Assignable","assignedArea":4008,"roomSpaceCount":13,"_id":"9EYK3gNH0UHTzYMa"}
+{"bldg":"155B","department":"TOTALS","assignedArea":20003,"roomSpaceCount":142,"_id":"9FXELpZhA1aNjzA1"}
+{"bldg":"170","department":"Non-Assignable","assignedArea":52215,"roomSpaceCount":134,"_id":"9I7pJOPdgMGznFHh"}
+{"bldg":"812A","department":"TOTALS","assignedArea":6903,"roomSpaceCount":3,"_id":"9MKUns7O0rjFU5CV"}
+{"bldg":"147","department":"Misc Outside Agencies","assignedArea":2837,"roomSpaceCount":9,"_id":"9MqDp9obA4kFKQA2"}
+{"bldg":"77","department":"Non-Assignable","assignedArea":28869,"roomSpaceCount":118,"_id":"9NrtRphVE5CBb6U6"}
+{"bldg":"73","department":"Non-Assignable","assignedArea":75949,"roomSpaceCount":129,"_id":"9SAiyxTd8tY2Nnn4"}
+{"bldg":"173","department":"TOTALS","assignedArea":59928,"roomSpaceCount":287,"_id":"9T8yHUbqoauzu1wc"}
+{"bldg":"771A","department":"TOTALS","assignedArea":8750,"roomSpaceCount":1,"_id":"9YqjwUxttFBHOyUs"}
+{"bldg":"132","department":"Non-Assignable","assignedArea":40855,"roomSpaceCount":124,"_id":"9ZMrfwsc14K4w3c9"}
+{"bldg":"135","department":"TOTALS","assignedArea":108368,"roomSpaceCount":311,"_id":"9byevnubKUTyW1Rd"}
+{"bldg":"99","department":"GTRI-Common","assignedArea":2074,"roomSpaceCount":10,"_id":"9dU2MW7iPt6jJHvF"}
+{"bldg":"149","department":"Aerospace Engineering","assignedArea":4769,"roomSpaceCount":10,"_id":"9f9J0kCKDgZjISSk"}
+{"bldg":"166","department":"Facilities-Management","assignedArea":212,"roomSpaceCount":1,"_id":"9fK5xWvMSSEzYgJD"}
+{"bldg":"790","department":"Non-Assignable","assignedArea":126,"roomSpaceCount":6,"_id":"9kH06BdPlkJlXCZb"}
+{"bldg":"823","department":"GTRI-Non-Assignable","assignedArea":4639,"roomSpaceCount":18,"_id":"9z0BzAPu9VHZArJd"}
+{"bldg":"166","department":"Physics","assignedArea":10163,"roomSpaceCount":12,"_id":"ADxmCzcUo6RRgVFq"}
+{"bldg":"791","department":"Misc Outside Agencies","assignedArea":9239,"roomSpaceCount":53,"_id":"AFAf1Fn4nNIzqWB5"}
+{"bldg":"136","department":"Mechanical Engineering","assignedArea":20802,"roomSpaceCount":56,"_id":"AHGXZUyPqIvv1jtl"}
+{"bldg":"128","department":"CATEA-Rehabilitation Center","assignedArea":13946,"roomSpaceCount":60,"_id":"APQ8WEm9TqMre9ey"}
+{"bldg":"709","department":"Rental/GT Owned Property","assignedArea":3800,"roomSpaceCount":1,"_id":"ASiMBThb8uP8artT"}
+{"bldg":"104","department":"Non-Assignable","assignedArea":28110,"roomSpaceCount":76,"_id":"AWKOivynTxpZGXBK"}
+{"bldg":"823","department":"GTRI-Unassigned","assignedArea":7792,"roomSpaceCount":28,"_id":"AXXX8ALyrc4RKQ99"}
+{"bldg":"38","department":"Non-Assignable","assignedArea":6796,"roomSpaceCount":46,"_id":"AdPiziacHooNhTIL"}
+{"bldg":"146","department":"TOTALS","assignedArea":136426,"roomSpaceCount":553,"_id":"Ae8TZ6KkHHOT3HOy"}
+{"bldg":"31","department":"Athletic Association","assignedArea":292,"roomSpaceCount":2,"_id":"Aituz6OetOwGPbm5"}
+{"bldg":"848","department":"GTRI-Non-Assignable","assignedArea":326,"roomSpaceCount":7,"_id":"Al0YM1uYpYyWvIjS"}
+{"bldg":"84","department":"Aerospace Engineering","assignedArea":29017,"roomSpaceCount":113,"_id":"AowtCETyGVDhCUIw"}
+{"bldg":"104","department":"Dining Services","assignedArea":24689,"roomSpaceCount":42,"_id":"AqUzbnbFEckJC0AM"}
+{"bldg":"64","department":"Vending","assignedArea":275,"roomSpaceCount":1,"_id":"Az5u0Lk3CmABCsDI"}
+{"bldg":"33","department":"TOTALS","assignedArea":97467,"roomSpaceCount":342,"_id":"B5ODEtNbuFXuDrCl"}
+{"bldg":"99","department":"GTRI-Business Services","assignedArea":646,"roomSpaceCount":4,"_id":"BAWerfRe9cMsXzIM"}
+{"bldg":"99","department":"GTRI-Non-Assignable","assignedArea":32347,"roomSpaceCount":119,"_id":"BBwj35FwMdvZxw6o"}
+{"bldg":"6","department":"Housing Office","assignedArea":2527,"roomSpaceCount":12,"_id":"BEeUUG0yhVbDJ6Yq"}
+{"bldg":"832","department":"OIT-Information Tech Services","assignedArea":228,"roomSpaceCount":2,"_id":"BKX8CxuENGJRnZMC"}
+{"bldg":"22","department":"Civil & Environmental Engr","assignedArea":11807,"roomSpaceCount":38,"_id":"BMO4ZlS3ybPNBdEx"}
+{"bldg":"17","department":"Non-Assignable","assignedArea":189933,"roomSpaceCount":261,"_id":"BNHtoG10deqOmCGJ"}
+{"bldg":"029A","department":"Budget Office","assignedArea":1538,"roomSpaceCount":12,"_id":"BPtBbHucIRHzCsoe"}
+{"bldg":"6","department":"Non-Assignable","assignedArea":14971,"roomSpaceCount":78,"_id":"BdfQXzNYwuGRwtxn"}
+{"bldg":"115","department":"Unassigned","assignedArea":2712,"roomSpaceCount":8,"_id":"Bjg3E43DsGX2vaJF"}
+{"bldg":"804","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":9615,"roomSpaceCount":52,"_id":"BnLKAFT1o3z2Hb7M"}
+{"bldg":"177","department":"Non-Assignable","assignedArea":7655,"roomSpaceCount":32,"_id":"BruEksWvIXnbqRL5"}
+{"bldg":"822A","department":"GTRI-Unassigned","assignedArea":1145,"roomSpaceCount":8,"_id":"BtFEV948Y0ztOxwj"}
+{"bldg":"31","department":"Office of Schl & Financial Aid","assignedArea":5740,"roomSpaceCount":28,"_id":"BwwvVdKMzMmUpatT"}
+{"bldg":"74","department":"Non-Assignable","assignedArea":1036,"roomSpaceCount":13,"_id":"BxgKgaK4Nb9R7UE4"}
+{"bldg":"2","department":"Literature Media and Communication","assignedArea":19338,"roomSpaceCount":80,"_id":"C6Z50lWkYj1EQFXS"}
+{"bldg":"46","department":"Security & Police Department","assignedArea":8763,"roomSpaceCount":54,"_id":"CCOYhtc5nOxfo5PQ"}
+{"bldg":"061A","department":"GTRI-Accounting","assignedArea":1856,"roomSpaceCount":15,"_id":"CDVRKH20vtv5lflj"}
+{"bldg":"30","department":"Honors Program","assignedArea":2073,"roomSpaceCount":10,"_id":"CFeQYGOGFWErxMjA"}
+{"bldg":"856A","department":"GTRI-Research Security","assignedArea":826,"roomSpaceCount":3,"_id":"CHm1mgPbf45FGLuM"}
+{"bldg":"123","department":"VPSA - Assessment","assignedArea":131,"roomSpaceCount":1,"_id":"CQDBf5xMoKJi2UnX"}
+{"bldg":"124","department":"Dramatech","assignedArea":5797,"roomSpaceCount":11,"_id":"CVEpUNjwDAE7hxlz"}
+{"bldg":"31","department":"Undergraduate Admissions","assignedArea":2929,"roomSpaceCount":24,"_id":"CVnChVZEKGBHt53k"}
+{"bldg":"126","department":"Vending","assignedArea":325,"roomSpaceCount":3,"_id":"CXE0hEDXgPXqrLb5"}
+{"bldg":"114","department":"Dining Services","assignedArea":6624,"roomSpaceCount":17,"_id":"CXT1xXp4tuFKOw0j"}
+{"bldg":"601","department":"TOTALS","assignedArea":17176,"roomSpaceCount":50,"_id":"CgkB1emBKYvMQVY1"}
+{"bldg":"129","department":"Strategic Energy Institute","assignedArea":1775,"roomSpaceCount":18,"_id":"CkOosiPpeTaAuaR8"}
+{"bldg":"31","department":"Career Services","assignedArea":9175,"roomSpaceCount":67,"_id":"CnCeTpV3vlS9P8xl"}
+{"bldg":"15","department":"Non-Assignable","assignedArea":11032,"roomSpaceCount":61,"_id":"CnpXsWPEexiRJxHU"}
+{"bldg":"844","department":"EII-General","assignedArea":2368,"roomSpaceCount":1,"_id":"CqoECqS0lTkblqL2"}
+{"bldg":"144","department":"Ctr for Distance Learng","assignedArea":123,"roomSpaceCount":1,"_id":"Cst70QcH7p40byoe"}
+{"bldg":"149","department":"TOTALS","assignedArea":29308,"roomSpaceCount":47,"_id":"D7ePYzGUizgw0Jz8"}
+{"bldg":"76","department":"TOTALS","assignedArea":56266,"roomSpaceCount":170,"_id":"D8CkgRqDLWTLiJt8"}
+{"bldg":"131","department":"Non-Assignable","assignedArea":35453,"roomSpaceCount":104,"_id":"D9pvHnMYEmeaa4KE"}
+{"bldg":"805","department":"GTRI-Research Security","assignedArea":472,"roomSpaceCount":3,"_id":"DDWk5wtrSo8bJlcB"}
+{"bldg":"023A","department":"TOTALS","assignedArea":2063,"roomSpaceCount":13,"_id":"DEyYOnOH7UFmyLe5"}
+{"bldg":"22","department":"TOTALS","assignedArea":19190,"roomSpaceCount":74,"_id":"DIqDZ4M7nDXuv96a"}
+{"bldg":"117","department":"Housing Office","assignedArea":2717,"roomSpaceCount":13,"_id":"DOIF8DmALY2b6fyf"}
+{"bldg":"50","department":"College of Computing","assignedArea":60517,"roomSpaceCount":187,"_id":"DOO3gXKptlFGG6DM"}
+{"bldg":"181","department":"TOTALS","assignedArea":185115,"roomSpaceCount":230,"_id":"DQvo4xtHWuYdsULt"}
+{"bldg":"801","department":"GTRI-Unassigned","assignedArea":351,"roomSpaceCount":2,"_id":"DT5B3fQQhWXlCpOv"}
+{"bldg":"145","department":"Non-Assignable","assignedArea":13156,"roomSpaceCount":48,"_id":"DawzC0rk1R6LoYZx"}
+{"bldg":"186","department":"Unassigned","assignedArea":11015,"roomSpaceCount":18,"_id":"DeYtlpWi4yhGoGgq"}
+{"bldg":"167","department":"Institute Classrooms","assignedArea":8737,"roomSpaceCount":8,"_id":"Do8m2ITzKlLSt4Vr"}
+{"bldg":"807A","department":"GTRI-Common","assignedArea":20,"roomSpaceCount":1,"_id":"Dpp6bKZ007XMVl9p"}
+{"bldg":"138","department":"OIT-Printing & Copying Center","assignedArea":5392,"roomSpaceCount":8,"_id":"DtHKx0x88hm6tSnT"}
+{"bldg":"171","department":"Auxiliary Services AVP","assignedArea":6862,"roomSpaceCount":1,"_id":"EA0Fb0CT6LsyVhbQ"}
+{"bldg":"850","department":"Global Center for Medical Innovation","assignedArea":10916,"roomSpaceCount":42,"_id":"EBefH85U8U3DnZ3h"}
+{"bldg":"029A","department":"Non-Assignable","assignedArea":2111,"roomSpaceCount":9,"_id":"EGoHPl6PNhJcWMIm"}
+{"bldg":"176","department":"Insitute for People and Technology","assignedArea":9312,"roomSpaceCount":28,"_id":"EHDrFje1V4ZAqwlC"}
+{"bldg":"201","department":"CRC-Operations","assignedArea":216,"roomSpaceCount":3,"_id":"EHkrV6AKRIcY8BvN"}
+{"bldg":"103","department":"Earth & Atmospheric Sciences","assignedArea":227,"roomSpaceCount":1,"_id":"ELN4atgeufjfOWS8"}
+{"bldg":"24","department":"Non-Assignable","assignedArea":11218,"roomSpaceCount":65,"_id":"EN5bp8LM9DBvgrtO"}
+{"bldg":"176","department":"GTRI-Non-Assignable","assignedArea":426,"roomSpaceCount":2,"_id":"EV4lNrvKjDoe0vxk"}
+{"bldg":"051D","department":"TOTALS","assignedArea":37149,"roomSpaceCount":144,"_id":"Ec5jcKft8hzjdvTO"}
+{"bldg":"859","department":"GTRI-Non-Assignable","assignedArea":96,"roomSpaceCount":1,"_id":"EcyYYujNVJJfDqkG"}
+{"bldg":"801","department":"GTRI-Information Systems","assignedArea":239,"roomSpaceCount":1,"_id":"EipiSBJjc0cq2wtC"}
+{"bldg":"073A","department":"Non-Assignable","assignedArea":1997,"roomSpaceCount":11,"_id":"EpmKY7CDeGoQarCV"}
+{"bldg":"196","department":"TOTALS","assignedArea":5590,"roomSpaceCount":21,"_id":"EslKWf1fASMVbAzH"}
+{"bldg":"30","department":"OIT-Information Tech Services","assignedArea":450,"roomSpaceCount":3,"_id":"EvxJMH4WL1eG6GhC"}
+{"bldg":"30","department":"Non-Assignable","assignedArea":8543,"roomSpaceCount":34,"_id":"EyYqbLDB47S8jDI6"}
+{"bldg":"802","department":"GTRI-Non-Assignable","assignedArea":5140,"roomSpaceCount":23,"_id":"F0EUcqQx8xUir5aA"}
+{"bldg":"138","department":"OIT-Architecture & Infrastruct","assignedArea":5770,"roomSpaceCount":2,"_id":"F0jtvwB5GpEAj3nV"}
+{"bldg":"033A","department":"Athletic Association","assignedArea":18324,"roomSpaceCount":17,"_id":"F1nKISPc37PAfQHM"}
+{"bldg":"876","department":"Civil & Environmental Engr","assignedArea":3754,"roomSpaceCount":1,"_id":"F1vw95zSnY9SkkD9"}
+{"bldg":"172","department":"Auxiliary Services AVP","assignedArea":6981,"roomSpaceCount":12,"_id":"F7CYp2XH7LqZ9jv5"}
+{"bldg":"802","department":"TOTALS","assignedArea":23672,"roomSpaceCount":88,"_id":"F9IKKaZd8NYFT0iR"}
+{"bldg":"85","department":"Institute Classrooms","assignedArea":13082,"roomSpaceCount":17,"_id":"FA0dF9rnoVENH7bL"}
+{"bldg":"141","department":"Non-Assignable","assignedArea":591,"roomSpaceCount":8,"_id":"FCu1sWx4WkiOwhyM"}
+{"bldg":"81","department":"Non-Assignable","assignedArea":41256,"roomSpaceCount":118,"_id":"FE1C02YoPcA7ZVT1"}
+{"bldg":"2","department":"TOTALS","assignedArea":126475,"roomSpaceCount":412,"_id":"FF7oFVAsoN42wGQ9"}
+{"bldg":"95","department":"Institute for Electronics and Nanotechnology","assignedArea":35841,"roomSpaceCount":118,"_id":"FIuOWxTZ4TvWut4A"}
+{"bldg":"33","department":"Vending","assignedArea":37,"roomSpaceCount":1,"_id":"FPRQgeG8I7nD3APN"}
+{"bldg":"141A","department":"TOTALS","assignedArea":27608,"roomSpaceCount":115,"_id":"FW3kIwknz0t1dqGp"}
+{"bldg":"162","department":"Parking Decks","assignedArea":85664,"roomSpaceCount":20,"_id":"FZWU5MRnsUGinO9q"}
+{"bldg":"170","department":"DLPE-Global Learning Center","assignedArea":69213,"roomSpaceCount":189,"_id":"Fi9wEjr322UkUnDh"}
+{"bldg":"166","department":"Literature Media and Communication","assignedArea":2208,"roomSpaceCount":7,"_id":"FmUU5eECUFiN3dAW"}
+{"bldg":"65","department":"Non-Assignable","assignedArea":68667,"roomSpaceCount":308,"_id":"Fq1xFzJWWtCG02mL"}
+{"bldg":"018A","department":"Athletic Association","assignedArea":28046,"roomSpaceCount":111,"_id":"FrWL2tkuOcYXdI7E"}
+{"bldg":"2","department":"Mathematics","assignedArea":34932,"roomSpaceCount":167,"_id":"G5I3VUxJfrcr8Gft"}
+{"bldg":"859","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":908,"roomSpaceCount":6,"_id":"G955YWs9fOv2FnaS"}
+{"bldg":"47","department":"GT Cable Network","assignedArea":1616,"roomSpaceCount":12,"_id":"GCsIrdybI9gqdiKf"}
+{"bldg":"772","department":"TOTALS","assignedArea":3750,"roomSpaceCount":1,"_id":"GE9B2OwPDWHd8Cwa"}
+{"bldg":"029A","department":"Real Estate Development Office","assignedArea":1240,"roomSpaceCount":7,"_id":"GIeXhMrXU4tb8mi7"}
+{"bldg":"160","department":"Non-Assignable","assignedArea":17325,"roomSpaceCount":39,"_id":"GQPsMd0KIzutYC7m"}
+{"bldg":"175","department":"Interactive Computing","assignedArea":741,"roomSpaceCount":1,"_id":"GRi0TzaLRYbJ2C70"}
+{"bldg":"108","department":"Residence Halls","assignedArea":14404,"roomSpaceCount":79,"_id":"GVfyHt0NiDKsz5OQ"}
+{"bldg":"8","department":"TOTALS","assignedArea":177587,"roomSpaceCount":21,"_id":"GVgsqhBifwHCLjzU"}
+{"bldg":"180","department":"Family Housing","assignedArea":254129,"roomSpaceCount":448,"_id":"GWaQi92ilhBbVtMn"}
+{"bldg":"816A","department":"EII-General","assignedArea":418,"roomSpaceCount":1,"_id":"GXKwAHsyztZoPudn"}
+{"bldg":"7","department":"Non-Assignable","assignedArea":3267,"roomSpaceCount":21,"_id":"GYeSEbGf1p6cBYK2"}
+{"bldg":"826","department":"Non-Assignable","assignedArea":1923,"roomSpaceCount":24,"_id":"GgfdmqABiFyCwWUt"}
+{"bldg":"12","department":"Dining Services","assignedArea":11003,"roomSpaceCount":19,"_id":"Glv6geS8hTWBAsnu"}
+{"bldg":"135","department":"Materials Science & Engr","assignedArea":20210,"roomSpaceCount":74,"_id":"GncEZSCJpeQRcQXi"}
+{"bldg":"199","department":"TOTALS","assignedArea":43495,"roomSpaceCount":79,"_id":"Go4ccKeai9V7KF9t"}
+{"bldg":"136","department":"College of Computing","assignedArea":3465,"roomSpaceCount":1,"_id":"Gt1OTsnbZK7OWmlv"}
+{"bldg":"36","department":"President's Office","assignedArea":3943,"roomSpaceCount":19,"_id":"GufDZ2eTFVYFjcjj"}
+{"bldg":"76","department":"Non-Assignable","assignedArea":19823,"roomSpaceCount":69,"_id":"H5GZjS5iz26mJ2dm"}
+{"bldg":"849","department":"GTRI-Cyber Tech & Info Sec Lab (CTISL)","assignedArea":869,"roomSpaceCount":8,"_id":"H6VcHqttCg78ECA6"}
+{"bldg":"50","department":"TOTALS","assignedArea":109325,"roomSpaceCount":313,"_id":"H7hqA5A2vUbVHJXN"}
+{"bldg":"22","department":"Non-Assignable","assignedArea":7383,"roomSpaceCount":36,"_id":"H8gz0vud3DW6wY8H"}
+{"bldg":"823","department":"Non-Assignable","assignedArea":7,"roomSpaceCount":1,"_id":"H91IfZj0dUJh1H8A"}
+{"bldg":"051D","department":"OIT-Office Of The CIO","assignedArea":978,"roomSpaceCount":7,"_id":"H9TNWBq87wOoBsmA"}
+{"bldg":"864","department":"GTRI-Info&Comm Lab","assignedArea":366,"roomSpaceCount":2,"_id":"HA7AVTljGV9apozo"}
+{"bldg":"848","department":"TOTALS","assignedArea":5106,"roomSpaceCount":32,"_id":"HCrsZFdWgzPOcMac"}
+{"bldg":"146","department":"Chemistry & Biochemistry","assignedArea":18099,"roomSpaceCount":79,"_id":"HDUlAyTq4xn14Rfq"}
+{"bldg":"73","department":"Athletic Association","assignedArea":104741,"roomSpaceCount":98,"_id":"HFWV07NYeC5RRVpJ"}
+{"bldg":"33","department":"Unassigned","assignedArea":7565,"roomSpaceCount":17,"_id":"HGGe3lGJmxIQmzyl"}
+{"bldg":"191","department":"Parking Decks","assignedArea":67491,"roomSpaceCount":21,"_id":"HHy313KWthpZuqrO"}
+{"bldg":"47","department":"Corp Liason Pgm","assignedArea":337,"roomSpaceCount":2,"_id":"HJMr0ToQ32PFEo5p"}
+{"bldg":"033A","department":"TOTALS","assignedArea":32654,"roomSpaceCount":50,"_id":"HKU3iQiwF7lShJgV"}
+{"bldg":"147","department":"Chemical and Biomolecular Engr","assignedArea":52548,"roomSpaceCount":186,"_id":"HPs8Y7X486Oo0YDd"}
+{"bldg":"051B","department":"OIT-Academic/Rsch Technologies","assignedArea":2378,"roomSpaceCount":15,"_id":"HT0h2jjdF4XDGa6g"}
+{"bldg":"843A","department":"EII-General","assignedArea":100,"roomSpaceCount":1,"_id":"HTk7JXhLLL7p5IGR"}
+{"bldg":"91","department":"Housing Office","assignedArea":3878,"roomSpaceCount":15,"_id":"HUrM71F7d2S0jTiK"}
+{"bldg":"884","department":"EII-General","assignedArea":658,"roomSpaceCount":1,"_id":"HVV5e4708WHgrgXj"}
+{"bldg":"190","department":"Non-Assignable","assignedArea":53648,"roomSpaceCount":12,"_id":"Hfiz5r4UL9STV2Df"}
+{"bldg":"2","department":"Non-Assignable","assignedArea":55115,"roomSpaceCount":134,"_id":"Hh3kXro9TvlsabUT"}
+{"bldg":"126","department":"Non-Assignable","assignedArea":44819,"roomSpaceCount":139,"_id":"HtBd5m71mN6pLKVl"}
+{"bldg":"051D","department":"OIT-Architecture & Infrastruct","assignedArea":9245,"roomSpaceCount":27,"_id":"Hu92K9MM0PfaIZHn"}
+{"bldg":"2","department":"Facilities-Management","assignedArea":1650,"roomSpaceCount":8,"_id":"HuugERV6djQphjrZ"}
+{"bldg":"177","department":"Student Health Services","assignedArea":27432,"roomSpaceCount":180,"_id":"HzCRG2llbRIdOyIi"}
+{"bldg":"98","department":"Facilities-Management","assignedArea":4211,"roomSpaceCount":8,"_id":"I0D3iQXhhwPl5G5J"}
+{"bldg":"137","department":"Non-Assignable","assignedArea":8709,"roomSpaceCount":48,"_id":"I8AOMB5aW0VXoged"}
+{"bldg":"133","department":"Facilities-Utilities & Energy","assignedArea":102,"roomSpaceCount":1,"_id":"IBjEir4tNw6pb6oV"}
+{"bldg":"801","department":"GTRI-Support Services","assignedArea":2919,"roomSpaceCount":6,"_id":"IEMnly9HJmpZztBN"}
+{"bldg":"051A","department":"Non-Assignable","assignedArea":5317,"roomSpaceCount":38,"_id":"IHXx023TZwOA5UUp"}
+{"bldg":"104","department":"Center For The Arts","assignedArea":218,"roomSpaceCount":3,"_id":"IMygFc9OYoFQpHML"}
+{"bldg":"790","department":"GTRI-Cyber Tech & Info Sec Lab (CTISL)","assignedArea":13490,"roomSpaceCount":62,"_id":"ITGEukjsf2DotNrg"}
+{"bldg":"141A","department":"GTRI Talent Management","assignedArea":2556,"roomSpaceCount":17,"_id":"Ibbp6tseItMVbVFW"}
+{"bldg":"083C","department":"Non-Assignable","assignedArea":248,"roomSpaceCount":3,"_id":"If4b0s7AymK4oYhA"}
+{"bldg":"155","department":"TOTALS","assignedArea":10643,"roomSpaceCount":83,"_id":"IgTVFJp37TxlxMAz"}
+{"bldg":"147","department":"Unassigned","assignedArea":212,"roomSpaceCount":1,"_id":"Ii8bydA6glX792eC"}
+{"bldg":"200","department":"TOTALS","assignedArea":79680,"roomSpaceCount":15,"_id":"IiHedWDeb53JA4Bc"}
+{"bldg":"166","department":"Earth & Atmospheric Sciences","assignedArea":4416,"roomSpaceCount":6,"_id":"IjOFzHjyWT6WPo7o"}
+{"bldg":"32","department":"TOTALS","assignedArea":6325,"roomSpaceCount":47,"_id":"IjPOORjkU9Re11El"}
+{"bldg":"75","department":"TOTALS","assignedArea":49418,"roomSpaceCount":96,"_id":"InakfxxsSroHD8z0"}
+{"bldg":"100","department":"Dining Services","assignedArea":1638,"roomSpaceCount":6,"_id":"Iva8xiOBuqqRUcPO"}
+{"bldg":"147","department":"Earth & Atmospheric Sciences","assignedArea":42564,"roomSpaceCount":165,"_id":"IwpK0KUMvJZPRq9M"}
+{"bldg":"856A","department":"TOTALS","assignedArea":8566,"roomSpaceCount":50,"_id":"IxEHgqFpRO7WH50e"}
+{"bldg":"103","department":"Institute Classrooms","assignedArea":5243,"roomSpaceCount":5,"_id":"J8WFh5RSnC33GPvN"}
+{"bldg":"167","department":"Dining Services","assignedArea":6630,"roomSpaceCount":15,"_id":"J9FR9H95N6Bu9yoR"}
+{"bldg":"104","department":"Afr Amer St Un","assignedArea":1428,"roomSpaceCount":9,"_id":"J9hjcHU8GbxBuLRY"}
+{"bldg":"76","department":"Building Construction","assignedArea":321,"roomSpaceCount":1,"_id":"JBUCM7MdYMXPdgqD"}
+{"bldg":"856A","department":"GTRI-Non-Assignable","assignedArea":23,"roomSpaceCount":1,"_id":"JC2qmTdr0veecln7"}
+{"bldg":"199","department":"Strategic Energy Institute","assignedArea":1616,"roomSpaceCount":8,"_id":"JDc8VMKu5bb1iTzs"}
+{"bldg":"59","department":"TOTALS","assignedArea":10504,"roomSpaceCount":46,"_id":"JFBgZfsgS0Ljmbzk"}
+{"bldg":"184","department":"Non-Assignable","assignedArea":4599,"roomSpaceCount":15,"_id":"JFlsubWtn7wdaqkL"}
+{"bldg":"95","department":"Chemical and Biomolecular Engr","assignedArea":1546,"roomSpaceCount":5,"_id":"JGeyjB6LCfIJN22X"}
+{"bldg":"029B","department":"Capital Planning & Space Mgmt","assignedArea":3009,"roomSpaceCount":24,"_id":"JH0m8QAuQlxkkDKW"}
+{"bldg":"91","department":"TOTALS","assignedArea":30271,"roomSpaceCount":155,"_id":"JIIsZ9BepAe6ZWDc"}
+{"bldg":"158","department":"Digital Fabrication Laboratory","assignedArea":17728,"roomSpaceCount":26,"_id":"JKQvuHG0efF5ZYcP"}
+{"bldg":"114","department":"OIT-Printing & Copying Center","assignedArea":321,"roomSpaceCount":2,"_id":"JLQfH9vfzW5YaOfJ"}
+{"bldg":"848","department":"GTRI-Common","assignedArea":2572,"roomSpaceCount":10,"_id":"JNfX0IFtRfJL8y1J"}
+{"bldg":"180","department":"Parking Decks","assignedArea":246,"roomSpaceCount":1,"_id":"JSzjJXnhwHORtVHV"}
+{"bldg":"029B","department":"Real Estate Development Office","assignedArea":212,"roomSpaceCount":1,"_id":"JWzL6Hp84nhISfT4"}
+{"bldg":"826","department":"TOTALS","assignedArea":16177,"roomSpaceCount":95,"_id":"JaQDooc5oWz3bBhq"}
+{"bldg":"801","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":809,"roomSpaceCount":5,"_id":"JbHcWQ2xTVn2JLo4"}
+{"bldg":"120","department":"TOTALS","assignedArea":3533,"roomSpaceCount":34,"_id":"JcwlTvBiKcLi15lS"}
+{"bldg":"175","department":"OIT-Academic/Rsch Technologies","assignedArea":563,"roomSpaceCount":3,"_id":"JhJkBUEl4roISI6b"}
+{"bldg":"140","department":"Athletic Association","assignedArea":4186,"roomSpaceCount":7,"_id":"JjchGdb92IKhhYZQ"}
+{"bldg":"140","department":"TOTALS","assignedArea":217557,"roomSpaceCount":219,"_id":"Jk2AxcSZPfVv6P4U"}
+{"bldg":"103","department":"Chemistry & Biochemistry","assignedArea":30772,"roomSpaceCount":103,"_id":"Jm9SJOPqixAMSYKt"}
+{"bldg":"30","department":"Provost's Office","assignedArea":362,"roomSpaceCount":1,"_id":"JnIUBMIXEi4eLDov"}
+{"bldg":"128","department":"Equal Opportunity Pgms","assignedArea":1191,"roomSpaceCount":9,"_id":"JpGE40gqzSF2nj6R"}
+{"bldg":"144","department":"Institute Classrooms","assignedArea":4395,"roomSpaceCount":3,"_id":"K0wVKI1emnVDnt4m"}
+{"bldg":"3","department":"TOTALS","assignedArea":20457,"roomSpaceCount":117,"_id":"K5MGEmOv8zDYVK5Y"}
+{"bldg":"129","department":"Non-Assignable","assignedArea":50154,"roomSpaceCount":157,"_id":"KEO9eZogpmYjNVzp"}
+{"bldg":"71","department":"TOTALS","assignedArea":8392,"roomSpaceCount":66,"_id":"KErLCWjuiVJPd7Fj"}
+{"bldg":"147","department":"Non-Assignable","assignedArea":97001,"roomSpaceCount":215,"_id":"KSIhUM0TTn0Eo4HO"}
+{"bldg":"61","department":"GTRI-Non-Assignable","assignedArea":13899,"roomSpaceCount":44,"_id":"KaC3VdmWri8gmEN7"}
+{"bldg":"31","department":"Student Success Center","assignedArea":5255,"roomSpaceCount":15,"_id":"KedUyBZbmLHKYMPN"}
+{"bldg":"11","department":"Residence Halls","assignedArea":13240,"roomSpaceCount":34,"_id":"KiWApyNz4hzqyu21"}
+{"bldg":"060A","department":"Non-Assignable","assignedArea":1274,"roomSpaceCount":13,"_id":"KmOIc5RhN3Z9vbvZ"}
+{"bldg":"841A","department":"GTRI-Info&Comm Lab","assignedArea":142,"roomSpaceCount":1,"_id":"KpTpNjTxD0cDWKmM"}
+{"bldg":"65","department":"TOTALS","assignedArea":184246,"roomSpaceCount":491,"_id":"Kr75puqLjk8qYt69"}
+{"bldg":"130","department":"Residence Halls","assignedArea":150746,"roomSpaceCount":204,"_id":"KtN0pLKZTM1nQhhh"}
+{"bldg":"104","department":"Musicians Network","assignedArea":2207,"roomSpaceCount":7,"_id":"L11fV2WeDfjmnO5k"}
+{"bldg":"8","department":"Parking Decks","assignedArea":94982,"roomSpaceCount":16,"_id":"L1Kw2qjDuXsKjzCv"}
+{"bldg":"191","department":"Dining Services","assignedArea":16619,"roomSpaceCount":43,"_id":"L1PqzjHUqYO7sS9H"}
+{"bldg":"20","department":"TOTALS","assignedArea":328,"roomSpaceCount":1,"_id":"L8ajm7lrexOsB9dF"}
+{"bldg":"98","department":"Aerospace Engineering","assignedArea":9078,"roomSpaceCount":11,"_id":"LA2hob8OeA2cGDCg"}
+{"bldg":"118","department":"TOTALS","assignedArea":21141,"roomSpaceCount":102,"_id":"LAis2yI6oDPxv5Gq"}
+{"bldg":"25","department":"Minority Education Dev (OMED)","assignedArea":3909,"roomSpaceCount":25,"_id":"LJug5oX10y1tRNZe"}
+{"bldg":"859","department":"TOTALS","assignedArea":2279,"roomSpaceCount":14,"_id":"LMTCbkgjn0TuccVz"}
+{"bldg":"141A","department":"GTRI-Common","assignedArea":2513,"roomSpaceCount":12,"_id":"LNmluBl15BXlxHz6"}
+{"bldg":"156","department":"OIT-Resource Management","assignedArea":3748,"roomSpaceCount":29,"_id":"LRfAneQUCwFvgWDZ"}
+{"bldg":"114","department":"TOTALS","assignedArea":20536,"roomSpaceCount":51,"_id":"LRp7n6yvJHmfQvjd"}
+{"bldg":"775","department":"Natl Elec Energy Testing","assignedArea":4626,"roomSpaceCount":2,"_id":"LZSIoi6Vza6JQs3h"}
+{"bldg":"176","department":"GCATT (Ga Ctr Adv Tele Tech)","assignedArea":4702,"roomSpaceCount":17,"_id":"LaJDXoZ5SiBVALrC"}
+{"bldg":"029B","department":"Non-Assignable","assignedArea":3482,"roomSpaceCount":39,"_id":"LlxlDSc61sY6WEvP"}
+{"bldg":"137","department":"International Affairs","assignedArea":12074,"roomSpaceCount":77,"_id":"LqSOPaBlU6vmsuDe"}
+{"bldg":"805","department":"Non-Assignable","assignedArea":55,"roomSpaceCount":2,"_id":"Lr8yJFw31F0Ji9LK"}
+{"bldg":"142","department":"TOTALS","assignedArea":14721,"roomSpaceCount":108,"_id":"Luc2nNPxY5zxx1lj"}
+{"bldg":"153","department":"Unassigned","assignedArea":18298,"roomSpaceCount":37,"_id":"Lwg6kZKRNoxy7oK5"}
+{"bldg":"36","department":"Executive VP Administration & Finance","assignedArea":951,"roomSpaceCount":6,"_id":"Lx0Z36SVBa0en5Cv"}
+{"bldg":"30","department":"TOTALS","assignedArea":28890,"roomSpaceCount":130,"_id":"M22TDdyMkDhBMQ6u"}
+{"bldg":"832","department":"TOTALS","assignedArea":228,"roomSpaceCount":2,"_id":"M2fXZ4Egzsm9b3VQ"}
+{"bldg":"103","department":"Unassigned","assignedArea":145,"roomSpaceCount":2,"_id":"M8FCRvHUDGhyUVb5"}
+{"bldg":"806","department":"TOTALS","assignedArea":3107,"roomSpaceCount":6,"_id":"M8wYn5JSHRcRXw98"}
+{"bldg":"156","department":"OIT-GT Telecom Services","assignedArea":1193,"roomSpaceCount":10,"_id":"MCHXop7evqvY72Rp"}
+{"bldg":"141B","department":"Non-Assignable","assignedArea":139530,"roomSpaceCount":64,"_id":"MJTUt8iuq9wwaRIQ"}
+{"bldg":"134","department":"Residence Halls","assignedArea":18895,"roomSpaceCount":75,"_id":"MT5L0t24ysQ5yoVy"}
+{"bldg":"822A","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":976,"roomSpaceCount":6,"_id":"MdWDXePdM4i7Gwh3"}
+{"bldg":"856A","department":"GTRI-Signature Tech (GTRI-STL)","assignedArea":2942,"roomSpaceCount":20,"_id":"MeYPq5PwYigN8kqE"}
+{"bldg":"74","department":"Dining Services","assignedArea":4252,"roomSpaceCount":11,"_id":"MfHtd3pgBrIV8V8R"}
+{"bldg":"203","department":"Non-Assignable","assignedArea":3689,"roomSpaceCount":23,"_id":"Ml4Wm4O7vUBaVqgK"}
+{"bldg":"172","department":"Coll of Bus - Executive Programs","assignedArea":6290,"roomSpaceCount":6,"_id":"MoN679qDTRX3P5T7"}
+{"bldg":"105","department":"TOTALS","assignedArea":6469,"roomSpaceCount":44,"_id":"Mt9fgEDbxlQVsK1U"}
+{"bldg":"029B","department":"Bursar's Office","assignedArea":20,"roomSpaceCount":1,"_id":"MvNJvfWpCTJYpgvP"}
+{"bldg":"061A","department":"Non-Assignable","assignedArea":847,"roomSpaceCount":4,"_id":"N1MpqTfo3nSyo9Ux"}
+{"bldg":"51","department":"Non-Assignable","assignedArea":2929,"roomSpaceCount":14,"_id":"N3cWI1ENr7QnxfAI"}
+{"bldg":"856A","department":"GTRI-Common","assignedArea":3278,"roomSpaceCount":17,"_id":"N5l9UDNq8xjscdOM"}
+{"bldg":"805","department":"GTRI-ICG","assignedArea":1314,"roomSpaceCount":4,"_id":"N8RivXPIclKaCJqz"}
+{"bldg":"073A","department":"Athletic Association","assignedArea":9172,"roomSpaceCount":42,"_id":"N8uycyQc5dOsEWkO"}
+{"bldg":"148","department":"TOTALS","assignedArea":264987,"roomSpaceCount":69,"_id":"NNrK7D8z1dzgLW7y"}
+{"bldg":"123","department":"VPSS-Student Publications","assignedArea":1832,"roomSpaceCount":10,"_id":"NPovxDWP1nlPI7Gf"}
+{"bldg":"819A","department":"TOTALS","assignedArea":1324,"roomSpaceCount":1,"_id":"NQuLvS6F8iPUkewH"}
+{"bldg":"174","department":"Parking Office","assignedArea":310,"roomSpaceCount":2,"_id":"NTyDEmkoezM0oCJe"}
+{"bldg":"25","department":"Non-Assignable","assignedArea":1533,"roomSpaceCount":19,"_id":"NXbn6SHm7WaakbH5"}
+{"bldg":"822A","department":"GTRI-Huntsville Rl (GTRI-HRL)","assignedArea":2612,"roomSpaceCount":17,"_id":"NdTBqUyHgUzSOQRb"}
+{"bldg":"50","department":"Non-Assignable","assignedArea":26391,"roomSpaceCount":96,"_id":"NdkF9wUklIiSlYHr"}
+{"bldg":"813A","department":"EII-General","assignedArea":1111,"roomSpaceCount":1,"_id":"NeoArf7vkATST6xS"}
+{"bldg":"169","department":"Facilities-Management","assignedArea":30504,"roomSpaceCount":22,"_id":"NosEqhQ4ySv1Lvkl"}
+{"bldg":"083C","department":"TOTALS","assignedArea":8402,"roomSpaceCount":28,"_id":"Nq4tLDwuBQnW41Xc"}
+{"bldg":"173","department":"Ctr Qual Gr & Reg Devl","assignedArea":3745,"roomSpaceCount":17,"_id":"NvGG6X9ihKUK3Bgp"}
+{"bldg":"830A","department":"TOTALS","assignedArea":896,"roomSpaceCount":1,"_id":"NwhBnd1YzCc2z4mr"}
+{"bldg":"62","department":"Non-Assignable","assignedArea":192,"roomSpaceCount":1,"_id":"Nx9lgiLkrxnha6t8"}
+{"bldg":"709","department":"TOTALS","assignedArea":3800,"roomSpaceCount":1,"_id":"O2EhJ8PWi4XCmyns"}
+{"bldg":"821A","department":"EII-General","assignedArea":858,"roomSpaceCount":1,"_id":"O2yZnmu9i9wecUEM"}
+{"bldg":"803","department":"GTRI-Machine Services","assignedArea":423,"roomSpaceCount":1,"_id":"O54XyW9nnxlfREKi"}
+{"bldg":"166","department":"Institute Classrooms","assignedArea":24035,"roomSpaceCount":23,"_id":"O76nP2honaI3VfyU"}
+{"bldg":"90","department":"Residence Halls","assignedArea":16282,"roomSpaceCount":91,"_id":"OB4KfB3G5GolIgOR"}
+{"bldg":"173","department":"Non-Assignable","assignedArea":22655,"roomSpaceCount":71,"_id":"OBY0LmRGNPiykRr4"}
+{"bldg":"166","department":"CETL-Ctr Enhan Teaching & Lrng","assignedArea":4304,"roomSpaceCount":18,"_id":"ODlA7LEbHw5yCyM9"}
+{"bldg":"117","department":"Non-Assignable","assignedArea":7042,"roomSpaceCount":38,"_id":"ODpyiEfucAmNqpHk"}
+{"bldg":"31","department":"Alumni Association","assignedArea":570,"roomSpaceCount":3,"_id":"OH80TUKT17GIMpvB"}
+{"bldg":"25","department":"TOTALS","assignedArea":6222,"roomSpaceCount":51,"_id":"OI2l49RlWbqtaOMR"}
+{"bldg":"153","department":"Electrical & Computer Engr","assignedArea":34435,"roomSpaceCount":98,"_id":"OISRrpalWCrUZgPS"}
+{"bldg":"114","department":"Burdells Gen St","assignedArea":3717,"roomSpaceCount":5,"_id":"OSsThC7GkDurLcKl"}
+{"bldg":"7","department":"TOTALS","assignedArea":14252,"roomSpaceCount":89,"_id":"OTsg8P7Ra0hOLNF9"}
+{"bldg":"826","department":"Unassigned","assignedArea":3416,"roomSpaceCount":8,"_id":"OUBqHHLqMxDCduU7"}
+{"bldg":"164","department":"Accounts Payable","assignedArea":3010,"roomSpaceCount":28,"_id":"OWL4bUn3WGQusX7t"}
+{"bldg":"073A","department":"TOTALS","assignedArea":11169,"roomSpaceCount":53,"_id":"OXj5u1c6B7XvP6nl"}
+{"bldg":"785","department":"Non-Assignable","assignedArea":11663,"roomSpaceCount":39,"_id":"OYVLdCtcRRysceSk"}
+{"bldg":"47","department":"Institute Partnerships-Comm","assignedArea":552,"roomSpaceCount":3,"_id":"Od6i5cU6u1vGkRa6"}
+{"bldg":"138","department":"TOTALS","assignedArea":41045,"roomSpaceCount":159,"_id":"OeED86UYqKzv5fqJ"}
+{"bldg":"54","department":"TOTALS","assignedArea":279986,"roomSpaceCount":42,"_id":"Og5q4dbpYWEz8KNZ"}
+{"bldg":"018A","department":"Non-Assignable","assignedArea":7112,"roomSpaceCount":47,"_id":"OiKICAdP7Xf86ABc"}
+{"bldg":"051D","department":"OIT-Office Chief Tech Officer","assignedArea":389,"roomSpaceCount":2,"_id":"OkufHrXYVP5INnix"}
+{"bldg":"119","department":"Residence Halls","assignedArea":18723,"roomSpaceCount":91,"_id":"OnYeGt1Ad4oJSBA6"}
+{"bldg":"164","department":"Business Services","assignedArea":7987,"roomSpaceCount":51,"_id":"OooDP8gpy3q69BzD"}
+{"bldg":"066A","department":"Biology","assignedArea":24770,"roomSpaceCount":102,"_id":"OtMUzfFSf0F0W8vY"}
+{"bldg":"111","department":"Institute Classrooms","assignedArea":7457,"roomSpaceCount":5,"_id":"OugsIxOkewKpiQVH"}
+{"bldg":"802","department":"GTRI-Dep Dir Research Oper","assignedArea":120,"roomSpaceCount":1,"_id":"OwxON0UOq9nVLb50"}
+{"bldg":"877","department":"TOTALS","assignedArea":725,"roomSpaceCount":1,"_id":"OxwUW8aWWf9mj3eZ"}
+{"bldg":"126","department":"College of Computing","assignedArea":243,"roomSpaceCount":1,"_id":"PAcqNqIXRSVuAmsd"}
+{"bldg":"203","department":"TOTALS","assignedArea":47751,"roomSpaceCount":39,"_id":"PAkZIe1ZrpZywycg"}
+{"bldg":"61","department":"TOTALS","assignedArea":40593,"roomSpaceCount":172,"_id":"PDmQBtZDPkx8qHkP"}
+{"bldg":"179","department":"Unassigned","assignedArea":33035,"roomSpaceCount":2,"_id":"PJIdrwG6TCFWmJNz"}
+{"bldg":"877","department":"EII-General","assignedArea":725,"roomSpaceCount":1,"_id":"PJUuaiHj7CK9qJTE"}
+{"bldg":"840","department":"TOTALS","assignedArea":3686,"roomSpaceCount":36,"_id":"PMdDZYHBy78m3t3L"}
+{"bldg":"86","department":"Institute Classrooms","assignedArea":2903,"roomSpaceCount":3,"_id":"PPD1UKrROUU4jfdl"}
+{"bldg":"46","department":"Non-Assignable","assignedArea":749,"roomSpaceCount":11,"_id":"PSB1WGO7MFjbr58P"}
+{"bldg":"603","department":"EII-General","assignedArea":1743,"roomSpaceCount":8,"_id":"PSEjCuRrJqyeu0Mf"}
+{"bldg":"196","department":"Athletic Association","assignedArea":4602,"roomSpaceCount":12,"_id":"PX4jWc7fm72nNooH"}
+{"bldg":"114A","department":"Auxiliary Services AVP","assignedArea":2254,"roomSpaceCount":15,"_id":"PYQDQqj5xdaZmq5l"}
+{"bldg":"3","department":"Alumni Association","assignedArea":16255,"roomSpaceCount":79,"_id":"PeLrhNQJCBAenoSY"}
+{"bldg":"104","department":"TOTALS","assignedArea":102771,"roomSpaceCount":224,"_id":"PmkEJwF7t8DYoSzK"}
+{"bldg":"790","department":"GTRI-Non-Assignable","assignedArea":57769,"roomSpaceCount":267,"_id":"PnxRFJ1NpVIlgODS"}
+{"bldg":"94","department":"TOTALS","assignedArea":21641,"roomSpaceCount":115,"_id":"Pq8f8SvGPReSuU2r"}
+{"bldg":"99","department":"GTRI-Research Security","assignedArea":1001,"roomSpaceCount":5,"_id":"PrvYaPxYtPS52xLz"}
+{"bldg":"86","department":"Vending","assignedArea":231,"roomSpaceCount":1,"_id":"PsdwR0AaYN7forbu"}
+{"bldg":"99","department":"GTRI-Signature Tech (GTRI-STL)","assignedArea":8288,"roomSpaceCount":35,"_id":"PtL4v8M8cQIe3det"}
+{"bldg":"179","department":"TOTALS","assignedArea":49553,"roomSpaceCount":3,"_id":"PuLECcjdvYH21BcK"}
+{"bldg":"864","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":132,"roomSpaceCount":1,"_id":"PuWG6TvlHEVUwFe4"}
+{"bldg":"24","department":"Public Policy","assignedArea":14411,"roomSpaceCount":67,"_id":"PxPqcdIUtKfvKhVQ"}
+{"bldg":"826","department":"Internal Auditing","assignedArea":5016,"roomSpaceCount":28,"_id":"PzVcCTSVRR1g0Ac1"}
+{"bldg":"156","department":"OIT-Architecture & Infrastruct","assignedArea":80,"roomSpaceCount":1,"_id":"Q7stkEpnxaJBTdFl"}
+{"bldg":"849","department":"TOTALS","assignedArea":2031,"roomSpaceCount":19,"_id":"QABrUedTmhoopL30"}
+{"bldg":"45","department":"Psychology","assignedArea":40032,"roomSpaceCount":217,"_id":"QCgetw5w49Ur6GQY"}
+{"bldg":"81","department":"Physics","assignedArea":62105,"roomSpaceCount":203,"_id":"QECHG7DYPB8nnlsZ"}
+{"bldg":"164","department":"Risk Management","assignedArea":212,"roomSpaceCount":1,"_id":"QFklySpzGqH9wgql"}
+{"bldg":"141","department":"GTRI-Communications","assignedArea":1111,"roomSpaceCount":8,"_id":"QHWmbejTG41VhTtm"}
+{"bldg":"139","department":"Non-Assignable","assignedArea":82333,"roomSpaceCount":46,"_id":"QK1Ji8lNKqz458dS"}
+{"bldg":"128","department":"Non-Assignable","assignedArea":6325,"roomSpaceCount":47,"_id":"QLLHpqIZr1TW7FIL"}
+{"bldg":"33","department":"Air Force ROTC","assignedArea":6258,"roomSpaceCount":29,"_id":"QMckEWz24waIpqnL"}
+{"bldg":"790","department":"GTRI-Common","assignedArea":9204,"roomSpaceCount":28,"_id":"QOFIwbfQ2eApm0cj"}
+{"bldg":"47","department":"Non-Assignable","assignedArea":40709,"roomSpaceCount":98,"_id":"QTNK4qYKTYWovGfa"}
+{"bldg":"166","department":"OIT-Information Tech Services","assignedArea":2560,"roomSpaceCount":5,"_id":"QX2ABLjyQfwzoJx1"}
+{"bldg":"153","department":"Computational Science & Eng","assignedArea":1023,"roomSpaceCount":6,"_id":"QYDCji03RbtnSmGd"}
+{"bldg":"8","department":"Non-Assignable","assignedArea":82605,"roomSpaceCount":5,"_id":"QYVsuyFzQhVvroGL"}
+{"bldg":"067A","department":"Landscape Services","assignedArea":2638,"roomSpaceCount":4,"_id":"QZnRlJVyng5XBNlm"}
+{"bldg":"52","department":"Housing Office","assignedArea":1622,"roomSpaceCount":5,"_id":"QbnhixZ7OAwGz0lw"}
+{"bldg":"184","department":"Psychology","assignedArea":4570,"roomSpaceCount":23,"_id":"QthFSYV42PhQJMGz"}
+{"bldg":"107","department":"Non-Assignable","assignedArea":6606,"roomSpaceCount":44,"_id":"Qyg0qI4EEMe0lQXI"}
+{"bldg":"162","department":"CRC-Operations","assignedArea":722,"roomSpaceCount":2,"_id":"R9zJv01BKcqVr3RQ"}
+{"bldg":"801","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":422,"roomSpaceCount":3,"_id":"RIODvSnGQS1pi3NU"}
+{"bldg":"166","department":"College of Sciences","assignedArea":1312,"roomSpaceCount":3,"_id":"RJH7GIX41TA0vZv5"}
+{"bldg":"99","department":"GTRI-Electro-Optical Sys Labs","assignedArea":46369,"roomSpaceCount":212,"_id":"RL3re7ywnikAPoWV"}
+{"bldg":"164","department":"Post Office","assignedArea":2308,"roomSpaceCount":3,"_id":"RMMUxmOOLinbq9R7"}
+{"bldg":"141B","department":"TOTALS","assignedArea":283773,"roomSpaceCount":129,"_id":"RMWvkmjBHJokHkQp"}
+{"bldg":"163","department":"TOTALS","assignedArea":56467,"roomSpaceCount":16,"_id":"RNERgxfymXWLR8qW"}
+{"bldg":"129","department":"Security & Police Department","assignedArea":540,"roomSpaceCount":4,"_id":"RNjgIvN947fcSXGz"}
+{"bldg":"135","department":"Non-Assignable","assignedArea":43933,"roomSpaceCount":107,"_id":"RNogvNe8y3q6b6kA"}
+{"bldg":"119","department":"TOTALS","assignedArea":27408,"roomSpaceCount":142,"_id":"RPiuGWgiGDJ6rFLD"}
+{"bldg":"190","department":"Parking Decks","assignedArea":59815,"roomSpaceCount":18,"_id":"RQaKe2vE3hUYEyer"}
+{"bldg":"59","department":"Literature Media and Communication","assignedArea":6609,"roomSpaceCount":25,"_id":"RRueX0im0ryEsW8t"}
+{"bldg":"124","department":"TOTALS","assignedArea":34627,"roomSpaceCount":67,"_id":"RT0p8iLd5uLIotrN"}
+{"bldg":"166","department":"Success Programs-SSC","assignedArea":6512,"roomSpaceCount":20,"_id":"RTwQg5aA79sH1M7X"}
+{"bldg":"156","department":"TOTALS","assignedArea":12046,"roomSpaceCount":85,"_id":"RTyNUvfFeXeh7ZVY"}
+{"bldg":"864","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":624,"roomSpaceCount":3,"_id":"RevKIikLZIGoZGJN"}
+{"bldg":"807","department":"TOTALS","assignedArea":2087,"roomSpaceCount":10,"_id":"RfCJrLuFzf1yfKDF"}
+{"bldg":"35","department":"Vending","assignedArea":39,"roomSpaceCount":1,"_id":"RgU1F2MLZiwdQZLD"}
+{"bldg":"95","department":"Nanotechnology Research Center","assignedArea":436,"roomSpaceCount":2,"_id":"Rp847P1Ni6j5A2Ae"}
+{"bldg":"874","department":"TOTALS","assignedArea":4886,"roomSpaceCount":29,"_id":"RqCJnl3NtS9Ue22i"}
+{"bldg":"185","department":"TOTALS","assignedArea":227,"roomSpaceCount":3,"_id":"Rulu4aukBSG3R3em"}
+{"bldg":"72","department":"Housing Office","assignedArea":1856,"roomSpaceCount":1,"_id":"RuohitCsQ6sScmUO"}
+{"bldg":"874","department":"GTRI-Common","assignedArea":1747,"roomSpaceCount":6,"_id":"RxdBBM9Iro8jim8d"}
+{"bldg":"141B","department":"Parking Decks","assignedArea":115584,"roomSpaceCount":43,"_id":"Rzrri6dy02xfMcCF"}
+{"bldg":"61","department":"GTRI-Common","assignedArea":5383,"roomSpaceCount":27,"_id":"S40zpcdObHZwnsj0"}
+{"bldg":"144","department":"Non-Assignable","assignedArea":65441,"roomSpaceCount":109,"_id":"SCeVEMmcKDUL7exQ"}
+{"bldg":"167","department":"Materials Science & Engr","assignedArea":28785,"roomSpaceCount":72,"_id":"SLI5AJSwUOkGHueh"}
+{"bldg":"104","department":"Student Center","assignedArea":28563,"roomSpaceCount":70,"_id":"SMf6VgEZxIeIh4Wc"}
+{"bldg":"114","department":"Auxiliary Services AVP","assignedArea":651,"roomSpaceCount":1,"_id":"SOdjGFRIlTQLJPct"}
+{"bldg":"7","department":"Residence Halls","assignedArea":10985,"roomSpaceCount":68,"_id":"SS2mfNZzQoiIIdql"}
+{"bldg":"17","department":"TOTALS","assignedArea":313875,"roomSpaceCount":705,"_id":"Sdai6zWPgfc8SRmY"}
+{"bldg":"38","department":"Graduate Admissions","assignedArea":2892,"roomSpaceCount":19,"_id":"SesMK9eIwYzXaMR4"}
+{"bldg":"32","department":"Facilities-Management","assignedArea":4765,"roomSpaceCount":31,"_id":"SlXoNmpYNazTj0vx"}
+{"bldg":"067A","department":"Environmental Health & Safety","assignedArea":782,"roomSpaceCount":2,"_id":"Sn3RTfjLSeuKrqbK"}
+{"bldg":"38","department":"Graduate Studies","assignedArea":705,"roomSpaceCount":4,"_id":"So6G3XnUDxCBXBt9"}
+{"bldg":"803","department":"GTRI-Common","assignedArea":6814,"roomSpaceCount":6,"_id":"Sz1dAi5XYUoOmvY0"}
+{"bldg":"029A","department":"Senior VP Admin & Finance","assignedArea":1935,"roomSpaceCount":9,"_id":"T4Uv39UXWNub2QkO"}
+{"bldg":"804","department":"TOTALS","assignedArea":19173,"roomSpaceCount":93,"_id":"T63shMfOJQdDTv1V"}
+{"bldg":"129","department":"Mechanical Engineering","assignedArea":276,"roomSpaceCount":1,"_id":"T6JKR2G1ubNcRVCq"}
+{"bldg":"35","department":"TOTALS","assignedArea":38038,"roomSpaceCount":240,"_id":"TGL5IgfUDCSZLCgU"}
+{"bldg":"801","department":"TOTALS","assignedArea":24983,"roomSpaceCount":81,"_id":"TP81L4iJF6cf4AKF"}
+{"bldg":"74","department":"Unassigned","assignedArea":1323,"roomSpaceCount":5,"_id":"TPUYwEXpfZzYNHLY"}
+{"bldg":"804","department":"GTRI-Non-Assignable","assignedArea":4801,"roomSpaceCount":22,"_id":"TRc19owtXhcaOrqq"}
+{"bldg":"123","department":"Auxiliary Services AVP","assignedArea":1655,"roomSpaceCount":9,"_id":"TScbgbL5XWIWBDhr"}
+{"bldg":"067A","department":"Facilities-Management","assignedArea":2574,"roomSpaceCount":5,"_id":"TSngo0umuvHwzkh8"}
+{"bldg":"178","department":"Non-Assignable","assignedArea":9141,"roomSpaceCount":56,"_id":"TUK7E7THm37JgaF9"}
+{"bldg":"54","department":"Parking Decks","assignedArea":152636,"roomSpaceCount":27,"_id":"TULujmR8J90wLYA0"}
+{"bldg":"16","department":"TOTALS","assignedArea":52208,"roomSpaceCount":286,"_id":"TWh086fIitPLvFpz"}
+{"bldg":"816A","department":"TOTALS","assignedArea":418,"roomSpaceCount":1,"_id":"TZEQWnfU5BvDeaLO"}
+{"bldg":"86","department":"Unassigned","assignedArea":515,"roomSpaceCount":2,"_id":"TZcjcZMAGqvOux82"}
+{"bldg":"771","department":"Natl Elec Energy Testing","assignedArea":15550,"roomSpaceCount":1,"_id":"TcV2iqM5ahSe1llk"}
+{"bldg":"841A","department":"GTRI-Non-Assignable","assignedArea":158,"roomSpaceCount":1,"_id":"TnatYwMCJyM9EZZH"}
+{"bldg":"66","department":"Non-Assignable","assignedArea":5855,"roomSpaceCount":26,"_id":"TqfbJ28qjIinT8Mp"}
+{"bldg":"159","department":"GTRI-Common","assignedArea":5318,"roomSpaceCount":11,"_id":"Tua8iz2kccBMC27w"}
+{"bldg":"106","department":"Residence Halls","assignedArea":8832,"roomSpaceCount":43,"_id":"TuefemYpUKlYIWdQ"}
+{"bldg":"182","department":"TOTALS","assignedArea":211110,"roomSpaceCount":119,"_id":"TzARXt2M7Rw5A2Yu"}
+{"bldg":"104","department":"OIT-Information Tech Services","assignedArea":1235,"roomSpaceCount":2,"_id":"U0u4YuTwsIekUMg1"}
+{"bldg":"029B","department":"Senior VP Admin & Finance","assignedArea":185,"roomSpaceCount":1,"_id":"U37IqVUe7hTaZTLd"}
+{"bldg":"181","department":"Institute for Electronics and Nanotechnology","assignedArea":39933,"roomSpaceCount":95,"_id":"U4BrlA9HeP201bI9"}
+{"bldg":"30","department":"Vice Provost International Initiatives","assignedArea":984,"roomSpaceCount":6,"_id":"UButlLSBoxeMb9tC"}
+{"bldg":"138","department":"Non-Assignable","assignedArea":5127,"roomSpaceCount":36,"_id":"UDjVemTPWPwfJGOK"}
+{"bldg":"99","department":"GTRI-Support Services","assignedArea":855,"roomSpaceCount":5,"_id":"UEw80v4ez7uuQbKS"}
+{"bldg":"168","department":"Athletic Association","assignedArea":18034,"roomSpaceCount":42,"_id":"UIRP4aGLNTgW98Tr"}
+{"bldg":"152","department":"TOTALS","assignedArea":5613,"roomSpaceCount":19,"_id":"UIr9iKygo129OpNo"}
+{"bldg":"791","department":"Non-Assignable","assignedArea":1407,"roomSpaceCount":11,"_id":"UPxmhADacOrDU9Je"}
+{"bldg":"3","department":"Non-Assignable","assignedArea":4202,"roomSpaceCount":38,"_id":"UadgEQOf86ndKzn8"}
+{"bldg":"51","department":"Architecture","assignedArea":12885,"roomSpaceCount":20,"_id":"UfYY3Mn33iKiRfr7"}
+{"bldg":"116","department":"Vending","assignedArea":650,"roomSpaceCount":2,"_id":"UjN4SDf5WIt8tHqH"}
+{"bldg":"864B","department":"TOTALS","assignedArea":117,"roomSpaceCount":1,"_id":"UmWy6LaBeZqytwFc"}
+{"bldg":"066A","department":"Non-Assignable","assignedArea":13448,"roomSpaceCount":57,"_id":"UmqgHiNfgVhKXc17"}
+{"bldg":"91","department":"Non-Assignable","assignedArea":9300,"roomSpaceCount":40,"_id":"Uo5yPQq9KZ9kRcyH"}
+{"bldg":"86","department":"Civil & Environmental Engr","assignedArea":1265,"roomSpaceCount":3,"_id":"Uxgvpwksv1DzvugK"}
+{"bldg":"146","department":"Chemical and Biomolecular Engr","assignedArea":5540,"roomSpaceCount":25,"_id":"UzOWu4WeFGhgnuST"}
+{"bldg":"865","department":"TOTALS","assignedArea":9513,"roomSpaceCount":2,"_id":"UzcCGPQ7AAATDSOg"}
+{"bldg":"159","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":16744,"roomSpaceCount":44,"_id":"V2ermK4jdpgfDY62"}
+{"bldg":"158","department":"TOTALS","assignedArea":19286,"roomSpaceCount":39,"_id":"V5sKknuKU6CtLjJq"}
+{"bldg":"36","department":"Non-Assignable","assignedArea":1531,"roomSpaceCount":21,"_id":"V7I2jGNq4GiVaRBm"}
+{"bldg":"029B","department":"Controller's Office","assignedArea":2973,"roomSpaceCount":23,"_id":"V7ML7X8eaijD0FJy"}
+{"bldg":"129","department":"Ctr for Adv Communicat Policy","assignedArea":2189,"roomSpaceCount":18,"_id":"V7YcB9XIIs4qidFi"}
+{"bldg":"6","department":"Residence Halls","assignedArea":37628,"roomSpaceCount":198,"_id":"VA408NHlfLInTqfE"}
+{"bldg":"54","department":"Non-Assignable","assignedArea":127350,"roomSpaceCount":15,"_id":"VAA7idFVZcyD25Xf"}
+{"bldg":"865","department":"EII-General","assignedArea":9513,"roomSpaceCount":2,"_id":"VDIecalif0SlqUyM"}
+{"bldg":"801","department":"GTRI-Research Security","assignedArea":2034,"roomSpaceCount":10,"_id":"VG1opNMdgnLp5zVq"}
+{"bldg":"61","department":"Non-Assignable","assignedArea":540,"roomSpaceCount":4,"_id":"VI5ZmXNBWdqnvkyL"}
+{"bldg":"55","department":"TOTALS","assignedArea":36710,"roomSpaceCount":65,"_id":"VLeX4FWMdNBuH7OZ"}
+{"bldg":"12","department":"Vending","assignedArea":106,"roomSpaceCount":1,"_id":"VPg1KAdei38br5WI"}
+{"bldg":"164","department":"Logistics","assignedArea":9798,"roomSpaceCount":9,"_id":"VVESeaxp6lsGfzqQ"}
+{"bldg":"103","department":"Nuclear Engineering","assignedArea":19562,"roomSpaceCount":67,"_id":"VVsKS7rZXvfxLW0e"}
+{"bldg":"108","department":"Non-Assignable","assignedArea":5759,"roomSpaceCount":40,"_id":"Vb73Uzkq55ELh6Aw"}
+{"bldg":"166","department":"Chemistry & Biochemistry","assignedArea":12634,"roomSpaceCount":14,"_id":"Vo26xpkvxXJYuumv"}
+{"bldg":"139","department":"Parking Decks","assignedArea":84482,"roomSpaceCount":22,"_id":"VwTLl7gnfdV5eOVK"}
+{"bldg":"115","department":"Non-Assignable","assignedArea":9011,"roomSpaceCount":36,"_id":"Vx0T3LfbxrnKICmx"}
+{"bldg":"151","department":"Aerospace Engineering","assignedArea":13667,"roomSpaceCount":32,"_id":"W3Y9LLChpRMIQqq4"}
+{"bldg":"159","department":"Non-Assignable","assignedArea":101,"roomSpaceCount":2,"_id":"W6VuWMpMk9fRgMLA"}
+{"bldg":"133","department":"TOTALS","assignedArea":7604,"roomSpaceCount":10,"_id":"W6oMvkfcIR7vW4yJ"}
+{"bldg":"155B","department":"Non-Assignable","assignedArea":4238,"roomSpaceCount":41,"_id":"W7MgAwLxskS5QG3C"}
+{"bldg":"184","department":"TOTALS","assignedArea":21058,"roomSpaceCount":78,"_id":"WArsc2NEjJD89oLP"}
+{"bldg":"151","department":"TOTALS","assignedArea":17675,"roomSpaceCount":45,"_id":"WCSQN39ijoJO3cEe"}
+{"bldg":"172","department":"TOTALS","assignedArea":240086,"roomSpaceCount":721,"_id":"WDCYS1HtdZjcX0c6"}
+{"bldg":"171","department":"TOTALS","assignedArea":6862,"roomSpaceCount":1,"_id":"WE72eCbMf4eCdaa9"}
+{"bldg":"166","department":"Provost & Exec VP Acad Aff","assignedArea":2980,"roomSpaceCount":15,"_id":"WErIxMt1rsbzNiqt"}
+{"bldg":"864B","department":"Legal Affairs","assignedArea":117,"roomSpaceCount":1,"_id":"WI7iT4863oeVqh3P"}
+{"bldg":"033C","department":"Facilities-Management","assignedArea":744,"roomSpaceCount":1,"_id":"WIsrx9xPXE0Z0wDT"}
+{"bldg":"103","department":"Materials Science & Engr","assignedArea":585,"roomSpaceCount":1,"_id":"WSwiB5dm9wbsF8Hj"}
+{"bldg":"135","department":"Mechanical Engineering","assignedArea":39482,"roomSpaceCount":122,"_id":"WjNxDa6edQPkRA0S"}
+{"bldg":"156","department":"OIT-Information Tech Services","assignedArea":6302,"roomSpaceCount":32,"_id":"WmMtZqP1FoHP2WZV"}
+{"bldg":"174","department":"TOTALS","assignedArea":464641,"roomSpaceCount":165,"_id":"Wmlz4ez3jay204OC"}
+{"bldg":"128","department":"Industrial Design","assignedArea":685,"roomSpaceCount":3,"_id":"WmuSXqf8AI4bXuMm"}
+{"bldg":"801","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":802,"roomSpaceCount":3,"_id":"Wpjtg0e637UTQPeG"}
+{"bldg":"141","department":"TOTALS","assignedArea":141892,"roomSpaceCount":508,"_id":"WpwDt50mCI9daEtD"}
+{"bldg":"051A","department":"Vending","assignedArea":87,"roomSpaceCount":1,"_id":"WqxBTR7xMA4NUCyX"}
+{"bldg":"114","department":"Dean of Students","assignedArea":230,"roomSpaceCount":1,"_id":"WqziGHOyOA5yGVcT"}
+{"bldg":"41","department":"Institute Classrooms","assignedArea":2611,"roomSpaceCount":3,"_id":"WvKcpk0BsDNJ2oO0"}
+{"bldg":"199","department":"Mechanical Engineering","assignedArea":1540,"roomSpaceCount":5,"_id":"WxlQBTkpDxhyKNkD"}
+{"bldg":"804","department":"GTRI-Research Security","assignedArea":230,"roomSpaceCount":2,"_id":"XDIcUeON5L6rx1dZ"}
+{"bldg":"773","department":"Natl Elec Energy Testing","assignedArea":3390,"roomSpaceCount":1,"_id":"XJpQIxojCle9pgQi"}
+{"bldg":"801","department":"Non-Assignable","assignedArea":104,"roomSpaceCount":2,"_id":"XKUPrnIs0Q3hKBVe"}
+{"bldg":"115","department":"Music","assignedArea":15969,"roomSpaceCount":44,"_id":"XL20T8MYadaD6n7E"}
+{"bldg":"30","department":"Assessment","assignedArea":1194,"roomSpaceCount":8,"_id":"XOGwtFzGLx06YPdt"}
+{"bldg":"149","department":"Non-Assignable","assignedArea":3569,"roomSpaceCount":20,"_id":"XQ9XByo8MRuE0cKw"}
+{"bldg":"051D","department":"OIT-Academic/Rsch Technologies","assignedArea":9678,"roomSpaceCount":31,"_id":"XVqDzfXlKfTkQtOs"}
+{"bldg":"138","department":"OIT-Information Tech Services","assignedArea":2034,"roomSpaceCount":2,"_id":"Xa92wA3kdA3vNIgO"}
+{"bldg":"110","department":"Non-Assignable","assignedArea":7450,"roomSpaceCount":48,"_id":"XhVTyKtu8WcYOOB7"}
+{"bldg":"31","department":"Special Programs-Ssc","assignedArea":1372,"roomSpaceCount":6,"_id":"XlKSDARG2OrlPN1m"}
+{"bldg":"142","department":"Payroll Office","assignedArea":2253,"roomSpaceCount":20,"_id":"XmT34IuWOLIV5bua"}
+{"bldg":"805","department":"TOTALS","assignedArea":43838,"roomSpaceCount":206,"_id":"XqAYi2NEdCkz5vMd"}
+{"bldg":"849","department":"GTRI-Non-Assignable","assignedArea":57,"roomSpaceCount":3,"_id":"XuxU4jF1oUABotOB"}
+{"bldg":"141","department":"GTRI-Strategic Initiative Ofc","assignedArea":569,"roomSpaceCount":3,"_id":"Xz8PcI6Ad0w0pcyy"}
+{"bldg":"175","department":"Literature Media and Communication","assignedArea":6912,"roomSpaceCount":21,"_id":"Y1fbOPBcSnqgqfrS"}
+{"bldg":"67","department":"Landscape Services","assignedArea":730,"roomSpaceCount":1,"_id":"Y2NvrdSd8TG4HbDg"}
+{"bldg":"132","department":"TOTALS","assignedArea":133782,"roomSpaceCount":247,"_id":"Y66I3fsrxeMyqlW3"}
+{"bldg":"153","department":"Auxiliary Services AVP","assignedArea":395,"roomSpaceCount":3,"_id":"Y7yI9kKrMKSFjMVB"}
+{"bldg":"147","department":"EII-ATDC / VL","assignedArea":12749,"roomSpaceCount":36,"_id":"YA4jR3Ey1NJQAl2H"}
+{"bldg":"803","department":"TOTALS","assignedArea":36341,"roomSpaceCount":149,"_id":"YIgfiWp1HnQHakPp"}
+{"bldg":"152","department":"College of Computing","assignedArea":3715,"roomSpaceCount":6,"_id":"YOmoQr1JON8LlAw0"}
+{"bldg":"033B","department":"Non-Assignable","assignedArea":335,"roomSpaceCount":3,"_id":"YP0Amhz89viQyTtJ"}
+{"bldg":"198","department":"Non-Assignable","assignedArea":5751,"roomSpaceCount":28,"_id":"YPSYQK1LCEtu0cRp"}
+{"bldg":"86","department":"Materials Science & Engr","assignedArea":20384,"roomSpaceCount":58,"_id":"YRFg76e5OfpZjscz"}
+{"bldg":"95","department":"Electrical & Computer Engr","assignedArea":9606,"roomSpaceCount":33,"_id":"YSgXfBWmMa1Agzpe"}
+{"bldg":"58","department":"History Technology and Society","assignedArea":4254,"roomSpaceCount":24,"_id":"YSymZ8UGfyXsq6iI"}
+{"bldg":"176","department":"TOTALS","assignedArea":107478,"roomSpaceCount":430,"_id":"YVMVqwzTJ5lC9iNn"}
+{"bldg":"139","department":"Parking Office","assignedArea":276,"roomSpaceCount":1,"_id":"YXdxRr8yBhUCsTsq"}
+{"bldg":"180","department":"TOTALS","assignedArea":330900,"roomSpaceCount":1295,"_id":"YcKno0T5fFeXx9it"}
+{"bldg":"141A","department":"GTRI-Non-Assignable","assignedArea":6925,"roomSpaceCount":25,"_id":"Yxr9sKMZVbRLvBxI"}
+{"bldg":"40","department":"Non-Assignable","assignedArea":5768,"roomSpaceCount":26,"_id":"YzMYnOTKz3hb6HlB"}
+{"bldg":"170","department":"Human Resources","assignedArea":1897,"roomSpaceCount":23,"_id":"Z4Im1zMNp1ciUtp3"}
+{"bldg":"772","department":"Natl Elec Energy Testing","assignedArea":3750,"roomSpaceCount":1,"_id":"Z9pcu6iIFJKIzS8A"}
+{"bldg":"52","department":"Residence Halls","assignedArea":80564,"roomSpaceCount":102,"_id":"ZAEjRdUOCpjcwUW2"}
+{"bldg":"98","department":"Non-Assignable","assignedArea":12388,"roomSpaceCount":30,"_id":"ZAMpKslgotDDQ6j5"}
+{"bldg":"803","department":"Non-Assignable","assignedArea":36,"roomSpaceCount":3,"_id":"ZAtgmjzJROVl26Ow"}
+{"bldg":"14","department":"TOTALS","assignedArea":25711,"roomSpaceCount":129,"_id":"ZGJonAtIQhxy0VYa"}
+{"bldg":"066A","department":"TOTALS","assignedArea":40532,"roomSpaceCount":162,"_id":"ZJclAraJeneSTJqN"}
+{"bldg":"172","department":"Buzz Card Center","assignedArea":4777,"roomSpaceCount":28,"_id":"ZLpEet4VD7fFeJix"}
+{"bldg":"780","department":"GTRI-Research Security","assignedArea":178,"roomSpaceCount":1,"_id":"ZQ9hxhMJP3JlRKQr"}
+{"bldg":"158A","department":"GTRI-Machine Services","assignedArea":7982,"roomSpaceCount":12,"_id":"ZSOcM9fjCfzEMcfE"}
+{"bldg":"029B","department":"TOTALS","assignedArea":13571,"roomSpaceCount":109,"_id":"ZT2kEsJghapAxcub"}
+{"bldg":"18","department":"Athletic Association","assignedArea":45340,"roomSpaceCount":194,"_id":"ZV2kkXgYTIZ98X0Y"}
+{"bldg":"804","department":"GTRI-Machine Services","assignedArea":108,"roomSpaceCount":1,"_id":"ZWWVyMA1CD4AE2jH"}
+{"bldg":"99","department":"GTRI-Information Systems","assignedArea":643,"roomSpaceCount":3,"_id":"ZXfJuPJ6uGsXvYYc"}
+{"bldg":"804","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":3192,"roomSpaceCount":8,"_id":"ZZFSJDi4jYcBlsIj"}
+{"bldg":"141B","department":"GTRI-Non-Assignable","assignedArea":8614,"roomSpaceCount":14,"_id":"ZfrkLgfUt7evFvhR"}
+{"bldg":"99","department":"GTRI-Info&Comm Lab","assignedArea":130,"roomSpaceCount":1,"_id":"ZjPy8iasgo5Pn8ZH"}
+{"bldg":"167","department":"Physics","assignedArea":2038,"roomSpaceCount":9,"_id":"Znmm6CibGwAyg5mX"}
+{"bldg":"785","department":"GT Emory Biomedical Engr","assignedArea":19034,"roomSpaceCount":77,"_id":"Znx2B4BMDA9ZBAv4"}
+{"bldg":"77","department":"OIT-Information Tech Services","assignedArea":81,"roomSpaceCount":1,"_id":"ZoNyIdgrwRTneANK"}
+{"bldg":"071A","department":"President's Home","assignedArea":1415,"roomSpaceCount":4,"_id":"Zt9XJNUIt3h3Gl8c"}
+{"bldg":"139","department":"TOTALS","assignedArea":172215,"roomSpaceCount":78,"_id":"Zu4BSkdJzN3OyAVx"}
+{"bldg":"175","department":"Non-Assignable","assignedArea":50374,"roomSpaceCount":143,"_id":"ZvV28x92fJLjPaL2"}
+{"bldg":"118","department":"Residence Halls","assignedArea":16288,"roomSpaceCount":76,"_id":"Zza9Kh8xKOdu21yQ"}
+{"bldg":"104A","department":"Student Center","assignedArea":407,"roomSpaceCount":1,"_id":"a2ku7ILfujY7DZXu"}
+{"bldg":"129","department":"Chemical and Biomolecular Engr","assignedArea":2264,"roomSpaceCount":14,"_id":"a8a2Keu0Y3LdhQpR"}
+{"bldg":"11","department":"Non-Assignable","assignedArea":8230,"roomSpaceCount":46,"_id":"a8rWhv5jWeaHiGUK"}
+{"bldg":"126","department":"Industrial & Systems Engr","assignedArea":1486,"roomSpaceCount":3,"_id":"aAKOPqfs5Ec83iu0"}
+{"bldg":"182","department":"Non-Assignable","assignedArea":94110,"roomSpaceCount":52,"_id":"aBIVfbZtSGT8CWHG"}
+{"bldg":"125","department":"Southern Regional Ed Bd","assignedArea":14337,"roomSpaceCount":63,"_id":"aBgkR4nqdqsras0B"}
+{"bldg":"191","department":"Security & Police Department","assignedArea":1982,"roomSpaceCount":8,"_id":"aFpbP0cVg9QzuiK7"}
+{"bldg":"051A","department":"TOTALS","assignedArea":16254,"roomSpaceCount":58,"_id":"aK73rhcAuo0pBNQy"}
+{"bldg":"856A","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":673,"roomSpaceCount":4,"_id":"aLhWtj7gaI6gnBIA"}
+{"bldg":"30","department":"Executive Vice President of Research","assignedArea":507,"roomSpaceCount":3,"_id":"aSkjWGZAn85j0yI8"}
+{"bldg":"50","department":"Institute Classrooms","assignedArea":8568,"roomSpaceCount":9,"_id":"aTk2bEPYMA1y0LuY"}
+{"bldg":"111","department":"Non-Assignable","assignedArea":29480,"roomSpaceCount":119,"_id":"aZQ8AFGEXmEU9HVL"}
+{"bldg":"66","department":"TOTALS","assignedArea":14129,"roomSpaceCount":61,"_id":"aZuGRQRlDEpezkMP"}
+{"bldg":"856A","department":"GTRI-Electro-Optical Sys Labs","assignedArea":163,"roomSpaceCount":1,"_id":"abISDjEEt16J5Jyq"}
+{"bldg":"33","department":"Language Institute","assignedArea":9839,"roomSpaceCount":33,"_id":"agw6tY8swSGjUGPV"}
+{"bldg":"164","department":"Non-Assignable","assignedArea":2004,"roomSpaceCount":21,"_id":"amzzg3QSbsksXZO9"}
+{"bldg":"169","department":"TOTALS","assignedArea":31859,"roomSpaceCount":32,"_id":"aqQZqpR68vCBpzyw"}
+{"bldg":"159","department":"GTRI-Non-Assignable","assignedArea":11328,"roomSpaceCount":36,"_id":"arutzScjMrVN0xK4"}
+{"bldg":"802","department":"GTRI Talent Management","assignedArea":120,"roomSpaceCount":1,"_id":"avi8zP6OvHZzvsHM"}
+{"bldg":"141B","department":"Ga Public TV","assignedArea":18374,"roomSpaceCount":2,"_id":"ayvyPlF9dDqAx1hp"}
+{"bldg":"173","department":"Legal Affairs","assignedArea":5223,"roomSpaceCount":26,"_id":"b2OOfzbiPQ2ZvcEJ"}
+{"bldg":"47","department":"VP Development","assignedArea":24498,"roomSpaceCount":87,"_id":"bCtzHPDU2N8XHXVC"}
+{"bldg":"602","department":"TOTALS","assignedArea":38767,"roomSpaceCount":132,"_id":"bEW2vpzp7r8J6MI7"}
+{"bldg":"178","department":"Health Systems Institute","assignedArea":17619,"roomSpaceCount":55,"_id":"bHiLMFtMao5L0Bg7"}
+{"bldg":"47","department":"Institute Communications","assignedArea":8766,"roomSpaceCount":56,"_id":"bMP11QyGOjvjXrD1"}
+{"bldg":"140","department":"VPSA-Intramural Council","assignedArea":153457,"roomSpaceCount":97,"_id":"bOnxNjtZDu2kgcKP"}
+{"bldg":"59","department":"Non-Assignable","assignedArea":3895,"roomSpaceCount":21,"_id":"bSeRdfcPbJjfWrgw"}
+{"bldg":"720","department":"Architecture","assignedArea":2907,"roomSpaceCount":7,"_id":"bWXPfajxuV824hpf"}
+{"bldg":"25","department":"Modern Languages","assignedArea":780,"roomSpaceCount":7,"_id":"baV3nM4x8eR6tssL"}
+{"bldg":"806","department":"GTRI-Common","assignedArea":80,"roomSpaceCount":3,"_id":"bgWlKOKvvunRcUP6"}
+{"bldg":"022A","department":"Non-Assignable","assignedArea":1227,"roomSpaceCount":11,"_id":"bjmLWrXsY9ni9iZy"}
+{"bldg":"033B","department":"TOTALS","assignedArea":5542,"roomSpaceCount":23,"_id":"brwdtEXXFBL7uwkT"}
+{"bldg":"189","department":"Non-Assignable","assignedArea":583,"roomSpaceCount":2,"_id":"bufHCNjOLKSkLe0M"}
+{"bldg":"47","department":"TOTALS","assignedArea":110116,"roomSpaceCount":297,"_id":"buuaXij4WfVb5OtB"}
+{"bldg":"874","department":"Non-Assignable","assignedArea":35,"roomSpaceCount":1,"_id":"bw77DWg2pOht37ig"}
+{"bldg":"30","department":"Organizational Development","assignedArea":1852,"roomSpaceCount":9,"_id":"bxhG27AXl8QpDhlm"}
+{"bldg":"790","department":"GTRI-Research Security","assignedArea":591,"roomSpaceCount":4,"_id":"byAQWaxUznWyMcrG"}
+{"bldg":"080A","department":"Athletic Association","assignedArea":657,"roomSpaceCount":3,"_id":"c2KuYBqj7y27aXHL"}
+{"bldg":"100","department":"Library","assignedArea":89807,"roomSpaceCount":226,"_id":"c2SEOHh9cslc8M8z"}
+{"bldg":"141","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":6611,"roomSpaceCount":29,"_id":"c6L4tpXIUO7rq8mX"}
+{"bldg":"163","department":"Unassigned","assignedArea":53167,"roomSpaceCount":9,"_id":"c7ZNS4UMm60quSvn"}
+{"bldg":"45","department":"Non-Assignable","assignedArea":27461,"roomSpaceCount":122,"_id":"cH6VttCL8h51wYaH"}
+{"bldg":"156","department":"Non-Assignable","assignedArea":723,"roomSpaceCount":13,"_id":"cHoaG9dFySNMcL4g"}
+{"bldg":"876","department":"TOTALS","assignedArea":3754,"roomSpaceCount":1,"_id":"cIcBirW9luXbdeii"}
+{"bldg":"850","department":"Housing Office","assignedArea":20513,"roomSpaceCount":28,"_id":"cPgDpzF6OidYY55q"}
+{"bldg":"155B","department":"Grants & Contracts Accounting","assignedArea":15,"roomSpaceCount":1,"_id":"cTIb593ITYmv4NNt"}
+{"bldg":"18","department":"Non-Assignable","assignedArea":20013,"roomSpaceCount":81,"_id":"cUjHkQqirXlsyfIB"}
+{"bldg":"164","department":"Property Control","assignedArea":858,"roomSpaceCount":7,"_id":"cXvy5t2Tjxo9kSuR"}
+{"bldg":"773","department":"TOTALS","assignedArea":3390,"roomSpaceCount":1,"_id":"cYjFHCPEnuTOw067"}
+{"bldg":"115","department":"TOTALS","assignedArea":27692,"roomSpaceCount":88,"_id":"caZATsEN9NWh6HLG"}
+{"bldg":"155","department":"Non-Assignable","assignedArea":886,"roomSpaceCount":8,"_id":"carP10L8c4ClU9iP"}
+{"bldg":"124","department":"Non-Assignable","assignedArea":6428,"roomSpaceCount":21,"_id":"cl5uudzIsjB2r9WW"}
+{"bldg":"92","department":"Non-Assignable","assignedArea":4592,"roomSpaceCount":25,"_id":"clB2EtxXooGMW1w1"}
+{"bldg":"849","department":"GTRI-Common","assignedArea":815,"roomSpaceCount":6,"_id":"csg8b6lkp2AclhyK"}
+{"bldg":"92","department":"Residence Halls","assignedArea":13528,"roomSpaceCount":83,"_id":"d1ABhkeinxwGpr9Z"}
+{"bldg":"40","department":"Institute Classrooms","assignedArea":1590,"roomSpaceCount":2,"_id":"d4HCdKEM84W3yixw"}
+{"bldg":"128","department":"TOTALS","assignedArea":33620,"roomSpaceCount":149,"_id":"d5DQr4EREnnrATwT"}
+{"bldg":"136","department":"Unassigned","assignedArea":2213,"roomSpaceCount":2,"_id":"dAAZNTSDu5AOsadB"}
+{"bldg":"41","department":"Non-Assignable","assignedArea":9781,"roomSpaceCount":36,"_id":"dB7s0ZxqFmBMREtm"}
+{"bldg":"804","department":"Non-Assignable","assignedArea":22,"roomSpaceCount":1,"_id":"dFDzpvCNnNRFLTF0"}
+{"bldg":"103","department":"Non-Assignable","assignedArea":49647,"roomSpaceCount":133,"_id":"dHaK7aD28QTaOyYr"}
+{"bldg":"131","department":"Residence Halls","assignedArea":75338,"roomSpaceCount":101,"_id":"dKSSWNeDuBC6tuHc"}
+{"bldg":"176","department":"GTRI-Common","assignedArea":4460,"roomSpaceCount":18,"_id":"dLXDXadxyZ26FbpS"}
+{"bldg":"74","department":"TOTALS","assignedArea":7468,"roomSpaceCount":31,"_id":"dWccZW94CDxUcWtd"}
+{"bldg":"86","department":"Chemical and Biomolecular Engr","assignedArea":29635,"roomSpaceCount":78,"_id":"dYmJexUDHNK76H8w"}
+{"bldg":"838","department":"Non-Assignable","assignedArea":728,"roomSpaceCount":4,"_id":"dax20TZdyJNW6AKS"}
+{"bldg":"856A","department":"GTRI-Info&Comm Lab","assignedArea":165,"roomSpaceCount":1,"_id":"dbNnvOPgRGVuGZoF"}
+{"bldg":"141A","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":13796,"roomSpaceCount":53,"_id":"dbkCed4Mm7fkd0hg"}
+{"bldg":"178","department":"Brook Byers Institute of Sustainable Systems","assignedArea":3419,"roomSpaceCount":3,"_id":"dcBp0cKUpuqEaM3l"}
+{"bldg":"163","department":"Non-Assignable","assignedArea":3300,"roomSpaceCount":7,"_id":"dcuvIlN8rexjW5Y7"}
+{"bldg":"133","department":"Non-Assignable","assignedArea":7502,"roomSpaceCount":9,"_id":"de9VwjqgjsOKdFvL"}
+{"bldg":"61","department":"GTRI-Support Services","assignedArea":3961,"roomSpaceCount":9,"_id":"df5XWzow3LlCQqvr"}
+{"bldg":"106","department":"TOTALS","assignedArea":14749,"roomSpaceCount":75,"_id":"dlZqBORKg4IBYdBO"}
+{"bldg":"109","department":"Non-Assignable","assignedArea":7311,"roomSpaceCount":47,"_id":"dnAlL86rOQFBWZR7"}
+{"bldg":"051C","department":"OIT-Academic/Rsch Technologies","assignedArea":2436,"roomSpaceCount":13,"_id":"dqGzWL4RCSMzJ0Ud"}
+{"bldg":"029C","department":"Bursar's Office","assignedArea":795,"roomSpaceCount":2,"_id":"dtCFQVczISAs2vGA"}
+{"bldg":"864A","department":"Non-Assignable","assignedArea":7,"roomSpaceCount":2,"_id":"dxpauCfSArGWMgwy"}
+{"bldg":"123","department":"Unassigned","assignedArea":460,"roomSpaceCount":3,"_id":"eBnUZPhIoNArbnz7"}
+{"bldg":"123","department":"Vending","assignedArea":65,"roomSpaceCount":1,"_id":"eCzQoTy6d75y1mKu"}
+{"bldg":"141","department":"GTRI-Common","assignedArea":19190,"roomSpaceCount":44,"_id":"eD3L24E1Bs0ejXDG"}
+{"bldg":"75","department":"Vending","assignedArea":179,"roomSpaceCount":1,"_id":"eHcIYzs22GN6rV0m"}
+{"bldg":"790","department":"TOTALS","assignedArea":177100,"roomSpaceCount":775,"_id":"eJoHBg3s5bYSB7hj"}
+{"bldg":"128","department":"Security & Police Department","assignedArea":414,"roomSpaceCount":2,"_id":"eK7jVxfhItNOiebc"}
+{"bldg":"138","department":"OIT-Enterprise Information Sys","assignedArea":17821,"roomSpaceCount":101,"_id":"eLNjCjXB02lNErnx"}
+{"bldg":"104A","department":"Non-Assignable","assignedArea":822,"roomSpaceCount":2,"_id":"eLw3JJjx3RbIRzua"}
+{"bldg":"166","department":"Biology","assignedArea":7654,"roomSpaceCount":10,"_id":"eS0Yv7lP6nLxnc8b"}
+{"bldg":"103","department":"Biology","assignedArea":8514,"roomSpaceCount":33,"_id":"eY0l699wW83Flh1d"}
+{"bldg":"850","department":"Vending","assignedArea":36,"roomSpaceCount":1,"_id":"ecB1i8GFZU8dfUbl"}
+{"bldg":"71","department":"President's Home","assignedArea":8360,"roomSpaceCount":63,"_id":"edqgySI3HSYrLokv"}
+{"bldg":"64","department":"Residence Halls","assignedArea":99662,"roomSpaceCount":127,"_id":"ef3wKVfYsZXKiKlZ"}
+{"bldg":"177","department":"Vending","assignedArea":33,"roomSpaceCount":1,"_id":"eh0x468YJ6dCXcK4"}
+{"bldg":"023A","department":"Non-Assignable","assignedArea":88,"roomSpaceCount":2,"_id":"eiV45qS1oDtYSrfl"}
+{"bldg":"141","department":"GTRI-Ethics & Compliance Off","assignedArea":159,"roomSpaceCount":1,"_id":"ejaSJmguBapjxOCE"}
+{"bldg":"167","department":"Chemical and Biomolecular Engr","assignedArea":9294,"roomSpaceCount":22,"_id":"ekJWyTVs4tyh5egn"}
+{"bldg":"601","department":"Non-Assignable","assignedArea":4535,"roomSpaceCount":17,"_id":"eoG5nl6WkdNeT72O"}
+{"bldg":"126","department":"Manufacturing Research Center","assignedArea":25494,"roomSpaceCount":81,"_id":"eotDikEWKhiBCXCF"}
+{"bldg":"155B","department":"Georgia Tech Research Corporation","assignedArea":7571,"roomSpaceCount":41,"_id":"ep5uk95QVN6pRiAT"}
+{"bldg":"029B","department":"Budget Office","assignedArea":3395,"roomSpaceCount":18,"_id":"erePKCGxfhOHpNbw"}
+{"bldg":"15","department":"Residence Halls","assignedArea":31167,"roomSpaceCount":165,"_id":"esT6hpgL01Kz2DLb"}
+{"bldg":"146","department":"Physiological Research Lab","assignedArea":8601,"roomSpaceCount":41,"_id":"eunQ65GL1nZ9xX52"}
+{"bldg":"75","department":"Institute Classrooms","assignedArea":1694,"roomSpaceCount":3,"_id":"ew3EQTCtrfCPuSwb"}
+{"bldg":"105","department":"Non-Assignable","assignedArea":1603,"roomSpaceCount":19,"_id":"ew8g6KzhIi3hTmxn"}
+{"bldg":"864","department":"TOTALS","assignedArea":5111,"roomSpaceCount":31,"_id":"ewdFjZ1NbD4JThJS"}
+{"bldg":"785","department":"TOTALS","assignedArea":45068,"roomSpaceCount":177,"_id":"exteadmQpWDQmEED"}
+{"bldg":"153","department":"Institute Classrooms","assignedArea":16199,"roomSpaceCount":15,"_id":"f51hP7J5qkema4JC"}
+{"bldg":"159","department":"TOTALS","assignedArea":33491,"roomSpaceCount":93,"_id":"f9GtQpRZfjnhaakl"}
+{"bldg":"73","department":"Facilities-Management","assignedArea":6703,"roomSpaceCount":37,"_id":"fETUMXJCeRN9TcKK"}
+{"bldg":"46","department":"TOTALS","assignedArea":9512,"roomSpaceCount":65,"_id":"fJlYXKbCwNMAE35F"}
+{"bldg":"129","department":"IPST (Inst Paper Sci & Tech)","assignedArea":76502,"roomSpaceCount":306,"_id":"fJxBWzffPwbrYnVa"}
+{"bldg":"31","department":"TOTALS","assignedArea":43908,"roomSpaceCount":226,"_id":"fL56vGFUt9qQU1rv"}
+{"bldg":"029A","department":"Inst Research & Planning (IRP)","assignedArea":2346,"roomSpaceCount":15,"_id":"fPwAcfPq9njgslE2"}
+{"bldg":"57","department":"Industrial & Systems Engr","assignedArea":33014,"roomSpaceCount":163,"_id":"fWrUzPmue3jCjlHJ"}
+{"bldg":"841A","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":116,"roomSpaceCount":1,"_id":"fXB0NAYfFb728Wkd"}
+{"bldg":"24","department":"Literature Media and Communication","assignedArea":1963,"roomSpaceCount":14,"_id":"fXQV51OT100vq0iU"}
+{"bldg":"142","department":"Non-Assignable","assignedArea":1553,"roomSpaceCount":19,"_id":"fbLWHHTp7aTgdfLo"}
+{"bldg":"162","department":"TOTALS","assignedArea":158408,"roomSpaceCount":39,"_id":"fgp6lyy51aZiLf4n"}
+{"bldg":"109","department":"TOTALS","assignedArea":26121,"roomSpaceCount":146,"_id":"fj6JZWncko6tzTPK"}
+{"bldg":"36","department":"TOTALS","assignedArea":8402,"roomSpaceCount":56,"_id":"fohMldQmJMgfjo0s"}
+{"bldg":"105","department":"Housing Office","assignedArea":2033,"roomSpaceCount":10,"_id":"fqg1TxocE2HxZpOb"}
+{"bldg":"90","department":"Non-Assignable","assignedArea":6626,"roomSpaceCount":40,"_id":"fsCV2xDGiRKpS4LH"}
+{"bldg":"31","department":"Corp Liason Pgm","assignedArea":411,"roomSpaceCount":4,"_id":"fttJoppr6r9u6jmM"}
+{"bldg":"141","department":"GTRI-Info&Comm Lab","assignedArea":28709,"roomSpaceCount":115,"_id":"fu2ceOwR2nnVw16U"}
+{"bldg":"101","department":"TOTALS","assignedArea":50843,"roomSpaceCount":141,"_id":"fuYFPfJJkl8e69vA"}
+{"bldg":"033A","department":"Facilities-Management","assignedArea":8721,"roomSpaceCount":11,"_id":"fwgSga5bauhUobjP"}
+{"bldg":"141B","department":"Facilities-Management","assignedArea":526,"roomSpaceCount":4,"_id":"g0gwg1tAKEcfkbCg"}
+{"bldg":"74","department":"Executive VP Administration & Finance","assignedArea":857,"roomSpaceCount":2,"_id":"g1W1jRrkLnsA9mAa"}
+{"bldg":"140","department":"Non-Assignable","assignedArea":59914,"roomSpaceCount":115,"_id":"g33LdC2WTBIxCzcp"}
+{"bldg":"864A","department":"GTRI-Info&Comm Lab","assignedArea":2424,"roomSpaceCount":25,"_id":"g3iPXEIjskMQMT8z"}
+{"bldg":"73","department":"TOTALS","assignedArea":187393,"roomSpaceCount":264,"_id":"g5PEW2Ts5d9cnrB7"}
+{"bldg":"178","department":"TOTALS","assignedArea":45112,"roomSpaceCount":177,"_id":"g5mGYydKuYL6NIdt"}
+{"bldg":"807A","department":"TOTALS","assignedArea":2147,"roomSpaceCount":2,"_id":"gGeuwhBEXKMbbUsB"}
+{"bldg":"101","department":"Vending","assignedArea":25,"roomSpaceCount":1,"_id":"gHH2kwKQZtNCfssV"}
+{"bldg":"199","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":7057,"roomSpaceCount":2,"_id":"gJKKm1e7fk5NTQzb"}
+{"bldg":"93","department":"TOTALS","assignedArea":20947,"roomSpaceCount":110,"_id":"gOwidkgeHomh3iBU"}
+{"bldg":"141","department":"GTRI-Information Systems","assignedArea":203,"roomSpaceCount":1,"_id":"gezxJQbEEJ24pVIH"}
+{"bldg":"162","department":"Non-Assignable","assignedArea":72022,"roomSpaceCount":17,"_id":"ghg7Ekc8NFUWL3jS"}
+{"bldg":"191","department":"Non-Assignable","assignedArea":264847,"roomSpaceCount":1089,"_id":"gqTISKh3nB5jcy4B"}
+{"bldg":"864A","department":"GTRI-Non-Assignable","assignedArea":956,"roomSpaceCount":10,"_id":"gsPS9WmYxdUrHOj4"}
+{"bldg":"771A","department":"Natl Elec Energy Testing","assignedArea":8750,"roomSpaceCount":1,"_id":"gv1K3vc8nDWCyRcJ"}
+{"bldg":"158A","department":"TOTALS","assignedArea":8197,"roomSpaceCount":17,"_id":"h6hjhVL758rU1kaB"}
+{"bldg":"67","department":"TOTALS","assignedArea":8838,"roomSpaceCount":27,"_id":"hE7bOL5uhWTIub5d"}
+{"bldg":"104","department":"Student Center Recreation","assignedArea":12720,"roomSpaceCount":11,"_id":"hEXn1anJviGs9fEA"}
+{"bldg":"33","department":"Facilities-Management","assignedArea":22590,"roomSpaceCount":94,"_id":"hISFHj3yLpC3kzMI"}
+{"bldg":"103A","department":"Unassigned","assignedArea":366,"roomSpaceCount":2,"_id":"hJ5zgXmoTcNsymSp"}
+{"bldg":"850","department":"Unassigned","assignedArea":4319,"roomSpaceCount":8,"_id":"hKPVXTiZR7Sd1P1j"}
+{"bldg":"123","department":"Non-Assignable","assignedArea":9777,"roomSpaceCount":41,"_id":"hOeLikoKywfoSFUl"}
+{"bldg":"109","department":"Residence Halls","assignedArea":18810,"roomSpaceCount":99,"_id":"hRHoRvC1T4LiJDPH"}
+{"bldg":"840","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":383,"roomSpaceCount":3,"_id":"hTICFQnN5TQOjKDd"}
+{"bldg":"56","department":"Vending","assignedArea":87,"roomSpaceCount":1,"_id":"hYiv17lUmWDO2tev"}
+{"bldg":"116","department":"Dining Services","assignedArea":13708,"roomSpaceCount":19,"_id":"hZVuXOkCJUZHqacT"}
+{"bldg":"104","department":"Vending","assignedArea":201,"roomSpaceCount":1,"_id":"hc6L7rUOwCEag4OI"}
+{"bldg":"179","department":"Misc Outside Agencies","assignedArea":16518,"roomSpaceCount":1,"_id":"hdlqUSI1f75lzeOj"}
+{"bldg":"52","department":"Non-Assignable","assignedArea":40874,"roomSpaceCount":90,"_id":"hmzjbETbCKQFkNik"}
+{"bldg":"153","department":"Parking Decks","assignedArea":98400,"roomSpaceCount":22,"_id":"hnwjlNzm3SqAiRzP"}
+{"bldg":"775","department":"TOTALS","assignedArea":4626,"roomSpaceCount":2,"_id":"hqDISAj5HjHOhb9G"}
+{"bldg":"9","department":"Non-Assignable","assignedArea":23671,"roomSpaceCount":9,"_id":"hrGEEwgUL1egmMfk"}
+{"bldg":"160","department":"TOTALS","assignedArea":65109,"roomSpaceCount":106,"_id":"hwGaFDPNer3iIGIj"}
+{"bldg":"168","department":"Non-Assignable","assignedArea":6598,"roomSpaceCount":19,"_id":"i42wpHmxJPfpIhQj"}
+{"bldg":"6","department":"TOTALS","assignedArea":55126,"roomSpaceCount":288,"_id":"i5e1GF5Vb0imbljs"}
+{"bldg":"146","department":"Non-Assignable","assignedArea":36121,"roomSpaceCount":124,"_id":"iC3IFi4FrGRcKFEW"}
+{"bldg":"67","department":"Non-Assignable","assignedArea":1655,"roomSpaceCount":10,"_id":"iCZqmtNFTyaGxXnc"}
+{"bldg":"859","department":"GTRI-Common","assignedArea":998,"roomSpaceCount":5,"_id":"iLB2GgVWhGFqxhKf"}
+{"bldg":"780","department":"GTRI-Common","assignedArea":1983,"roomSpaceCount":5,"_id":"iPavJPnKJim7BRXT"}
+{"bldg":"874","department":"GTRI-Cyber Tech & Info Sec Lab (CTISL)","assignedArea":1087,"roomSpaceCount":9,"_id":"iUiKtC0zTrmf63gh"}
+{"bldg":"864","department":"GTRI-Unassigned","assignedArea":179,"roomSpaceCount":1,"_id":"iWeloUWpq72Nz2vn"}
+{"bldg":"103","department":"Radiation Safety","assignedArea":3304,"roomSpaceCount":10,"_id":"idZgBMH9sSWMP3LO"}
+{"bldg":"141","department":"GTRI-Dep Dir Supp Oper","assignedArea":2334,"roomSpaceCount":5,"_id":"iezEY6DV9PKRKfMQ"}
+{"bldg":"38","department":"Organizational Development","assignedArea":3618,"roomSpaceCount":15,"_id":"ig16WpEjBJnbRBry"}
+{"bldg":"141","department":"Biology","assignedArea":3735,"roomSpaceCount":16,"_id":"ii66B2iPnnndNVIp"}
+{"bldg":"141","department":"GTRI-Non-Assignable","assignedArea":51947,"roomSpaceCount":166,"_id":"iq5509g1e4amG5AT"}
+{"bldg":"86","department":"Electrical & Computer Engr","assignedArea":27144,"roomSpaceCount":92,"_id":"iu7lXX0MVu2M8nig"}
+{"bldg":"029C","department":"Non-Assignable","assignedArea":6363,"roomSpaceCount":23,"_id":"ixhyQ4kYrXo64WAL"}
+{"bldg":"147","department":"TOTALS","assignedArea":258407,"roomSpaceCount":778,"_id":"izBqIb5vaSFYUK8Z"}
+{"bldg":"158A","department":"GTRI-Non-Assignable","assignedArea":121,"roomSpaceCount":3,"_id":"j7riqQRNIuajsrY3"}
+{"bldg":"182","department":"Parking Decks","assignedArea":115931,"roomSpaceCount":62,"_id":"j9UsIXdGMOi38aIj"}
+{"bldg":"50","department":"Unassigned","assignedArea":13543,"roomSpaceCount":20,"_id":"jGozTKX7n6oY9qbn"}
+{"bldg":"26","department":"TOTALS","assignedArea":29864,"roomSpaceCount":27,"_id":"jJBZwWbZt4oTeZsQ"}
+{"bldg":"30","department":"Vice President Institute Diversity","assignedArea":1841,"roomSpaceCount":11,"_id":"jJX5kPrfA8CimHSe"}
+{"bldg":"172","department":"Non-Assignable","assignedArea":74333,"roomSpaceCount":203,"_id":"jKEPBev0WG2LCoXC"}
+{"bldg":"822A","department":"GTRI-Common","assignedArea":3679,"roomSpaceCount":18,"_id":"jMJy39pJlC8BgBHI"}
+{"bldg":"35","department":"Non-Assignable","assignedArea":10475,"roomSpaceCount":75,"_id":"jVYFK8F4DPI3TWbp"}
+{"bldg":"130","department":"Non-Assignable","assignedArea":102554,"roomSpaceCount":210,"_id":"jaFjJ6Tism26ND0z"}
+{"bldg":"55","department":"Non-Assignable","assignedArea":12180,"roomSpaceCount":30,"_id":"jaFkZbHVBDnVCH6q"}
+{"bldg":"813A","department":"TOTALS","assignedArea":1111,"roomSpaceCount":1,"_id":"jbnJEpVEu1mBxrXM"}
+{"bldg":"12","department":"Non-Assignable","assignedArea":3284,"roomSpaceCount":25,"_id":"jcWxtwfHfeC6ybII"}
+{"bldg":"17","department":"Student Success Center","assignedArea":14979,"roomSpaceCount":109,"_id":"jei0ujHyWqrXQVlj"}
+{"bldg":"173","department":"CEISMC","assignedArea":12681,"roomSpaceCount":92,"_id":"jlbKKW0x8lbR3eix"}
+{"bldg":"071A","department":"Non-Assignable","assignedArea":12,"roomSpaceCount":1,"_id":"jltKAdsFvQsYMqZ7"}
+{"bldg":"840","department":"GTRI-Common","assignedArea":2148,"roomSpaceCount":15,"_id":"jmJ4Vb3IoCNWIa30"}
+{"bldg":"023A","department":"OIT-Information Tech Services","assignedArea":1975,"roomSpaceCount":11,"_id":"jnmCLg4RQ8HfMPaC"}
+{"bldg":"52","department":"TOTALS","assignedArea":123060,"roomSpaceCount":197,"_id":"jppayGEbLlwCIkp8"}
+{"bldg":"822A","department":"GTRI-Non-Assignable","assignedArea":132,"roomSpaceCount":2,"_id":"jso8rzDbIJtan8wv"}
+{"bldg":"166","department":"Vending","assignedArea":846,"roomSpaceCount":5,"_id":"jxwmd3t6EwYXjNmE"}
+{"bldg":"173","department":"GT Foundation","assignedArea":9508,"roomSpaceCount":52,"_id":"jyo9eAbPfMP0ZrIp"}
+{"bldg":"33","department":"Navy ROTC (Naval Science)","assignedArea":8547,"roomSpaceCount":29,"_id":"k3R2te2ND1fCaix0"}
+{"bldg":"116","department":"Residence Halls","assignedArea":72113,"roomSpaceCount":187,"_id":"k5su4iuZC3rtfqM5"}
+{"bldg":"141B","department":"GTRI-Support Services","assignedArea":1145,"roomSpaceCount":2,"_id":"kD48AuyrpzFKwsfC"}
+{"bldg":"146","department":"Mechanical Engineering","assignedArea":11597,"roomSpaceCount":44,"_id":"kDPNS0iQx32NKgAR"}
+{"bldg":"144","department":"Mechanical Engineering","assignedArea":45998,"roomSpaceCount":158,"_id":"kFAwnkzzHj8y6FYh"}
+{"bldg":"94","department":"Residence Halls","assignedArea":15942,"roomSpaceCount":91,"_id":"kGF7in6tDaDopCnv"}
+{"bldg":"155B","department":"Sponsored Programs (OSP)","assignedArea":8179,"roomSpaceCount":59,"_id":"kLl4890Akbfu2QDm"}
+{"bldg":"145","department":"Ctr for Distance Learng","assignedArea":128,"roomSpaceCount":1,"_id":"kM4dKfOw67Ny7AT3"}
+{"bldg":"128","department":"Defense Contr Audit Agy","assignedArea":1583,"roomSpaceCount":5,"_id":"kOxLTEbX32apW3HU"}
+{"bldg":"175","department":"Interactive Media Tech Center","assignedArea":8964,"roomSpaceCount":28,"_id":"kP61eBaWbB57A5xQ"}
+{"bldg":"118","department":"Non-Assignable","assignedArea":4687,"roomSpaceCount":25,"_id":"kPPp9ZSJFDCFF970"}
+{"bldg":"826","department":"Security & Police Department","assignedArea":3488,"roomSpaceCount":15,"_id":"kQhDbrFivbuYNSCq"}
+{"bldg":"167","department":"TOTALS","assignedArea":272715,"roomSpaceCount":657,"_id":"kWeoextZplP8zCQn"}
+{"bldg":"864","department":"GTRI-Research Security","assignedArea":123,"roomSpaceCount":1,"_id":"kZd4CLMsKZwDss5G"}
+{"bldg":"114A","department":"Non-Assignable","assignedArea":9788,"roomSpaceCount":28,"_id":"kZzHPinaLV5mb4NB"}
+{"bldg":"14","department":"Non-Assignable","assignedArea":6095,"roomSpaceCount":36,"_id":"kaH7Wk4iyLajXHH4"}
+{"bldg":"9","department":"TOTALS","assignedArea":54745,"roomSpaceCount":23,"_id":"kcrSeafSIWmd7Po5"}
+{"bldg":"39","department":"Institute Classrooms","assignedArea":2843,"roomSpaceCount":4,"_id":"klIyFYwfuoXFgdnd"}
+{"bldg":"198","department":"TOTALS","assignedArea":16986,"roomSpaceCount":73,"_id":"koY4807RF6I77VDD"}
+{"bldg":"174","department":"Security & Police Department","assignedArea":429,"roomSpaceCount":2,"_id":"kyyHVCerAe0vmoxX"}
+{"bldg":"55","department":"Institute Classrooms","assignedArea":24530,"roomSpaceCount":35,"_id":"l1G7C9Y75nIea9ML"}
+{"bldg":"823","department":"EII-General","assignedArea":961,"roomSpaceCount":4,"_id":"l5g0qBhiQolPbBHY"}
+{"bldg":"841A","department":"GTRI-Electro-Optical Sys Labs","assignedArea":114,"roomSpaceCount":1,"_id":"l6p7nDV4zwzyOsDA"}
+{"bldg":"64","department":"TOTALS","assignedArea":168375,"roomSpaceCount":285,"_id":"lC0MEvD592F6DxXT"}
+{"bldg":"92","department":"TOTALS","assignedArea":18120,"roomSpaceCount":108,"_id":"lDPEGVzcd7oYZhTS"}
+{"bldg":"848","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":2208,"roomSpaceCount":15,"_id":"lHbSWlt6VwewdxPm"}
+{"bldg":"051F","department":"Non-Assignable","assignedArea":4039,"roomSpaceCount":2,"_id":"lI1oRZAQHJpqnErM"}
+{"bldg":"135","department":"Institute Classrooms","assignedArea":4658,"roomSpaceCount":6,"_id":"lKGRhucLxdZp6M7U"}
+{"bldg":"71","department":"Non-Assignable","assignedArea":32,"roomSpaceCount":3,"_id":"lOA1ZqypnjCGjS4V"}
+{"bldg":"178","department":"Auxiliary Services AVP","assignedArea":1786,"roomSpaceCount":12,"_id":"lOpSRzqoVAd7PatW"}
+{"bldg":"123","department":"Center For The Arts","assignedArea":847,"roomSpaceCount":5,"_id":"lQ6o0Z2QdUlwLS1l"}
+{"bldg":"200","department":"Non-Assignable","assignedArea":531,"roomSpaceCount":5,"_id":"lQDysXXdxZFOyMWx"}
+{"bldg":"111","department":"Civil & Environmental Engr","assignedArea":51190,"roomSpaceCount":158,"_id":"lTb085fSSLgKM84U"}
+{"bldg":"39","department":"TOTALS","assignedArea":26607,"roomSpaceCount":105,"_id":"lYvZxDnNcuCnkBnM"}
+{"bldg":"107","department":"Residence Halls","assignedArea":14895,"roomSpaceCount":76,"_id":"laI9Jyey8WyRjAm2"}
+{"bldg":"101","department":"Non-Assignable","assignedArea":15796,"roomSpaceCount":55,"_id":"ldajBzpswdbWJNyf"}
+{"bldg":"823","department":"GTRI-Common","assignedArea":877,"roomSpaceCount":2,"_id":"ljoDApgmgAHLTDZ6"}
+{"bldg":"805","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":23385,"roomSpaceCount":123,"_id":"lsxtSpkg8tSB320c"}
+{"bldg":"77","department":"TOTALS","assignedArea":92476,"roomSpaceCount":208,"_id":"lyNVT9nlAnYtCt2f"}
+{"bldg":"105","department":"Conference Services","assignedArea":1396,"roomSpaceCount":10,"_id":"lz6i3kaXdYcyWpHG"}
+{"bldg":"98","department":"Ctr for Distance Learng","assignedArea":630,"roomSpaceCount":2,"_id":"lzEW9rBy4DBSRx5B"}
+{"bldg":"033B","department":"Athletic Association","assignedArea":5207,"roomSpaceCount":20,"_id":"mF0b6IngtL0591M7"}
+{"bldg":"155","department":"Georgia Tech Research Corporation","assignedArea":3591,"roomSpaceCount":23,"_id":"mFNQtU0h6d4POXA0"}
+{"bldg":"165","department":"Non-Assignable","assignedArea":26999,"roomSpaceCount":103,"_id":"mGskBgLk0bQqgEIx"}
+{"bldg":"785","department":"Unassigned","assignedArea":14371,"roomSpaceCount":61,"_id":"mKq5ZjjfktoyH6UA"}
+{"bldg":"175","department":"Graphics Vis and Usability GVU","assignedArea":50938,"roomSpaceCount":114,"_id":"mMoGH4ZUdn7IhfY0"}
+{"bldg":"47","department":"Athletic Association","assignedArea":17628,"roomSpaceCount":28,"_id":"mQ7JJw0p84emacY7"}
+{"bldg":"36","department":"Executive Vice President of Research","assignedArea":525,"roomSpaceCount":3,"_id":"mVtaIJB5PYDawWQP"}
+{"bldg":"142","department":"Equal Opportunity Pgms","assignedArea":214,"roomSpaceCount":1,"_id":"mXq7FZVsOPuDN8Ap"}
+{"bldg":"141","department":"GTRI-Business Services","assignedArea":638,"roomSpaceCount":4,"_id":"mYcpQWGnlrTExu9P"}
+{"bldg":"170","department":"Security & Police Department","assignedArea":141,"roomSpaceCount":1,"_id":"maoqjAdolf30vSgI"}
+{"bldg":"14","department":"Residence Halls","assignedArea":18799,"roomSpaceCount":91,"_id":"mcHSjeBQ3y27sOls"}
+{"bldg":"86","department":"Non-Assignable","assignedArea":54571,"roomSpaceCount":106,"_id":"mlvZl2MJisq4lhTf"}
+{"bldg":"24","department":"Institute Classrooms","assignedArea":6653,"roomSpaceCount":8,"_id":"mmjlb0l5nKzadrof"}
+{"bldg":"76","department":"City Planning","assignedArea":5150,"roomSpaceCount":20,"_id":"mpklCASTSxNYFCVi"}
+{"bldg":"145","department":"Vending","assignedArea":75,"roomSpaceCount":1,"_id":"mvjw8azpYgdhvzbS"}
+{"bldg":"123","department":"Student Government Assoc","assignedArea":429,"roomSpaceCount":3,"_id":"n7sJiOVBrXlMotvS"}
+{"bldg":"104A","department":"Post Office","assignedArea":4073,"roomSpaceCount":14,"_id":"nEOiFATjiFGVb67T"}
+{"bldg":"42","department":"Parking Office","assignedArea":72,"roomSpaceCount":1,"_id":"nHMInPTVnT9g4J8t"}
+{"bldg":"061A","department":"GTRI-Business Services","assignedArea":2372,"roomSpaceCount":20,"_id":"nHiU107Q5gTpUKmS"}
+{"bldg":"830A","department":"EII-General","assignedArea":896,"roomSpaceCount":1,"_id":"nIT6ieeEYM8PVSOS"}
+{"bldg":"16","department":"Residence Halls","assignedArea":38480,"roomSpaceCount":206,"_id":"nZTOaLbtZSk53rHD"}
+{"bldg":"841A","department":"TOTALS","assignedArea":1675,"roomSpaceCount":12,"_id":"ndRypHxfvUEJ5lx6"}
+{"bldg":"720","department":"Non-Assignable","assignedArea":763,"roomSpaceCount":7,"_id":"ndnJMDQJmyl9YsKN"}
+{"bldg":"051A","department":"Architecture","assignedArea":10850,"roomSpaceCount":19,"_id":"nfYODZsnBpL2t52D"}
+{"bldg":"139","department":"Housing Office","assignedArea":1519,"roomSpaceCount":4,"_id":"nh78Xb44Lucnjx6N"}
+{"bldg":"65","department":"Housing Office","assignedArea":8009,"roomSpaceCount":42,"_id":"nhc6iPc1OJSIoOJz"}
+{"bldg":"158A","department":"GTRI-Common","assignedArea":94,"roomSpaceCount":2,"_id":"noLlclvq42WDSmNC"}
+{"bldg":"17","department":"Athletic Association","assignedArea":108963,"roomSpaceCount":335,"_id":"nob4aDwsxNUwJjNl"}
+{"bldg":"029B","department":"Inst Research & Planning (IRP)","assignedArea":167,"roomSpaceCount":1,"_id":"nrYtsPnwsJWgNQOn"}
+{"bldg":"174","department":"Parking Decks","assignedArea":242814,"roomSpaceCount":83,"_id":"nwGqsvwLtdIEUQfO"}
+{"bldg":"199","department":"Non-Assignable","assignedArea":13628,"roomSpaceCount":33,"_id":"nwZ4VYmqc31X92Ug"}
+{"bldg":"114A","department":"Dining Services","assignedArea":1634,"roomSpaceCount":5,"_id":"o4xhUhyrrOpRBZVR"}
+{"bldg":"790","department":"Univ Financing Foundation","assignedArea":145,"roomSpaceCount":1,"_id":"o5rybmVS3CsC2ksB"}
+{"bldg":"56","department":"TOTALS","assignedArea":48425,"roomSpaceCount":246,"_id":"o9iwKjfqKmMncQao"}
+{"bldg":"066A","department":"Institute Classrooms","assignedArea":2314,"roomSpaceCount":3,"_id":"oAtQai5qb39PNX4x"}
+{"bldg":"165","department":"GT Emory Biomedical Engr","assignedArea":60277,"roomSpaceCount":216,"_id":"oIL6YiIc4v8VLpJP"}
+{"bldg":"721","department":"Earth & Atmospheric Sciences","assignedArea":1894,"roomSpaceCount":11,"_id":"oNcTeYQhMYs7j0Mn"}
+{"bldg":"141","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":1886,"roomSpaceCount":10,"_id":"oXKStJnuTsCN8oEW"}
+{"bldg":"129","department":"Unassigned","assignedArea":1555,"roomSpaceCount":12,"_id":"oa9PbSJTpHhjqEB6"}
+{"bldg":"167","department":"Non-Assignable","assignedArea":90272,"roomSpaceCount":193,"_id":"obZwZU9wldCrXqvx"}
+{"bldg":"62","department":"TOTALS","assignedArea":192,"roomSpaceCount":1,"_id":"ofwTdjH3G0Gxo3dO"}
+{"bldg":"114A","department":"TOTALS","assignedArea":24406,"roomSpaceCount":95,"_id":"ohhQQ0CFqsBZI5hb"}
+{"bldg":"033C","department":"TOTALS","assignedArea":744,"roomSpaceCount":1,"_id":"on6w0GYYSif7gsz9"}
+{"bldg":"802","department":"GTRI-Common","assignedArea":1013,"roomSpaceCount":6,"_id":"p358drHwDOBRYK45"}
+{"bldg":"837","department":"TOTALS","assignedArea":2000,"roomSpaceCount":1,"_id":"p6P03bGplijAFmDz"}
+{"bldg":"153","department":"College of Computing","assignedArea":59705,"roomSpaceCount":140,"_id":"p7hVhPKF1i4eqHEr"}
+{"bldg":"11","department":"TOTALS","assignedArea":21470,"roomSpaceCount":80,"_id":"pDKyVdG0oxs5Ljzb"}
+{"bldg":"191","department":"Residence Halls","assignedArea":502418,"roomSpaceCount":573,"_id":"pFANjei2WMLWIJi3"}
+{"bldg":"801","department":"GTRI-Non-Assignable","assignedArea":10212,"roomSpaceCount":31,"_id":"pJdAVxz1CTRoZK9t"}
+{"bldg":"603","department":"TOTALS","assignedArea":51524,"roomSpaceCount":169,"_id":"pJtASXpNvcnesX8C"}
+{"bldg":"114A","department":"Buzz Card Center","assignedArea":2287,"roomSpaceCount":10,"_id":"pKoD0qxUnii5zfq2"}
+{"bldg":"136","department":"TOTALS","assignedArea":28486,"roomSpaceCount":74,"_id":"pLo6oCcvj1L3DZBs"}
+{"bldg":"81","department":"College of Sciences","assignedArea":1846,"roomSpaceCount":3,"_id":"pNoLGPOoHPuxGoOY"}
+{"bldg":"603","department":"Georgia Tech Savannah","assignedArea":34762,"roomSpaceCount":112,"_id":"pPMtmNYncjhGK0hu"}
+{"bldg":"061A","department":"GTRI-ESD","assignedArea":3723,"roomSpaceCount":29,"_id":"pPTbjOaRoanmTpZc"}
+{"bldg":"86","department":"TOTALS","assignedArea":136769,"roomSpaceCount":344,"_id":"pWwbWD21pjK7go2x"}
+{"bldg":"061A","department":"GTRI-Support Services","assignedArea":1773,"roomSpaceCount":19,"_id":"paiId7zZCKyQDRFY"}
+{"bldg":"133A","department":"Non-Assignable","assignedArea":7359,"roomSpaceCount":2,"_id":"pc36LYQLN2RJaI0s"}
+{"bldg":"187","department":"TOTALS","assignedArea":15798,"roomSpaceCount":60,"_id":"pdbEwUKERzVAtU5W"}
+{"bldg":"168","department":"TOTALS","assignedArea":24632,"roomSpaceCount":61,"_id":"pppxf5DyIPQNfMh0"}
+{"bldg":"167","department":"Vending","assignedArea":253,"roomSpaceCount":2,"_id":"px2NGUdJBnXrFJ4p"}
+{"bldg":"129","department":"TOTALS","assignedArea":146127,"roomSpaceCount":567,"_id":"pxyMa0fVnJxUZLPz"}
+{"bldg":"114","department":"Non-Assignable","assignedArea":5091,"roomSpaceCount":14,"_id":"pyhS63nUiqQtk45f"}
+{"bldg":"187","department":"Unassigned","assignedArea":15131,"roomSpaceCount":48,"_id":"q1e4ej6mg3LdMMMY"}
+{"bldg":"807A","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":2127,"roomSpaceCount":1,"_id":"q5cLvfSSQWLeQnkK"}
+{"bldg":"201","department":"TOTALS","assignedArea":3719,"roomSpaceCount":8,"_id":"q5rPLziBUmEpouW2"}
+{"bldg":"42","department":"TOTALS","assignedArea":72,"roomSpaceCount":1,"_id":"qChFwi1bucmLSPJC"}
+{"bldg":"152","department":"Non-Assignable","assignedArea":1898,"roomSpaceCount":13,"_id":"qCwPUqbDlu6qHCNd"}
+{"bldg":"189","department":"TOTALS","assignedArea":583,"roomSpaceCount":2,"_id":"qD0GQA4ON2aaMPFb"}
+{"bldg":"35","department":"Unassigned","assignedArea":6527,"roomSpaceCount":36,"_id":"qZsXVYGG2wIKi4Wt"}
+{"bldg":"103","department":"Mechanical Engineering","assignedArea":1463,"roomSpaceCount":2,"_id":"qe3eYRBgmPwHqXB8"}
+{"bldg":"141","department":"GTRI-Cyber Tech & Info Sec Lab (CTISL)","assignedArea":19919,"roomSpaceCount":75,"_id":"qmDLGHug30GwHDx2"}
+{"bldg":"802","department":"GTRI-Business Services","assignedArea":137,"roomSpaceCount":1,"_id":"qsyAe1biavF5YTqB"}
+{"bldg":"172","department":"Institute Classrooms","assignedArea":21285,"roomSpaceCount":12,"_id":"qxyJkZSd0o2HEe8q"}
+{"bldg":"114A","department":"Student Organizations","assignedArea":2666,"roomSpaceCount":14,"_id":"r259U7dNXHC8KAr4"}
+{"bldg":"139","department":"Dining Services","assignedArea":3605,"roomSpaceCount":5,"_id":"r3J6totGQel7GIdS"}
+{"bldg":"169","department":"Non-Assignable","assignedArea":1355,"roomSpaceCount":10,"_id":"r3whtOz9KusPTi85"}
+{"bldg":"95","department":"Non-Assignable","assignedArea":41589,"roomSpaceCount":66,"_id":"r5mBXseC6QX1bSeN"}
+{"bldg":"167","department":"Chemistry & Biochemistry","assignedArea":97910,"roomSpaceCount":251,"_id":"rD09haij2NHe69jZ"}
+{"bldg":"117","department":"TOTALS","assignedArea":23642,"roomSpaceCount":122,"_id":"rDKyLaBloEk6V5s0"}
+{"bldg":"060A","department":"Building Construction","assignedArea":4171,"roomSpaceCount":22,"_id":"rHTqzQODKoCBuH92"}
+{"bldg":"850","department":"Applied Physiology","assignedArea":33875,"roomSpaceCount":99,"_id":"rJOVCDorh1t3hGFP"}
+{"bldg":"080A","department":"Non-Assignable","assignedArea":44,"roomSpaceCount":1,"_id":"rKgMnEtaxQHw2xYb"}
+{"bldg":"826","department":"SE Consort Minor in Eng","assignedArea":2334,"roomSpaceCount":20,"_id":"rMUBwRPhIqaXllH7"}
+{"bldg":"721","department":"Non-Assignable","assignedArea":625,"roomSpaceCount":7,"_id":"rPJ8BWoD3dplQcr7"}
+{"bldg":"167","department":"GT Emory Biomedical Engr","assignedArea":14210,"roomSpaceCount":42,"_id":"rQ61K03KvO0NyMF3"}
+{"bldg":"187","department":"Non-Assignable","assignedArea":667,"roomSpaceCount":12,"_id":"rRqb3O7krZQFR0OC"}
+{"bldg":"129","department":"Materials Science & Engr","assignedArea":10872,"roomSpaceCount":37,"_id":"rV10IXRZVgLzhojq"}
+{"bldg":"859","department":"GTRI-Electro-Optical Sys Labs","assignedArea":140,"roomSpaceCount":1,"_id":"rXgyGBg75G4zizNH"}
+{"bldg":"31","department":"Fin Aid Accounting","assignedArea":149,"roomSpaceCount":2,"_id":"rY3cv37dfkijrBaQ"}
+{"bldg":"120","department":"Alpha Phi Omega","assignedArea":2232,"roomSpaceCount":17,"_id":"rZ2PTwuvZcUeDAWt"}
+{"bldg":"175","department":"TOTALS","assignedArea":198384,"roomSpaceCount":480,"_id":"rdbRuauyS6g2rwig"}
+{"bldg":"39","department":"Modern Languages","assignedArea":8867,"roomSpaceCount":55,"_id":"rfjL7vrCLqX9wREe"}
+{"bldg":"022A","department":"TOTALS","assignedArea":3566,"roomSpaceCount":19,"_id":"rsGdAsDFqEIkBAtu"}
+{"bldg":"146","department":"Biology","assignedArea":10252,"roomSpaceCount":44,"_id":"rxIbjQRH7DAx3xVA"}
+{"bldg":"840","department":"GTRI-Info&Comm Lab","assignedArea":167,"roomSpaceCount":1,"_id":"ry0yAhZ1byInD8MF"}
+{"bldg":"120","department":"Non-Assignable","assignedArea":469,"roomSpaceCount":5,"_id":"rz3VltsfPQerwQ2M"}
+{"bldg":"060A","department":"Ctr Geographic Info Sys","assignedArea":4572,"roomSpaceCount":22,"_id":"s1AxurWD5eJhNwOZ"}
+{"bldg":"864","department":"GTRI-Strategic Initiative Ofc","assignedArea":801,"roomSpaceCount":4,"_id":"s3wXry96GJ0n22iu"}
+{"bldg":"133A","department":"TOTALS","assignedArea":7359,"roomSpaceCount":2,"_id":"s4F35v8xg5R8HC3q"}
+{"bldg":"181","department":"Under Construction","assignedArea":67183,"roomSpaceCount":32,"_id":"s5WnJ4ukn5IF47bo"}
+{"bldg":"141A","department":"Non-Assignable","assignedArea":433,"roomSpaceCount":1,"_id":"s7D7zHlr2Y7rA9iR"}
+{"bldg":"805","department":"GTRI-Common","assignedArea":3309,"roomSpaceCount":13,"_id":"sEcxFZUpzJP4Q4As"}
+{"bldg":"114A","department":"WREK Radio Station","assignedArea":1311,"roomSpaceCount":8,"_id":"sFhN4FX9NrY4oqiv"}
+{"bldg":"774","department":"TOTALS","assignedArea":20570,"roomSpaceCount":2,"_id":"sMxxC4VIvNbdIYe6"}
+{"bldg":"822A","department":"TOTALS","assignedArea":8544,"roomSpaceCount":51,"_id":"sVkTRUaZd8Wvd7Tm"}
+{"bldg":"184","department":"GTRI-Common","assignedArea":157,"roomSpaceCount":1,"_id":"sYbZu7hnZF209758"}
+{"bldg":"029A","department":"OIT-Information Tech Services","assignedArea":1265,"roomSpaceCount":6,"_id":"saNH0yba0V1ZqgQP"}
+{"bldg":"165","department":"Institute Classrooms","assignedArea":3213,"roomSpaceCount":3,"_id":"sctxQ7OHsoK5dAIU"}
+{"bldg":"850","department":"Non-Assignable","assignedArea":19347,"roomSpaceCount":64,"_id":"sfIV4GAoGa1AJAdG"}
+{"bldg":"33","department":"Non-Assignable","assignedArea":33608,"roomSpaceCount":105,"_id":"shYjjLl5iNe0B1yt"}
+{"bldg":"884","department":"TOTALS","assignedArea":658,"roomSpaceCount":1,"_id":"slFltXYD8eEYvZKr"}
+{"bldg":"24","department":"TOTALS","assignedArea":34245,"roomSpaceCount":154,"_id":"sphQwqwe4w9xaScT"}
+{"bldg":"837","department":"OIT-Information Tech Services","assignedArea":2000,"roomSpaceCount":1,"_id":"swy5qBPG5BIUzsU6"}
+{"bldg":"91","department":"Residence Halls","assignedArea":17093,"roomSpaceCount":100,"_id":"t5YC6zUwX0VLFaGT"}
+{"bldg":"64","department":"Non-Assignable","assignedArea":68438,"roomSpaceCount":157,"_id":"tEIGOZ9QggM8Hktq"}
+{"bldg":"31","department":"Non-Assignable","assignedArea":17457,"roomSpaceCount":73,"_id":"tJ51XSGh5J9S0D06"}
+{"bldg":"45","department":"TOTALS","assignedArea":67493,"roomSpaceCount":339,"_id":"tMFNKa3mlSsiO8z9"}
+{"bldg":"145","department":"Civil & Environmental Engr","assignedArea":16120,"roomSpaceCount":46,"_id":"tMLPrjqTuNstktOc"}
+{"bldg":"161","department":"Environmental Health & Safety","assignedArea":1986,"roomSpaceCount":8,"_id":"tS1PF942iZlDA2Ih"}
+{"bldg":"123","department":"Leadership Education & Development Program","assignedArea":111,"roomSpaceCount":1,"_id":"tSHM4n0JCwbLk9GV"}
+{"bldg":"114","department":"Student Center","assignedArea":3194,"roomSpaceCount":7,"_id":"tSsGQjO0JMvsK1Wi"}
+{"bldg":"125","department":"Non-Assignable","assignedArea":6099,"roomSpaceCount":30,"_id":"tUl7TnCnrjQnikv3"}
+{"bldg":"104","department":"Post Office","assignedArea":3400,"roomSpaceCount":3,"_id":"taKwIyWwYZRUkoSE"}
+{"bldg":"153","department":"TOTALS","assignedArea":393599,"roomSpaceCount":528,"_id":"tcRmZfTE8wntNB87"}
+{"bldg":"804","department":"GTRI-Common","assignedArea":1205,"roomSpaceCount":7,"_id":"tfJIQiorrRZ0EK3S"}
+{"bldg":"9","department":"Parking Decks","assignedArea":31043,"roomSpaceCount":13,"_id":"tfQNYJJecdzd4qoS"}
+{"bldg":"790","department":"GTRI-Support Services","assignedArea":535,"roomSpaceCount":3,"_id":"tpU0LA03sigQxkYB"}
+{"bldg":"10","department":"Non-Assignable","assignedArea":6012,"roomSpaceCount":39,"_id":"tzU00U4CAdJ8YVsf"}
+{"bldg":"061A","department":"TOTALS","assignedArea":33963,"roomSpaceCount":188,"_id":"u4KDcEoSJA8ijnGX"}
+{"bldg":"184","department":"GSU/GT Ctr Adv Brain Imaging","assignedArea":4672,"roomSpaceCount":24,"_id":"u4PbJHXoKTcByx0O"}
+{"bldg":"146","department":"Bioengineering & Biosciences","assignedArea":29531,"roomSpaceCount":125,"_id":"u684WLIl7JdGhWoV"}
+{"bldg":"805","department":"GTRI-Non-Assignable","assignedArea":12302,"roomSpaceCount":50,"_id":"u6XFH8OzqlpMFy4r"}
+{"bldg":"868A","department":"TOTALS","assignedArea":231,"roomSpaceCount":1,"_id":"u6cAInwa1p3eZXLr"}
+{"bldg":"051F","department":"TOTALS","assignedArea":4039,"roomSpaceCount":2,"_id":"u9liwqKbarGVttZC"}
+{"bldg":"58","department":"TOTALS","assignedArea":29514,"roomSpaceCount":131,"_id":"uAekt13rNg6Cn1ye"}
+{"bldg":"67","department":"Facilities-Management","assignedArea":6453,"roomSpaceCount":16,"_id":"uDkaXwIkPDPwvpGP"}
+{"bldg":"108","department":"TOTALS","assignedArea":20163,"roomSpaceCount":119,"_id":"uFOirRH8G3g7KqIt"}
+{"bldg":"177","department":"TOTALS","assignedArea":35120,"roomSpaceCount":213,"_id":"uLXfYlvinwDwVnFO"}
+{"bldg":"061A","department":"GTRI-Common","assignedArea":6183,"roomSpaceCount":24,"_id":"uTAfT6p3jyPsbVpu"}
+{"bldg":"26","department":"Facilities-Utilities & Energy","assignedArea":1251,"roomSpaceCount":9,"_id":"uTPX7c4KxLKLNSW7"}
+{"bldg":"153","department":"Non-Assignable","assignedArea":163743,"roomSpaceCount":199,"_id":"uXaQYqSbDA0aPlZg"}
+{"bldg":"147","department":"Chemistry & Biochemistry","assignedArea":9112,"roomSpaceCount":32,"_id":"uY8LWGCQUcV9Zxxd"}
+{"bldg":"132","department":"Housing Office","assignedArea":7420,"roomSpaceCount":4,"_id":"uav10j40D6bk6Awa"}
+{"bldg":"823","department":"TOTALS","assignedArea":19619,"roomSpaceCount":75,"_id":"ug3aKTNadq0q8wHj"}
+{"bldg":"805","department":"GTRI-Support Services","assignedArea":169,"roomSpaceCount":1,"_id":"ul5uURdMXGVCFBB0"}
+{"bldg":"116","department":"Non-Assignable","assignedArea":30954,"roomSpaceCount":143,"_id":"uwOtUmMmMEJYwt6D"}
+{"bldg":"56","department":"Industrial & Systems Engr","assignedArea":35233,"roomSpaceCount":181,"_id":"v0Jc4RkWIPPtey58"}
+{"bldg":"38","department":"TOTALS","assignedArea":22137,"roomSpaceCount":138,"_id":"v0h1Z1KYM1QyesTf"}
+{"bldg":"141A","department":"GTRI-Communications","assignedArea":1385,"roomSpaceCount":7,"_id":"v3Mun5QXFK9AYAaW"}
+{"bldg":"103A","department":"TOTALS","assignedArea":366,"roomSpaceCount":2,"_id":"v5R1IOo7S3eQ2N13"}
+{"bldg":"81","department":"TOTALS","assignedArea":121385,"roomSpaceCount":337,"_id":"v8GFtaNCcgitsoAv"}
+{"bldg":"33","department":"Army ROTC (Military Science)","assignedArea":8749,"roomSpaceCount":33,"_id":"vBRuyp8pwoaOcodY"}
+{"bldg":"134","department":"TOTALS","assignedArea":26190,"roomSpaceCount":149,"_id":"vD25DAKqCIQZy6kK"}
+{"bldg":"812A","department":"GTRI-Common","assignedArea":6903,"roomSpaceCount":3,"_id":"vDNC2dMsNgA5jDtS"}
+{"bldg":"57","department":"Non-Assignable","assignedArea":13354,"roomSpaceCount":60,"_id":"vEweH7IFBINv5hCn"}
+{"bldg":"12","department":"Housing Office","assignedArea":2412,"roomSpaceCount":5,"_id":"vI9v1UZBhk8mp0gt"}
+{"bldg":"603","department":"Non-Assignable","assignedArea":15019,"roomSpaceCount":49,"_id":"vLFtiYC8xllDG7Dz"}
+{"bldg":"125","department":"TOTALS","assignedArea":20436,"roomSpaceCount":93,"_id":"vNJDi1F83DLPQ9bK"}
+{"bldg":"602","department":"Non-Assignable","assignedArea":11207,"roomSpaceCount":39,"_id":"vOvGJTxWdsiBAlH4"}
+{"bldg":"72","department":"TOTALS","assignedArea":1856,"roomSpaceCount":1,"_id":"vPJFGlXTiRpOst0X"}
+{"bldg":"166","department":"Dining Services","assignedArea":1794,"roomSpaceCount":3,"_id":"vPU5Xll0hhQ8s3iC"}
+{"bldg":"147","department":"Institute Classrooms","assignedArea":8300,"roomSpaceCount":12,"_id":"vPm42qXO99ZjohL4"}
+{"bldg":"029A","department":"Bursar's Office","assignedArea":3817,"roomSpaceCount":26,"_id":"vSmnhonCvETMhv80"}
+{"bldg":"175","department":"Tech Sq Research Bldg","assignedArea":1473,"roomSpaceCount":5,"_id":"vUCgY5yzGvGZcFUi"}
+{"bldg":"103","department":"Physics","assignedArea":14036,"roomSpaceCount":48,"_id":"vWQnnNTW9mKrxpsY"}
+{"bldg":"36","department":"Provost's Office","assignedArea":1053,"roomSpaceCount":4,"_id":"vbaHdv7kHq0RlCB3"}
+{"bldg":"051C","department":"OIT-Architecture & Infrastruct","assignedArea":2426,"roomSpaceCount":17,"_id":"vcCyS5pguHOWZzkE"}
+{"bldg":"13","department":"Non-Assignable","assignedArea":5204,"roomSpaceCount":27,"_id":"vg5MUQ3Hb9wWkGWa"}
+{"bldg":"190","department":"TOTALS","assignedArea":113463,"roomSpaceCount":30,"_id":"vkKHugIqoGrUhnbI"}
+{"bldg":"167","department":"Electrical & Computer Engr","assignedArea":6306,"roomSpaceCount":14,"_id":"vmxdcqlKL7sUPp02"}
+{"bldg":"10","department":"TOTALS","assignedArea":20716,"roomSpaceCount":117,"_id":"voN7KwLKeAbIqyac"}
+{"bldg":"200","department":"Athletic Association","assignedArea":79149,"roomSpaceCount":10,"_id":"vqo0xLH0Gf0URZ2N"}
+{"bldg":"721","department":"TOTALS","assignedArea":2519,"roomSpaceCount":18,"_id":"vsqEZJiX2xVt7JFb"}
+{"bldg":"801","department":"GTRI-Common","assignedArea":6045,"roomSpaceCount":11,"_id":"vvMQ1UILlhUyuSKh"}
+{"bldg":"123","department":"Student Affairs VP","assignedArea":7400,"roomSpaceCount":15,"_id":"vxQREXddwRm0UoXU"}
+{"bldg":"051B","department":"OIT-Architecture & Infrastruct","assignedArea":1780,"roomSpaceCount":15,"_id":"w0yZbcfQ5sQBVhnu"}
+{"bldg":"181","department":"MRSEC","assignedArea":1208,"roomSpaceCount":6,"_id":"w2S85MDjah11Mq18"}
+{"bldg":"18","department":"TOTALS","assignedArea":65353,"roomSpaceCount":275,"_id":"w8U3DOSDOTZ8PuUt"}
+{"bldg":"178","department":"Parking Office","assignedArea":8071,"roomSpaceCount":44,"_id":"w9QiZ8jaND7lIShN"}
+{"bldg":"790","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":56576,"roomSpaceCount":268,"_id":"wDjZVtcv6xJ08WiM"}
+{"bldg":"807","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":1550,"roomSpaceCount":5,"_id":"wDqBsWm18UOuemnP"}
+{"bldg":"868A","department":"EII-General","assignedArea":231,"roomSpaceCount":1,"_id":"wHCY5HHlo7V9JhTl"}
+{"bldg":"780","department":"GTRI-Non-Assignable","assignedArea":209,"roomSpaceCount":3,"_id":"wIpiL4sFEAsJzVVN"}
+{"bldg":"137","department":"Ivan Allen College","assignedArea":4439,"roomSpaceCount":30,"_id":"wRJULqlYcRAjDSyc"}
+{"bldg":"840","department":"GTRI-Electronic Sy(GTRI-ELSYS)","assignedArea":759,"roomSpaceCount":7,"_id":"wRYCXEmaAiYjAh6a"}
+{"bldg":"148","department":"Parking Decks","assignedArea":142210,"roomSpaceCount":34,"_id":"wUb9QnFtnsqDGKhJ"}
+{"bldg":"136","department":"Non-Assignable","assignedArea":2006,"roomSpaceCount":15,"_id":"wYmmRd3upMe69Vb9"}
+{"bldg":"149","department":"Civil & Environmental Engr","assignedArea":20970,"roomSpaceCount":17,"_id":"whQTWsEuWLl1ipE6"}
+{"bldg":"144","department":"TOTALS","assignedArea":145272,"roomSpaceCount":398,"_id":"wkPfPpVoCnknqZ21"}
+{"bldg":"184","department":"Facilities-Management","assignedArea":2980,"roomSpaceCount":10,"_id":"wo3Hw3LJLuQGJycJ"}
+{"bldg":"75","department":"Architecture","assignedArea":25650,"roomSpaceCount":43,"_id":"wrVz94yXlONlGHVM"}
+{"bldg":"35","department":"College of Sciences","assignedArea":3872,"roomSpaceCount":20,"_id":"wrsB6mhMUFfseH0O"}
+{"bldg":"073B","department":"TOTALS","assignedArea":18262,"roomSpaceCount":27,"_id":"wxFCRi6cOHmbBRZ8"}
+{"bldg":"148","department":"Non-Assignable","assignedArea":122777,"roomSpaceCount":35,"_id":"x7Foqg6HocL4OE94"}
+{"bldg":"864A","department":"TOTALS","assignedArea":4548,"roomSpaceCount":43,"_id":"xKXNAXOVuUoPnfTf"}
+{"bldg":"850","department":"IPST (Inst Paper Sci & Tech)","assignedArea":4259,"roomSpaceCount":3,"_id":"xLl0vef3Cho7be3f"}
+{"bldg":"141","department":"GTRI-Financial Operations","assignedArea":687,"roomSpaceCount":4,"_id":"xMCGjaa3jSWkkemN"}
+{"bldg":"39","department":"Non-Assignable","assignedArea":14897,"roomSpaceCount":46,"_id":"xNWWGSnMeFjEFRzx"}
+{"bldg":"145","department":"TOTALS","assignedArea":30539,"roomSpaceCount":97,"_id":"xRt8q9twt9HeJpjk"}
+{"bldg":"840","department":"GTRI-Non-Assignable","assignedArea":229,"roomSpaceCount":10,"_id":"xaIkKz34WrjqE8QF"}
+{"bldg":"166","department":"Library","assignedArea":34010,"roomSpaceCount":68,"_id":"xbb3JKTvoG6ng6Hn"}
+{"bldg":"051C","department":"Non-Assignable","assignedArea":1329,"roomSpaceCount":13,"_id":"xc3aS7EsJsEzFRZg"}
+{"bldg":"15","department":"TOTALS","assignedArea":42199,"roomSpaceCount":226,"_id":"xgecIX9QjzxImbxG"}
+{"bldg":"802","department":"GTRI-Aero Trans Adv Sys (ATAS)","assignedArea":17036,"roomSpaceCount":55,"_id":"xlUqXWnaaIe5WRhU"}
+{"bldg":"153","department":"Computer Science","assignedArea":1401,"roomSpaceCount":8,"_id":"xrShFg4aGab4qKbe"}
+{"bldg":"105","department":"Residence Halls","assignedArea":1437,"roomSpaceCount":5,"_id":"xriIqT9Sr9dzMh1c"}
+{"bldg":"31","department":"Enrollment Services","assignedArea":558,"roomSpaceCount":2,"_id":"xtSQBSQT0XCqMiKj"}
+{"bldg":"128","department":"Architecture","assignedArea":5940,"roomSpaceCount":4,"_id":"xu3H4nlzn0PjUH27"}
+{"bldg":"85","department":"Electrical & Computer Engr","assignedArea":81643,"roomSpaceCount":259,"_id":"xvIdk3bWxFIWk1y4"}
+{"bldg":"155","department":"Sponsored Programs (OSP)","assignedArea":1883,"roomSpaceCount":17,"_id":"xy8D3lK8VePHiWK3"}
+{"bldg":"35","department":"Registrar's Office","assignedArea":6743,"roomSpaceCount":41,"_id":"xz7R37MAgt39IFLv"}
+{"bldg":"142","department":"Human Resources","assignedArea":10701,"roomSpaceCount":68,"_id":"y0M5AedbL64rigKP"}
+{"bldg":"86","department":"Facilities-Management","assignedArea":121,"roomSpaceCount":1,"_id":"y2hkTpDHFivuwnsU"}
+{"bldg":"35","department":"College of Engineering","assignedArea":10382,"roomSpaceCount":67,"_id":"y8NquUSNQjyD70Aa"}
+{"bldg":"13","department":"TOTALS","assignedArea":19036,"roomSpaceCount":98,"_id":"y9A5pnS5VXssQslq"}
+{"bldg":"176","department":"EII-General","assignedArea":36138,"roomSpaceCount":169,"_id":"y9tz2U2iW3ZM5oKP"}
+{"bldg":"123","department":"Parents Program","assignedArea":732,"roomSpaceCount":5,"_id":"yA4xYk8CA0BV7rJ9"}
+{"bldg":"843A","department":"TOTALS","assignedArea":100,"roomSpaceCount":1,"_id":"yONMKLfZO55n5yE7"}
+{"bldg":"110","department":"TOTALS","assignedArea":26123,"roomSpaceCount":148,"_id":"yPOp0GSRTbOyDqyV"}
+{"bldg":"022A","department":"Civil & Environmental Engr","assignedArea":2339,"roomSpaceCount":8,"_id":"yQF6KYh2TL86hKYg"}
+{"bldg":"114A","department":"Student Center","assignedArea":4119,"roomSpaceCount":13,"_id":"yVy9r3OGCjPyjH8M"}
+{"bldg":"172","department":"Bookstore","assignedArea":35251,"roomSpaceCount":37,"_id":"yZN28DOXtaYc1nem"}
+{"bldg":"114A","department":"Student Government Assoc","assignedArea":347,"roomSpaceCount":2,"_id":"yZQYVJO31pKWFR8R"}
+{"bldg":"65","department":"Residence Halls","assignedArea":107570,"roomSpaceCount":141,"_id":"ycltbmmVUjMayUOm"}
+{"bldg":"173","department":"Facilities-Management","assignedArea":2485,"roomSpaceCount":7,"_id":"ygQQaWbvZaP0Puwk"}
+{"bldg":"126","department":"TOTALS","assignedArea":107419,"roomSpaceCount":323,"_id":"yjCuBSLocCM5tqDc"}
+{"bldg":"073B","department":"Athletic Association","assignedArea":16669,"roomSpaceCount":15,"_id":"ysXDo4hffKstW6mz"}
+{"bldg":"41","department":"Ctr for Distance Learng","assignedArea":2725,"roomSpaceCount":8,"_id":"yslhMQ9kpUG8KKPD"}
+{"bldg":"844","department":"TOTALS","assignedArea":2368,"roomSpaceCount":1,"_id":"yuCcOj8hoCraJ7os"}
+{"bldg":"16","department":"Non-Assignable","assignedArea":13728,"roomSpaceCount":80,"_id":"yx7aax7ceOh5MTQT"}
+{"bldg":"819A","department":"EII-General","assignedArea":1324,"roomSpaceCount":1,"_id":"z25CjqbbzYCsUgW6"}
+{"bldg":"123","department":"TOTALS","assignedArea":38879,"roomSpaceCount":184,"_id":"z2BwEiMfz7kWtE2r"}
+{"bldg":"803","department":"GTRI-Non-Assignable","assignedArea":11471,"roomSpaceCount":42,"_id":"zD5MUmI1LgF7iPnL"}
+{"bldg":"147","department":"Biology","assignedArea":14495,"roomSpaceCount":54,"_id":"zEbiTb9KOIasSBay"}
+{"bldg":"080A","department":"TOTALS","assignedArea":701,"roomSpaceCount":4,"_id":"zLGK204vv8xiDsIK"}
+{"bldg":"051B","department":"OIT-Office Chief Tech Officer","assignedArea":246,"roomSpaceCount":1,"_id":"zOg6NdASG8wEcNQX"}
+{"bldg":"051D","department":"OIT-Resource Management","assignedArea":1701,"roomSpaceCount":11,"_id":"zWo08QMdkavxMp3f"}
+{"bldg":"170","department":"TOTALS","assignedArea":130357,"roomSpaceCount":353,"_id":"zYhUJRlVpBcTD4iF"}
+{"bldg":"106","department":"Non-Assignable","assignedArea":5917,"roomSpaceCount":32,"_id":"zYw8zDBYYYFknTL6"}
+{"bldg":"801","department":"GTRI-Business Services","assignedArea":1046,"roomSpaceCount":7,"_id":"zZqsWLB3iS58R7RL"}
+{"bldg":"841A","department":"GTRI-Common","assignedArea":1145,"roomSpaceCount":8,"_id":"zcJz2EFsaRAnvhQu"}
+{"bldg":"060A","department":"TOTALS","assignedArea":10017,"roomSpaceCount":57,"_id":"znhhGz67QaqoCRtr"}
+{"bldg":"130","department":"TOTALS","assignedArea":253925,"roomSpaceCount":417,"_id":"zoBrLoVX79SCcgoR"}
+{"bldg":"176","department":"Electrical & Computer Engr","assignedArea":35515,"roomSpaceCount":117,"_id":"zppI9hCY02zK3T78"}
+{"bldg":"864A","department":"GTRI-Common","assignedArea":1161,"roomSpaceCount":6,"_id":"zr7JXXifBu64f6Py"}
+{"bldg":"58","department":"Ivan Allen College","assignedArea":6042,"roomSpaceCount":10,"_id":"zwrFPauHiToPskhw"}
+{"bldg":"856A","department":"GTRI-Sensors Elec (GTRI-SEAL)","assignedArea":496,"roomSpaceCount":3,"_id":"zyiWBAPiuE5wviPu"}

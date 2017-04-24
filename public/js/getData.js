@@ -8,7 +8,18 @@ var HttpClient = function() {
 
         anHttpRequest.open( "GET", aUrl, true );            
         anHttpRequest.send( null );
-    }
+    };    
+
+    this.post = function(aUrl, aParams, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function() { 
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+
+        anHttpRequest.open( "POST", aUrl, true );            
+        anHttpRequest.send(aParams);
+    };
 }
 
 var jsonToLoad = ['/api/buildingsnames','/api/zones','/api/buildingspos','/api/buildingsparams','/api/buildingsparamsbis','/api/buildingsfloors'];
@@ -26,7 +37,7 @@ function getMonthly(building,request){
 		buildingClient.get('/api/buildingsmonthly/' + building.id.toString(), function(response) {
 	   		buildingmonthlyJSON = JSON && JSON.parse(response) || $.parseJSON(response);
 			var obj = buildingmonthlyJSON["0"]; 
-			if(obj != undefined){
+			if(obj != undefined){ 
 				building.params.monthly_energy = obj;
 				building.params.tot_energy2014 = obj["Jan-14"]+obj["Feb-14"]+obj["Mar-14"]+obj["Apr-14"]+obj["May-14"]+obj["Jun-14"]+obj["Jul-14"]+obj["Aug-14"]+obj["Sep-14"]+obj["Oct-14"]+obj["Nov-14"]+obj["Dec-14"];
 				building.params.noEnergy = false; 
@@ -185,16 +196,14 @@ function initBuildings(environment) {
 
 	aClient = new HttpClient();
 	aClient.get('/api/buildingspos', function(response) {
-    	buildingsposJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+    	buildingsposJSON = JSON && JSON.parse(response) || $.parseJSON(response); 
 	   	nLoadJsonFinished ++;
 	   	if (njson == nLoadJsonFinished){
 	   	environment.initBuildingsList(); 
 	   }
 	});
 
-$.get('jsons/infoBldg.json', function(data) {         
-    console.log(data);
-});		
+	
 
 	dClient = new HttpClient();
 	dClient.get('/api/buildingsparams', function(response) {

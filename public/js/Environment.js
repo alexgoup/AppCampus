@@ -17,9 +17,7 @@ Environment = function(application) {
 	this.shapeAllRoads = []; 
     this.Zlist = []; 
 
-    $.getJSON('jsons/infoBldg.json', function(data) {         
-    console.log(data);
-});	
+
 
     this.hPlate = 0; 
     this.sZ0 = 0.25; 
