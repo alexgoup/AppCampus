@@ -38,7 +38,7 @@ app.controller('BuildingController',
         			var scenarioData = scenariosJSON[i]; 
         			var scenarioBL = []; 
         			for(j in scenarioData.data){
-        				var building = scenarioData.data[j];console.log(building);
+        				var building = scenarioData.data[j];
         				var reconstructedBldg = $rootScope.reconstructBldgFromData(building); 
         				scenarioBL.push(reconstructedBldg); 
         			} 
@@ -60,14 +60,19 @@ app.controller('BuildingController',
 /*        $rootScope.initScenarioList = function(){
 
         }*/
-
+        function getRandomInt(min, max) {
+		  min = Math.ceil(min);
+		  max = Math.floor(max);
+		  return Math.floor(Math.random() * (max - min)) + min;
+		}
+		
         $rootScope.reconstructBldgFromData = function(data){ // takes json bldg obj from DB, returns building type js obj 
         // do not forget mesh visib
 	        	for(var k=0; k<$rootScope.buildingsList.length; k++){
 	        		var isBldgCreated = data.duplicatedID != undefined;
 	        		var idtofind = data.duplicatedID == undefined ? data.bldgid : data.duplicatedID; 
-	        		if($rootScope.buildingsList[k].id == data.idtofind){
-	        			if(isBldgCreated){
+	        		if($rootScope.buildingsList[k].id == idtofind){
+	        			if(isBldgCreated){ 
 	        				var bldgDuplicated = $rootScope.buildingsList[k];
 	        				var returnedBldg = new Building(data.duplicatedID+getRandomInt(1000, 10000),data.name,bldgDuplicated.bClass,bldgDuplicated.environment); 
 	        				returnedBldg.params = data.params; 
@@ -83,7 +88,7 @@ app.controller('BuildingController',
         					returnedBldg.mesh = newMesh; 
         					return returnedBldg;
 	        			}
-	        			else{
+	        			else{console.log("here");
 		        			var returnedBldg = jQuery.extend(true, {}, $rootScope.buildingsList[k]);
 		        			returnedBldg.params = data.params; //also change position? later
 		        			return returnedBldg; 
