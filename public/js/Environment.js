@@ -894,7 +894,7 @@ Environment.prototype = {
 		_this.scope.$apply(function(){ 
 			_this.scope.buildingsList = _this.currentBlist; 
 			_this.scope.editableBuildingsList = copylist;
-			_this.scope.scenarioList[0].buildingsList = _this.currentBlist; //initial campus
+			//_this.scope.scenarioList[0].buildingsList = _this.currentBlist; //initial campus
 		});
 		/*console.log(this.currentBlist)*/
 

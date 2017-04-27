@@ -29,14 +29,22 @@ var scenariosDB = new Datastore({ filename: './data/scenariosDB.db', autoload: t
 
     module.exports = function(app) {
 
-
-
-        app.post('/api/testDB', function(req, res) { 
-            console.log("receiving something : ")
-            console.log(req.body); 
+        app.post('/api/scenarioDB', function(req, res) { 
 
             scenariosDB.insert(req.body, function (err, newDoc) {  
 
+            });
+            
+        });        
+
+        app.get('/api/scenarioDB', function(req, res) { 
+
+            scenariosDB.find({},function(err, scenarios) { 
+
+                if (err)
+                    res.send(err);
+
+                res.json(scenarios); 
             });
             
         });

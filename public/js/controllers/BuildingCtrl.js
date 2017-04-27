@@ -24,16 +24,74 @@ app.controller('BuildingController',
 
 
         if($rootScope.firstrender){ 
-	        $rootScope.scenarioList = [ //IN THEORY SHOULD GET INITIAL SCENARIO LIST FROM THE DB, JUST THE NAMES OR ID
-		        {
-		        	name : "Initial Campus", 
-		        	buildingsList : $rootScope.buildingsList, 
-		        }
-	        ]; 
-	        $rootScope.firstrender = false; 
-	        $rootScope.chosenScenarioViewmode = $rootScope.scenarioList[0];
-	        $rootScope.currentScenario = $rootScope.scenarioList[0];
+        	console.log('bldg ctrl first rendering');
+        	var scenarioGetClient = new HttpClient(); 
+        	scenarioGetClient.get('/api/scenarioDB/', function(response){
+        		var scenariosJSON = JSON && JSON.parse(response) || $.parseJSON(response);
+		        $rootScope.scenarioList = [
+			        {
+			        	name : "Initial Campus", 
+			        	buildingsList : $rootScope.buildingsList, 
+			        }
+		        ]; 
+        		for(i in scenariosJSON){ // avoid doublons 
+        			var scenarioData = scenariosJSON[i]; 
+        			var scenarioBL = []; 
+        			for(j in scenarioData.data){
+        				var building = scenarioData.data[j];console.log(building);
+        				var reconstructedBldg = $rootScope.reconstructBldgFromData(building); 
+        				scenarioBL.push(reconstructedBldg); 
+        			} 
+        			console.log(scenarioBL);
+        			var scenario = {
+        				name: scenarioData.name, 
+        				buildingsList: scenarioBL, 
+        			}; 
+        			$rootScope.scenarioList.push(scenario); 
+        		}
+	        	$rootScope.firstrender = false; 
+	        	$rootScope.chosenScenarioViewmode = $rootScope.scenarioList[0];
+	        	$rootScope.currentScenario = $rootScope.scenarioList[0];
+        	});
+
+
         }
+
+/*        $rootScope.initScenarioList = function(){
+
+        }*/
+
+        $rootScope.reconstructBldgFromData = function(data){ // takes json bldg obj from DB, returns building type js obj 
+        // do not forget mesh visib
+	        	for(var k=0; k<$rootScope.buildingsList.length; k++){
+	        		var isBldgCreated = data.duplicatedID != undefined;
+	        		var idtofind = data.duplicatedID == undefined ? data.bldgid : data.duplicatedID; 
+	        		if($rootScope.buildingsList[k].id == data.idtofind){
+	        			if(isBldgCreated){
+	        				var bldgDuplicated = $rootScope.buildingsList[k];
+	        				var returnedBldg = new Building(data.duplicatedID+getRandomInt(1000, 10000),data.name,bldgDuplicated.bClass,bldgDuplicated.environment); 
+	        				returnedBldg.params = data.params; 
+	        				returnedBldg.departmentList = bldgDuplicated.departmentList;
+	        				returnedBldg.isMovable = false; 
+				        	var duplicatedMesh = bldgDuplicated.mesh; 
+        					var newMesh = duplicatedMesh.clone(data.name + "dupli"); 
+        					newMesh.position = data.meshposition; 
+        					newMesh.material = $rootScope.materialBuilding;
+        					newMesh.building = returnedBldg;
+        					returnedBldg.inity = data.inity; 
+        					returnedBldg.initroty = data.initroty; 
+        					returnedBldg.mesh = newMesh; 
+        					return returnedBldg;
+	        			}
+	        			else{
+		        			var returnedBldg = jQuery.extend(true, {}, $rootScope.buildingsList[k]);
+		        			returnedBldg.params = data.params; //also change position? later
+		        			return returnedBldg; 
+	        			}
+	        		}
+	        	}
+
+        };
 
 		$scope.toggleEnergyGraph = function() {
 			if($scope.showEnergyGraph){

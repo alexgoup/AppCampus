@@ -234,10 +234,9 @@ app.controller('EditController',
 						name: $scope.saveScenarioName, 
 						data: datatosave, 
 				};
-				var scenarioJSON = angular.toJson(scenarioToSave); console.log(scenarioJSON);
-				//var testee = angular.toJson({"test" : "caca", "test2" : "caca2", }); 
-				scenarioClient = new HttpClient();
-				scenarioClient.post('/api/testDB/', scenarioJSON ,function(response) { /*console.log(response)*/
+				var scenarioJSON = angular.toJson(scenarioToSave);
+				var scenarioClient = new HttpClient();
+				scenarioClient.post('/api/scenarioDB/', scenarioJSON ,function(response) { 
 
 				});
 
@@ -250,36 +249,7 @@ app.controller('EditController',
         	
         };
 
-/*        reconstructCircularBldgFromData = function(data){ // do not forget mesh visib
-	        	for(var k=0; k<$rootScope.buildingsList.length; k++){
-	        		var isBldgCreated = data.duplicatedID != undefined;
-	        		var idtofind = data.duplicatedID == undefined ? data.bldgid : data.duplicatedID; 
-	        		if($rootScope.buildingsList[k].id == data.idtofind){
-	        			if(isBldgCreated){
-	        				var bldgDuplicated = $rootScope.buildingsList[k];
-	        				var returnedBldg = new Building(data.duplicatedID+getRandomInt(1000, 10000),data.name,bldgDuplicated.bClass,bldgDuplicated.environment); 
-	        				returnedBldg.params = data.params; 
-	        				returnedBldg.departmentList = bldgDuplicated.departmentList;
-	        				returnedBldg.isMovable = false; 
-				        	var duplicatedMesh = bldgDuplicated.mesh; 
-        					var newMesh = duplicatedMesh.clone(data.name + "dupli"); 
-        					newMesh.position = data.meshposition; 
-        					newMesh.material = $rootScope.materialBuilding;
-        					newMesh.building = returnedBldg;
-        					returnedBldg.inity = data.inity; 
-        					returnedBldg.initroty = data.initroty; 
-        					returnedBldg.mesh = newMesh; 
-        					return returnedBldg;
-	        			}
-	        			else{
-		        			var returnedBldg = jQuery.extend(true, {}, $rootScope.buildingsList[k]);
-		        			returnedBldg.params = data.params; //also change position? later
-		        			return returnedBldg; 
-	        			}
-	        		}
-	        	}
 
-        };*/
 
         $rootScope.saveCurrentScenario = function(){
         	var copylist = [];
