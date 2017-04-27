@@ -21,7 +21,7 @@ var port = process.env.PORT || 8080;
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
-app.use(bodyParser.json()); 
+app.use(bodyParser.json({limit:'50mb'})); 
 
 // parse application/vnd.api+json as json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 

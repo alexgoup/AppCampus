@@ -9,6 +9,7 @@ var BuildingParamsBis = require('./models/BuildingsParamsBis');
 var BuildingFloors = require('./models/BuildingsFloors');
 var Zones = require('./models/Zones');*/
 
+
 var Datastore = require('nedb'); 
 fs = require('fs');
 
@@ -28,9 +29,13 @@ var scenariosDB = new Datastore({ filename: './data/scenariosDB.db', autoload: t
 
     module.exports = function(app) {
 
-        app.post('/api/testDB', function(req, res) { console.log(req); 
 
-            scenariosDB.insert(req, function (err, newDoc) {   // Callback is optional 
+
+        app.post('/api/testDB', function(req, res) { 
+            console.log("receiving something : ")
+            console.log(req.body); 
+
+            scenariosDB.insert(req.body, function (err, newDoc) {  
 
             });
             

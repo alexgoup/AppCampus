@@ -17,7 +17,8 @@ var HttpClient = function() {
                 aCallback(anHttpRequest.responseText);
         }
 
-        anHttpRequest.open( "POST", aUrl, true );            
+        anHttpRequest.open( "POST", aUrl, true );   
+        anHttpRequest.setRequestHeader("Content-Type", "application/json");         
         anHttpRequest.send(aParams);
     };
 }

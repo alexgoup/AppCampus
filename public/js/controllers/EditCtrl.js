@@ -234,9 +234,10 @@ app.controller('EditController',
 						name: $scope.saveScenarioName, 
 						data: datatosave, 
 				};
-				var scenarioJSON = angular.toJson(scenarioToSave);
+				var scenarioJSON = angular.toJson(scenarioToSave); console.log(scenarioJSON);
+				//var testee = angular.toJson({"test" : "caca", "test2" : "caca2", }); 
 				scenarioClient = new HttpClient();
-				scenarioClient.post('/api/testDB/', scenarioJSON ,function(response) { console.log(response)
+				scenarioClient.post('/api/testDB/', scenarioJSON ,function(response) { /*console.log(response)*/
 
 				});
 
