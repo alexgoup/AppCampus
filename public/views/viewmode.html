@@ -79,6 +79,10 @@
 						<button ng-click="loadScenarioViewmode()"> Load </button>
 					</div>
 
+					<div class="controlpanelSection" id="currentScenarioNameSection">
+						<h4 class="controlPanelHeaders"> <span> {{currentScenario.name}} </span> </h4>
+					</div>
+
 					<div class="panel panel-default" id="controlPanel" > 
 <!-- 						<div class="controlpanelSection">
 							<h4 class="controlPanelHeaders"> <span> Visible plot </span> </h4>
@@ -91,6 +95,8 @@
 							  <span class="plotchoiceSpans"> Energy Distribution </span>
 						 	</div>
 						</div> -->
+
+
 						<div class="controlpanelSection" id="costcontrolpanelSection" ng-style="costStyle" ng-show="coststate">
 							<h4 class="controlPanelHeaders"> <span> Construction cost </span> </h4>
 							<slider floor="0" ceiling="100" step="1" precision="2" ng-model-low="costLow" ng-model-high="costHigh" class="controlSlider"></slider>

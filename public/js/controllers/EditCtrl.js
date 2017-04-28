@@ -10,7 +10,7 @@ app.controller('EditController',
         $rootScope.editableRenovDate = "";  
         $rootScope.editableMaterialBuilding = "";
         $rootScope.matBuildingList = ["Steel/Concrete" , "Heavy Timber/Laminate" , "Wood Frame/Brick" , "Metal"]; 
-        $scope.isBuildingMovable = false; 
+        $rootScope.isBuildingMovable = false; 
         $rootScope.chosenScenario = $scope.chosenScenario; 
         $rootScope.currentScenario = $scope.currentScenario; 
         //$rootScope.isBldgClicked = false; 
@@ -117,7 +117,7 @@ app.controller('EditController',
         	newBldg.departmentList = bldgDuplicated.departmentList; 
         	newBldg.isMovable = true; 
         	newBldg.duplicatedID = bldgDuplicatedId;
-        	$scope.isBuildingMovable = true; 
+        	$rootScope.isBuildingMovable = true; 
         	var duplicatedMesh = bldgDuplicated.mesh; 
         	var newMesh = duplicatedMesh.clone($scope.createdBuildingName + "dupli"); 
         	newMesh.position.x = 0; 
@@ -227,6 +227,7 @@ app.controller('EditController',
 					}
 					if(bldg.mesh != undefined){
 						bldgtosave.meshposition = bldg.mesh.position; 
+						bldgtosave.visibility = bldg.mesh.isVisible;
 					}
 					datatosave.push(bldgtosave);
 				}
@@ -303,7 +304,7 @@ app.controller('EditController',
         $rootScope.saveBuildingPosition = function(){ 
         	$rootScope.currentMovableBuilding.mesh.material = $rootScope.materialBuilding; 
         	$rootScope.currentMovableBuilding.isMovable = false; 
-        	$scope.isBuildingMovable = false; 
+        	$rootScope.isBuildingMovable = false; 
         	$rootScope.currentMovableBuilding.mesh.actionManager = new BABYLON.ActionManager($rootScope.scene);
 			$rootScope.currentMovableBuilding.mesh.actionManager.registerAction($rootScope.pointerMeshActionOPOverT);
 			$rootScope.currentMovableBuilding.mesh.actionManager.registerAction($rootScope.pointerMeshActionOPOutT);

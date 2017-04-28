@@ -119,7 +119,20 @@ html, body {
  #loadScenarioPanelViewmode { 
 	position: absolute;
 	top: 3.5%;
-	left: 55%;
+	left: 42.5%;
+	width: 15%;
+	height: auto;
+	margin:0px;
+	border: 0px solid transparent;
+	border-color: #346562;
+	border-radius: 4px;
+	background-color: rgba(60,60,60,0.5)
+ }  
+
+ #currentScenarioNameSection { 
+	position: absolute;
+	top: 9%;
+	left: 1%;
 	width: 15%;
 	height: auto;
 	margin:0px;

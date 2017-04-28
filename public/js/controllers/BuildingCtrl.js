@@ -51,11 +51,22 @@ app.controller('BuildingController',
         		}
 	        	$rootScope.firstrender = false; 
 	        	$rootScope.chosenScenarioViewmode = $rootScope.scenarioList[0];
-	        	$rootScope.currentScenario = $rootScope.scenarioList[0];
+	        	$rootScope.currentScenario = $rootScope.scenarioList[0]; 
+	        	$rootScope.chosenScenario = $rootScope.chosenScenarioViewmode;
         	});
 
 
         }
+
+    	if($rootScope.currentMovableBuilding != undefined && $rootScope.currentMovableBuilding.isMovable == true){ //if going to view mode but didnt save the created bldg
+    		$rootScope.currentMovableBuilding.mesh.material = $rootScope.materialBuilding; 
+			$rootScope.currentMovableBuilding.isMovable = false;
+        	$rootScope.isBuildingMovable = false; 
+        	$rootScope.currentMovableBuilding.mesh.actionManager = new BABYLON.ActionManager($rootScope.scene);
+			$rootScope.currentMovableBuilding.mesh.actionManager.registerAction($rootScope.pointerMeshActionOPOverT);
+			$rootScope.currentMovableBuilding.mesh.actionManager.registerAction($rootScope.pointerMeshActionOPOutT);
+			$rootScope.currentMovableBuilding.mesh.actionManager.registerAction($rootScope.pointerMeshActionOPickT);
+    	}
 
 /*        $rootScope.initScenarioList = function(){
 
@@ -65,7 +76,7 @@ app.controller('BuildingController',
 		  max = Math.floor(max);
 		  return Math.floor(Math.random() * (max - min)) + min;
 		}
-		
+
         $rootScope.reconstructBldgFromData = function(data){ // takes json bldg obj from DB, returns building type js obj 
         // do not forget mesh visib
 	        	for(var k=0; k<$rootScope.buildingsList.length; k++){
@@ -83,12 +94,18 @@ app.controller('BuildingController',
         					newMesh.position = data.meshposition; 
         					newMesh.material = $rootScope.materialBuilding;
         					newMesh.building = returnedBldg;
+        					newMesh.isVisible = false; 
+        					newMesh.actionManager = new BABYLON.ActionManager($rootScope.scene);
+							newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPOverT);
+							newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPOutT);
+							newMesh.actionManager.registerAction($rootScope.pointerMeshActionOPickT);
         					returnedBldg.inity = data.inity; 
         					returnedBldg.initroty = data.initroty; 
-        					returnedBldg.mesh = newMesh; 
+        					returnedBldg.mesh = newMesh;
+        					$rootScope.editableBuildingsList.push(returnedBldg);  
         					return returnedBldg;
 	        			}
-	        			else{console.log("here");
+	        			else{
 		        			var returnedBldg = jQuery.extend(true, {}, $rootScope.buildingsList[k]);
 		        			returnedBldg.params = data.params; //also change position? later
 		        			return returnedBldg; 
